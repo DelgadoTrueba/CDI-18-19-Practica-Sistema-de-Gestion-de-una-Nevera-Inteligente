@@ -1,0 +1,30 @@
+/*navegador*/
+#navbar{
+    position:fixed;
+    left:0px;
+    bottom:0px;
+
+    width: 100%;
+    height: 100% !important;
+}
+
+mat-tab-group{
+    width: 100% !important;   
+    height: 100% !important;
+}
+
+.mat-tab-labels{
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.mat-tab-label{
+    flex: 1 1 33% !important;
+}
+
+/*contenedor del navegador*/
+
+.mat-tab-body-wrapper{
+    height: 100% !important;
+    border: 5px solid black !important;
+}
