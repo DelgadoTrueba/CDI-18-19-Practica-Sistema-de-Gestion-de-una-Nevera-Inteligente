@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 
+//Importar Flex-Layout
+import { FlexLayoutModule } from "@angular/flex-layout";
+
 //Components
 import { AppComponent } from './app.component';
 
@@ -23,7 +26,8 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
 
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    FlexLayoutModule
   ],
   //Importar Servicios
   providers: [],
