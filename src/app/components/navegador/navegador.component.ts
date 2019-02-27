@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ViewChildren, ViewChild } from '@angular/core';
-import { MatTab, MatTabGroup } from '@angular/material/tabs';
+import { MatTab, MatTabGroup, MatTabChangeEvent } from '@angular/material/tabs';
 import { Router, RouterOutlet } from '@angular/router';
 import { slideInAnimation } from 'src/app/animations';
 
@@ -58,6 +58,14 @@ export class NavegadorComponent implements OnInit {
     console.log(index, this.tabs[index]);
   }
   
+  public onLinkClick(event: MatTabChangeEvent){
+    let index = event.index;
+    console.log("onclick; "+index);
+    if (index >=0 && index < this.tabs.length){
+      this.reAlignTabGroup(index);
+      this.navegateToComponent(this.tabs[index]);
+    }
+  }
 
   private calculatePosition(direction:string ): number{
     if(direction === "left" && this.position -1 >= 0){
