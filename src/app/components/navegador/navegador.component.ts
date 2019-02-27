@@ -1,13 +1,18 @@
 import { Component, OnInit, ViewEncapsulation, ViewChildren, ViewChild } from '@angular/core';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
+import { slideInAnimation } from 'src/app/animations';
 
 
 @Component({
   selector: 'app-navegador',
   templateUrl: './navegador.component.html',
   styleUrls: ['./navegador.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  animations: [
+    slideInAnimation
+    // animation triggers go here
+  ]
 })
 export class NavegadorComponent implements OnInit {
 
@@ -76,6 +81,9 @@ export class NavegadorComponent implements OnInit {
     this._router.navigate(['/'+component]);
   }
   
-  
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  }
 
 }

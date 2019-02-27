@@ -6,9 +6,9 @@ import { SettingsComponent } from './components/settings/settings.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'fridge', pathMatch: 'full' },
-  { path: 'fridge', component: FridgeComponent },
-  { path: 'market', component: MarketComponent },
-  { path: 'settings', component: SettingsComponent },
+  { path: 'fridge', component: FridgeComponent, data: {animation: 'fridge'} },
+  { path: 'market', component: MarketComponent, data: {animation: 'market'} },
+  { path: 'settings', component: SettingsComponent, data: {animation: 'settings'}},
 ];
 
 @NgModule({
