@@ -17,12 +17,18 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 //Components
 import { AppComponent } from './app.component';
 import { NavegadorComponent } from './components/navegador/navegador.component';
+import { FridgeComponent } from './components/fridge/fridge.component';
+import { MarketComponent } from './components/market/market.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 @NgModule({
   //Importar Componenentes
   declarations: [
     AppComponent,
     NavegadorComponent,
+    FridgeComponent,
+    MarketComponent,
+    SettingsComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [

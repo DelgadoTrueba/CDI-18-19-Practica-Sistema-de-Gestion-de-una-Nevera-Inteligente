@@ -2,15 +2,14 @@
   (swipeleft)="onSwipeLeft($event)"
   (swiperight)="onSwipeRight($event)">
 
-    
-
+  <router-outlet></router-outlet>
+  
     <div id="navbar">
       <mat-tab-group headerPosition="below" #tabGroup>
 
-        <mat-tab *ngFor = "let tab of tabs;" label={{tab}} ></mat-tab>
+        <mat-tab *ngFor = "let tab of tabs;" label={{tab}}></mat-tab>
   
       </mat-tab-group>
     </div>
     
-
 </div>

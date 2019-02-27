@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChildren, ViewChild } from '@angular/core';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { MatTab, MatTabGroup } from '@angular/material/tabs';
 })
 export class NavegadorComponent implements OnInit {
 
-  private tabs: Array<string> =["First", "Second", "Third"];
+  private tabs: Array<string> =["fridge", "market", "settings"];
   private position: number;
 
   public eventText = '';
@@ -18,7 +19,9 @@ export class NavegadorComponent implements OnInit {
 
   @ViewChild("tabGroup") tabGroup: MatTabGroup;
 
-  constructor() {
+  constructor(
+    private _router: Router
+  ) { 
     this.position = 0;
   }
 
@@ -30,18 +33,24 @@ export class NavegadorComponent implements OnInit {
     console.log("onSwipeLeft");
 
     let index = this.calculatePosition("left");
-    if(index !== -1) this.reAlignTabGroup(index);
+    if(index !== -1){
+      this.reAlignTabGroup(index);
+      this.navegateToComponent(this.tabs[index]);
+    } 
 
-    console.log(index);
+    console.log(index, this.tabs[index]);
   }
 
   public onSwipeRight(evt) {
     console.log("onSwipeRight");
 
     let index = this.calculatePosition("right");
-    if(index !== -1) this.reAlignTabGroup(index);
+    if(index !== -1){
+      this.reAlignTabGroup(index);
+      this.navegateToComponent(this.tabs[index]);
+    } 
 
-    console.log(index);
+    console.log(index, this.tabs[index]);
   }
   
 
@@ -62,6 +71,11 @@ export class NavegadorComponent implements OnInit {
       this.tabGroup.realignInkBar();
     }
   }
+
+  private navegateToComponent(component: string){
+    this._router.navigate(['/'+component]);
+  }
+  
   
 
 }
