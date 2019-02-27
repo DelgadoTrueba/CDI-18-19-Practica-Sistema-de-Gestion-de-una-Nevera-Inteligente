@@ -1,16 +1,16 @@
-<div id="navbar">
-  <mat-tab-group headerPosition="below" >
+<div 
+  (swipeleft)="onSwipeLeft($event)"
+  (swiperight)="onSwipeRight($event)">
 
-    <mat-tab label="First"> 
-      <app-tab1></app-tab1>
-    </mat-tab>
+    
 
-    <mat-tab label="Second">
-      
-    </mat-tab>
+    <div id="navbar">
+      <mat-tab-group headerPosition="below" #tabGroup>
 
-    <mat-tab label="Third">
-      
-    </mat-tab>
-  </mat-tab-group>
+        <mat-tab *ngFor = "let tab of tabs;" label={{tab}} ></mat-tab>
+  
+      </mat-tab-group>
+    </div>
+    
+
 </div>

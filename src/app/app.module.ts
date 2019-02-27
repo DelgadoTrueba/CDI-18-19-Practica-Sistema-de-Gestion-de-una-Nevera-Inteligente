@@ -17,14 +17,12 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 //Components
 import { AppComponent } from './app.component';
 import { NavegadorComponent } from './components/navegador/navegador.component';
-import { Tab1Component } from './components/tab1/tab1.component';
 
 @NgModule({
   //Importar Componenentes
   declarations: [
     AppComponent,
     NavegadorComponent,
-    Tab1Component
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
