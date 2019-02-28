@@ -2,10 +2,6 @@
   (swipeleft)="onSwipeLeft($event)"
   (swiperight)="onSwipeRight($event)">
 
-  <div [@routeAnimations]="prepareRoute(outlet)" >
-    <router-outlet #outlet="outlet"></router-outlet>
-  </div>
-
     <div id="navbar">
       <mat-tab-group headerPosition="below" 
                       (selectedTabChange)="onLinkClick($event)"
