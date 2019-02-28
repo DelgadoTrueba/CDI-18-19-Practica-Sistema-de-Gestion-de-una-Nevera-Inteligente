@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, Input } from '@angular/core';
 import { MatTabGroup, MatTabChangeEvent } from '@angular/material/tabs';
 import { Router, NavigationEnd, } from '@angular/router';
+import { arrayDeNavegacion as tabs} from 'src/app/model/array-de-navegacion/array-de-navegacion.component';
 
 @Component({
   selector: 'app-navegador',
@@ -10,71 +11,31 @@ import { Router, NavigationEnd, } from '@angular/router';
 })
 export class NavegadorComponent implements OnInit {
 
-  private tabs: Array<string> =["market", "fridge", "settings"];
-  private position: number;
+  private tabs:Array<string> = tabs;
+  @Input() position: number = 0;
 
 
   @ViewChild("tabGroup") tabGroup: MatTabGroup;
 
   constructor(
     private _router: Router,
-  ) { 
-    this.position = 0;
-  }
+  ) { }
 
   ngOnInit() {
-    this._router.events.subscribe( (event) => {
-      if( event instanceof NavigationEnd){
-        let url = event.urlAfterRedirects;
-        url = url.substr(1);
-        //console.log(url);
-        this.reAlignTabGroup(this.tabs.indexOf(url));
-      }
-    } );
+   this.reAlignTabGroup(this.position);
   }
 
-  public onSwipeLeft(evt) {
-    //console.log("onSwipeLeft");
-
-    let index = this.calculatePosition("left");
-    if(index !== -1){
-      this.reAlignTabGroup(index);
-      this.navegateToComponent(this.tabs[index]);
-    } 
-
-    //console.log(index, this.tabs[index]);
+  ngOnChanges(changes) {
+    //console.log('Changed', changes.position.currentValue, changes.position.previousValue);
+    this.reAlignTabGroup(this.position);
   }
-
-  public onSwipeRight(evt) {
-    //console.log("onSwipeRight");
-
-    let index = this.calculatePosition("right");
-    if(index !== -1){
-      this.reAlignTabGroup(index);
-      this.navegateToComponent(this.tabs[index]);
-    } 
-
-    //console.log(index, this.tabs[index]);
-  }
-  
+ 
   public onLinkClick(event: MatTabChangeEvent){
     let index = event.index;
     //console.log("onclick; "+index);
     if (index >=0 && index < this.tabs.length){
-      this.reAlignTabGroup(index);
       this.navegateToComponent(this.tabs[index]);
     }
-  }
-
-  private calculatePosition(direction:string ): number{
-    if(direction === "left" && this.position -1 >= 0){
-      return --this.position;
-    }
-    else if(direction === "right" && this.position + 1< this.tabs.length)
-    {
-      return ++this.position;
-    }
-    else return -1;
   }
 
   private reAlignTabGroup( index: number ){

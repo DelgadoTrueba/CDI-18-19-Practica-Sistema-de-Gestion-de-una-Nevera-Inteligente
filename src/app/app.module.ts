@@ -28,6 +28,7 @@ import { IconKitchenComponent } from './components/icons/icon-kitchen/icon-kitch
 import { IconSelecledKitchenComponent } from './components/icons/icon-selecled-kitchen/icon-selecled-kitchen.component';
 import { IconStoreComponent } from './components/icons/icon-store/icon-store.component';
 import { IconSelecledStoreComponent } from './components/icons/icon-selecled-store/icon-selecled-store.component';
+import { AppMovileComponent } from './components/app-movile/app-movile.component';
 
 @NgModule({
   //Importar Componenentes
@@ -43,6 +44,7 @@ import { IconSelecledStoreComponent } from './components/icons/icon-selecled-sto
     IconSelecledKitchenComponent,
     IconStoreComponent,
     IconSelecledStoreComponent,
+    AppMovileComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
