@@ -5,7 +5,7 @@
   <div [@routeAnimations]="prepareRoute(outlet)" >
     <router-outlet #outlet="outlet"></router-outlet>
   </div>
-  
+
     <div id="navbar">
       <mat-tab-group headerPosition="below" 
                       (selectedTabChange)="onLinkClick($event)"
@@ -13,9 +13,9 @@
       <!--market-->
         <mat-tab>
           <ng-template mat-tab-label>
-              <app-icon-store *ngIf="position !== 0"></app-icon-store>
+              <app-icon-store *ngIf="position !== 0" ></app-icon-store>
               <app-icon-selecled-store *ngIf="position === 0"></app-icon-selecled-store>
-            {{tabs[0]}}
+              <!--{{tabs[0]}}-->
           </ng-template>
           <!--Content 1-->
         </mat-tab>
@@ -25,7 +25,7 @@
         <ng-template mat-tab-label>
             <app-icon-kitchen *ngIf="position !== 1"></app-icon-kitchen>
             <app-icon-selecled-kitchen *ngIf="position === 1"></app-icon-selecled-kitchen>
-          {{tabs[1]}}
+            <!--{{tabs[1]}}-->
         </ng-template>
         <!--Content 1-->
       </mat-tab>
@@ -35,7 +35,7 @@
         <ng-template mat-tab-label>
             <app-icon-setting *ngIf="position !== 2"></app-icon-setting>
             <app-icon-selecled-setting *ngIf="position === 2"></app-icon-selecled-setting>
-          {{tabs[2]}}
+          <!--{{tabs[2]}}-->
         </ng-template>
         <!--Content 1-->
       </mat-tab>
