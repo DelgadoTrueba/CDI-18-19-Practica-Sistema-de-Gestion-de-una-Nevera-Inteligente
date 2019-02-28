@@ -33,7 +33,7 @@ export class NavegadorComponent implements OnInit {
       if( event instanceof NavigationEnd){
         let url = event.urlAfterRedirects;
         url = url.substr(1);
-        console.log(url);
+        //console.log(url);
         this.reAlignTabGroup(this.tabs.indexOf(url));
       }
     } );
