@@ -2,7 +2,7 @@ import { trigger, transition, style, query, animateChild, group, animate } from 
 
 export const slideInAnimation =
   trigger('routeAnimations', [
-      transition('fridge => market', [
+      transition('market => fridge', [
           /* order */
           /* 1 */ query(':enter, :leave', style({ position: 'fixed', width:'100%' })
             , { optional: true }),
@@ -17,7 +17,7 @@ export const slideInAnimation =
           ], { optional: true }),
         ]),
       ]),
-      transition('market => settings', [
+      transition('fridge => settings', [
         /* order */
         /* 1 */ query(':enter, :leave', style({ position: 'fixed', width:'100%' })
           , { optional: true }),
@@ -33,7 +33,7 @@ export const slideInAnimation =
       ]),
     ]),
 
-      transition('settings => market', [
+      transition('settings => fridge', [
         /* order */
         /* 1 */ query(':enter, :leave', style({ position: 'fixed', width:'100%' })
           , { optional: true }),
@@ -48,7 +48,7 @@ export const slideInAnimation =
         ], { optional: true }),
       ]),
     ]),
-      transition('market => fridge', [
+      transition('fridge => market', [
         /* order */
         /* 1 */ query(':enter, :leave', style({ position: 'fixed', width:'100%' })
           , { optional: true }),
