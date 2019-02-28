@@ -7,7 +7,9 @@
   </div>
   
     <div id="navbar">
-      <mat-tab-group headerPosition="below" #tabGroup (selectedTabChange)="onLinkClick($event)">
+      <mat-tab-group headerPosition="below" 
+                      (selectedTabChange)="onLinkClick($event)"
+                      #tabGroup >
 
         <mat-tab *ngFor = "let tab of tabs;let indice=index" label={{tab}}></mat-tab>
   
