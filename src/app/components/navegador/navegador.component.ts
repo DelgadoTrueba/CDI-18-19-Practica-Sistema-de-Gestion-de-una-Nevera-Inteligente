@@ -16,7 +16,7 @@ import { slideInAnimation } from 'src/app/animations';
 })
 export class NavegadorComponent implements OnInit {
 
-  private tabs: Array<string> =["fridge", "market", "settings"];
+  private tabs: Array<string> =["market", "fridge", "settings"];
   private position: number;
 
 
@@ -85,6 +85,7 @@ export class NavegadorComponent implements OnInit {
 
   private reAlignTabGroup( index: number ){
     if (index >=0 && index < this.tabs.length){
+      this.position = index;
       this.tabGroup.selectedIndex = index;
       this.tabGroup.realignInkBar();
     }

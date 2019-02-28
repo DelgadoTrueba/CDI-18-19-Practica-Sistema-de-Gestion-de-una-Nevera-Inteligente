@@ -2,13 +2,6 @@
   (swipeleft)="onSwipeLeft($event)"
   (swiperight)="onSwipeRight($event)">
 
-  <app-icon-selecled-setting></app-icon-selecled-setting>
-  <app-icon-setting></app-icon-setting>
-  <app-icon-selecled-kitchen></app-icon-selecled-kitchen>
-  <app-icon-kitchen></app-icon-kitchen>
-  <app-icon-store></app-icon-store>
-  <app-icon-selecled-store></app-icon-selecled-store>
-
   <div [@routeAnimations]="prepareRoute(outlet)" >
     <router-outlet #outlet="outlet"></router-outlet>
   </div>
@@ -17,14 +10,35 @@
       <mat-tab-group headerPosition="below" 
                       (selectedTabChange)="onLinkClick($event)"
                       #tabGroup >
- 
-        <mat-tab *ngFor = "let tab of tabs;" label={{tab}}>
+      <!--market-->
+        <mat-tab>
           <ng-template mat-tab-label>
-            <app-icon-selecled-setting></app-icon-selecled-setting>
-            {{tab}}
+              <app-icon-store *ngIf="position !== 0"></app-icon-store>
+              <app-icon-selecled-store *ngIf="position === 0"></app-icon-selecled-store>
+            {{tabs[0]}}
           </ng-template>
           <!--Content 1-->
         </mat-tab>
+
+      <!--kitchen-->
+      <mat-tab>
+        <ng-template mat-tab-label>
+            <app-icon-kitchen *ngIf="position !== 1"></app-icon-kitchen>
+            <app-icon-selecled-kitchen *ngIf="position === 1"></app-icon-selecled-kitchen>
+          {{tabs[1]}}
+        </ng-template>
+        <!--Content 1-->
+      </mat-tab>
+
+      <!--Settings-->
+      <mat-tab>
+        <ng-template mat-tab-label>
+            <app-icon-setting *ngIf="position !== 2"></app-icon-setting>
+            <app-icon-selecled-setting *ngIf="position === 2"></app-icon-selecled-setting>
+          {{tabs[2]}}
+        </ng-template>
+        <!--Content 1-->
+      </mat-tab>
 
       </mat-tab-group>
     </div>
