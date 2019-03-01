@@ -8,7 +8,7 @@ import {MatIconRegistry} from '@angular/material';
   templateUrl: './icon-selecled-setting.component.html',
   styleUrls: ['./icon-selecled-setting.component.css']
 })
-export class SelecledSettingComponent implements OnInit {
+export class IconSelecledSettingComponent implements OnInit {
 
   constructor(
     private iconRegistry: MatIconRegistry, 

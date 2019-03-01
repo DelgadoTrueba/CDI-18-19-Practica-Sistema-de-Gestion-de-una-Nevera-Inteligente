@@ -18,32 +18,38 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 //Components
 import { AppComponent } from './app.component';
-import { NavegadorComponent } from './components/navegador/navegador.component';
-import { FridgeComponent } from './components/fridge/fridge.component';
-import { MarketComponent } from './components/market/market.component';
-import { SettingsComponent } from './components/settings/settings.component';
-import { SelecledSettingComponent } from './components/icons/icon-selecled-setting/icon-selecled-setting.component';
-import { IconSettingComponent } from './components/icons/icon-setting/icon-setting.component';
-import { IconKitchenComponent } from './components/icons/icon-kitchen/icon-kitchen.component';
-import { IconSelecledKitchenComponent } from './components/icons/icon-selecled-kitchen/icon-selecled-kitchen.component';
-import { IconStoreComponent } from './components/icons/icon-store/icon-store.component';
-import { IconSelecledStoreComponent } from './components/icons/icon-selecled-store/icon-selecled-store.component';
-import { AppMovileComponent } from './components/app-movile/app-movile.component';
+
+import { IconSettingComponent } from './components/movile-components/navegador/icons/icon-setting/icon-setting.component';
+import { IconKitchenComponent } from './components/movile-components/navegador/icons/icon-kitchen/icon-kitchen.component';
+import { IconSelecledKitchenComponent } from './components/movile-components/navegador/icons/icon-selecled-kitchen/icon-selecled-kitchen.component';
+import { IconStoreComponent } from './components/movile-components/navegador/icons/icon-store/icon-store.component';
+import { IconSelecledStoreComponent } from './components/movile-components/navegador/icons/icon-selecled-store/icon-selecled-store.component';
+import { IconSelecledSettingComponent } from './components/movile-components/navegador/icons/icon-selecled-setting/icon-selecled-setting.component';
+import { NavegadorComponent } from './components/movile-components/navegador/navegador.component';
+
+import { FridgeComponent } from './components/movile-components/pages/fridge/fridge.component';
+import { MarketComponent } from './components/movile-components/pages/market/market.component';
+import { SettingsComponent } from './components/movile-components/pages/settings/settings.component';
+
+import { AppMovileComponent } from './components/movile-components/app-movile/app-movile.component';
 
 @NgModule({
   //Importar Componenentes
   declarations: [
     AppComponent,
-    NavegadorComponent,
-    FridgeComponent,
-    MarketComponent,
-    SettingsComponent,
-    SelecledSettingComponent,
+
+    IconSelecledSettingComponent,
     IconSettingComponent,
     IconKitchenComponent,
     IconSelecledKitchenComponent,
     IconStoreComponent,
     IconSelecledStoreComponent,
+    NavegadorComponent,
+    
+    FridgeComponent,
+    MarketComponent,
+    SettingsComponent,
+    
     AppMovileComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
