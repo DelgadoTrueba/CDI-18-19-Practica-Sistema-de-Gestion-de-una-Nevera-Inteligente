@@ -16,7 +16,7 @@ export class IconSettingComponent implements OnInit {
   ) {
     iconRegistry.addSvgIcon(
       'settings',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/settings.svg')
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/settings.svg')
     );
    }
 

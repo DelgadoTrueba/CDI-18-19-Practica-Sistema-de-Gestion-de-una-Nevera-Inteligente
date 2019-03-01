@@ -15,7 +15,7 @@ export class IconStoreComponent implements OnInit {
   ) {
     iconRegistry.addSvgIcon(
       'store',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/store_mall_directory.svg')
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/store_mall_directory.svg')
     );
    }
 

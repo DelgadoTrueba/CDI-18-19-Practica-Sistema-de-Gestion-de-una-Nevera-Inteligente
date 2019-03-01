@@ -7,10 +7,10 @@
 
 
    
-      <img *ngIf="cerrado" src="../../../assets/img/myfridge.png" class="imagen">
-    <img *ngIf="abieroArriba && abiertoAbajo" src="../../../assets/img/fridge2.png"  class="imagen">
-    <img *ngIf="abieroArriba && !abiertoAbajo" src="../../../assets/img/fridge2-2.png"  class="imagen">
-    <img *ngIf="!abieroArriba && abiertoAbajo" src="../../../assets/img/fridge2-3.png"  class="imagen">
+  <img *ngIf="cerrado"                        src="assets/img/closed-fridge.png"          class="imagen">
+  <img *ngIf="abieroArriba && abiertoAbajo"   src="assets/img/opened-fridge.png"          class="imagen">
+  <img *ngIf="abieroArriba && !abiertoAbajo"  src="assets/img/top-opened-fridge.png"      class="imagen">
+  <img *ngIf="!abieroArriba && abiertoAbajo"  src="assets/img/bottom-opened-fridge.png"   class="imagen">
 
 
 

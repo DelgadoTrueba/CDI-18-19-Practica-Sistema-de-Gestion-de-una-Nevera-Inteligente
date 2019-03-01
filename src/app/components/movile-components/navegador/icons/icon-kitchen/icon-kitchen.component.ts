@@ -16,7 +16,7 @@ export class IconKitchenComponent implements OnInit {
   ) {
     iconRegistry.addSvgIcon(
       'kitchen',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/kitchen.svg')
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/kitchen.svg')
     );
    }
 

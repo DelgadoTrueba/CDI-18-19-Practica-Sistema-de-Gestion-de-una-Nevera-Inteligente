@@ -16,7 +16,7 @@ export class IconSelecledSettingComponent implements OnInit {
   ) {
     iconRegistry.addSvgIcon(
       'selected-settings',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/selected-settings.svg')
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/selected-settings.svg')
     );
    }
 

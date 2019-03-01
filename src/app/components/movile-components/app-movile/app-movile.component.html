@@ -2,18 +2,14 @@
   (swipeleft)="onSwipeLeft($event)"
   (swiperight)="onSwipeRight($event)">
 
-  <!--
-<div class="main"></div>
-    <div class="navegador"></div>
-  -->
-    
-
-    
     <div [@routeAnimations]="prepareRoute(outlet)" class="main">
       <router-outlet #outlet="outlet"></router-outlet>
     </div>
 
     <app-navegador [position]="position" class="navegador"></app-navegador>
   
-
+    <!--
+    <div class="main"></div>
+    <div class="navegador"></div>
+    -->
 </div>
