@@ -1,17 +1,11 @@
 #mostrador{
     border: 1px black solid;
+    height: 100%;
 }
-
-
-.media { 
-    min-width: 0;
-    margin: 5px;
- }
- img {
-    max-width: 100%; 
-    
-    margin-top: 10px;
-    margin-bottom: 10px;
+ 
+.imagen {
+    max-width: 100%;
+    height: auto;
   }
 
 

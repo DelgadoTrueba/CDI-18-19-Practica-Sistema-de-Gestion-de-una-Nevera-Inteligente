@@ -1,4 +1,15 @@
 #container{
     height: 100vh;
+}
 
+.main{
+    height: 85%;
+    /*background: yellow;*/
+
+}
+
+.navegador{
+    height: 15%;
+    z-index: 1;
+    /*background: pink !important;*/
 }
