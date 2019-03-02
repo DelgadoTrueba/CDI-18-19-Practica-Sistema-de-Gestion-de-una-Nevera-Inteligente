@@ -6,17 +6,25 @@
   </p>
 
 
-   
+  <!--
   <img *ngIf="cerrado"                        src="assets/img/closed-fridge.png"          class="imagen">
   <img *ngIf="abieroArriba && abiertoAbajo"   src="assets/img/opened-fridge.png"          class="imagen">
   <img *ngIf="abieroArriba && !abiertoAbajo"  src="assets/img/top-opened-fridge.png"      class="imagen">
   <img *ngIf="!abieroArriba && abiertoAbajo"  src="assets/img/bottom-opened-fridge.png"   class="imagen">
+-->
 
+  
 
-
-  <button (click)="abrirArriba()">Abrir/Cerrar arriba</button>
-
-  <button (click)="abrirAbajo();">Abrir/Cerrar abajo</button>
+  <div class="images">
+    <img *ngIf="!abiertoArriba"  src="assets/img/cerradoArriba.png"  class="imagen"
+          (click)="abrirArriba()">
+    <img *ngIf="abiertoArriba"   src="assets/img/abiertoArriba.png"  class="imagen"
+          (click)="abrirArriba()">
+    <img *ngIf="abiertoAbajo"   src="assets/img/abiertoAbajo.png"   class="imagen"
+          (click)="abrirAbajo();">
+    <img *ngIf="!abiertoAbajo"  src="assets/img/cerradoAbajo.png"   class="imagen"
+          (click)="abrirAbajo();">
+  </div>
 
 </div>
 

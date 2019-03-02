@@ -3,9 +3,11 @@
     height: 100%;
 }
  
+.images{
+    font-size:0;
+}
+
 .imagen {
     max-width: 100%;
     height: auto;
-  }
-
-
+}

@@ -7,13 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FridgeComponent implements OnInit {
 
-  private cerrado: boolean;
-  private abieroArriba: boolean;
+  private abiertoArriba: boolean;
   private abiertoAbajo: boolean;
 
   constructor() {
-    this.cerrado = true;
-    this.abieroArriba = false;
+    this.abiertoArriba = false;
     this.abiertoAbajo = false;
   }
 
@@ -21,14 +19,12 @@ export class FridgeComponent implements OnInit {
   }
 
   public abrirArriba(){
-    this.abieroArriba = !this.abieroArriba;  
-    if(!this.abiertoAbajo) this.cerrado = !this.abieroArriba;
+    this.abiertoArriba = !this.abiertoArriba;  
   }
 
 
   public abrirAbajo() {
     this.abiertoAbajo = !this.abiertoAbajo;  
-    if(!this.abieroArriba) this.cerrado = !this.abiertoAbajo;
   }
 
   playSound(soundfile) {
