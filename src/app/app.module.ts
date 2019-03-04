@@ -11,6 +11,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
 
 
 //Importar Flex-Layout
@@ -70,6 +71,7 @@ import { CanvasComponent } from './components/movile-components/pages/fridge/can
     MatButtonModule,
     MatTabsModule,
     MatIconModule,
+    MatCardModule,
 
     FlexLayoutModule
   ],

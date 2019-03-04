@@ -5,6 +5,7 @@
 .main{
     height: 85%;
     /*background: yellow;*/
+    overflow-y: scroll;
 }
 
 .navegador{
