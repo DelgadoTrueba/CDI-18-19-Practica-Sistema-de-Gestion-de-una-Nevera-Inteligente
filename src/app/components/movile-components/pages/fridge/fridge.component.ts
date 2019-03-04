@@ -7,29 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FridgeComponent implements OnInit {
 
-  private abiertoArriba: boolean;
-  private abiertoAbajo: boolean;
-
-  constructor() {
-    this.abiertoArriba = false;
-    this.abiertoAbajo = false;
-  }
+  constructor() {}
 
   ngOnInit() {
-  }
-
-  public abrirArriba(){
-    this.abiertoArriba = !this.abiertoArriba;  
-  }
-
-
-  public abrirAbajo() {
-    this.abiertoAbajo = !this.abiertoAbajo;  
-  }
-
-  playSound(soundfile) {
-    document.getElementById("audio").innerHTML= 
-    "<embed src="+soundfile+" hidden='true' autostart='true' loop='false' />";
   }
 
 }

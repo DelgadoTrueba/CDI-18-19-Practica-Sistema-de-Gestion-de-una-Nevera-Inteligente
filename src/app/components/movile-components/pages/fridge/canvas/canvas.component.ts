@@ -11,8 +11,8 @@ export class CanvasComponent implements OnInit {
   width:number;
   height:number;
 
-  private abiertoArriba: boolean = false;
-  private abiertoAbajo: boolean = false;
+  abiertoArriba: boolean = false;
+  abiertoAbajo: boolean = false;
 
   mapArea: any = {
     A: {x: 0, y: 0},
@@ -47,7 +47,7 @@ export class CanvasComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.height = (window.innerHeight*0.85)*(2/3);
+    this.height = (window.innerHeight*0.85)*(3/4);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth)*0.78 : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
@@ -57,7 +57,7 @@ export class CanvasComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.height = (window.innerHeight*0.85)*(2/3);
+    this.height = (window.innerHeight*0.85)*(3/4);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth)*0.78 : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );

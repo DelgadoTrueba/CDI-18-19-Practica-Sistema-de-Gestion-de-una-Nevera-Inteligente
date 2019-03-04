@@ -8,12 +8,8 @@
 
     margin-bottom: 15%;
 }
- 
-.images{
-    font-size:0;
-}
 
-.imagen {
-    max-width: 100%;
-    height: auto;
+app-canvas{
+    margin-top: 2%;
+    /*background: pink;*/
 }
