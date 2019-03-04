@@ -29,10 +29,24 @@ mat-tab-group{
     /*border: 1px black solid;*/
 }
 
-/*contenedor del navegador*/
-/*
-.mat-tab-body-wrapper{
+/******TAMAÑO DE LOS ICONOS*******/
+
+mat-tab-group .mat-tab-header{
     height: 100% !important;
-    border: 5px solid black !important;
 }
-*/
+
+.mat-tab-header {
+    height: 100% !important;
+}
+
+.mat-tab-label{
+    height: 100% !important;
+}
+
+mat-tab-label-container{
+    height: 100% !important;
+}
+
+.mat-tab-labels{
+    height: 100% !important;
+}

@@ -1,0 +1,13 @@
+@media screen and (orientation:portrait) {
+    .example-tab-icon{
+        height: 25% !important;
+        width: 55% !important;
+    
+        min-width: 24px;
+    }
+}
+@media screen and (orientation:landscape) {
+    .example-tab-icon{    
+        width: 24px;
+    }
+}
