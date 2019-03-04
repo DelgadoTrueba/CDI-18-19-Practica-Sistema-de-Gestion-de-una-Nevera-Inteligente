@@ -3,6 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
+
+export class MyHammerConfig extends HammerGestureConfig {
+  overrides = <any> {
+      'pinch': { enable: false },
+      'rotate': { enable: false }
+  }
+}
 
 //Services
 
@@ -76,7 +84,12 @@ import { CanvasComponent } from './components/movile-components/pages/fridge/can
     FlexLayoutModule
   ],
   //Importar Servicios
-  providers: [],
+  providers: [
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: MyHammerConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

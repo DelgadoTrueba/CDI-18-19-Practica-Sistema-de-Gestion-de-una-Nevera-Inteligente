@@ -3,13 +3,12 @@
 }
 
 .main{
-    height: 85%;
+    /*height: 85%;*/
     /*background: yellow;*/
-    overflow-y: scroll;
+    /*overflow: hidden;*/
 }
 
 .navegador{
     height: 15%;
-    z-index: 1;
     /*background: pink !important;*/
 }
