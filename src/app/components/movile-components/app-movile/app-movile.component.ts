@@ -55,10 +55,10 @@ export class AppMovileComponent implements OnInit {
   }
 
   private calculatePosition(direction:string ): number{
-    if(direction === "left" && this.position - 1 >= 0){
+    if(direction === "right" && this.position - 1 >= 0){
       return --this.position;
     }
-    else if(direction === "right" && this.position + 1< this.arrayDeNavegacion.length)
+    else if(direction === "left" && this.position + 1< this.arrayDeNavegacion.length)
     {
       return ++this.position;
     }
