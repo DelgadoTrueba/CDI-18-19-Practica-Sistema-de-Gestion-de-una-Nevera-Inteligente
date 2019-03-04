@@ -11,6 +11,9 @@ export class CanvasComponent implements OnInit {
   width:number;
   height:number;
 
+  private abiertoArriba: boolean = false;
+  private abiertoAbajo: boolean = false;
+
   mapArea: any = {
     A: {x: 0, y: 0},
     B: {x: 0, y: 0},
@@ -138,27 +141,32 @@ export class CanvasComponent implements OnInit {
 
   hightLeft(){
     console.log("hightLeft");
+    this.abiertoArriba = false;
   }
 
   main(){
     console.log("main");
+    this.abiertoArriba = true;
   }
 
   hightRight(){
     console.log("hightRight");
+    this.abiertoArriba = false;
   }
 
   lowerLeft(){
     console.log("lowerLeft");
+    this.abiertoAbajo = false;
   }
 
   freezer(){
     console.log("freezer");
+    this.abiertoAbajo = true;
   }
 
   lowerRight(){
     console.log("higlowerRighthtRight");
+    this.abiertoAbajo = false;
   }
-
 
 }
