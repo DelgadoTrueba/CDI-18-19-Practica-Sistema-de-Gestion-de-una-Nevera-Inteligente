@@ -16,6 +16,9 @@ import {MatIconModule} from '@angular/material/icon';
 //Importar Flex-Layout
 import { FlexLayoutModule } from "@angular/flex-layout";
 
+//Directives
+import { StyleGetterDirective } from './directives/style-getter.directive';
+
 //Components
 import { AppComponent } from './app.component';
 
@@ -32,9 +35,10 @@ import { MarketComponent } from './components/movile-components/pages/market/mar
 import { SettingsComponent } from './components/movile-components/pages/settings/settings.component';
 
 import { AppMovileComponent } from './components/movile-components/app-movile/app-movile.component';
+import { CanvasComponent } from './components/movile-components/pages/fridge/canvas/canvas.component';
 
 @NgModule({
-  //Importar Componenentes
+  //Importar Componenentes y Directivas
   declarations: [
     AppComponent,
 
@@ -51,6 +55,10 @@ import { AppMovileComponent } from './components/movile-components/app-movile/ap
     SettingsComponent,
     
     AppMovileComponent,
+    
+    CanvasComponent,
+    
+    StyleGetterDirective,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
