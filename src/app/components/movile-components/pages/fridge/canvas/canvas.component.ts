@@ -47,8 +47,8 @@ export class CanvasComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.height = (window.innerHeight*0.85)*(3/4);
-    this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth)*0.78 : this.height;
+    this.height = (window.innerHeight*0.85);
+    this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
 
@@ -57,8 +57,8 @@ export class CanvasComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.height = (window.innerHeight*0.85)*(3/4);
-    this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth)*0.78 : this.height;
+    this.height = (window.innerHeight*0.85);
+    this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
 
