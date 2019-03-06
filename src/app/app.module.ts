@@ -44,7 +44,7 @@ import { MarketComponent } from './components/movile-components/pages/market/mar
 import { SettingsComponent } from './components/movile-components/pages/settings/settings.component';
 
 import { AppMovileComponent } from './components/movile-components/app-movile/app-movile.component';
-import { CanvasComponent } from './components/movile-components/pages/fridge/canvas/canvas.component';
+import { AllFridgeComponent } from './components/movile-components/pages/fridge/allFridge/allFridge.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -65,7 +65,7 @@ import { CanvasComponent } from './components/movile-components/pages/fridge/can
     
     AppMovileComponent,
     
-    CanvasComponent,
+    AllFridgeComponent,
     
     StyleGetterDirective,
   ],

@@ -30,7 +30,7 @@ export class AppMovileComponent implements OnInit {
     this._router.events.subscribe( (event) => {
       if( event instanceof NavigationEnd){
         let url = event.urlAfterRedirects;
-        url = url.substr(1);
+        url = url.substr(1).split("/")[0]
         //console.log(url);
         this.position = this.arrayDeNavegacion.indexOf(url);
         console.log(url, this.position);

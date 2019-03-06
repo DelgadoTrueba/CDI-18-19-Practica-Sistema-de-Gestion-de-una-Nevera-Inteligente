@@ -2,11 +2,11 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
-  selector: 'app-canvas',
-  templateUrl: './canvas.component.html',
-  styleUrls: ['./canvas.component.css']
+  selector: 'app-allFridge',
+  templateUrl: './allFridge.component.html',
+  styleUrls: ['./allFridge.component.css']
 })
-export class CanvasComponent implements OnInit {
+export class AllFridgeComponent implements OnInit {
 
   width:number;
   height:number;
