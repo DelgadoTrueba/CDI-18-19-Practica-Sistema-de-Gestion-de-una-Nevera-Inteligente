@@ -6,15 +6,7 @@
               coords={{mapCoorABCD}}>
               <!--A2-->
               <area shape=poly 
-              coords={{mapCoorEFGH}} >
-          <!--A3-->
-              <area shape=poly 
-              coords={{mapCoorIJKL}}>
-          <!--A4-->        
-              <area shape=poly 
-              coords={{mapCoorMNOP}}>
-      
-          
+              coords={{mapCoorMNOP}} >      
       
           <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
         <img id=capaRecorte src="../../../../../../assets/img/rightSide/rightSide.png" >
@@ -32,12 +24,6 @@
                   <polygon [attr.points]="mapCoorABCD"></polygon>
               </clipPath>
               <clipPath id=A2>
-                  <polygon [attr.points]="mapCoorEFGH" ></polygon>
-              </clipPath>
-              <clipPath id=A3>
-                  <polygon [attr.points]="mapCoorIJKL" ></polygon>
-              </clipPath>
-              <clipPath id=A4>
                   <polygon [attr.points]="mapCoorMNOP" ></polygon>
               </clipPath>
               

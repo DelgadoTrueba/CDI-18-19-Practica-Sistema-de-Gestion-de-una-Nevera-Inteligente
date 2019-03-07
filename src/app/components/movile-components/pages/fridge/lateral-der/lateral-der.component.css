@@ -62,11 +62,3 @@ svg, defs, clipPath {
 #figura area:nth-of-type(2):hover ~ #capaRecorte {
     clip-path: url(#A2); 
 }
-
-#figura area:nth-of-type(3):hover ~ #capaRecorte {
-    clip-path: url(#A3); 
-}
-
-#figura area:nth-of-type(4):hover ~ #capaRecorte {
-    clip-path: url(#A4); 
-}
