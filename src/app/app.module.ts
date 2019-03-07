@@ -49,6 +49,7 @@ import { MainFridgeComponent } from './components/movile-components/pages/fridge
 import { FreezerComponent } from './components/movile-components/pages/fridge/freezer/freezer.component';
 import { LateralIzqComponent } from './components/movile-components/pages/fridge/lateral-izq/lateral-izq.component';
 import { LateralDerComponent } from './components/movile-components/pages/fridge/lateral-der/lateral-der.component';
+import { OverLapDirective } from './directives/over-lap.directive';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -80,6 +81,8 @@ import { LateralDerComponent } from './components/movile-components/pages/fridge
     LateralIzqComponent,
     
     LateralDerComponent,
+    
+    OverLapDirective,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [

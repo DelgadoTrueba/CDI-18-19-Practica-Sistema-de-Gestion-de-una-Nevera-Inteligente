@@ -12,6 +12,9 @@ export class AllFridgeComponent implements OnInit {
   width:number;
   height:number;
 
+  top: number;
+  left: number;
+
   abiertoArriba: boolean = false;
   abiertoAbajo: boolean = false;
 
@@ -60,6 +63,9 @@ export class AllFridgeComponent implements OnInit {
   ) { 
     this.width= 0; 
     this.height = 0;
+
+    this.top= 0; 
+    this.left = 0;
   }
 
   ngOnInit() {
@@ -67,7 +73,10 @@ export class AllFridgeComponent implements OnInit {
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
-
+    
+    this.top = (window.innerHeight*0.1);
+    this.left = (window.innerWidth/2) - (this.width/2);
+    
     this.calcularMapArea();
   }
 
@@ -77,6 +86,8 @@ export class AllFridgeComponent implements OnInit {
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
+    this.top = (window.innerHeight*0.1);
+    this.left = (window.innerWidth/2) - (this.width/2);
 
     this.calcularMapArea();
   }

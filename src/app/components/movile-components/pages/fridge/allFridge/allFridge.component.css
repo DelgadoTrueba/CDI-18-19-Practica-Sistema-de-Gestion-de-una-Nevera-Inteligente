@@ -2,10 +2,15 @@
     margin-top: 2%;
 }
 
-.a{
-    cursor: grab;
+.imgSuperpuesta{
+    position:absolute;
+
+    height:50px;
+    width:50px;
+   
+    z-index: 1;
 }
 
-.b{
-    cursor: move;
+.imgPrincipal{
+    z-index: -1;
 }
