@@ -4,13 +4,17 @@ import { FridgeComponent } from './components/movile-components/pages/fridge/fri
 import { MarketComponent } from './components/movile-components/pages/market/market.component';
 import { SettingsComponent } from './components/movile-components/pages/settings/settings.component';
 import { AllFridgeComponent } from './components/movile-components/pages/fridge/allFridge/allFridge.component';
+import { MainFridgeComponent } from './components/movile-components/pages/fridge/main-fridge/main-fridge.component';
+import { FreezerComponent } from './components/movile-components/pages/fridge/freezer/freezer.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'fridge', pathMatch: 'full' },
   { path: 'fridge', component: FridgeComponent, data: {animation: 'fridge'},
     children:[
-      { path: '', redirectTo: 'allFridge', pathMatch: 'full' },
-      { path: 'allFridge', component: AllFridgeComponent },
+      { path: '', redirectTo: 'all', pathMatch: 'full' },
+      { path: 'all', component: AllFridgeComponent },
+      { path: 'main', component: MainFridgeComponent },
+      { path: 'freezer', component: FreezerComponent },
     ]
   },
   { path: 'market', component: MarketComponent, data: {animation: 'market'} },

@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-allFridge',
@@ -41,7 +42,9 @@ export class AllFridgeComponent implements OnInit {
   mapCoorIJ: string;
   mapCoorKL: string;
 
-  constructor() { 
+  constructor(
+    private router: Router, private r:ActivatedRoute
+  ) { 
     this.width= 0; 
     this.height = 0;
   }
@@ -146,7 +149,8 @@ export class AllFridgeComponent implements OnInit {
 
   main(){
     console.log("main");
-    this.abiertoArriba = true;
+    if(!this.abiertoArriba ) this.abiertoArriba = true;
+    else this.router.navigate(["../main"], { relativeTo: this.r });
   }
 
   hightRight(){
@@ -161,7 +165,8 @@ export class AllFridgeComponent implements OnInit {
 
   freezer(){
     console.log("freezer");
-    this.abiertoAbajo = true;
+    if(!this.abiertoAbajo ) this.abiertoAbajo = true;
+    else this.router.navigate(["../freezer"], { relativeTo: this.r });
   }
 
   lowerRight(){
