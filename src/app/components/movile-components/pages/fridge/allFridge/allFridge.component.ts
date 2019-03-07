@@ -276,6 +276,7 @@ export class AllFridgeComponent implements OnInit {
 
   lateralDer(){
     console.log("lateralDer")
+    this.router.navigate(["../rightSide"], { relativeTo: this.r });
   }
 
 }

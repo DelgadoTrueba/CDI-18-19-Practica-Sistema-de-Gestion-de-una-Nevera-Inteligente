@@ -1,0 +1,72 @@
+svg, defs, clipPath {
+    height: 0; 
+    position: absolute; 
+    top: 0; left: 0;  
+}
+
+
+#figura {
+    position: relative; 
+    /*width: 360px; height: 480px;*/ 
+    
+    border: 1px solid black; 
+    border-radius: 20px; 
+    overflow: hidden; 
+    
+    margin: 10px auto; 
+    
+    background-color: gray;
+    
+}
+#figura::before {
+    content: ""; 
+    
+    
+    /*IMPORTANTE CAPA ABAJO*/
+    background-image: url('../../../../../../assets/img/rightSide/rightSide.png'); 
+    background-size: 100% 100%;  
+    opacity: .4;
+    /*IMPORTANTE*/
+    
+    /*IGUAL 1*/
+    display: block; 
+    width: 100%; height: 100%; 
+    position: absolute; 
+    top: 0; left: 0; 
+}
+
+#capaRecorte {
+    /*IGUAL 1*/
+    display: block; 
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+}
+
+#imagen {
+    /*IGUAL 1*/
+    width: 100%; height: 100%; 
+    position: absolute;
+    top: 0; left: 0; 
+    
+    cursor: crosshair; 
+}
+
+
+
+#figura area:nth-of-type(1):hover ~ #capaRecorte {
+    clip-path: url(#A1); 
+}
+
+
+#figura area:nth-of-type(2):hover ~ #capaRecorte {
+    clip-path: url(#A2); 
+}
+
+#figura area:nth-of-type(3):hover ~ #capaRecorte {
+    clip-path: url(#A3); 
+}
+
+#figura area:nth-of-type(4):hover ~ #capaRecorte {
+    clip-path: url(#A4); 
+}

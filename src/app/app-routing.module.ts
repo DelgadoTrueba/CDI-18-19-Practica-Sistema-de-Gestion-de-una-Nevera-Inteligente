@@ -7,6 +7,7 @@ import { AllFridgeComponent } from './components/movile-components/pages/fridge/
 import { MainFridgeComponent } from './components/movile-components/pages/fridge/main-fridge/main-fridge.component';
 import { FreezerComponent } from './components/movile-components/pages/fridge/freezer/freezer.component';
 import { LateralIzqComponent } from './components/movile-components/pages/fridge/lateral-izq/lateral-izq.component';
+import { LateralDerComponent } from './components/movile-components/pages/fridge/lateral-der/lateral-der.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'fridge', pathMatch: 'full' },
@@ -16,7 +17,8 @@ const routes: Routes = [
       { path: 'all', component: AllFridgeComponent },
       { path: 'main', component: MainFridgeComponent },
       { path: 'freezer', component: FreezerComponent },
-      { path: 'leftSide', component: LateralIzqComponent }
+      { path: 'leftSide', component: LateralIzqComponent },
+      { path: 'rightSide', component: LateralDerComponent }
     ]
   },
   { path: 'market', component: MarketComponent, data: {animation: 'market'} },
