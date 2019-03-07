@@ -12,13 +12,46 @@
     <img *ngIf="abiertoAbajo && !abiertoArriba"  src="assets/img/bottom-opened-fridge2.png" usemap="#image-map"
     appStyleGetter [height]="height" [width]="width">
 
+    
     <map name="image-map">
-        <area target="" alt="hight-left" title="hight-left" coords={{mapCoorAB}} shape="rect"
-        (click)="hightLeft()">
+
+      <!--izq-->
+        <area target="" alt="hight-left" title="hight-left" coords={{mapCoorIZQ1}} shape="rect"
+        *ngIf="abiertoArriba" (click)="hightLeft()">
+
+        <area target="" alt="LATERAL1.1" title="LATERAL1.1" coords={{mapCoorIZQ2}} shape="rect"
+        *ngIf="abiertoArriba" (click)="lateralIzq()">
+
+        <area target="" alt="hight-left" title="hight-left" coords={{mapCoorIZQ3}} shape="rect"
+        *ngIf="abiertoArriba" (click)="hightLeft()">
+
+        <area target="" alt="LATERAL1.1" title="LATERAL1.2" coords={{mapCoorIZQ4}} shape="rect"
+        *ngIf="abiertoArriba" (click)="lateralIzq()">
+
+        <area target="" alt="hight-left" title="hight-left" coords={{mapCoorIZQ5}} shape="rect"
+        *ngIf="abiertoArriba" (click)="hightLeft()">
+      <!--fin izq-->
+      
         <area target="" alt="main" title="main" coords={{mapCoorCD}} shape="rect"
         (click)="main()">
-        <area target="" alt="hight-right" title="hight-right" coords={{mapCoorEF}} shape="rect"
-        (click)="hightRight()">
+      
+        <!--der-->
+        <area target="" alt="hight-right" title="hight-right" coords={{mapCoorDER1}} shape="rect"
+        *ngIf="abiertoArriba" (click)="hightRight()">
+
+        <area target="" alt="LATERAL2.1" title="LATERAL2.1" coords={{mapCoorDER2}} shape="rect"
+        *ngIf="abiertoArriba" (click)="lateralDer()">
+
+        <area target="" alt="hight-right" title="hight-right" coords={{mapCoorDER3}} shape="rect"
+        *ngIf="abiertoArriba" (click)="hightRight()">
+
+        <area target="" alt="LATERAL2.2" title="LATERAL2.2" coords={{mapCoorDER4}} shape="rect"
+        *ngIf="abiertoArriba" (click)="lateralDer()">
+
+        <area target="" alt="hight-right" title="hight-right" coords={{mapCoorDER5}} shape="rect"
+        *ngIf="abiertoArriba" (click)="hightRight()">
+
+        <!--fin der-->
 
         <area target="" alt="lower-left" title="lower-left" coords={{mapCoorGH}} shape="rect"
         (click)="lowerLeft()">
@@ -26,6 +59,6 @@
         (click)="freezer()">
         <area target="" alt="lower-right" title="lower-right" coords={{mapCoorKL}} shape="rect"
         (click)="lowerRight()">
-
     </map>
+    
 </div>

@@ -35,12 +35,25 @@ export class AllFridgeComponent implements OnInit {
     L: {x: 0, y: 0}
   };
 
-  mapCoorAB: string;
+  mapCoorIZQ1: string;
+  mapCoorIZQ2: string;
+  mapCoorIZQ3: string;
+  mapCoorIZQ4: string;
+  mapCoorIZQ5: string;
+
+  mapCoorDER1: string;
+  mapCoorDER2: string;
+  mapCoorDER3: string;
+  mapCoorDER4: string;
+  mapCoorDER5: string;
+
   mapCoorCD: string;
-  mapCoorEF: string;
+
   mapCoorGH: string;
   mapCoorIJ: string;
   mapCoorKL: string;
+
+  lateral: string;
 
   constructor(
     private router: Router, private r:ActivatedRoute
@@ -79,13 +92,55 @@ export class AllFridgeComponent implements OnInit {
   }
 
   calcularIzquierdaArriba(){
+/*
     this.mapArea.A.x = 0;
     this.mapArea.A.y = 0;
 
     this.mapArea.B.x = this.height*0.57;
     this.mapArea.B.y = this.width*0.27;
+    */
+   let Ax, Ay, Bx, By, Cx, Cy, Dx, Dy, Ex, Ey, Fx, Fy,
+      Gx, Gy, Hx, Hy, Ix, Iy, Jx, Jy;
 
-    this.mapCoorAB = this.toStringCoor(this.mapArea.A, this.mapArea.B);
+    Ax = 0;
+    Ay = 0;
+    Bx = this.height*0.17;
+    By = this.width*0.27;
+
+    this.mapCoorIZQ1 = this.toStringCoor2(Ax, Ay, Bx, By);
+
+    Cx = this.height*0.18;
+    Cy = 0;
+    Dx = this.height*0.21;
+    Dy = this.width*0.27;
+
+    this.mapCoorIZQ2 = this.toStringCoor2(Cx, Cy, Dx, Dy);
+
+    Ex = this.height*0.22;
+    Ey = 0;
+    Fx = this.height*0.46;
+    Fy = this.width*0.27;
+
+    this.mapCoorIZQ3 = this.toStringCoor2(Ex, Ey, Fx, Fy);
+
+    Gx = this.height*0.47;
+    Gy = 0;
+    Hx = this.height*0.50;
+    Hy = this.width*0.27;
+
+    this.mapCoorIZQ4 = this.toStringCoor2(Gx, Gy, Hx, Hy);
+
+    Ix = this.height*0.48;
+    Iy = 0;
+    Jx = this.height*0.58;
+    Jy = this.width*0.27;
+
+    this.mapCoorIZQ5 = this.toStringCoor2(Ix, Iy, Jx, Jy);
+  }
+
+  toStringCoor2(Ax, Ay, Bx, By){
+    return parseInt(Ay , 10) +","+ parseInt(Ax, 10) +" "+ parseInt(By, 10) +","+ parseInt(Bx, 10);
+
   }
 
   calcularNeveraCentral(){
@@ -99,13 +154,53 @@ export class AllFridgeComponent implements OnInit {
   }
 
   calcularDerechaArriba(){
+    /*
     this.mapArea.E.x = 0;
     this.mapArea.E.y = this.width-(this.width*0.27);
 
     this.mapArea.F.x = this.height*0.57;
     this.mapArea.F.y = this.width;
 
-    this.mapCoorEF = this.toStringCoor(this.mapArea.E, this.mapArea.F);
+    this.mapCoorEF = this.toStringCoor(this.mapArea.E, this.mapArea.F);*/
+    let Ax, Ay, Bx, By, Cx, Cy, Dx, Dy, Ex, Ey, Fx, Fy,
+      Gx, Gy, Hx, Hy, Ix, Iy, Jx, Jy;
+
+    let anchoInicial = this.width-(this.width*0.27);
+
+    Ax = 0;
+    Ay = anchoInicial
+    Bx = this.height*0.17;
+    By = this.width
+
+    this.mapCoorDER1 = this.toStringCoor2(Ax, Ay, Bx, By);
+
+    Cx = this.height*0.18;
+    Cy = anchoInicial;
+    Dx = this.height*0.21;
+    Dy = this.width;
+
+    this.mapCoorDER2 = this.toStringCoor2(Cx, Cy, Dx, Dy);
+
+    Ex = this.height*0.22;
+    Ey = anchoInicial;
+    Fx = this.height*0.46;
+    Fy = this.width;
+
+    this.mapCoorDER3 = this.toStringCoor2(Ex, Ey, Fx, Fy);
+
+    Gx = this.height*0.47;
+    Gy = anchoInicial;
+    Hx = this.height*0.50;
+    Hy = this.width;
+
+    this.mapCoorDER4 = this.toStringCoor2(Gx, Gy, Hx, Hy);
+
+    Ix = this.height*0.48;
+    Iy = anchoInicial;
+    Jx = this.height*0.58;
+    Jy = this.width;
+
+    this.mapCoorDER5 = this.toStringCoor2(Ix, Iy, Jx, Jy);
   }
 
   calcularIzquierdaAbajo(){
@@ -172,6 +267,14 @@ export class AllFridgeComponent implements OnInit {
   lowerRight(){
     console.log("higlowerRighthtRight");
     this.abiertoAbajo = false;
+  }
+
+  lateralIzq(){
+    console.log("lateralIzq")
+  }
+
+  lateralDer(){
+    console.log("lateralDer")
   }
 
 }

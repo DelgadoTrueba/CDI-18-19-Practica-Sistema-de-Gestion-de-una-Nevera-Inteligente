@@ -1,3 +1,11 @@
 #main{
     margin-top: 2%;
 }
+
+.a{
+    cursor: grab;
+}
+
+.b{
+    cursor: move;
+}
