@@ -44,7 +44,7 @@ export class LateralIzqComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.height = (window.innerHeight*0.85);
+    this.height = (window.innerHeight*0.75);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.95) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
@@ -54,7 +54,7 @@ export class LateralIzqComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.height = (window.innerHeight*0.85);
+    this.height = (window.innerHeight*0.75);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.95) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );

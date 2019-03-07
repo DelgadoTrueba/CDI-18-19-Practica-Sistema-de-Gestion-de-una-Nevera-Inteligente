@@ -63,7 +63,7 @@ export class AllFridgeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.height = (window.innerHeight*0.85);
+    this.height = (window.innerHeight*0.79);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
@@ -73,7 +73,7 @@ export class AllFridgeComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.height = (window.innerHeight*0.85);
+    this.height = (window.innerHeight*0.79);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
