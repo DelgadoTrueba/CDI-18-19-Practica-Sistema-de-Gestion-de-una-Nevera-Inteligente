@@ -47,6 +47,7 @@ import { AppMovileComponent } from './components/movile-components/app-movile/ap
 import { AllFridgeComponent } from './components/movile-components/pages/fridge/allFridge/allFridge.component';
 import { MainFridgeComponent } from './components/movile-components/pages/fridge/main-fridge/main-fridge.component';
 import { FreezerComponent } from './components/movile-components/pages/fridge/freezer/freezer.component';
+import { LateralIzqComponent } from './components/movile-components/pages/fridge/lateral-izq/lateral-izq.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -74,6 +75,8 @@ import { FreezerComponent } from './components/movile-components/pages/fridge/fr
     MainFridgeComponent,
     
     FreezerComponent,
+    
+    LateralIzqComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [

@@ -1,0 +1,47 @@
+<div id="main">
+    <figure id=figura appStyleGetter [height]="height" [width]="width">
+        <map name=recortes id=recortes>
+              <!--A1-->
+              <area shape=poly
+              coords={{mapCoorABCD}}>
+              <!--A2-->
+              <area shape=poly 
+              coords={{mapCoorEFGH}} >
+          <!--A3-->
+              <area shape=poly 
+              coords={{mapCoorIJKL}}>
+          <!--A4-->        
+              <area shape=poly 
+              coords={{mapCoorMNOP}}>
+      
+          
+      
+          <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
+        <img id=capaRecorte src="../../../../../../assets/img/leftSide/leftSide.png" >
+        </map>
+      
+          <!--USA EL MAPS: ES TRANSPARENTE-->
+        <img src="../../../../../../assets/img/transparente.gif"
+        id=imagen usemap=#recortes>
+      
+      </figure>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
+          <defs>
+              <clipPath id=A1>
+                  <polygon [attr.points]="mapCoorABCD"></polygon>
+              </clipPath>
+              <clipPath id=A2>
+                  <polygon [attr.points]="mapCoorEFGH" ></polygon>
+              </clipPath>
+              <clipPath id=A3>
+                  <polygon [attr.points]="mapCoorIJKL" ></polygon>
+              </clipPath>
+              <clipPath id=A4>
+                  <polygon [attr.points]="mapCoorMNOP" ></polygon>
+              </clipPath>
+              
+               
+          </defs>
+      </svg>
+</div>
