@@ -1,4 +1,12 @@
 <div id="main">
+    <img src="assets/img/main/apple.png" class="imgSuperpuesta"
+    *ngIf="abiertoArriba"
+    
+    appOverLap [top]="top" [left]="left" 
+    appStyleGetter [height]="height" [width]="width"
+    
+    usemap="recortes"> 
+    
     <figure id=figura appStyleGetter [height]="height" [width]="width">
         <map name=recortes id=recortes>
               <!--A1-->
@@ -19,9 +27,12 @@
           <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
         <img id=capaRecorte src="../../../../../../assets/img/main/nevera-centro.png" >
         </map>
-      
+
           <!--USA EL MAPS: ES TRANSPARENTE-->
-        <img src="../../../../../../assets/img/transparente.gif"
+        <img src="../../../../../../assets/img/main/apple.png"
+        id=imagen usemap=#recortes>
+
+        <img src="../../../../../../assets/img/main/apple2.png"
         id=imagen usemap=#recortes>
       
       </figure>
