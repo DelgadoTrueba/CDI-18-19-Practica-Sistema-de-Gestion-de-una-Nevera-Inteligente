@@ -30,7 +30,7 @@ mat-tab-group{
 }
 
 /******TAMAÑO DE LOS ICONOS*******/
-
+/*
 mat-tab-group .mat-tab-header{
     height: 100% !important;
 }
@@ -49,4 +49,4 @@ mat-tab-label-container{
 
 .mat-tab-labels{
     height: 100% !important;
-}
+}*/

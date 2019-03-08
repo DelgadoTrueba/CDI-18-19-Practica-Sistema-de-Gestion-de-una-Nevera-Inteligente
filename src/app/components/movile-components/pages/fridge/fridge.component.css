@@ -1,5 +1,5 @@
 #mostrador{
-    border: 1px black solid;
+
     height: 100%;
 
     display: flex;
@@ -11,4 +11,18 @@
     background: pink;
     min-height: 9%;
     margin-top: 1%;
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.mat-stroked-button{
+    min-width: 15.75% !important;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+
+mat-icon{
+   font-size: 18px;
 }

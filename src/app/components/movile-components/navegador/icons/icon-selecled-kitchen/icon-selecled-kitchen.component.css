@@ -1,8 +1,7 @@
+/*
 @media screen and (orientation:portrait) {
     .example-tab-icon{
-        height: 25% !important;
-        width: 55% !important;
-    
+        height: 25% !important;    
         min-width: 24px;
     }
 }
@@ -12,3 +11,4 @@
         width: 24px;
     }
 }
+*/

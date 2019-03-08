@@ -1,3 +1,9 @@
+svg, defs, clipPath {
+    height: 0; 
+    position: absolute; 
+    top: 0; left: 0;  
+}
+
 #figura {
     position: relative; 
     /*width: 360px; height: 480px;*/ 
@@ -5,8 +11,7 @@
     border: 1px solid black; 
     border-radius: 20px; 
     overflow: hidden; 
-    
-    margin: 10px auto; 
+ margin: 2% auto;
     
     background-color: gray;
     
