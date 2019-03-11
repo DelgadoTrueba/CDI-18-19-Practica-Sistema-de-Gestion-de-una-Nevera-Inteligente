@@ -32,7 +32,7 @@ export class MainFridgeComponent implements OnInit {
     P: {x: 0, y: 0}
   };
 
-  mapCoorABCD: string;
+  mapCoorManzana: string;
   mapCoorEFGH: string;
   mapCoorIJKL: string;
   mapCoorMNOP: string;
@@ -68,22 +68,18 @@ export class MainFridgeComponent implements OnInit {
     this.calcular3();
     this.calcular4_ultima();
 
+
   }
 
   calcular1_primera(){
-    this.mapArea.A.x = this.height*(0.3);
-    this.mapArea.A.y = 0;
+    let coord1x, coord1y, coord2x;
 
-    this.mapArea.B.x = 0;
-    this.mapArea.B.y = 0;
+    coord1x = Math.round( this.width * 0.12 ); coord1y = Math.round( this.height * 0.21 ); coord2x = Math.round( this.width * 0.08 ); 
 
-    this.mapArea.C.x = 0;
-    this.mapArea.C.y = this.width;
+    let mapCoord = [ coord1x, coord1y, coord2x];
 
-    this.mapArea.D.x = this.height*(0.3) ;
-    this.mapArea.D.y = this.width ;
-
-    this.mapCoorABCD = this.toStringCoor(this.mapArea.A, this.mapArea.B, this.mapArea.C, this.mapArea.D);
+    this.mapCoorManzana = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act}`;else  return v_ant += `,${v_act}`;}, '');
+    console.log("manzana",this.mapCoorManzana)
   }
 
   calcular2(){

@@ -49,10 +49,12 @@ svg, defs, clipPath {
     position: absolute;
     top: 0; left: 0; 
     
-    cursor: crosshair; 
+    cursor: default; 
 }
 
-
+.grab{
+    cursor: grab;
+}
 
 #figura area:nth-of-type(1):hover ~ #capaRecorte {
     clip-path: url(#A1); 

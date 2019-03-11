@@ -10,8 +10,8 @@
     <figure id=figura appStyleGetter [height]="height" [width]="width">
         <map name=recortes id=recortes>
               <!--A1-->
-              <area shape=poly
-              coords={{mapCoorABCD}}>
+              <area shape="circle"
+              [attr.coords]="mapCoorManzana" class="grab">
               <!--A2-->
               <area shape=poly 
               coords={{mapCoorEFGH}} >
@@ -39,8 +39,9 @@
       
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
           <defs>
+              <!--manzana-->
               <clipPath id=A1>
-                  <polygon [attr.points]="mapCoorABCD"></polygon>
+                  <circle [attr.points]="mapCoorManzana"></circle>
               </clipPath>
               <clipPath id=A2>
                   <polygon [attr.points]="mapCoorEFGH" ></polygon>

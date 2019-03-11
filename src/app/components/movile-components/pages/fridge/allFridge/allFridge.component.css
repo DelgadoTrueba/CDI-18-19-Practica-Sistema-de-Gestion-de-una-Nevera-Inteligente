@@ -10,3 +10,7 @@
 .imgPrincipal{
     z-index: -1;
 }
+
+.zoom{
+    cursor: zoom-in;
+}
