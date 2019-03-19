@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Alimentos } from 'src/app/model/alimentos/alimentos';
 
-import { Alimentos } from 'src/app/model/all-fridge-alimentos/alimentos';
+
 
 @Component({
   selector: 'app-main-fridge',
@@ -54,10 +55,11 @@ export class MainFridgeComponent implements OnInit {
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.9) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
-    this.alimentos = Alimentos.filter( (alimento) => {
-      return false;
+    //this.alimentos = Alimentos.filter( (alimento) => {
+      //return false;
       //alimento.nombreId ¿Corresponde a los ID que me interesa?
-    } );
+      // myfiltro.comprobar(nombreId): boolean
+    //} );
     this.calcularMapArea();
   }
 

@@ -1,7 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+
 //objeto con la información de los alimentos//
-import { Alimentos } from 'src/app/model/all-fridge-alimentos/alimentos';
+import { Alimentos } from 'src/app/model/alimentos/alimentos';
 
 @Component({
   selector: 'app-allFridge',
