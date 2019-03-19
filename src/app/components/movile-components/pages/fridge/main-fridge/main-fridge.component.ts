@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Alimentos } from 'src/app/model/alimentos/alimentos';
 
-
+//objeto con la información de los alimentos//
+import { AlimentosMainFridge } from 'src/app/model/alimentos/alimentosMainFridge';
 
 @Component({
   selector: 'app-main-fridge',
@@ -10,7 +10,7 @@ import { Alimentos } from 'src/app/model/alimentos/alimentos';
 })
 export class MainFridgeComponent implements OnInit {
 
-  alimentos;
+  alimentos = AlimentosMainFridge;
 
   width:number;
   height:number;

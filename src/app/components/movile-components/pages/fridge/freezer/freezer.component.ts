@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { AlimentosFreezer } from 'src/app/model/alimentos/alimentosFreezer';
 
 @Component({
   selector: 'app-freezer',
@@ -6,6 +7,8 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./freezer.component.css']
 })
 export class FreezerComponent implements OnInit {
+
+  alimentos = AlimentosFreezer;
 
   width:number;
   height:number;

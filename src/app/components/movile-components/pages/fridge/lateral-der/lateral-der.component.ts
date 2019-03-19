@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { AlimentosRightSide } from 'src/app/model/alimentos/alimentosRightSide';
 
 @Component({
   selector: 'app-lateral-der',
@@ -6,6 +7,8 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./lateral-der.component.css']
 })
 export class LateralDerComponent implements OnInit {
+
+  alimentos = AlimentosRightSide;
 
   width:number;
   height:number;

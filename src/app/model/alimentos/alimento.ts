@@ -1,5 +1,6 @@
 interface Alimento {
     nombreId: string,
-    nombreRuta: string,
-    empty: boolean,
+    rutaOk: string,
+    rutaEmpty: string,
+    cantidad: number,
 }

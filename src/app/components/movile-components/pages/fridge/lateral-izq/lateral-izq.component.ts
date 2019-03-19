@@ -1,4 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+//objeto con la información de los alimentos//
+import { AlimentosLeftSide } from 'src/app/model/alimentos/alimentosLeftSide';
 
 @Component({
   selector: 'app-lateral-izq',
@@ -6,6 +8,8 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./lateral-izq.component.css']
 })
 export class LateralIzqComponent implements OnInit {
+
+  alimentos = AlimentosLeftSide;
 
   width:number;
   height:number;

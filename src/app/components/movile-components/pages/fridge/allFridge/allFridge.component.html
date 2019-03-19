@@ -3,10 +3,17 @@
 
     <!--Imagenes de los alimentos-->
     <div *ngIf="abiertoArriba">
-      <img *ngFor="let alimento of alimentos"
-        src="assets/img/all-fridge-con-alimentos/{{alimento.nombreRuta}}.png"
-        class="imgSuperpuesta"  usemap="#image-map"
-        appOverLap [top]="top" [left]="left" appStyleGetter [height]="height" [width]="width"> 
+      <div *ngFor="let alimento of alimentos">
+          <img *ngIf="alimento.cantidad > 0"
+          src="{{alimento.rutaOk}}"
+          class="imgSuperpuesta"  usemap="#image-map"
+          appOverLap [top]="top" [left]="left" appStyleGetter [height]="height" [width]="width"> 
+
+          <img *ngIf="alimento.cantidad === 0"
+          src="{{alimento.rutaEmpty}}"
+          class="imgSuperpuesta"  usemap="#image-map"
+          appOverLap [top]="top" [left]="left" appStyleGetter [height]="height" [width]="width"> 
+      </div>
     </div>
      <!--Fin Imagenes de los alimentos-->
 
@@ -72,5 +79,3 @@
     </map>
     
 </div>
-
-<button (click)="recalculateImagenes()">CRUZ</button>

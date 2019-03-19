@@ -24,10 +24,17 @@
 
           <!--USA EL MAPS: ES TRANSPARENTE-->
 
-                <!--alimentos-->
-                <img *ngFor="let alimento of alimentos"
-                src="../../../../../../assets/img/main/{{alimento.nombreRuta}}.png"
-                class="imagen" usemap=#recortes>
+            <!--Imagenes de los alimentos-->
+            <div *ngFor="let alimento of alimentos">
+                <img *ngIf="alimento.cantidad > 0"
+                src="{{alimento.rutaOk}}"
+                class="imagen" usemap=#recortes> 
+    
+                <img *ngIf="alimento.cantidad === 0"
+                src="{{alimento.rutaEmpty}}"
+                class="imagen" usemap=#recortes> 
+            </div>
+           <!--Fin Imagenes de los alimentos-->
       
       </figure>
       
