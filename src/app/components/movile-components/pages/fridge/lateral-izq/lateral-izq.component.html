@@ -1,12 +1,18 @@
 <div id="main">
     <figure id=figura appStyleGetter [height]="height" [width]="width">
         <map name=recortes id=recortes>
-              <!--A1-->
-              <area shape=poly
-              coords={{mapCoorABCD}}>
-              <!--A2-->       
-              <area shape=poly 
-              coords={{mapCoorMNOP}}>
+              <!--agua-->
+              <area shape=rect
+              [attr.coords]="mapCoorAgua" class="pointer">
+              <!--leche-->
+              <area shape=rect
+              [attr.coords]="mapCoorLeche" class="pointer">
+              <!--ketchup-->
+              <area shape=rect
+              [attr.coords]="mapCoorKetchup" class="pointer">
+              <!--mantequilla-->
+              <area shape=rect
+              [attr.coords]="mapCoorMantequilla" class="pointer">
       
           
       

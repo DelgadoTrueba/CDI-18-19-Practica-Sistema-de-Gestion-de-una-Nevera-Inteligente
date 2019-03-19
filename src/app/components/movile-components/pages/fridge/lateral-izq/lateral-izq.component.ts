@@ -14,32 +14,10 @@ export class LateralIzqComponent implements OnInit {
   width:number;
   height:number;
 
-  mapArea: any = {
-    A: {x: 0, y: 0},
-    B: {x: 0, y: 0},
-    C: {x: 0, y: 0},
-    D: {x: 0, y: 0},
-    
-    E: {x: 0, y: 0},
-    F: {x: 0, y: 0},
-    G: {x: 0, y: 0},
-    H: {x: 0, y: 0},
-
-    I: {x: 0, y: 0},
-    J: {x: 0, y: 0},
-    K: {x: 0, y: 0},
-    L: {x: 0, y: 0},
-
-    M: {x: 0, y: 0},
-    N: {x: 0, y: 0},
-    O: {x: 0, y: 0},
-    P: {x: 0, y: 0}
-  };
-
-  mapCoorABCD: string;
-  mapCoorEFGH: string;
-  mapCoorIJKL: string;
-  mapCoorMNOP: string;
+  mapCoorAgua: string;
+  mapCoorLeche: string;
+  mapCoorKetchup: string;
+  mapCoorMantequilla: string;
 
   constructor(
   ) { 
@@ -67,43 +45,56 @@ export class LateralIzqComponent implements OnInit {
   }
 
   calcularMapArea(){
-    this.calcular1_primera();
-    this.calcular4_ultima();
-
+    this.calcularAgua();
+    this.calcularLeche();
+    this.calcularKetchup();
+    this.calcularMantequilla();
   }
 
-  calcular1_primera(){
-    this.mapArea.A.x = this.height*(0.33);
-    this.mapArea.A.y = 0;
+  calcularAgua(){
+    let coord1x, coord1y, coord2x, coord2y;
 
-    this.mapArea.B.x = 0;
-    this.mapArea.B.y = 0;
+    coord1x = Math.round( this.width * 0.64 ); coord1y = Math.round( this.height * 0.61 ); coord2x = Math.round( this.width * 0.76 ); coord2y = Math.round( this.height * 0.78 ); 
 
-    this.mapArea.C.x = 0;
-    this.mapArea.C.y = this.width;
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
 
-    this.mapArea.D.x = this.height*(0.33) ;
-    this.mapArea.D.y = this.width ;
-
-    this.mapCoorABCD = this.toStringCoor(this.mapArea.A, this.mapArea.B, this.mapArea.C, this.mapArea.D);
+    this.mapCoorAgua = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+   
   }
 
-  
-  calcular4_ultima(){
-    this.mapArea.M.x = this.height*(0.84);
-    this.mapArea.M.y = 0;
+  calcularLeche(){
+    let coord1x, coord1y, coord2x, coord2y;
 
-    this.mapArea.N.x = this.height*(0.61);
-    this.mapArea.N.y = 0;
+    coord1x = Math.round( this.width * 0.21 ); coord1y = Math.round( this.height * 0.61 ); coord2x = Math.round( this.width * 0.36 ); coord2y = Math.round( this.height * 0.79 ); 
 
-    this.mapArea.O.x = this.height*(0.61);
-    this.mapArea.O.y = this.width;
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
 
-    this.mapArea.P.x = this.height*(0.84);
-    this.mapArea.P.y = this.width ;
-
-    this.mapCoorMNOP = this.toStringCoor(this.mapArea.M, this.mapArea.N, this.mapArea.O, this.mapArea.P);
+    this.mapCoorLeche = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+        
   }
+
+  calcularKetchup(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.2 ); coord1y = Math.round( this.height * 0.12 ); coord2x = Math.round( this.width * 0.33 ); coord2y = Math.round( this.height * 0.28 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorKetchup = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+      
+  }
+
+  calcularMantequilla(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.59 ); coord1y = Math.round( this.height * 0.19 ); coord2x = Math.round( this.width * 0.8 ); coord2y = Math.round( this.height * 0.28 ); 
+    
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+    
+    this.mapCoorMantequilla = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+
+
 
   //A largo(X) B ancho(y)
   toStringCoor(ptoA, ptoB, ptoC, ptoD){
