@@ -1,11 +1,15 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 
+import { Alimentos } from 'src/app/model/all-fridge-alimentos/alimentos';
+
 @Component({
   selector: 'app-main-fridge',
   templateUrl: './main-fridge.component.html',
   styleUrls: ['./main-fridge.component.css']
 })
 export class MainFridgeComponent implements OnInit {
+
+  alimentos;
 
   width:number;
   height:number;
@@ -50,7 +54,10 @@ export class MainFridgeComponent implements OnInit {
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.9) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
-
+    this.alimentos = Alimentos.filter( (alimento) => {
+      return false;
+      //alimento.nombreId ¿Corresponde a los ID que me interesa?
+    } );
     this.calcularMapArea();
   }
 

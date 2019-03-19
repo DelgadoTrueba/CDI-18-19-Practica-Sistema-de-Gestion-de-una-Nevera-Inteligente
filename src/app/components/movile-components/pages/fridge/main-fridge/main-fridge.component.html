@@ -19,16 +19,15 @@
       
           <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
         <img id=capaRecorte src="../../../../../../assets/img/main/nevera-centro.png" >
+        
         </map>
 
           <!--USA EL MAPS: ES TRANSPARENTE-->
-                <!-- CON ESTO NO FUNCIONA LO DE REMARCAR -->
-                <img src="../../../../../../assets/img/main/nevera-centro.png"
-                id=imagen usemap=#recortes>
 
-                <!--manzana-->
-                <img src="../../../../../../assets/img/main/apple.png"
-                id=imagen usemap=#recortes>
+                <!--alimentos-->
+                <img *ngFor="let alimento of alimentos"
+                src="../../../../../../assets/img/main/{{alimento.nombreRuta}}.png"
+                class="imagen" usemap=#recortes>
       
       </figure>
       
