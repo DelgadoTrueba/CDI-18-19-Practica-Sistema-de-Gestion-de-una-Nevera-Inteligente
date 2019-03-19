@@ -2,30 +2,12 @@
 <div id="main">
 
     <!--Imagenes de los alimentos-->
-    <img src="assets/img/all-fridge-con-alimentos/cherry.png"
-    *ngIf="abiertoArriba"
-    class="imgSuperpuesta"  usemap="#image-map"
-    appOverLap [top]="top" [left]="left" appStyleGetter [height]="height" [width]="width"> 
-
-    <img src="assets/img/all-fridge-con-alimentos/manzana.png"
-    *ngIf="abiertoArriba"
-    class="imgSuperpuesta"  usemap="#image-map"
-    appOverLap [top]="top" [left]="left" appStyleGetter [height]="height" [width]="width"> 
-
-    <img src="assets/img/all-fridge-con-alimentos/melon.png"
-    *ngIf="abiertoArriba"
-    class="imgSuperpuesta"  usemap="#image-map"
-    appOverLap [top]="top" [left]="left" appStyleGetter [height]="height" [width]="width"> 
-
-    <img src="assets/img/all-fridge-con-alimentos/pera.png"
-    *ngIf="abiertoArriba"
-    class="imgSuperpuesta"  usemap="#image-map"
-    appOverLap [top]="top" [left]="left" appStyleGetter [height]="height" [width]="width"> 
-
-    <img src="assets/img/all-fridge-con-alimentos/platano.png"
-    *ngIf="abiertoArriba"
-    class="imgSuperpuesta"  usemap="#image-map"
-    appOverLap [top]="top" [left]="left" appStyleGetter [height]="height" [width]="width"> 
+    <div *ngIf="abiertoArriba">
+      <img *ngFor="let alimento of alimentos"
+        src="assets/img/all-fridge-con-alimentos/{{alimento.nombreRuta}}.png"
+        class="imgSuperpuesta"  usemap="#image-map"
+        appOverLap [top]="top" [left]="left" appStyleGetter [height]="height" [width]="width"> 
+    </div>
      <!--Fin Imagenes de los alimentos-->
 
     <img *ngIf="!abiertoArriba && !abiertoAbajo" src="assets/img/closed-fridge.png" usemap="#image-map"
@@ -90,3 +72,5 @@
     </map>
     
 </div>
+
+<button (click)="recalculateImagenes()">CRUZ</button>

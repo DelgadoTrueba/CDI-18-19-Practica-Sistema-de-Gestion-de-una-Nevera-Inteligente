@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Router, ActivatedRoute } from '@angular/router';
+//objeto con la información de los alimentos//
+import { Alimentos } from 'src/app/model/all-fridge-alimentos/alimentos';
 
 @Component({
   selector: 'app-allFridge',
@@ -8,6 +9,8 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./allFridge.component.css']
 })
 export class AllFridgeComponent implements OnInit {
+
+  alimentos = Alimentos;
 
   width:number;
   height:number;
@@ -77,6 +80,7 @@ export class AllFridgeComponent implements OnInit {
     this.top = (window.innerHeight*0.015);
     this.left = (window.innerWidth/2) - (this.width/2);
     
+    this.recalculateImagenes();
     this.calcularMapArea();
   }
 
@@ -288,6 +292,26 @@ export class AllFridgeComponent implements OnInit {
   lateralDer(){
     console.log("lateralDer")
     this.router.navigate(["../rightSide"], { relativeTo: this.r });
+  }
+
+  recalculateImagenes(){
+    //console.log(this.alimentos);
+
+    this.alimentos.forEach( (alimento) => {
+      if( alimento.empty === true){
+        alimento.nombreRuta += "-cruz";
+        alimento.empty = false;
+      } 
+      else{
+        let separador = alimento.nombreRuta.indexOf("-");
+        if(separador !== -1){
+          alimento.nombreRuta = alimento.nombreRuta.substr(0, separador);
+        }
+        alimento.empty = true;
+      } 
+    });
+
+   //console.log(this.alimentos);
   }
 
 }
