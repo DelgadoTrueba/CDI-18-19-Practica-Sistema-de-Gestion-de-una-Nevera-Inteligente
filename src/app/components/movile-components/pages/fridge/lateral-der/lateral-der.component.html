@@ -1,15 +1,28 @@
 <div id="main">
     <figure id=figura appStyleGetter [height]="height" [width]="width">
         <map name=recortes id=recortes>
-              <!--A1-->
-              <area shape=poly
-              coords={{mapCoorABCD}}>
-              <!--A2-->
-              <area shape=poly 
-              coords={{mapCoorMNOP}} >      
+              <!--queso-->
+              <area shape=rect
+              [attr.coords]="mapCoorQueso" class="pointer">
+              <!--yogurt-->
+              <area shape=rect
+              [attr.coords]="mapCoorYogurt" class="pointer">  
+               <!--zumo-->
+               <area shape=rect
+               [attr.coords]="mapCoorZumo" class="pointer">
+               <!--sprite-->
+               <area shape=rect
+               [attr.coords]="mapCoorSprite" class="pointer"> 
+                <!--fanta-->
+              <area shape=rect
+              [attr.coords]="mapCoorFanta" class="pointer">
+              <!--coke-->
+              <area shape=rect
+              [attr.coords]="mapCoorCoke" class="pointer"> 
+ 
       
           <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
-        <img id=capaRecorte src="../../../../../../assets/img/rightSide/rightSide.png" >
+        <img id=capaRecorte src="../../../../../../assets/img/rightSide/rightSide.png">
         </map>
       
           <!--USA EL MAPS: ES TRANSPARENTE-->
@@ -26,7 +39,8 @@
            <!--Fin Imagenes de los alimentos-->
       
       </figure>
-      
+    
+      <!--
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
           <defs>
               <clipPath id=A1>
@@ -39,4 +53,5 @@
                
           </defs>
       </svg>
+    -->
 </div>

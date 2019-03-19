@@ -13,32 +13,12 @@ export class LateralDerComponent implements OnInit {
   width:number;
   height:number;
 
-  mapArea: any = {
-    A: {x: 0, y: 0},
-    B: {x: 0, y: 0},
-    C: {x: 0, y: 0},
-    D: {x: 0, y: 0},
-    
-    E: {x: 0, y: 0},
-    F: {x: 0, y: 0},
-    G: {x: 0, y: 0},
-    H: {x: 0, y: 0},
-
-    I: {x: 0, y: 0},
-    J: {x: 0, y: 0},
-    K: {x: 0, y: 0},
-    L: {x: 0, y: 0},
-
-    M: {x: 0, y: 0},
-    N: {x: 0, y: 0},
-    O: {x: 0, y: 0},
-    P: {x: 0, y: 0}
-  };
-
-  mapCoorABCD: string;
-  mapCoorEFGH: string;
-  mapCoorIJKL: string;
-  mapCoorMNOP: string;
+  mapCoorQueso: string;
+  mapCoorYogurt: string;
+  mapCoorZumo: string;
+  mapCoorSprite: string;
+  mapCoorFanta: string;
+  mapCoorCoke: string;
 
   constructor(
   ) { 
@@ -66,41 +46,72 @@ export class LateralDerComponent implements OnInit {
   }
 
   calcularMapArea(){
-    this.calcular1_primera();
-    this.calcular4_ultima();
-
+    this.calcularAreaQueso();
+    this.calcularYogurt();
+    this.calcularZumo();
+    this.calcularSprite();
+    this.calcularFanta();
+    this.calcularCoke();
   }
 
-  calcular1_primera(){
-    this.mapArea.A.x = this.height*(0.33);
-    this.mapArea.A.y = 0;
+  calcularAreaQueso(){
+    let coord1x, coord1y, coord2x, coord2y;
 
-    this.mapArea.B.x = 0;
-    this.mapArea.B.y = 0;
+    coord1x = Math.round( this.width * 0.24 ); coord1y = Math.round( this.height * 0.21 ); coord2x = Math.round( this.width * 0.4 ); coord2y = Math.round( this.height * 0.3 ); 
 
-    this.mapArea.C.x = 0;
-    this.mapArea.C.y = this.width;
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
 
-    this.mapArea.D.x = this.height*(0.33) ;
-    this.mapArea.D.y = this.width ;
-
-    this.mapCoorABCD = this.toStringCoor(this.mapArea.A, this.mapArea.B, this.mapArea.C, this.mapArea.D);
+    this.mapCoorQueso = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
   }
 
-  calcular4_ultima(){
-    this.mapArea.M.x = this.height*(0.84);
-    this.mapArea.M.y = 0;
+  calcularYogurt(){
+    let coord1x, coord1y, coord2x, coord2y;
 
-    this.mapArea.N.x = this.height*(0.61);
-    this.mapArea.N.y = 0;
+    coord1x = Math.round( this.width * 0.66 ); coord1y = Math.round( this.height * 0.2 ); coord2x = Math.round( this.width * 0.8 ); coord2y = Math.round( this.height * 0.3 ); 
 
-    this.mapArea.O.x = this.height*(0.61);
-    this.mapArea.O.y = this.width;
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
 
-    this.mapArea.P.x = this.height*(0.84);
-    this.mapArea.P.y = this.width ;
+    this.mapCoorYogurt = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
 
-    this.mapCoorMNOP = this.toStringCoor(this.mapArea.M, this.mapArea.N, this.mapArea.O, this.mapArea.P);
+  calcularZumo(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.16 ); coord1y = Math.round( this.height * 0.59 ); coord2x = Math.round( this.width * 0.29 ); coord2y = Math.round( this.height * 0.79 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorZumo = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+
+  calcularSprite(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.31 ); coord1y = Math.round( this.height * 0.6 ); coord2x = Math.round( this.width * 0.43 ); coord2y = Math.round( this.height * 0.79 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorSprite = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+
+  calcularFanta(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.56 ); coord1y = Math.round( this.height * 0.59 ); coord2x = Math.round( this.width * 0.68 ); coord2y = Math.round( this.height * 0.79 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorFanta = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+
+  calcularCoke(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.72 ); coord1y = Math.round( this.height * 0.59 ); coord2x = Math.round( this.width * 0.84 ); coord2y = Math.round( this.height * 0.79 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorCoke = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
   }
 
   //A largo(X) B ancho(y)
