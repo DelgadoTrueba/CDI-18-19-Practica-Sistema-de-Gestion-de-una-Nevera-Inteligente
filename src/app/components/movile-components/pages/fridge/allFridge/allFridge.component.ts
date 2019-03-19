@@ -77,7 +77,7 @@ export class AllFridgeComponent implements OnInit {
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
     
-    this.top = (window.innerHeight*0.015);
+    this.top = (window.innerHeight*0.0125);
     this.left = (window.innerWidth/2) - (this.width/2);
     
     this.recalculateImagenes();
@@ -90,7 +90,7 @@ export class AllFridgeComponent implements OnInit {
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
-    this.top = (window.innerHeight*0.015);
+    this.top = (window.innerHeight*0.0125);
     this.left = (window.innerWidth/2) - (this.width/2);
 
     this.calcularMapArea();
