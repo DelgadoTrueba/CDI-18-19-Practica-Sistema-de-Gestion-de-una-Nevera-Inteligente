@@ -1,8 +1,8 @@
 export let AlimentosMainFridge: Array<Alimento> = [
     {
-        nombreId: "Manzana", 
-        rutaOk:"assets/img/main/manzana.png", 
-        rutaEmpty:"assets/img/main/manzana.png", 
+        nombreId: "Pera", 
+        rutaOk:"assets/img/main/pera.png", 
+        rutaEmpty:"assets/img/main/pera.png", 
         cantidad: 5
     },
 
