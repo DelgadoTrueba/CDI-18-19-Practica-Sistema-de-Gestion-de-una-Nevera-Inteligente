@@ -1,5 +1,6 @@
 #container{
     height: 100vh;
+    background: linear-gradient(#1867C0, #5BB9F5);
 }
 
 .main{

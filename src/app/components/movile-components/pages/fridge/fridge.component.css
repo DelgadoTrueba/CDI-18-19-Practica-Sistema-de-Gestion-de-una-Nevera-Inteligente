@@ -5,8 +5,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    background: linear-gradient(#1867C0, #5BB9F5);
 }
 
 #navegadorFridge{
