@@ -1,12 +1,5 @@
 <div id="main">
-    <img src="assets/img/main/apple.png" class="imgSuperpuesta"
-    *ngIf="abiertoArriba"
-    
-    appOverLap [top]="top" [left]="left" 
-    appStyleGetter [height]="height" [width]="width"
-    
-    usemap="recortes"> 
-    
+    <!-- REMARCAR LA FIGURA -->
     <figure id=figura appStyleGetter [height]="height" [width]="width">
         <map name=recortes id=recortes>
               <!--A1-->
@@ -29,14 +22,17 @@
         </map>
 
           <!--USA EL MAPS: ES TRANSPARENTE-->
-        <img src="../../../../../../assets/img/main/apple.png"
-        id=imagen usemap=#recortes>
+                <!-- CON ESTO NO FUNCIONA LO DE REMARCAR -->
+                <img src="../../../../../../assets/img/main/nevera-centro.png"
+                id=imagen usemap=#recortes>
 
-        <img src="../../../../../../assets/img/main/apple2.png"
-        id=imagen usemap=#recortes>
+                <!--manzana-->
+                <img src="../../../../../../assets/img/main/apple.png"
+                id=imagen usemap=#recortes>
       
       </figure>
       
+      <!-- AREA DE LA FIGURA -->
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
           <defs>
               <!--manzana-->

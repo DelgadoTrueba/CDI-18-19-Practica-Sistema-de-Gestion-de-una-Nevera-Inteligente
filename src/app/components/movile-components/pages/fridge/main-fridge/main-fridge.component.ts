@@ -9,6 +9,8 @@ export class MainFridgeComponent implements OnInit {
 
   width:number;
   height:number;
+  top:number;
+  left:number;
 
   mapArea: any = {
     A: {x: 0, y: 0},
