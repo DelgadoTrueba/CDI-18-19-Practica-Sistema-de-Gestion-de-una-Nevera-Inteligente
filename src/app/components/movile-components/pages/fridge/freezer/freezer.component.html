@@ -1,15 +1,11 @@
 <div id="main">
     <figure id=figura appStyleGetter [height]="height" [width]="width">
         <map name=recortes id=recortes>
-              <!--A1-->
-              <area shape=poly
-              coords={{mapCoorABCD}}>
-              <!--A2-->
-              <area shape=poly 
-              coords={{mapCoorEFGH}} >
-          <!--A3-->
-              <area shape=poly 
-              coords={{mapCoorIJKL}}>
+              <!--helado-->
+              <area shape=rect
+              [attr.coords]="mapCoorHelado" class="pointer">
+             
+
           
           <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
         <img id=capaRecorte src="../../../../../../assets/img/freezer/freezer.png" >
@@ -29,7 +25,7 @@
            <!--Fin Imagenes de los alimentos-->
       
       </figure>
-      
+      <!--
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
           <defs>
               <clipPath id=A1>
@@ -43,4 +39,5 @@
               </clipPath>
           </defs>
       </svg>
+    -->
 </div>
