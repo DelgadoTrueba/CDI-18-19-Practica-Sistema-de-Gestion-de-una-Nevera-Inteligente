@@ -17,7 +17,10 @@ export class MainFridgeComponent implements OnInit {
   top:number;
   left:number;
 
+  isOpen: boolean = false;
+
   mapCoorPescado: string;
+  mapCoorCajon: string;
 
   constructor(
   ) { 
@@ -51,17 +54,34 @@ export class MainFridgeComponent implements OnInit {
   calcularMapArea(){
     this.calcularPescado();
 
+    this.calcularCajon();
+
   }
 
   calcularPescado(){
     let coord1x, coord1y, coord2x, coord2y;
 
-coord1x = Math.round( this.width * 0.77 ); coord1y = Math.round( this.height * 0.13 ); coord2x = Math.round( this.width * 0.97 ); coord2y = Math.round( this.height * 0.29 ); 
+    coord1x = Math.round( this.width * 0.77 ); coord1y = Math.round( this.height * 0.13 ); coord2x = Math.round( this.width * 0.97 ); coord2y = Math.round( this.height * 0.29 ); 
 
-let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
 
-this.mapCoorPescado = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+    this.mapCoorPescado = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
 
+  }
+
+  calcularCajon(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.03 ); coord1y = Math.round( this.height * 0.77 ); coord2x = Math.round( this.width * 0.97 ); coord2y = Math.round( this.height * 0.99 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorCajon = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+
+  }
+
+  abrirCajon(){
+    this.isOpen = true;
   }
 
   //A largo(X) B ancho(y)

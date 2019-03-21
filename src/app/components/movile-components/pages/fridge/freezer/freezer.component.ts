@@ -13,6 +13,8 @@ export class FreezerComponent implements OnInit {
   width:number;
   height:number;
 
+  arrayCajonIsOpen = [false, false, false];
+
   mapCoorHelado: string;
   mapCoorChurro: string;
   mapCoorTarta: string;
@@ -56,7 +58,6 @@ export class FreezerComponent implements OnInit {
     this.calcularVerduras();
     this.calcularPescado();
     this.calcularCarne();
-
   }
 
   calcularHelado(){
@@ -131,6 +132,12 @@ export class FreezerComponent implements OnInit {
 
   this.mapCoorCarne = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
   }
+
+
+  abrirCajon(index: number){
+    this.arrayCajonIsOpen[index] = true;
+  }
+
   //A largo(X) B ancho(y)
   toStringCoor(ptoA, ptoB, ptoC, ptoD){
     

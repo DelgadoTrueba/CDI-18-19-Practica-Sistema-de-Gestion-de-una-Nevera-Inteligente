@@ -23,23 +23,28 @@
               <area shape=rect
               [attr.coords]="mapCoorPescado" class="pointer">
               <!--Carne-->
-             <area shape=rect
-              [attr.coords]="mapCoorCarne" class="pointer">
-
-          <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
-        <img id=capaRecorte src="../../../../../../assets/img/freezer/freezer.png" >
+              <area shape=rect
+                [attr.coords]="mapCoorCarne" class="pointer">
         </map>
+        
+        <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
+        <img id=capaRecorte src="../../../../../../assets/img/freezer/freezer.png">
+        <img *ngIf="arrayCajonIsOpen[0]" id=capaRecorte src="../../../../../../assets/img/freezer/freezer-cajon1-abierto.png" >
+        <img *ngIf="arrayCajonIsOpen[1]" id=capaRecorte src="../../../../../../assets/img/freezer/freezer-cajon2-abierto.png">
+        <img *ngIf="arrayCajonIsOpen[2]" id=capaRecorte src="../../../../../../assets/img/freezer/freezer-cajon3-abierto.png" >
       
           <!--USA EL MAPS: ES TRANSPARENTE-->
         <!--Imagenes de los alimentos-->
         <div *ngFor="let alimento of alimentos">
-                <img *ngIf="alimento.cantidad > 0"
-                src="{{alimento.rutaOk}}"
-                class="imagen" usemap=#recortes> 
-    
-                <img *ngIf="alimento.cantidad === 0"
-                src="{{alimento.rutaEmpty}}"
-                class="imagen" usemap=#recortes> 
+                <div *ngIf="arrayCajonIsOpen[alimento.cajon]">
+                    <img *ngIf="alimento.cantidad > 0"
+                    src="{{alimento.rutaOk}}"
+                    class="imagen" usemap=#recortes> 
+        
+                    <img *ngIf="alimento.cantidad === 0"
+                    src="{{alimento.rutaEmpty}}"
+                    class="imagen" usemap=#recortes> 
+                </div>
             </div>
            <!--Fin Imagenes de los alimentos-->
       
@@ -60,3 +65,7 @@
       </svg>
     -->
 </div>
+
+<button (click)="abrirCajon(0)">cajon1</button>
+<button (click)="abrirCajon(1)">cajon2</button>
+<button (click)="abrirCajon(2)">cajon3</button>

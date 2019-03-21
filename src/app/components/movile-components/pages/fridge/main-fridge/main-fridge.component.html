@@ -5,12 +5,17 @@
               <!--pescado-->
               <area shape="rect"
               [attr.coords]="mapCoorPescado" class="pointer">
+            <!--cajon-->
+            <area shape="rect"
+            [attr.coords]="mapCoorCajon" class="pointer" (click)="abrirCajon()">
 
       
           
       
           <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
         <img id=capaRecorte src="../../../../../../assets/img/main/nevera-centro.png" >
+        <!--cajon abierto-->
+        <img *ngIf="isOpen===true" id=capaRecorte src="../../../../../../assets/img/main/nevera-cajon-abierto.png" >
         
         </map>
 
