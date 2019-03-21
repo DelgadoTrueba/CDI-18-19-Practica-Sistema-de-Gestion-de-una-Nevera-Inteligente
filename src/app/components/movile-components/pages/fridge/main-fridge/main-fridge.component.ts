@@ -17,7 +17,7 @@ export class MainFridgeComponent implements OnInit {
   top:number;
   left:number;
 
-  mapCoorManzana: string;
+  mapCoorPescado: string;
 
   constructor(
   ) { 
@@ -49,18 +49,18 @@ export class MainFridgeComponent implements OnInit {
   }
 
   calcularMapArea(){
-    this.calcularManzana();
+    this.calcularPescado();
 
   }
 
-  calcularManzana(){
+  calcularPescado(){
     let coord1x, coord1y, coord2x, coord2y;
 
-    coord1x = Math.round( this.width * 0.11 ); coord1y = Math.round( this.height * 0.58 ); coord2x = Math.round( this.width * 0.23 ); coord2y = Math.round( this.height * 0.76 ); 
+coord1x = Math.round( this.width * 0.77 ); coord1y = Math.round( this.height * 0.13 ); coord2x = Math.round( this.width * 0.97 ); coord2y = Math.round( this.height * 0.29 ); 
 
-    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
 
-    this.mapCoorManzana = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+this.mapCoorPescado = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
 
   }
 

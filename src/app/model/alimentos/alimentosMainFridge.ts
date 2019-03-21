@@ -1,9 +1,9 @@
 export let AlimentosMainFridge: Array<Alimento> = [
     {
-        nombreId: "Pera", 
-        rutaOk:"assets/img/main/pera.png", 
-        rutaEmpty:"assets/img/main/pera.png", 
-        cantidad: 5
+        nombreId: "Pescado", 
+        rutaOk:"assets/img/main/pescado.png", 
+        rutaEmpty:"assets/img/main/pescado-cruz.png", 
+        cantidad: 0
     },
 
 ];
