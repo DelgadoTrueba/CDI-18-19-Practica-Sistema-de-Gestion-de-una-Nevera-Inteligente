@@ -14,6 +14,13 @@ export class FreezerComponent implements OnInit {
   height:number;
 
   mapCoorHelado: string;
+  mapCoorChurro: string;
+  mapCoorTarta: string;
+  mapCoorPizza: string;
+  mapCoorPatata: string;
+  mapCoorVerduras: string;
+  mapCoorPescado: string;
+  mapCoorCarne: string;
 
   constructor(
   ) { 
@@ -42,6 +49,13 @@ export class FreezerComponent implements OnInit {
 
   calcularMapArea(){
     this.calcularHelado();
+    this.calcularChurro();
+    this.calcularTarta();
+    this.calcularPizza();
+    this.calcularPatata();
+    this.calcularVerduras();
+    this.calcularPescado();
+    this.calcularCarne();
 
   }
 
@@ -54,8 +68,69 @@ export class FreezerComponent implements OnInit {
     
     this.mapCoorHelado = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
   }
+  calcularChurro(){
+ let coord1x, coord1y, coord2x, coord2y;
 
+  coord1x = Math.round( this.width * 0.4 ); coord1y = Math.round( this.height * 0.06 ); coord2x = Math.round( this.width * 0.55 ); coord2y = Math.round( this.height * 0.29 ); 
 
+  let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+  this.mapCoorChurro = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+  calcularTarta(){
+  let coord1x, coord1y, coord2x, coord2y;
+
+  coord1x = Math.round( this.width * 0.68 ); coord1y = Math.round( this.height * 0.1 ); coord2x = Math.round( this.width * 0.85 ); coord2y = Math.round( this.height * 0.28 ); 
+
+  let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+  this.mapCoorTarta = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+  calcularPizza(){
+  let coord1x, coord1y, coord2x, coord2y;
+
+  coord1x = Math.round( this.width * 0.13 ); coord1y = Math.round( this.height * 0.37 ); coord2x = Math.round( this.width * 0.29 ); coord2y = Math.round( this.height * 0.54 ); 
+
+  let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+  this.mapCoorPizza = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+  calcularPatata(){
+  let coord1x, coord1y, coord2x, coord2y;
+
+  coord1x = Math.round( this.width * 0.39 ); coord1y = Math.round( this.height * 0.31 ); coord2x = Math.round( this.width * 0.56 ); coord2y = Math.round( this.height * 0.56 ); 
+
+  let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+  this.mapCoorPatata = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+  calcularVerduras(){
+  let coord1x, coord1y, coord2x, coord2y;
+
+  coord1x = Math.round( this.width * 0.65 ); coord1y = Math.round( this.height * 0.31 ); coord2x = Math.round( this.width * 0.88 ); coord2y = Math.round( this.height * 0.56 ); 
+
+  let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+  this.mapCoorVerduras = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+  calcularPescado(){
+  let coord1x, coord1y, coord2x, coord2y;
+
+  coord1x = Math.round( this.width * 0.21 ); coord1y = Math.round( this.height * 0.65 ); coord2x = Math.round( this.width * 0.47 ); coord2y = Math.round( this.height * 0.84 ); 
+
+  let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+  this.mapCoorPescado = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+  calcularCarne(){
+  let coord1x, coord1y, coord2x, coord2y;
+
+  coord1x = Math.round( this.width * 0.57 ); coord1y = Math.round( this.height * 0.67 ); coord2x = Math.round( this.width * 0.76 ); coord2y = Math.round( this.height * 0.84 ); 
+
+  let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+  this.mapCoorCarne = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
   //A largo(X) B ancho(y)
   toStringCoor(ptoA, ptoB, ptoC, ptoD){
     
