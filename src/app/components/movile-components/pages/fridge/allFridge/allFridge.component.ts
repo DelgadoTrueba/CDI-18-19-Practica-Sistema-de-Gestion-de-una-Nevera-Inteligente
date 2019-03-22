@@ -22,44 +22,27 @@ export class AllFridgeComponent implements OnInit {
   abiertoArriba: boolean = false;
   abiertoAbajo: boolean = false;
 
-  mapArea: any = {
-    A: {x: 0, y: 0},
-    B: {x: 0, y: 0},
-    
-    C: {x: 0, y: 0},
-    D: {x: 0, y: 0},
-    
-    E: {x: 0, y: 0},
-    F: {x: 0, y: 0},
-    
-    G: {x: 0, y: 0},
-    H: {x: 0, y: 0},
+  mapCoorNevera;
+  mapCoorIzqLateral1;
+  mapCoorIzqLateral2;
+  mapCoorIzq1;
+  mapCoorIzq2;
+  mapCoorIzq3;
+  mapCoorIzqA;
+  mapCoorIzqB;
 
-    I: {x: 0, y: 0},
-    J: {x: 0, y: 0},
+  mapCoorDerLateral1;
+  mapCoorDerLateral2;
+  mapCoorDer1;
+  mapCoorDer2;
+  mapCoorDer3;
+  mapCoorDerA;
+  mapCoorDerB;
 
-    K: {x: 0, y: 0},
-    L: {x: 0, y: 0}
-  };
-
-  mapCoorIZQ1: string;
-  mapCoorIZQ2: string;
-  mapCoorIZQ3: string;
-  mapCoorIZQ4: string;
-  mapCoorIZQ5: string;
-
-  mapCoorDER1: string;
-  mapCoorDER2: string;
-  mapCoorDER3: string;
-  mapCoorDER4: string;
-  mapCoorDER5: string;
-
-  mapCoorCD: string;
-
-  mapCoorGH: string;
-  mapCoorIJ: string;
-  mapCoorKL: string;
-
+  mapCoorCongelador;
+  mapCoorAbajoIzq;
+  mapCoorAbajoDer;
+  
   lateral: string;
 
   constructor(
@@ -97,161 +80,215 @@ export class AllFridgeComponent implements OnInit {
   }
 
   calcularMapArea(){
-    this.calcularIzquierdaArriba();
     this.calcularNeveraCentral();
-    this.calcularDerechaArriba();
-  
-    this.calcularIzquierdaAbajo();
+
+    this.calcularTopLeftLateral1();
+    this.calcularTopLeftLateral2();
+
+    this.calcularIzqArriba1();
+    this.calcularIzqArriba2();
+    this.calcularIzqArriba3();
+
+    this.calcularIzqArribaA();
+    this.calcularIzqArribaB();
+
+    this.calcularDerLateral1();
+    this.calcularDerLateral2();
+
+    this.calcularDerArriba1();
+    this.calcularDerArriba2();
+    this.calcularDerArriba3();
+
+    this.calcularDerArribaA();
+    this.calcularDerArribaB();
+
     this.calcularCongelador();
-    this.calcularDerechaAbajo();
-  }
-
-  calcularIzquierdaArriba(){
-/*
-    this.mapArea.A.x = 0;
-    this.mapArea.A.y = 0;
-
-    this.mapArea.B.x = this.height*0.57;
-    this.mapArea.B.y = this.width*0.27;
-    */
-   let Ax, Ay, Bx, By, Cx, Cy, Dx, Dy, Ex, Ey, Fx, Fy,
-      Gx, Gy, Hx, Hy, Ix, Iy, Jx, Jy;
-
-    Ax = 0;
-    Ay = 0;
-    Bx = this.height*0.17;
-    By = this.width*0.27;
-
-    this.mapCoorIZQ1 = this.toStringCoor2(Ax, Ay, Bx, By);
-
-    Cx = this.height*0.18;
-    Cy = 0;
-    Dx = this.height*0.21;
-    Dy = this.width*0.27;
-
-    this.mapCoorIZQ2 = this.toStringCoor2(Cx, Cy, Dx, Dy);
-
-    Ex = this.height*0.22;
-    Ey = 0;
-    Fx = this.height*0.46;
-    Fy = this.width*0.27;
-
-    this.mapCoorIZQ3 = this.toStringCoor2(Ex, Ey, Fx, Fy);
-
-    Gx = this.height*0.47;
-    Gy = 0;
-    Hx = this.height*0.50;
-    Hy = this.width*0.27;
-
-    this.mapCoorIZQ4 = this.toStringCoor2(Gx, Gy, Hx, Hy);
-
-    Ix = this.height*0.48;
-    Iy = 0;
-    Jx = this.height*0.58;
-    Jy = this.width*0.27;
-
-    this.mapCoorIZQ5 = this.toStringCoor2(Ix, Iy, Jx, Jy);
-  }
-
-  toStringCoor2(Ax, Ay, Bx, By){
-    return parseInt(Ay , 10) +","+ parseInt(Ax, 10) +" "+ parseInt(By, 10) +","+ parseInt(Bx, 10);
-
+    this.abajoIzq();
+    this.abajoDer();
   }
 
   calcularNeveraCentral(){
-    this.mapArea.C.x = 0;
-    this.mapArea.C.y = this.width*0.31;
+    let coord1x, coord1y, coord2x, coord2y;
 
-    this.mapArea.D.x = this.height*0.57;
-    this.mapArea.D.y = this.width-(this.width*0.31);
+    coord1x = Math.round( this.width * 0.31 ); coord1y = Math.round( this.height * 0 ); coord2x = Math.round( this.width * 0.69 ); coord2y = Math.round( this.height * 0.58 ); 
 
-    this.mapCoorCD = this.toStringCoor(this.mapArea.C, this.mapArea.D);
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorNevera = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
   }
 
-  calcularDerechaArriba(){
-    /*
-    this.mapArea.E.x = 0;
-    this.mapArea.E.y = this.width-(this.width*0.27);
+  calcularTopLeftLateral1(){
+    let coord1x, coord1y, coord2x, coord2y;
 
-    this.mapArea.F.x = this.height*0.57;
-    this.mapArea.F.y = this.width;
+    coord1x = Math.round( this.width * 0.03 ); coord1y = Math.round( this.height * 0.06 ); coord2x = Math.round( this.width * 0.27 ); coord2y = Math.round( this.height * 0.21 ); 
 
-    this.mapCoorEF = this.toStringCoor(this.mapArea.E, this.mapArea.F);*/
-    let Ax, Ay, Bx, By, Cx, Cy, Dx, Dy, Ex, Ey, Fx, Fy,
-      Gx, Gy, Hx, Hy, Ix, Iy, Jx, Jy;
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
 
-    let anchoInicial = this.width-(this.width*0.27);
-
-    Ax = 0;
-    Ay = anchoInicial
-    Bx = this.height*0.17;
-    By = this.width
-
-    this.mapCoorDER1 = this.toStringCoor2(Ax, Ay, Bx, By);
-
-    Cx = this.height*0.18;
-    Cy = anchoInicial;
-    Dx = this.height*0.21;
-    Dy = this.width;
-
-    this.mapCoorDER2 = this.toStringCoor2(Cx, Cy, Dx, Dy);
-
-    Ex = this.height*0.22;
-    Ey = anchoInicial;
-    Fx = this.height*0.46;
-    Fy = this.width;
-
-    this.mapCoorDER3 = this.toStringCoor2(Ex, Ey, Fx, Fy);
-
-    Gx = this.height*0.47;
-    Gy = anchoInicial;
-    Hx = this.height*0.50;
-    Hy = this.width;
-
-    this.mapCoorDER4 = this.toStringCoor2(Gx, Gy, Hx, Hy);
-
-    Ix = this.height*0.48;
-    Iy = anchoInicial;
-    Jx = this.height*0.58;
-    Jy = this.width;
-
-    this.mapCoorDER5 = this.toStringCoor2(Ix, Iy, Jx, Jy);
+    this.mapCoorIzqLateral1 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
   }
 
-  calcularIzquierdaAbajo(){
-    this.mapArea.G.x = this.height*0.61;
-    this.mapArea.G.y = 0;
+  calcularTopLeftLateral2(){
+    let coord1x, coord1y, coord2x, coord2y;
 
-    this.mapArea.H.x = this.height;
-    this.mapArea.H.y = this.width*0.27;
+    coord1x = Math.round( this.width * 0.03 ); coord1y = Math.round( this.height * 0.34 ); coord2x = Math.round( this.width * 0.27 ); coord2y = Math.round( this.height * 0.5 ); 
+    
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+    
+    this.mapCoorIzqLateral2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
 
-    this.mapCoorGH = this.toStringCoor(this.mapArea.G, this.mapArea.H);
+  }
+
+  calcularIzqArriba1(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0 ); coord1y = Math.round( this.height * 0.02 ); coord2x = Math.round( this.width * 0.27 ); coord2y = Math.round( this.height * 0.05 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorIzq1 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+
+  calcularIzqArriba2(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+coord1x = Math.round( this.width * 0 ); coord1y = Math.round( this.height * 0.22 ); coord2x = Math.round( this.width * 0.27 ); coord2y = Math.round( this.height * 0.32 ); 
+
+let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+
+  calcularIzqArriba3(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0 ); coord1y = Math.round( this.height * 0.51 ); coord2x = Math.round( this.width * 0.27 ); coord2y = Math.round( this.height * 0.58 ); 
+    
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+    
+    this.mapCoorIzq3 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+
   }
 
   calcularCongelador(){
-    this.mapArea.I.x = this.height*0.61;
-    this.mapArea.I.y = this.width*0.31;
+    let coord1x, coord1y, coord2x, coord2y;
 
-    this.mapArea.J.x = this.height;
-    this.mapArea.J.y = this.width-(this.width*0.31);
+    coord1x = Math.round( this.width * 0.31 ); coord1y = Math.round( this.height * 0.6 ); coord2x = Math.round( this.width * 0.69 ); coord2y = Math.round( this.height * 0.94 ); 
 
-    this.mapCoorIJ = this.toStringCoor(this.mapArea.I, this.mapArea.J);
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorCongelador = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
   }
 
-  calcularDerechaAbajo(){
-    this.mapArea.K.x = this.height*0.61;
-    this.mapArea.K.y = this.width-(this.width*0.27);
+  abajoIzq(){
+    let coord1x, coord1y, coord2x, coord2y;
 
-    this.mapArea.L.x = this.height;
-    this.mapArea.L.y = this.width;
+    coord1x = Math.round( this.width * 0 ); coord1y = Math.round( this.height * 0.61 ); coord2x = Math.round( this.width * 0.28 ); coord2y = Math.round( this.height * 0.96 ); 
 
-    this.mapCoorKL = this.toStringCoor(this.mapArea.K, this.mapArea.L);
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorAbajoIzq = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
   }
 
-  toStringCoor(ptoA, ptoB){
-    return parseInt(ptoA.y , 10) +","+ parseInt(ptoA.x, 10) +" "+ parseInt(ptoB.y, 10) +","+ parseInt(ptoB.x, 10);
+  abajoDer(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.72 ); coord1y = Math.round( this.height * 0.61 ); coord2x = Math.round( this.width * 1 ); coord2y = Math.round( this.height * 0.96 ); 
+    
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+    
+    this.mapCoorAbajoDer = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
   }
 
+  calcularIzqArribaA(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0 ); coord1y = Math.round( this.height * 0.05 ); coord2x = Math.round( this.width * 0.02 ); coord2y = Math.round( this.height * 0.22 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorIzqA = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+
+  calcularIzqArribaB(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0 ); coord1y = Math.round( this.height * 0.32 ); coord2x = Math.round( this.width * 0.02 ); coord2y = Math.round( this.height * 0.51 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorIzqB = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+  
+  calcularDerLateral1(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.73 ); coord1y = Math.round( this.height * 0.1 ); coord2x = Math.round( this.width * 0.97 ); coord2y = Math.round( this.height * 0.21 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorDerLateral1 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+
+  calcularDerLateral2(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.73 ); coord1y = Math.round( this.height * 0.32 ); coord2x = Math.round( this.width * 0.97 ); coord2y = Math.round( this.height * 0.49 ); 
+    
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+    
+    this.mapCoorDerLateral2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+
+  }
+
+  calcularDerArriba1(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.73 ); coord1y = Math.round( this.height * 0.02 ); coord2x = Math.round( this.width * 1 ); coord2y = Math.round( this.height * 0.08 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorDer1 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+  calcularDerArriba2(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.73 ); coord1y = Math.round( this.height * 0.23 ); coord2x = Math.round( this.width * 1 ); coord2y = Math.round( this.height * 0.3 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorDer2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+    
+  }
+  calcularDerArriba3(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+  coord1x = Math.round( this.width * 0.73 ); coord1y = Math.round( this.height * 0.51 ); coord2x = Math.round( this.width * 1 ); coord2y = Math.round( this.height * 0.57 ); 
+
+  let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+  this.mapCoorDer3 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+  calcularDerArribaA(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.98 ); coord1y = Math.round( this.height * 0.08 ); coord2x = Math.round( this.width * 1 ); coord2y = Math.round( this.height * 0.3 ); 
+    
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+    
+    this.mapCoorIzqA = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
+  calcularDerArribaB(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.98 ); coord1y = Math.round( this.height * 0.3 ); coord2x = Math.round( this.width * 1 ); coord2y = Math.round( this.height * 0.51 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorIzqB = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+    
+  }
+
+  
   hightLeft(){
     console.log("hightLeft");
     this.abiertoArriba = false;
