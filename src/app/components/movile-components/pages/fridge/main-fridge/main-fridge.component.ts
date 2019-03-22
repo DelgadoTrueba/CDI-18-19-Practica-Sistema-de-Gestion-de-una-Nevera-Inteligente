@@ -81,7 +81,7 @@ export class MainFridgeComponent implements OnInit {
   }
 
   abrirCajon(){
-    this.isOpen = true;
+    this.isOpen = !this.isOpen;
   }
 
   //A largo(X) B ancho(y)

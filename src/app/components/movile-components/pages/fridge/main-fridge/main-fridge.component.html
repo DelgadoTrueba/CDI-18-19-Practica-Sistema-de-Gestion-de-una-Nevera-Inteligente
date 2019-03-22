@@ -5,9 +5,6 @@
               <!--pescado-->
               <area shape="rect"
               [attr.coords]="mapCoorPescado" class="pointer">
-            <!--cajon-->
-            <area shape="rect"
-            [attr.coords]="mapCoorCajon" class="pointer" (click)="abrirCajon()">
 
       
           
@@ -56,4 +53,24 @@
           </defs>
       </svg>
     -->
+    <div id="navegadorFridge">
+        <button mat-stroked-button (click)="abrirCajon()">
+            <mat-icon>home</mat-icon><br/>Cajon1
+        </button>
+        <button mat-stroked-button color="primary">
+            <mat-icon>home</mat-icon>
+        </button>
+        <button mat-stroked-button color="accent">
+            <mat-icon>home</mat-icon>
+        </button>
+        <button mat-stroked-button color="warn">
+            <mat-icon>home</mat-icon>
+        </button>
+        <button mat-stroked-button disabled>
+            <mat-icon>home</mat-icon>
+        </button>
+        <a mat-stroked-button routerLink=".">
+            <mat-icon>home</mat-icon>
+        </a>
+    </div>
 </div>

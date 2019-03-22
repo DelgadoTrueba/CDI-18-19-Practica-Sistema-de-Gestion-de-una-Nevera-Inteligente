@@ -13,7 +13,7 @@ export class FreezerComponent implements OnInit {
   width:number;
   height:number;
 
-  arrayCajonIsOpen = [false, false, false];
+  arrayCajonIsOpen = [false, false, false]
 
   mapCoorHelado: string;
   mapCoorChurro: string;
@@ -134,8 +134,14 @@ export class FreezerComponent implements OnInit {
   }
 
 
-  abrirCajon(index: number){
-    this.arrayCajonIsOpen[index] = true;
+  abrirCajon1(){
+    this.arrayCajonIsOpen[0] = !this.arrayCajonIsOpen[0] ;
+  }
+  abrirCajon2(){
+    this.arrayCajonIsOpen[1]  = !this.arrayCajonIsOpen[1] ;
+  }
+  abrirCajon3(){
+    this.arrayCajonIsOpen[2]  = !this.arrayCajonIsOpen[2] ;
   }
 
   //A largo(X) B ancho(y)
