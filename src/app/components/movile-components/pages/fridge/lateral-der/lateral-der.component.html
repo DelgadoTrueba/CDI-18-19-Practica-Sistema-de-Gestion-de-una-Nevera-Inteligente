@@ -29,11 +29,11 @@
         <!--Imagenes de los alimentos-->
         <div *ngFor="let alimento of alimentos">
                 <img *ngIf="alimento.cantidad > 0"
-                src="{{alimento.rutaOk}}"
+                src="{{alimento.img.rightSide.rutaOk}}"
                 class="imagen" usemap=#recortes> 
     
                 <img *ngIf="alimento.cantidad === 0"
-                src="{{alimento.rutaEmpty}}"
+                src="{{alimento.img.rightSide.rutaEmpty}}"
                 class="imagen" usemap=#recortes> 
             </div>
            <!--Fin Imagenes de los alimentos-->

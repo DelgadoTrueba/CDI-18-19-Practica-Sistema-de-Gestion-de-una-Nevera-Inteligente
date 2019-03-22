@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 //objeto con la información de los alimentos//
-import { AlimentosLeftSide } from 'src/app/model/alimentos/alimentosLeftSide';
+import { alimentosLateralIzq } from 'src/app/model/alimentos/alimentos';
+
 
 @Component({
   selector: 'app-lateral-izq',
@@ -9,7 +10,7 @@ import { AlimentosLeftSide } from 'src/app/model/alimentos/alimentosLeftSide';
 })
 export class LateralIzqComponent implements OnInit {
 
-  alimentos = AlimentosLeftSide;
+  alimentos = alimentosLateralIzq();
 
   width:number;
   height:number;
@@ -26,6 +27,8 @@ export class LateralIzqComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.alimentos);
+
     this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.95) : this.height;
     

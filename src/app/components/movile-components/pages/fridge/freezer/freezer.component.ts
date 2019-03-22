@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { AlimentosFreezer } from 'src/app/model/alimentos/alimentosFreezer';
+import { alimentosFreezer } from 'src/app/model/alimentos/alimentos';
 
 @Component({
   selector: 'app-freezer',
@@ -8,7 +8,7 @@ import { AlimentosFreezer } from 'src/app/model/alimentos/alimentosFreezer';
 })
 export class FreezerComponent implements OnInit {
 
-  alimentos = AlimentosFreezer;
+  alimentos = alimentosFreezer();
 
   width:number;
   height:number;
@@ -31,6 +31,7 @@ export class FreezerComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.alimentos);
     this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.9) : this.height;
     

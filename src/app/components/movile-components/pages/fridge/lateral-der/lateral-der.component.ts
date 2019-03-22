@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { AlimentosRightSide } from 'src/app/model/alimentos/alimentosRightSide';
+/*alimentos*/
+import { alimentosLateralDer } from 'src/app/model/alimentos/alimentos';
 
 @Component({
   selector: 'app-lateral-der',
@@ -8,7 +9,7 @@ import { AlimentosRightSide } from 'src/app/model/alimentos/alimentosRightSide';
 })
 export class LateralDerComponent implements OnInit {
 
-  alimentos = AlimentosRightSide;
+  alimentos = alimentosLateralDer();
 
   width:number;
   height:number;
@@ -27,6 +28,7 @@ export class LateralDerComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.alimentos);
     this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.95) : this.height;
     

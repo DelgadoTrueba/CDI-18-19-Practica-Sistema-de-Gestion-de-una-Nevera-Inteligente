@@ -5,12 +5,12 @@
     <div *ngIf="abiertoArriba">
       <div *ngFor="let alimento of alimentos">
           <img *ngIf="alimento.cantidad > 0"
-          src="{{alimento.rutaOk}}"
+          src="{{alimento.img.allFridge.rutaOk}}"
           class="imgSuperpuesta"  usemap="#image-map"
           appOverLap [top]="top" [left]="left" appStyleGetter [height]="height" [width]="width"> 
 
           <img *ngIf="alimento.cantidad === 0"
-          src="{{alimento.rutaEmpty}}"
+          src="{{alimento.img.allFridge.rutaEmpty}}"
           class="imgSuperpuesta"  usemap="#image-map"
           appOverLap [top]="top" [left]="left" appStyleGetter [height]="height" [width]="width"> 
       </div>

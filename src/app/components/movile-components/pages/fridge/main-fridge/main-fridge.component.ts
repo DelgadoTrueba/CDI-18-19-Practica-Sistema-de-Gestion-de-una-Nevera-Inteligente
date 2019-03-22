@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 
 //objeto con la información de los alimentos//
-import { AlimentosMainFridge } from 'src/app/model/alimentos/alimentosMainFridge';
+import { alimentosMainFridge } from 'src/app/model/alimentos/alimentos';
 
 @Component({
   selector: 'app-main-fridge',
@@ -10,7 +10,7 @@ import { AlimentosMainFridge } from 'src/app/model/alimentos/alimentosMainFridge
 })
 export class MainFridgeComponent implements OnInit {
 
-  alimentos = AlimentosMainFridge;
+  alimentos = alimentosMainFridge();
 
   width:number;
   height:number;
@@ -29,6 +29,8 @@ export class MainFridgeComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.alimentos);
+
     this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.9) : this.height;
     

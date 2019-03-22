@@ -2,7 +2,8 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 //objeto con la información de los alimentos//
-import { AlimentosAllFridge } from 'src/app/model/alimentos/alimentosAllFridge';
+import { alimentosAllFridge } from 'src/app/model/alimentos/alimentos';
+
 
 @Component({
   selector: 'app-allFridge',
@@ -11,7 +12,7 @@ import { AlimentosAllFridge } from 'src/app/model/alimentos/alimentosAllFridge';
 })
 export class AllFridgeComponent implements OnInit {
 
-  alimentos = AlimentosAllFridge;
+  alimentos = alimentosAllFridge();
 
   width:number;
   height:number;
@@ -56,6 +57,8 @@ export class AllFridgeComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.alimentos);
+    
     this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth) : this.height;
     

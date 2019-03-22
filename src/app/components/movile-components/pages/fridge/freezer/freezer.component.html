@@ -38,11 +38,11 @@
         <div *ngFor="let alimento of alimentos">
                 <div *ngIf="arrayCajonIsOpen[alimento.cajon]">
                     <img *ngIf="alimento.cantidad > 0"
-                    src="{{alimento.rutaOk}}"
+                    src="{{alimento.img.freezer.rutaOk}}"
                     class="imagen" usemap=#recortes> 
         
                     <img *ngIf="alimento.cantidad === 0"
-                    src="{{alimento.rutaEmpty}}"
+                    src="{{alimento.img.freezer.rutaEmpty}}"
                     class="imagen" usemap=#recortes> 
                 </div>
             </div>
