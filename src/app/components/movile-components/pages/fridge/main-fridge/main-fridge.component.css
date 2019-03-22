@@ -94,4 +94,12 @@ svg, defs, clipPath {
 mat-icon{
    font-size: 18px;
 }
+
+.flex-icon{
+    display: flex !important;
+    justify-content: center !important;
+}
+.p{
+    display: inline;
+}
 /*fin navegador*/

@@ -54,8 +54,11 @@
       </svg>
     -->
     <div id="navegadorFridge">
-        <button mat-stroked-button (click)="abrirCajon()">
-            <mat-icon>home</mat-icon><br/>Cajon1
+        <button (click)="abrirCajon()"
+        class="flex-icon"
+        mat-stroked-button>
+            <mat-icon>home</mat-icon>
+            <p class="p">Cajon1</p>
         </button>
         <button mat-stroked-button color="primary">
             <mat-icon>home</mat-icon>
@@ -69,8 +72,8 @@
         <button mat-stroked-button disabled>
             <mat-icon>home</mat-icon>
         </button>
-        <a mat-stroked-button routerLink=".">
-            <mat-icon>home</mat-icon>
+        <a mat-stroked-button routerLink="../">
+            <mat-icon>exit_to_app</mat-icon>
         </a>
     </div>
 </div>

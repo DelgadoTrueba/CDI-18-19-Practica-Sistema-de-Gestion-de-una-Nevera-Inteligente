@@ -67,14 +67,23 @@
 </div>
 
 <div id="navegadorFridge">
-    <button mat-stroked-button (click)="abrirCajon1()">
-        <mat-icon>home</mat-icon>cajon1
+    <button (click)="abrirCajon1()"
+    mat-stroked-button  
+    class="flex-icon" >
+        <mat-icon>home</mat-icon>
+        <p class="p">Cajon1</p>
     </button>
-    <button mat-stroked-button color="primary" (click)="abrirCajon2()">
-        <mat-icon>home</mat-icon>cajon2
+    <button (click)="abrirCajon2()"
+    mat-stroked-button  color="primary"
+    class="flex-icon" >
+        <mat-icon>home</mat-icon>
+        <p class="p">Cajon2</p>
     </button>
-    <button mat-stroked-button color="accent" (click)="abrirCajon3()">
-        <mat-icon>home</mat-icon>cajon3
+    <button (click)="abrirCajon3()"
+    mat-stroked-button  color="accent"
+    class="flex-icon" >
+        <mat-icon>home</mat-icon>
+        <p class="p">Cajon3</p>
     </button>
     <button mat-stroked-button color="warn">
         <mat-icon>home</mat-icon>
@@ -82,7 +91,7 @@
     <button mat-stroked-button disabled>
         <mat-icon>home</mat-icon>
     </button>
-    <a mat-stroked-button routerLink=".">
-        <mat-icon>home</mat-icon>
+    <a mat-stroked-button routerLink="../">
+        <mat-icon>exit_to_app</mat-icon>
     </a>
 </div>
