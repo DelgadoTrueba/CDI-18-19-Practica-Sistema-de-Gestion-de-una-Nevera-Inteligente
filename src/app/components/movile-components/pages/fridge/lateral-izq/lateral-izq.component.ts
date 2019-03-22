@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 //objeto con la información de los alimentos//
-import { alimentosLateralIzq } from 'src/app/model/alimentos/alimentos';
+import { AlimentosService } from 'src/app/services/alimentos.service';
 
 
 @Component({
@@ -10,7 +10,8 @@ import { alimentosLateralIzq } from 'src/app/model/alimentos/alimentos';
 })
 export class LateralIzqComponent implements OnInit {
 
-  alimentos = alimentosLateralIzq();
+  //inicializarla
+  alimentos;
 
   width:number;
   height:number;
@@ -21,9 +22,12 @@ export class LateralIzqComponent implements OnInit {
   mapCoorMantequilla: string;
 
   constructor(
+    private alimentosService: AlimentosService
   ) { 
     this.width= 0; 
     this.height = 0;
+
+    this.alimentos = this.alimentosService.alimentosLateralIzq();
   }
 
   ngOnInit() {

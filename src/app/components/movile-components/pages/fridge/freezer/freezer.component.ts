@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { alimentosFreezer } from 'src/app/model/alimentos/alimentos';
+//objeto con la información de los alimentos//
+import { AlimentosService } from 'src/app/services/alimentos.service';
 
 @Component({
   selector: 'app-freezer',
@@ -8,7 +9,8 @@ import { alimentosFreezer } from 'src/app/model/alimentos/alimentos';
 })
 export class FreezerComponent implements OnInit {
 
-  alimentos = alimentosFreezer();
+  //inicializarla
+  alimentos;
 
   width:number;
   height:number;
@@ -25,9 +27,12 @@ export class FreezerComponent implements OnInit {
   mapCoorCarne: string;
 
   constructor(
+    private alimentosService: AlimentosService
   ) { 
     this.width= 0; 
     this.height = 0;
+
+    this.alimentos = this.alimentosService.alimentosFreezer();
   }
 
   ngOnInit() {

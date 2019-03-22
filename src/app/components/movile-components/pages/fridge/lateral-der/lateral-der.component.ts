@@ -1,7 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-/*alimentos*/
-import { alimentosLateralDer } from 'src/app/model/alimentos/alimentos';
-
+//objeto con la información de los alimentos//
+import { AlimentosService } from 'src/app/services/alimentos.service';
 @Component({
   selector: 'app-lateral-der',
   templateUrl: './lateral-der.component.html',
@@ -9,7 +8,8 @@ import { alimentosLateralDer } from 'src/app/model/alimentos/alimentos';
 })
 export class LateralDerComponent implements OnInit {
 
-  alimentos = alimentosLateralDer();
+   //inicializarla
+   alimentos;
 
   width:number;
   height:number;
@@ -22,9 +22,12 @@ export class LateralDerComponent implements OnInit {
   mapCoorCoke: string;
 
   constructor(
+    private alimentosService: AlimentosService
   ) { 
     this.width= 0; 
     this.height = 0;
+
+    this.alimentos = this.alimentosService.alimentosLateralDer();
   }
 
   ngOnInit() {

@@ -90,18 +90,31 @@
         (click)="lowerRight()">
     </map>
 
+    
+
     <div id="navegadorFridge">
-      <button mat-stroked-button>
-          <mat-icon>home</mat-icon>
+      <button (click)="anadirPescado()"
+      mat-stroked-button class="flex-icon">
+          <mat-icon>home</mat-icon> 
+          <p class="p">P</p>
       </button>
-      <button mat-stroked-button color="primary">
+      <button (click)="anadirLeche()"
+      mat-stroked-button color="primary"
+      class="flex-icon">
           <mat-icon>home</mat-icon>
+          <p class="p">L</p>
       </button>
-      <button mat-stroked-button color="accent">
+      <button (click)="anadirQueso()" 
+      mat-stroked-button color="accent"
+      class="flex-icon">
           <mat-icon>home</mat-icon>
+          <p class="p">Q</p>
       </button>
-      <button mat-stroked-button color="warn">
+      <button (click)="anadirHelado()"
+      mat-stroked-button color="warn"
+      class="flex-icon">
           <mat-icon>home</mat-icon>
+          <p class="p">H</p>
       </button>
       <button mat-stroked-button disabled>
           <mat-icon>home</mat-icon>

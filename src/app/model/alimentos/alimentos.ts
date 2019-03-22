@@ -1,4 +1,5 @@
-let state = [
+export let alimentos = [
+    //0
     {
         id: "agua",
         nombre: "Agua", 
@@ -14,6 +15,7 @@ let state = [
             }
         }
     },
+    //1
     {
         id: "broccoli",
         nombre: "Broccoli", 
@@ -29,6 +31,7 @@ let state = [
             }
         }
     },
+    //2
     {
         id: "carne",
         nombre: "Carne", 
@@ -44,6 +47,7 @@ let state = [
             }
         }
     },
+    //3
     {
         id: "carne-congelada",
         nombre: "Carne Congelada",
@@ -56,6 +60,7 @@ let state = [
             }
         }
     },
+    //4
     {
         id: "cereza",
         nombre: "Cereza", 
@@ -71,6 +76,7 @@ let state = [
             }
         }
     },
+    //5
     {
         id: "churros",
         nombre: "Churros", 
@@ -83,6 +89,7 @@ let state = [
             }
         }
     },
+    //6
     {
         id: "cocaCola",
         nombre: "CocaCola",
@@ -98,6 +105,7 @@ let state = [
             }
         }
     },
+    //7
     {
         id: "coliflor",
         nombre: "Coliflor", 
@@ -113,6 +121,7 @@ let state = [
             }
         }
     },
+    //8
     {
         id: "fanta",
         nombre: "Fanta",  
@@ -128,6 +137,7 @@ let state = [
             }
         }
     },
+    //9
     {
         id: "helado",
         nombre: "Helado", 
@@ -140,6 +150,7 @@ let state = [
             }
         }
     },
+    //10
     {
         id: "huevos",
         nombre: "Huevos", 
@@ -155,6 +166,7 @@ let state = [
             }
         }
     },
+    //11
     {
         id: "leche",
         nombre: "Leche", 
@@ -170,6 +182,7 @@ let state = [
             }
         }
     },
+    //12
     {
         id: "mantequilla",
         nombre: "Mantequilla", 
@@ -185,6 +198,7 @@ let state = [
             }
         }
     },
+    //13
     {
         id: "manzana",
         nombre: "Manzana", 
@@ -200,6 +214,7 @@ let state = [
             }
         }
     },
+    //14
     {
         id: "melon",
         nombre: "Melon", 
@@ -215,6 +230,7 @@ let state = [
             }
         }
     },
+    //15
     {
         id: "patatas-congeladas",
         nombre: "Patatas Congeladas", 
@@ -227,6 +243,7 @@ let state = [
             }
         }
     },
+    //16
     {
         id: "pepino",
         nombre: "Pepino", 
@@ -242,6 +259,7 @@ let state = [
             }
         }
     },
+    //17
     {
         id: "pera",
         nombre: "Pera", 
@@ -257,6 +275,7 @@ let state = [
             }
         }
     },
+    //18
     {
         id: "pescado",
         nombre: "Pescado", 
@@ -272,6 +291,7 @@ let state = [
             }
         }
     },
+    //19
     {
         id: "pescado-congelado",
         nombre: "Pescado Congelado", 
@@ -284,6 +304,7 @@ let state = [
             }
         }
     },
+    //20
     {
         id: "pimiento",
         nombre: "Pimiento", 
@@ -299,6 +320,7 @@ let state = [
             }
         }
     },
+    //21
     {
         id: "pizza-congelada",
         nombre: "Pizza Congelada", 
@@ -311,6 +333,7 @@ let state = [
             }
         }
     },
+    //22
     {
         id: "platano",
         nombre: "Platano", 
@@ -326,6 +349,7 @@ let state = [
             }
         }
     },
+    //23
     {
         id: "pollo",
         nombre: "Pollo", 
@@ -341,6 +365,7 @@ let state = [
             }
         }
     },
+    //24
     {
         id: "queso",
         nombre: "Queso", 
@@ -356,6 +381,7 @@ let state = [
             }
         }
     },
+    //25
     {
         id: "salchicha",
         nombre: "Salchicha", 
@@ -371,6 +397,7 @@ let state = [
             }
         }
     },
+    //26
     {
         id: "salsaDeTomate",
         nombre: "SalsaDeTomate", 
@@ -386,6 +413,7 @@ let state = [
             }
         }
     },
+    //27
     {
         id: "sprite",
         nombre: "Sprite", 
@@ -401,6 +429,7 @@ let state = [
             }
         }
     },
+    //28
     {
         id: "tarta",
         nombre: "Tarta", 
@@ -413,6 +442,7 @@ let state = [
         cantidad: 0,
         cajon: 0
     },
+    //29
     {
         id: "verduras-congeladas",
         nombre: "Verduras Congeladas",  
@@ -425,6 +455,7 @@ let state = [
             }
         }
     },
+    //30
     {
         id: "yogurt",
         nombre: "Yogurt", 
@@ -440,6 +471,7 @@ let state = [
             }
         }
     },
+    //31
     {
         id: "zanahoria",
         nombre: "Zanahoria",  
@@ -455,6 +487,7 @@ let state = [
             }
         }
     },
+    //32
     {
         id: "zumo",
         nombre: "Zumo de Naranja", 
@@ -471,100 +504,3 @@ let state = [
         }
     },
 ];
-
-function isContent(id: string, ids:Array<any>){
-    for(let i=0; i<ids.length; i++){
-        if(ids[i] === id){
-            return true;
-        }
-    }
-    return false;
-}
-
-export function alimentosMainFridge(){
-    let ids = [
-        "broccoli",
-        "carne",
-        "cereza",
-        "coliflor",
-        "huevos",
-        "manzana",
-        "melon",
-        "pepino",
-        "pera",
-        "pescado",
-        "pimiento",
-        "platano",
-        "pollo",
-        "salchicha",
-        "zanahoria",
-        ]
-    return state.filter( element => isContent(element.id, ids) );
-}
-
-export function alimentosAllFridge(){
-    let ids = [
-        "agua",
-        "broccoli",
-        "carne",
-        "cereza",
-        "cocaCola",
-        "coliflor",
-        "fanta",
-        "huevos",
-        "leche",
-        "mantequilla",
-        "manzana",
-        "melon",
-        "pepino",
-        "pera",
-        "pescado",
-        "pimiento",
-        "platano",
-        "pollo",
-        "queso",
-        "salchicha",
-        "salsaDeTomate",
-        "sprite",
-        "yogurt",
-        "zanahoria",
-        "zumo"
-        ]
-    return state.filter( element => isContent(element.id, ids) );
-}
-
-export function alimentosLateralIzq(){
-    let ids = [
-        "agua",
-        "leche",
-        "mantequilla",
-        "salsaDeTomate",
-        ]
-    return state.filter( element => isContent(element.id, ids) );
-}
-
-export function alimentosLateralDer(){
-    let ids = [
-        "cocaCola",
-        "fanta",
-        "queso",
-        "sprite",
-        "yogurt",
-        "zumo"
-        ]
-    return state.filter( element => isContent(element.id, ids) );
-}
-
-export function alimentosFreezer(){
-    let ids = [
-        "carne-congelada",
-        "churros",
-        "helado",
-        "patatas-congeladas",
-        "pescado-congelado",
-        "pizza-congelada",
-        "tarta",
-        "verduras-congeladas",
-        ]
-    return state.filter( element => isContent(element.id, ids) );
-}

@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 //objeto con la información de los alimentos//
-import { alimentosAllFridge } from 'src/app/model/alimentos/alimentos';
+import { AlimentosService } from 'src/app/services/alimentos.service';
 
 
 @Component({
@@ -12,7 +12,8 @@ import { alimentosAllFridge } from 'src/app/model/alimentos/alimentos';
 })
 export class AllFridgeComponent implements OnInit {
 
-  alimentos = alimentosAllFridge();
+  //inicializarla
+  alimentos;
 
   width:number;
   height:number;
@@ -47,13 +48,16 @@ export class AllFridgeComponent implements OnInit {
   lateral: string;
 
   constructor(
-    private router: Router, private r:ActivatedRoute
+    private router: Router, private r:ActivatedRoute,
+    private alimentosService: AlimentosService
   ) { 
     this.width= 0; 
     this.height = 0;
 
     this.top= 0; 
     this.left = 0;
+
+    this.alimentos = this.alimentosService.alimentosAllFridge();
   }
 
   ngOnInit() {
@@ -332,6 +336,30 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
   lateralDer(){
     console.log("lateralDer")
     this.router.navigate(["../rightSide"], { relativeTo: this.r });
+  }
+
+  anadirPescado(){
+    console.log(this.alimentosService.getPescado());
+    this.alimentosService.setPescado(10);
+    console.log(this.alimentosService.getPescado());
+  }
+
+  anadirLeche(){
+    console.log(this.alimentosService.getLeche());
+    this.alimentosService.setLeche(10);
+    console.log(this.alimentosService.getLeche());
+  }
+
+  anadirQueso(){
+    console.log(this.alimentosService.getQueso());
+    this.alimentosService.setQueso(10);
+    console.log(this.alimentosService.getQueso());
+  }
+
+  anadirHelado(){
+    console.log(this.alimentosService.getHelado());
+    this.alimentosService.setHelado(10);
+    console.log(this.alimentosService.getHelado());
   }
 
 }
