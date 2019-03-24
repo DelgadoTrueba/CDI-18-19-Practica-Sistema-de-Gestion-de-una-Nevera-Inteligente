@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 //objeto con la información de los alimentos//
@@ -10,10 +10,11 @@ import { AlimentosService } from 'src/app/services/alimentos.service';
   templateUrl: './allFridge.component.html',
   styleUrls: ['./allFridge.component.css']
 })
-export class AllFridgeComponent implements OnInit {
+export class AllFridgeComponent implements OnInit, OnDestroy {
 
   //inicializarla
   alimentos;
+  subscribeServiceAlimentos;
 
   width:number;
   height:number;
@@ -56,12 +57,16 @@ export class AllFridgeComponent implements OnInit {
 
     this.top= 0; 
     this.left = 0;
-
-    this.alimentos = this.alimentosService.alimentosAllFridge();
   }
 
   ngOnInit() {
-    console.log(this.alimentos);
+    this.subscribeServiceAlimentos = this.alimentosService.notification$.subscribe(
+      (alimentos) => {
+        let filterFunction = this.alimentosService.alimentosAllFridgeFilter
+        this.alimentos = alimentos.filter( (item) => filterFunction(item) );
+        console.log(this.alimentos);
+      }
+    );
     
     this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth) : this.height;
@@ -84,6 +89,10 @@ export class AllFridgeComponent implements OnInit {
     this.left = (window.innerWidth/2) - (this.width/2);
 
     this.calcularMapArea();
+  }
+
+  ngOnDestroy() {
+    this.subscribeServiceAlimentos.unsubscribe();
   }
 
   calcularMapArea(){
@@ -338,28 +347,21 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
     this.router.navigate(["../rightSide"], { relativeTo: this.r });
   }
 
+  /*LOGICA ALIMENTOS*/
   anadirPescado(){
-    console.log(this.alimentosService.getPescado());
     this.alimentosService.setPescado(10);
-    console.log(this.alimentosService.getPescado());
   }
 
   anadirLeche(){
-    console.log(this.alimentosService.getLeche());
     this.alimentosService.setLeche(10);
-    console.log(this.alimentosService.getLeche());
   }
 
   anadirQueso(){
-    console.log(this.alimentosService.getQueso());
     this.alimentosService.setQueso(10);
-    console.log(this.alimentosService.getQueso());
   }
 
   anadirHelado(){
-    console.log(this.alimentosService.getHelado());
     this.alimentosService.setHelado(10);
-    console.log(this.alimentosService.getHelado());
   }
 
 }
