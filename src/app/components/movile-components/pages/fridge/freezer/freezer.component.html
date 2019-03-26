@@ -3,28 +3,28 @@
         <map name=recortes id=recortes>
               <!--helado-->
               <area shape=rect
-              [attr.coords]="mapCoorHelado" class="pointer">
+              [attr.coords]="mapCoorHelado" class="pointer" (click)="openDialog('helado')">
               <!--churro-->
               <area shape=rect
-              [attr.coords]="mapCoorChurro" class="pointer">
+              [attr.coords]="mapCoorChurro" class="pointer" (click)="openDialog('churros')">
                <!--Tarta-->
               <area shape=rect
-               [attr.coords]="mapCoorTarta" class="pointer">
+               [attr.coords]="mapCoorTarta" class="pointer" (click)="openDialog('tarta')">
                 <!--Pizza-->
               <area shape=rect
-               [attr.coords]="mapCoorPizza" class="pointer">
+               [attr.coords]="mapCoorPizza" class="pointer" (click)="openDialog('pizza-congelada')">
                <!--Patatas-->
               <area shape=rect
-               [attr.coords]="mapCoorPatata" class="pointer">
+               [attr.coords]="mapCoorPatata" class="pointer" (click)="openDialog('patatas-congeladas')">
                <!--Verduras-->
               <area shape=rect
-               [attr.coords]="mapCoorVerduras" class="pointer">
+               [attr.coords]="mapCoorVerduras" class="pointer" (click)="openDialog('verduras-congeladas')">
                <!--Pescado-->
               <area shape=rect
-              [attr.coords]="mapCoorPescado" class="pointer">
+              [attr.coords]="mapCoorPescado" class="pointer" (click)="openDialog('pescado-congelado')">
               <!--Carne-->
               <area shape=rect
-                [attr.coords]="mapCoorCarne" class="pointer">
+                [attr.coords]="mapCoorCarne" class="pointer" (click)="openDialog('carne-congelada')">
         </map>
         
         <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
