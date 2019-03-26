@@ -29,11 +29,11 @@
         <!--Imagenes de los alimentos-->
         <div *ngFor="let alimento of alimentos">
                 <img *ngIf="alimento.cantidad > 0"
-                src="{{alimento.rutaOk}}"
+                src="{{alimento.img.rightSide.rutaOk}}"
                 class="imagen" usemap=#recortes> 
     
                 <img *ngIf="alimento.cantidad === 0"
-                src="{{alimento.rutaEmpty}}"
+                src="{{alimento.img.rightSide.rutaEmpty}}"
                 class="imagen" usemap=#recortes> 
             </div>
            <!--Fin Imagenes de los alimentos-->
@@ -54,4 +54,24 @@
           </defs>
       </svg>
     -->
+    <div id="navegadorFridge">
+        <button mat-stroked-button>
+            <mat-icon>home</mat-icon>
+        </button>
+        <button mat-stroked-button color="primary">
+            <mat-icon>home</mat-icon>
+        </button>
+        <button mat-stroked-button color="accent">
+            <mat-icon>home</mat-icon>
+        </button>
+        <button mat-stroked-button color="warn">
+            <mat-icon>home</mat-icon>
+        </button>
+        <button mat-stroked-button disabled>
+            <mat-icon>home</mat-icon>
+        </button>
+        <a mat-stroked-button routerLink="../">
+            <mat-icon>exit_to_app</mat-icon>
+        </a>
+    </div>
 </div>

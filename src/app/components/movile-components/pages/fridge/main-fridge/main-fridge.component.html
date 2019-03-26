@@ -54,6 +54,8 @@
       
           <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
         <img id=capaRecorte src="../../../../../../assets/img/main/nevera-centro.png" >
+        <!--cajon abierto-->
+        <img *ngIf="isOpen===true" id=capaRecorte src="../../../../../../assets/img/main/nevera-cajon-abierto.png" >
         
         </map>
 
@@ -62,11 +64,11 @@
             <!--Imagenes de los alimentos-->
             <div *ngFor="let alimento of alimentos">
                 <img *ngIf="alimento.cantidad > 0"
-                src="{{alimento.rutaOk}}"
+                src="{{alimento.img.main.rutaOk}}"
                 class="imagen" usemap=#recortes> 
     
                 <img *ngIf="alimento.cantidad === 0"
-                src="{{alimento.rutaEmpty}}"
+                src="{{alimento.img.main.rutaEmpty}}"
                 class="imagen" usemap=#recortes> 
             </div>
            <!--Fin Imagenes de los alimentos-->
@@ -94,4 +96,27 @@
           </defs>
       </svg>
     -->
+    <div id="navegadorFridge">
+        <button (click)="abrirCajon()"
+        class="flex-icon"
+        mat-stroked-button>
+            <mat-icon>home</mat-icon>
+            <p class="p">Cajon1</p>
+        </button>
+        <button mat-stroked-button color="primary">
+            <mat-icon>home</mat-icon>
+        </button>
+        <button mat-stroked-button color="accent">
+            <mat-icon>home</mat-icon>
+        </button>
+        <button mat-stroked-button color="warn">
+            <mat-icon>home</mat-icon>
+        </button>
+        <button mat-stroked-button disabled>
+            <mat-icon>home</mat-icon>
+        </button>
+        <a mat-stroked-button routerLink="../">
+            <mat-icon>exit_to_app</mat-icon>
+        </a>
+    </div>
 </div>

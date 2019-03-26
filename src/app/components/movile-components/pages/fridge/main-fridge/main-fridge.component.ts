@@ -1,21 +1,25 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 
 //objeto con la información de los alimentos//
-import { AlimentosMainFridge } from 'src/app/model/alimentos/alimentosMainFridge';
+import { AlimentosService } from 'src/app/services/alimentos.service';
 
 @Component({
   selector: 'app-main-fridge',
   templateUrl: './main-fridge.component.html',
   styleUrls: ['./main-fridge.component.css']
 })
-export class MainFridgeComponent implements OnInit {
+export class MainFridgeComponent implements OnInit, OnDestroy {
 
-  alimentos = AlimentosMainFridge;
+  //inicializarla
+  alimentos;
+  subscribeServiceAlimentos;
 
   width:number;
   height:number;
   top:number;
   left:number;
+
+  isOpen: boolean = false;
 
   mapCoorPescado: string;
   mapCoorCarne: string;
@@ -33,14 +37,24 @@ export class MainFridgeComponent implements OnInit {
   mapCoorMelon: string;
   mapCoorPera: string;
 
+  mapCoorCajon: string;
 
   constructor(
+    private alimentosService: AlimentosService
   ) { 
     this.width= 0; 
     this.height = 0;
   }
 
   ngOnInit() {
+    this.subscribeServiceAlimentos = this.alimentosService.notification$.subscribe(
+      (alimentos) => {
+        let filterFunction = this.alimentosService.alimentosMainFridgeFilter
+        this.alimentos = alimentos.filter( (item) => filterFunction(item) );
+        console.log(this.alimentos);
+      }
+    );
+
     this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.9) : this.height;
     
@@ -63,6 +77,10 @@ export class MainFridgeComponent implements OnInit {
     this.calcularMapArea();
   }
 
+  ngOnDestroy() {
+    this.subscribeServiceAlimentos.unsubscribe();
+  }
+
   calcularMapArea(){
     this.calcularPescado();
     this.calcularCarne();
@@ -79,6 +97,9 @@ export class MainFridgeComponent implements OnInit {
     this.calcularPlatano();
     this.calcularMelon();
     this.calcularPera();
+
+    this.calcularCajon();
+
   }
 
   calcularPescado(){
@@ -229,6 +250,22 @@ export class MainFridgeComponent implements OnInit {
     let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
     
     this.mapCoorPera = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+
+  }
+
+  calcularCajon(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.03 ); coord1y = Math.round( this.height * 0.77 ); coord2x = Math.round( this.width * 0.97 ); coord2y = Math.round( this.height * 0.99 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorCajon = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+
+  }
+
+  abrirCajon(){
+    this.isOpen = !this.isOpen;
   }
   
 

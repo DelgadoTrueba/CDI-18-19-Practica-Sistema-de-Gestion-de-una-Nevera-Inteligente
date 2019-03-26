@@ -1,14 +1,16 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { AlimentosRightSide } from 'src/app/model/alimentos/alimentosRightSide';
-
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
+//objeto con la información de los alimentos//
+import { AlimentosService } from 'src/app/services/alimentos.service';
 @Component({
   selector: 'app-lateral-der',
   templateUrl: './lateral-der.component.html',
   styleUrls: ['./lateral-der.component.css']
 })
-export class LateralDerComponent implements OnInit {
+export class LateralDerComponent implements OnInit, OnDestroy {
 
-  alimentos = AlimentosRightSide;
+   //inicializarla
+   alimentos;
+   subscribeServiceAlimentos;
 
   width:number;
   height:number;
@@ -21,12 +23,21 @@ export class LateralDerComponent implements OnInit {
   mapCoorCoke: string;
 
   constructor(
+    private alimentosService: AlimentosService
   ) { 
     this.width= 0; 
     this.height = 0;
   }
 
   ngOnInit() {
+    this.subscribeServiceAlimentos = this.alimentosService.notification$.subscribe(
+      (alimentos) => {
+        let filterFunction = this.alimentosService.alimentosLateralDerFilter;
+        this.alimentos = alimentos.filter( (item) => filterFunction(item) );
+        console.log(this.alimentos);
+      }
+    );
+   
     this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.95) : this.height;
     
@@ -43,6 +54,10 @@ export class LateralDerComponent implements OnInit {
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
 
     this.calcularMapArea();
+  }
+
+  ngOnDestroy() {
+    this.subscribeServiceAlimentos.unsubscribe();
   }
 
   calcularMapArea(){

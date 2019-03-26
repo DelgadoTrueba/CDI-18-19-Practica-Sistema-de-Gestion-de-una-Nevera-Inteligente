@@ -1,15 +1,18 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 //objeto con la información de los alimentos//
-import { AlimentosLeftSide } from 'src/app/model/alimentos/alimentosLeftSide';
+import { AlimentosService } from 'src/app/services/alimentos.service';
+
 
 @Component({
   selector: 'app-lateral-izq',
   templateUrl: './lateral-izq.component.html',
   styleUrls: ['./lateral-izq.component.css']
 })
-export class LateralIzqComponent implements OnInit {
+export class LateralIzqComponent implements OnInit, OnDestroy {
 
-  alimentos = AlimentosLeftSide;
+  //inicializarla
+  alimentos;
+  subscribeServiceAlimentos;
 
   width:number;
   height:number;
@@ -20,12 +23,21 @@ export class LateralIzqComponent implements OnInit {
   mapCoorMantequilla: string;
 
   constructor(
+    private alimentosService: AlimentosService
   ) { 
     this.width= 0; 
     this.height = 0;
   }
 
   ngOnInit() {
+    this.subscribeServiceAlimentos = this.alimentosService.notification$.subscribe(
+      (alimentos) => {
+        let filterFunction = this.alimentosService.alimentosLateralIzqFilter;
+        this.alimentos = alimentos.filter( (item) => filterFunction(item) );
+        console.log(this.alimentos);
+      }
+    );
+
     this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.95) : this.height;
     
@@ -42,6 +54,10 @@ export class LateralIzqComponent implements OnInit {
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
 
     this.calcularMapArea();
+  }
+
+  ngOnDestroy() {
+    this.subscribeServiceAlimentos.unsubscribe();
   }
 
   calcularMapArea(){

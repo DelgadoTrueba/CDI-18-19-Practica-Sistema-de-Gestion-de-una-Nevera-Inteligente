@@ -23,23 +23,28 @@
               <area shape=rect
               [attr.coords]="mapCoorPescado" class="pointer">
               <!--Carne-->
-             <area shape=rect
-              [attr.coords]="mapCoorCarne" class="pointer">
-
-          <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
-        <img id=capaRecorte src="../../../../../../assets/img/freezer/freezer.png" >
+              <area shape=rect
+                [attr.coords]="mapCoorCarne" class="pointer">
         </map>
+        
+        <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
+        <img id=capaRecorte src="../../../../../../assets/img/freezer/freezer.png">
+        <img *ngIf="arrayCajonIsOpen[0]" id=capaRecorte src="../../../../../../assets/img/freezer/freezer-cajon1-abierto.png" >
+        <img *ngIf="arrayCajonIsOpen[1]" id=capaRecorte src="../../../../../../assets/img/freezer/freezer-cajon2-abierto.png">
+        <img *ngIf="arrayCajonIsOpen[2]" id=capaRecorte src="../../../../../../assets/img/freezer/freezer-cajon3-abierto.png" >
       
           <!--USA EL MAPS: ES TRANSPARENTE-->
         <!--Imagenes de los alimentos-->
         <div *ngFor="let alimento of alimentos">
-                <img *ngIf="alimento.cantidad > 0"
-                src="{{alimento.rutaOk}}"
-                class="imagen" usemap=#recortes> 
-    
-                <img *ngIf="alimento.cantidad === 0"
-                src="{{alimento.rutaEmpty}}"
-                class="imagen" usemap=#recortes> 
+                <div *ngIf="arrayCajonIsOpen[alimento.cajon]">
+                    <img *ngIf="alimento.cantidad > 0"
+                    src="{{alimento.img.freezer.rutaOk}}"
+                    class="imagen" usemap=#recortes> 
+        
+                    <img *ngIf="alimento.cantidad === 0"
+                    src="{{alimento.img.freezer.rutaEmpty}}"
+                    class="imagen" usemap=#recortes> 
+                </div>
             </div>
            <!--Fin Imagenes de los alimentos-->
       
@@ -59,4 +64,34 @@
           </defs>
       </svg>
     -->
+</div>
+
+<div id="navegadorFridge">
+    <button (click)="abrirCajon1()"
+    mat-stroked-button  
+    class="flex-icon" >
+        <mat-icon>home</mat-icon>
+        <p class="p">Cajon1</p>
+    </button>
+    <button (click)="abrirCajon2()"
+    mat-stroked-button  color="primary"
+    class="flex-icon" >
+        <mat-icon>home</mat-icon>
+        <p class="p">Cajon2</p>
+    </button>
+    <button (click)="abrirCajon3()"
+    mat-stroked-button  color="accent"
+    class="flex-icon" >
+        <mat-icon>home</mat-icon>
+        <p class="p">Cajon3</p>
+    </button>
+    <button mat-stroked-button color="warn">
+        <mat-icon>home</mat-icon>
+    </button>
+    <button mat-stroked-button disabled>
+        <mat-icon>home</mat-icon>
+    </button>
+    <a mat-stroked-button routerLink="../">
+        <mat-icon>exit_to_app</mat-icon>
+    </a>
 </div>

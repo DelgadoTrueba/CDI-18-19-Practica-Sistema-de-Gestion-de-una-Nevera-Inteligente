@@ -5,12 +5,12 @@
     <div *ngIf="abiertoArriba">
       <div *ngFor="let alimento of alimentos">
           <img *ngIf="alimento.cantidad > 0"
-          src="{{alimento.rutaOk}}"
+          src="{{alimento.img.allFridge.rutaOk}}"
           class="imgSuperpuesta"  usemap="#image-map"
           appOverLap [top]="top" [left]="left" appStyleGetter [height]="height" [width]="width"> 
 
           <img *ngIf="alimento.cantidad === 0"
-          src="{{alimento.rutaEmpty}}"
+          src="{{alimento.img.allFridge.rutaEmpty}}"
           class="imgSuperpuesta"  usemap="#image-map"
           appOverLap [top]="top" [left]="left" appStyleGetter [height]="height" [width]="width"> 
       </div>
@@ -33,49 +33,95 @@
     <map name="image-map">
 
       <!--izq-->
-        <area target="" alt="hight-left" title="hight-left" coords={{mapCoorIZQ1}} shape="rect"
+        <area target="" alt="hight-left" title="hight-left" [attr.coords]="mapCoorIzq1" shape="rect"
         *ngIf="abiertoArriba" (click)="hightLeft()">
 
-        <area target="" alt="LATERAL1.1" title="LATERAL1.1" coords={{mapCoorIZQ2}} shape="rect"
+        <area target="" alt="LATERAL1.1" title="LATERAL1.1" [attr.coords]="mapCoorIzqLateral1" shape="rect"
         *ngIf="abiertoArriba" (click)="lateralIzq()" class="zoom">
 
-        <area target="" alt="hight-left" title="hight-left" coords={{mapCoorIZQ3}} shape="rect"
+        <area target="" alt="hight-left" title="hight-left" [attr.coords]="mapCoorIzq2" shape="rect"
         *ngIf="abiertoArriba" (click)="hightLeft()">
 
-        <area target="" alt="LATERAL1.1" title="LATERAL1.2" coords={{mapCoorIZQ4}} shape="rect"
+        <area target="" alt="LATERAL1.1" title="LATERAL1.2" [attr.coords]="mapCoorIzqLateral2" shape="rect"
         *ngIf="abiertoArriba" (click)="lateralIzq()" class="zoom">
 
-        <area target="" alt="hight-left" title="hight-left" coords={{mapCoorIZQ5}} shape="rect"
+        <area target="" alt="hight-left" title="hight-left" [attr.coords]="mapCoorIzq3" shape="rect"
+        *ngIf="abiertoArriba" (click)="hightLeft()">
+
+        <area target="" alt="hight-left" title="hight-left" [attr.coords]="mapCoorIzqA" shape="rect"
+        *ngIf="abiertoArriba" (click)="hightLeft()">
+
+        <area target="" alt="hight-left" title="hight-left" [attr.coords]="mapCoorIzqB" shape="rect"
         *ngIf="abiertoArriba" (click)="hightLeft()">
       <!--fin izq-->
       
-        <area target="" alt="main" title="main" coords={{mapCoorCD}} shape="rect"
+        <area target="" alt="main" title="main" [attr.coords]="mapCoorNevera" shape="rect"
         (click)="main()" [style.cursor]=" abiertoArriba ? 'zoom-in' : 'pointer'">
       
         <!--der-->
-        <area target="" alt="hight-right" title="hight-right" coords={{mapCoorDER1}} shape="rect"
+        <area target="" alt="hight-right" title="hight-right" [attr.coords]="mapCoorDer1" shape="rect"
         *ngIf="abiertoArriba" (click)="hightRight()">
 
-        <area target="" alt="LATERAL2.1" title="LATERAL2.1" coords={{mapCoorDER2}} shape="rect"
+        <area target="" alt="LATERAL2.1" title="LATERAL2.1" [attr.coords]="mapCoorDerLateral1" shape="rect"
         *ngIf="abiertoArriba" (click)="lateralDer()" class="zoom">
 
-        <area target="" alt="hight-right" title="hight-right" coords={{mapCoorDER3}} shape="rect"
+        <area target="" alt="hight-right" title="hight-right" [attr.coords]="mapCoorDer2" shape="rect"
         *ngIf="abiertoArriba" (click)="hightRight()">
 
-        <area target="" alt="LATERAL2.2" title="LATERAL2.2" coords={{mapCoorDER4}} shape="rect"
+        <area target="" alt="LATERAL2.2" title="LATERAL2.2" [attr.coords]="mapCoorDerLateral2" shape="rect"
         *ngIf="abiertoArriba" (click)="lateralDer()" class="zoom">
 
-        <area target="" alt="hight-right" title="hight-right" coords={{mapCoorDER5}} shape="rect"
+        <area target="" alt="hight-right" title="hight-right" [attr.coords]="mapCoorDer3" shape="rect"
+        *ngIf="abiertoArriba" (click)="hightRight()">
+
+        <area target="" alt="hight-right" title="hight-right" [attr.coords]="mapCoorDerA" shape="rect"
+        *ngIf="abiertoArriba" (click)="hightRight()">
+
+        <area target="" alt="hight-right" title="hight-right" [attr.coords]="mapCoorDerB" shape="rect"
         *ngIf="abiertoArriba" (click)="hightRight()">
 
         <!--fin der-->
 
-        <area target="" alt="lower-left" title="lower-left" coords={{mapCoorGH}} shape="rect"
+        <area target="" alt="lower-left" title="lower-left" [attr.coords]="mapCoorAbajoIzq" shape="rect"
         (click)="lowerLeft()">
-        <area target="" alt="freezer" title="freezer" coords={{mapCoorIJ}} shape="rect"
+        <area target="" alt="freezer" title="freezer"  [attr.coords]="mapCoorCongelador" shape="rect"
         (click)="freezer()" [style.cursor]=" abiertoAbajo ? 'zoom-in' : 'pointer'">
-        <area target="" alt="lower-right" title="lower-right" coords={{mapCoorKL}} shape="rect"
+        <area target="" alt="lower-right" title="lower-right" [attr.coords]="mapCoorAbajoDer" shape="rect"
         (click)="lowerRight()">
     </map>
+
+    
+
+    <div id="navegadorFridge">
+      <button (click)="anadirPescado()"
+      mat-stroked-button class="flex-icon">
+          <mat-icon>home</mat-icon> 
+          <p class="p">P</p>
+      </button>
+      <button (click)="anadirLeche()"
+      mat-stroked-button color="primary"
+      class="flex-icon">
+          <mat-icon>home</mat-icon>
+          <p class="p">L</p>
+      </button>
+      <button (click)="anadirQueso()" 
+      mat-stroked-button color="accent"
+      class="flex-icon">
+          <mat-icon>home</mat-icon>
+          <p class="p">Q</p>
+      </button>
+      <button (click)="anadirHelado()"
+      mat-stroked-button color="warn"
+      class="flex-icon">
+          <mat-icon>home</mat-icon>
+          <p class="p">H</p>
+      </button>
+      <button mat-stroked-button disabled>
+          <mat-icon>home</mat-icon>
+      </button>
+      <a mat-stroked-button routerLink=".">
+          <mat-icon>home</mat-icon>
+      </a>
+  </div>
     
 </div>

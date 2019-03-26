@@ -68,3 +68,33 @@ svg, defs, clipPath {
     clip-path: url(#A3); 
 }
 */
+
+/*navegador*/
+#navegadorFridge{
+    background: pink;
+    min-height: 9%;
+    margin-top: 1%;
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.mat-stroked-button{
+    min-width: 15.75% !important;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+
+mat-icon{
+   font-size: 18px;
+}
+
+.flex-icon{
+    display: flex !important;
+    justify-content: center !important;
+}
+.p{
+    display: inline;
+}
+/*fin navegador*/

@@ -1,17 +1,22 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { AlimentosFreezer } from 'src/app/model/alimentos/alimentosFreezer';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
+//objeto con la información de los alimentos//
+import { AlimentosService } from 'src/app/services/alimentos.service';
 
 @Component({
   selector: 'app-freezer',
   templateUrl: './freezer.component.html',
   styleUrls: ['./freezer.component.css']
 })
-export class FreezerComponent implements OnInit {
+export class FreezerComponent implements OnInit, OnDestroy {
 
-  alimentos = AlimentosFreezer;
+  //inicializarla
+  alimentos;
+  subscribeServiceAlimentos;
 
   width:number;
   height:number;
+
+  arrayCajonIsOpen = [false, false, false]
 
   mapCoorHelado: string;
   mapCoorChurro: string;
@@ -23,12 +28,21 @@ export class FreezerComponent implements OnInit {
   mapCoorCarne: string;
 
   constructor(
+    private alimentosService: AlimentosService
   ) { 
     this.width= 0; 
     this.height = 0;
   }
 
   ngOnInit() {
+    this.subscribeServiceAlimentos = this.alimentosService.notification$.subscribe(
+      (alimentos) => {
+        let filterFunction = this.alimentosService.alimentosFreezerFilter;
+        this.alimentos = alimentos.filter( (item) => filterFunction(item) );
+        console.log(this.alimentos);
+      }
+    );
+    
     this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.9) : this.height;
     
@@ -47,6 +61,10 @@ export class FreezerComponent implements OnInit {
     this.calcularMapArea();
   }
 
+  ngOnDestroy() {
+    this.subscribeServiceAlimentos.unsubscribe();
+  }
+
   calcularMapArea(){
     this.calcularHelado();
     this.calcularChurro();
@@ -56,7 +74,6 @@ export class FreezerComponent implements OnInit {
     this.calcularVerduras();
     this.calcularPescado();
     this.calcularCarne();
-
   }
 
   calcularHelado(){
@@ -131,6 +148,18 @@ export class FreezerComponent implements OnInit {
 
   this.mapCoorCarne = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
   }
+
+
+  abrirCajon1(){
+    this.arrayCajonIsOpen[0] = !this.arrayCajonIsOpen[0] ;
+  }
+  abrirCajon2(){
+    this.arrayCajonIsOpen[1]  = !this.arrayCajonIsOpen[1] ;
+  }
+  abrirCajon3(){
+    this.arrayCajonIsOpen[2]  = !this.arrayCajonIsOpen[2] ;
+  }
+
   //A largo(X) B ancho(y)
   toStringCoor(ptoA, ptoB, ptoC, ptoD){
     
