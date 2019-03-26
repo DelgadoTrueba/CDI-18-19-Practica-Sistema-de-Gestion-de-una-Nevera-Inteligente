@@ -2,6 +2,8 @@ import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 
 //objeto con la información de los alimentos//
 import { AlimentosService } from 'src/app/services/alimentos.service';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { DialogInfoAlimentoComponent } from '../dialog-info-alimento/dialog-info-alimento.component';
 
 @Component({
   selector: 'app-main-fridge',
@@ -40,7 +42,8 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
   mapCoorCajon: string;
 
   constructor(
-    private alimentosService: AlimentosService
+    private alimentosService: AlimentosService,
+    private dialog: MatDialog
   ) { 
     this.width= 0; 
     this.height = 0;
@@ -276,5 +279,19 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
       " "+ parseInt(ptoB.y, 10) +","+ parseInt(ptoB.x, 10) +
       " "+ parseInt(ptoC.y, 10) +","+ parseInt(ptoC.x, 10) +
       " "+ parseInt(ptoD.y, 10) +","+ parseInt(ptoD.x, 10);
+  }
+
+  openDialog(alimentoNombre) {
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    if(alimentoNombre === "pescado"){
+      dialogConfig.data = this.alimentosService.getPescado();
+    }
+
+    this.dialog.open(DialogInfoAlimentoComponent, dialogConfig);
   }
 }

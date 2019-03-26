@@ -20,6 +20,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 //Importar Flex-Layout
@@ -50,6 +52,7 @@ import { FreezerComponent } from './components/movile-components/pages/fridge/fr
 import { LateralIzqComponent } from './components/movile-components/pages/fridge/lateral-izq/lateral-izq.component';
 import { LateralDerComponent } from './components/movile-components/pages/fridge/lateral-der/lateral-der.component';
 import { OverLapDirective } from './directives/over-lap.directive';
+import { DialogInfoAlimentoComponent } from './components/movile-components/pages/fridge/dialog-info-alimento/dialog-info-alimento.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -83,6 +86,8 @@ import { OverLapDirective } from './directives/over-lap.directive';
     LateralDerComponent,
     
     OverLapDirective,
+    
+    DialogInfoAlimentoComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
@@ -95,6 +100,7 @@ import { OverLapDirective } from './directives/over-lap.directive';
     MatTabsModule,
     MatIconModule,
     MatCardModule,
+    MatDialogModule,
 
     FlexLayoutModule
   ],
@@ -105,6 +111,7 @@ import { OverLapDirective } from './directives/over-lap.directive';
       useClass: MyHammerConfig
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogInfoAlimentoComponent]
 })
 export class AppModule { }

@@ -4,7 +4,7 @@
         <map name=recortes id=recortes>
               <!--pescado-->
               <area shape="rect"
-              [attr.coords]="mapCoorPescado" class="pointer">
+              [attr.coords]="mapCoorPescado" class="pointer" (click)="openDialogPescado('pescado')">
               <!--carne-->
               <area shape="rect"
               [attr.coords]="mapCoorCarne" class="pointer">

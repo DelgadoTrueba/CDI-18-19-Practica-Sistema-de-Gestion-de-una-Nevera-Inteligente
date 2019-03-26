@@ -159,140 +159,140 @@ export class AlimentosService {
     return isContent(element.id, ids);
   }
 
-  /*getters cantidad*/
+
+  /*getters*/
   getAgua(){
-    return this.alimentos[0].cantidad;
+    return this.alimentos[0];
   }
 
   getBroccoli(){
-    return this.alimentos[1].cantidad;
+    return this.alimentos[1];
   }
 
   getCarne(){
-    return this.alimentos[2].cantidad;
+    return this.alimentos[2];
   }
 
   getCarneCongelada(){
-    return this.alimentos[3].cantidad;
+    return this.alimentos[3];
   }
 
   getCereza(){
-    return this.alimentos[4].cantidad;
+    return this.alimentos[4];
   }
 
   getChurros(){
-    return this.alimentos[5].cantidad;
+    return this.alimentos[5];
   }
 
   getCocaCola(){
-    return this.alimentos[6].cantidad;
+    return this.alimentos[6];
   }
 
   getColiflor(){
-    return this.alimentos[7].cantidad;
+    return this.alimentos[7];
   }
 
   getFanta(){
-    return this.alimentos[8].cantidad;
+    return this.alimentos[8];
   }
 
   getHelado(){
-    return this.alimentos[9].cantidad;
+    return this.alimentos[9];
   }
 
   getHuevos(){
-    return this.alimentos[10].cantidad;
+    return this.alimentos[10];
   }
 
   getLeche(){
-    return this.alimentos[11].cantidad;
+    return this.alimentos[11];
   }
 
   getMantequilla(){
-    return this.alimentos[12].cantidad;
+    return this.alimentos[12];
   }
 
   getManzana(){
-    return this.alimentos[13].cantidad;
+    return this.alimentos[13];
   }
 
   getMelon(){
-    return this.alimentos[14].cantidad;
+    return this.alimentos[14];
   }
 
   getPatatasCongeladas(){
-    return this.alimentos[15].cantidad;
+    return this.alimentos[15];
   }
 
   getPepino(){
-    return this.alimentos[16].cantidad;
+    return this.alimentos[16];
   }
 
   getPera(){
-    return this.alimentos[17].cantidad;
+    return this.alimentos[17];
   }
 
   getPescado(){
-    return this.alimentos[18].cantidad;
+    return this.alimentos[18];
   }
 
   getPescadoCongelado(){
-    return this.alimentos[19].cantidad;
+    return this.alimentos[19];
   }
 
   getPimiento(){
-    return this.alimentos[20].cantidad;
+    return this.alimentos[20];
   }
 
   getPizzaCongelada(){
-    return this.alimentos[21].cantidad;
+    return this.alimentos[21];
   }
 
   getPlatano(){
-    return this.alimentos[22].cantidad;
+    return this.alimentos[22];
   }
 
   getPollo(){
-    return this.alimentos[23].cantidad;
+    return this.alimentos[23];
   }
 
   getQueso(){
-    return this.alimentos[24].cantidad;
+    return this.alimentos[24];
   }
 
   getSalchicha(){
-    return this.alimentos[25].cantidad;
+    return this.alimentos[25];
   }
 
   getSalsaDeTomate(){
-    return this.alimentos[26].cantidad;
+    return this.alimentos[26];
   }
 
   getSprite(){
-    return this.alimentos[27].cantidad;
+    return this.alimentos[27];
   }
 
   getTarta(){
-    return this.alimentos[28].cantidad;
+    return this.alimentos[28];
   }
 
   getVerdurasCongeladas(){
-    return this.alimentos[29].cantidad;
+    return this.alimentos[29];
   }
 
   getYogurt(){
-    return this.alimentos[30].cantidad;
+    return this.alimentos[30];
   }
 
   getZanahoria(){
-    return this.alimentos[31].cantidad;
+    return this.alimentos[31];
   }
 
   getZumo(){
-    return this.alimentos[32].cantidad;
+    return this.alimentos[32];
   }
-
-
+  
   /*setters de cantidad*/
   setAgua(cantidad){
     this.alimentos[0].cantidad = cantidad;
