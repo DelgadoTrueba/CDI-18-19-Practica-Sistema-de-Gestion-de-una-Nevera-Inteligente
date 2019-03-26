@@ -291,6 +291,51 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
     if(alimentoNombre === "pescado"){
       dialogConfig.data = this.alimentosService.getPescado();
     }
+    if(alimentoNombre === "carne"){
+      dialogConfig.data = this.alimentosService.getCarne();
+    }
+    if(alimentoNombre === "salchica"){
+      dialogConfig.data = this.alimentosService.getSalchicha();
+    }
+    if(alimentoNombre === "pollo"){
+      dialogConfig.data = this.alimentosService.getPollo();
+    }
+    if(alimentoNombre === "huevos"){
+      dialogConfig.data = this.alimentosService.getHuevos();
+    }
+    if(alimentoNombre === "pimineto"){
+      dialogConfig.data = this.alimentosService.getPimiento();
+    }
+    if(alimentoNombre === "zanahoria"){
+      dialogConfig.data = this.alimentosService.getZanahoria();
+    }
+    if(alimentoNombre === "pimiento"){
+      dialogConfig.data = this.alimentosService.getPimiento();
+    }
+    if(alimentoNombre === "pepino"){
+      dialogConfig.data = this.alimentosService.getPepino();
+    }
+    if(alimentoNombre === "coliflor"){
+      dialogConfig.data = this.alimentosService.getColiflor();
+    }
+    if(alimentoNombre === "broccoli"){
+      dialogConfig.data = this.alimentosService.getBroccoli();
+    }
+    if(alimentoNombre === "cherry"){
+      dialogConfig.data = this.alimentosService.getCereza();
+    }
+    if(alimentoNombre === "manzana"){
+      dialogConfig.data = this.alimentosService.getManzana();
+    }
+    if(alimentoNombre === "platano"){
+      dialogConfig.data = this.alimentosService.getPlatano();
+    }
+    if(alimentoNombre === "melon"){
+      dialogConfig.data = this.alimentosService.getMelon();
+    }
+    if(alimentoNombre === "pera"){
+      dialogConfig.data = this.alimentosService.getPera();
+    }
 
     this.dialog.open(DialogInfoAlimentoComponent, dialogConfig);
   }
