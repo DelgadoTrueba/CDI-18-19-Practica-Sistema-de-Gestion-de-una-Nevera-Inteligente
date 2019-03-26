@@ -1,6 +1,8 @@
 import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 //objeto con la información de los alimentos//
 import { AlimentosService } from 'src/app/services/alimentos.service';
+import { MatDialogConfig, MatDialog } from '@angular/material';
+import { DialogInfoAlimentoComponent } from '../dialog-info-alimento/dialog-info-alimento.component';
 
 
 @Component({
@@ -23,7 +25,8 @@ export class LateralIzqComponent implements OnInit, OnDestroy {
   mapCoorMantequilla: string;
 
   constructor(
-    private alimentosService: AlimentosService
+    private alimentosService: AlimentosService,
+    private dialog: MatDialog
   ) { 
     this.width= 0; 
     this.height = 0;
@@ -119,6 +122,29 @@ export class LateralIzqComponent implements OnInit, OnDestroy {
       " "+ parseInt(ptoB.y, 10) +","+ parseInt(ptoB.x, 10) +
       " "+ parseInt(ptoC.y, 10) +","+ parseInt(ptoC.x, 10) +
       " "+ parseInt(ptoD.y, 10) +","+ parseInt(ptoD.x, 10);
+  }
+
+  openDialog(alimentoNombre) {
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    if(alimentoNombre === "agua"){
+      dialogConfig.data = this.alimentosService.getAgua();
+    } else
+    if(alimentoNombre === "leche"){
+      dialogConfig.data = this.alimentosService.getLeche();
+    } else
+    if(alimentoNombre === "ketchup"){
+      dialogConfig.data = this.alimentosService.getSalsaDeTomate();
+    } else
+    if(alimentoNombre === "mantequilla"){
+      dialogConfig.data = this.alimentosService.getMantequilla();
+    } 
+
+    this.dialog.open(DialogInfoAlimentoComponent, dialogConfig);
   }
 
 }

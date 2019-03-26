@@ -1,6 +1,8 @@
 import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 //objeto con la información de los alimentos//
 import { AlimentosService } from 'src/app/services/alimentos.service';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { DialogInfoAlimentoComponent } from '../dialog-info-alimento/dialog-info-alimento.component';
 
 @Component({
   selector: 'app-freezer',
@@ -28,7 +30,8 @@ export class FreezerComponent implements OnInit, OnDestroy {
   mapCoorCarne: string;
 
   constructor(
-    private alimentosService: AlimentosService
+    private alimentosService: AlimentosService,
+    private dialog: MatDialog
   ) { 
     this.width= 0; 
     this.height = 0;
@@ -167,6 +170,42 @@ export class FreezerComponent implements OnInit, OnDestroy {
       " "+ parseInt(ptoB.y, 10) +","+ parseInt(ptoB.x, 10) +
       " "+ parseInt(ptoC.y, 10) +","+ parseInt(ptoC.x, 10) +
       " "+ parseInt(ptoD.y, 10) +","+ parseInt(ptoD.x, 10);
+  }
+
+
+  openDialog(alimentoNombre) {
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    if(alimentoNombre === "helado"){
+      dialogConfig.data = this.alimentosService.getHelado();
+    }
+	  else if(alimentoNombre === "carne-congelada"){
+      dialogConfig.data = this.alimentosService.getCarneCongelada();
+    }
+  	else if(alimentoNombre === "churros"){
+      dialogConfig.data = this.alimentosService.getChurros();
+    }
+  	else if(alimentoNombre === "patatas-congeladas"){
+      dialogConfig.data = this.alimentosService.getPatatasCongeladas();
+    }
+  	else if(alimentoNombre === "pescado-congelado"){
+      dialogConfig.data = this.alimentosService.getPescadoCongelado();
+    }
+  	else if(alimentoNombre === "pizza-congelada"){
+      dialogConfig.data = this.alimentosService.getPizzaCongelada();
+    }
+  	else if(alimentoNombre === "tarta"){
+      dialogConfig.data = this.alimentosService.getTarta();
+    }
+  	else if(alimentoNombre === "verduras-congeladas"){
+      dialogConfig.data = this.alimentosService.getVerdurasCongeladas();
+    }
+
+    this.dialog.open(DialogInfoAlimentoComponent, dialogConfig);
   }
 
 }
