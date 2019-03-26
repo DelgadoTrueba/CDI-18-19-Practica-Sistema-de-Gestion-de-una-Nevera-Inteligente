@@ -3,22 +3,22 @@
         <map name=recortes id=recortes>
               <!--queso-->
               <area shape=rect
-              [attr.coords]="mapCoorQueso" class="pointer">
+              [attr.coords]="mapCoorQueso" class="pointer" (click)="openDialog('queso')">
               <!--yogurt-->
               <area shape=rect
-              [attr.coords]="mapCoorYogurt" class="pointer">  
+              [attr.coords]="mapCoorYogurt" class="pointer" (click)="openDialog('yogurt')">  
                <!--zumo-->
                <area shape=rect
-               [attr.coords]="mapCoorZumo" class="pointer">
+               [attr.coords]="mapCoorZumo" class="pointer" (click)="openDialog('zumo')">
                <!--sprite-->
                <area shape=rect
-               [attr.coords]="mapCoorSprite" class="pointer"> 
+               [attr.coords]="mapCoorSprite" class="pointer" (click)="openDialog('sprite')"> 
                 <!--fanta-->
               <area shape=rect
-              [attr.coords]="mapCoorFanta" class="pointer">
+              [attr.coords]="mapCoorFanta" class="pointer" (click)="openDialog('fanta')">
               <!--coke-->
               <area shape=rect
-              [attr.coords]="mapCoorCoke" class="pointer"> 
+              [attr.coords]="mapCoorCoke" class="pointer" (click)="openDialog('coke')" > 
  
       
           <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->

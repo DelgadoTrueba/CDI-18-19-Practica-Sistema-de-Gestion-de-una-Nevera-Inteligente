@@ -1,6 +1,8 @@
 import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 //objeto con la información de los alimentos//
 import { AlimentosService } from 'src/app/services/alimentos.service';
+import { MatDialogConfig, MatDialog } from '@angular/material';
+import { DialogInfoAlimentoComponent } from '../dialog-info-alimento/dialog-info-alimento.component';
 @Component({
   selector: 'app-lateral-der',
   templateUrl: './lateral-der.component.html',
@@ -23,7 +25,8 @@ export class LateralDerComponent implements OnInit, OnDestroy {
   mapCoorCoke: string;
 
   constructor(
-    private alimentosService: AlimentosService
+    private alimentosService: AlimentosService,
+    private dialog: MatDialog
   ) { 
     this.width= 0; 
     this.height = 0;
@@ -136,6 +139,34 @@ export class LateralDerComponent implements OnInit, OnDestroy {
       " "+ parseInt(ptoB.y, 10) +","+ parseInt(ptoB.x, 10) +
       " "+ parseInt(ptoC.y, 10) +","+ parseInt(ptoC.x, 10) +
       " "+ parseInt(ptoD.y, 10) +","+ parseInt(ptoD.x, 10);
+  }
+  openDialog(alimentoNombre) {
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    if(alimentoNombre === "queso"){
+      dialogConfig.data = this.alimentosService.getQueso();
+    }
+    if(alimentoNombre === "fanta"){
+      dialogConfig.data = this.alimentosService.getFanta();
+    }
+    if(alimentoNombre === "coke"){
+      dialogConfig.data = this.alimentosService.getCocaCola();
+    }
+    if(alimentoNombre === "yogurt"){
+      dialogConfig.data = this.alimentosService.getYogurt();
+    }
+    if(alimentoNombre === "zumo"){
+      dialogConfig.data = this.alimentosService.getZumo();
+    }
+    if(alimentoNombre === "sprite"){
+      dialogConfig.data = this.alimentosService.getSprite();
+    }
+
+    this.dialog.open(DialogInfoAlimentoComponent, dialogConfig);
   }
 
 }
