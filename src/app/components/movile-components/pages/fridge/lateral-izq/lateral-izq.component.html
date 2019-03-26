@@ -3,16 +3,16 @@
         <map name=recortes id=recortes>
               <!--agua-->
               <area shape=rect
-              [attr.coords]="mapCoorAgua" class="pointer">
+              [attr.coords]="mapCoorAgua" class="pointer" (click)="openDialog('agua')">
               <!--leche-->
               <area shape=rect
-              [attr.coords]="mapCoorLeche" class="pointer">
+              [attr.coords]="mapCoorLeche" class="pointer" (click)="openDialog('leche')">
               <!--ketchup-->
               <area shape=rect
-              [attr.coords]="mapCoorKetchup" class="pointer">
+              [attr.coords]="mapCoorKetchup" class="pointer" (click)="openDialog('ketchup')">
               <!--mantequilla-->
               <area shape=rect
-              [attr.coords]="mapCoorMantequilla" class="pointer">
+              [attr.coords]="mapCoorMantequilla" class="pointer" (click)="openDialog('mantequilla')">
       
           
       
