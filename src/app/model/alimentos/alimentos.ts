@@ -503,4 +503,40 @@ export let alimentos = [
             }
         }
     },
+    //33
+    {
+        id: "carne-descongelada",
+        nombre: "carne descongelada", 
+        cantidad: 0,
+        img: {
+            main: {
+                rutaOk:"assets/img/main/carne-descongelada.png", 
+                rutaEmpty:"assets/img/main/carne-descongelada-cruz.png", 
+            },
+        }
+    },
+    //34
+    {
+        id: "pescado-descongelado",
+        nombre: "pescado descongelado", 
+        cantidad: 0,
+        img: {
+            main: {
+                rutaOk:"assets/img/main/pescado-descongelado.png", 
+                rutaEmpty:"assets/img/main/pescado-descongelado-cruz.png", 
+            },
+        }
+    },
+    //35
+    {
+        id: "tarta-descongelada",
+        nombre: "tarta descongelada", 
+        cantidad: 0,
+        img: {
+            main: {
+                rutaOk:"assets/img/main/tarta-descongelada.png", 
+                rutaEmpty:"assets/img/main/tarta-descongelada-cruz.png", 
+            },
+        }
+    },
 ];

@@ -49,6 +49,9 @@ export class AlimentosService {
         "pollo",
         "salchicha",
         "zanahoria",
+        "carne-descongelada",
+        "pescado-descongelado",
+        "tarta-descongelada",
         ]
     return  isContent(element.id, ids);
   }
@@ -292,6 +295,15 @@ export class AlimentosService {
   getZumo(){
     return this.alimentos[32];
   }
+  getCarneDescongelada(){
+    return this.alimentos[33];
+  }
+  getPescadoDescongelado(){
+    return this.alimentos[34];
+  }
+  getTartaDescongelada(){
+    return this.alimentos[35];
+  }
   
   /*setters de cantidad*/
 
@@ -465,6 +477,18 @@ export class AlimentosService {
     this.alimentos[32].cantidad = cantidad;
 	this.notify();
  }
+ setCarneDescongelada(cantidad){
+  this.alimentos[33].cantidad = cantidad;
+this.notify();
+}
+setPescadoDescongelado(cantidad){
+  this.alimentos[34].cantidad = cantidad;
+this.notify();
+}
+setTartaDescongelada(cantidad){
+  this.alimentos[35].cantidad = cantidad;
+this.notify();
+}
 
  /*decrementar*/
   decrementarCantidad(alimento){
@@ -637,6 +661,20 @@ export class AlimentosService {
 
   decrementarZumo(){
     this.alimentos[32].cantidad--;
+	  this.notify();
+  }
+  decrementarCarneDescongelada(){
+    this.alimentos[33].cantidad--;
+	  this.notify();
+  }
+
+  decrementarPescadoDescongelado(){
+    this.alimentos[34].cantidad--;
+	  this.notify();
+  }
+
+  decrementarTartaDescongelada(){
+    this.alimentos[35].cantidad--;
 	  this.notify();
   }
 
