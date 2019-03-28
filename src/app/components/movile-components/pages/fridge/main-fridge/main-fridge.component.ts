@@ -38,6 +38,10 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
   mapCoorPlatano: string;
   mapCoorMelon: string;
   mapCoorPera: string;
+  mapCoorCarneDescongelada: string;
+  mapCoorPescadoDescongelado: string;
+  mapCoorTartaDescongelada: string;
+
 
   mapCoorCajon: string;
 
@@ -100,6 +104,9 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
     this.calcularPlatano();
     this.calcularMelon();
     this.calcularPera();
+    this.calcularCarneDesongelada();
+    this.calcularPescadoDesongelado();
+    this.calcularTartaDesongelada();
 
     this.calcularCajon();
 
@@ -266,6 +273,36 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
     this.mapCoorCajon = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
 
   }
+  
+  calcularCarneDesongelada(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.08 ); coord1y = Math.round( this.height * 0.82 ); coord2x = Math.round( this.width * 0.3 ); coord2y = Math.round( this.height * 0.95 ); 
+    
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+    
+    this.mapCoorCarneDescongelada= mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+
+  }
+  calcularPescadoDesongelado(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.37 ); coord1y = Math.round( this.height * 0.82 ); coord2x = Math.round( this.width * 0.7 ); coord2y = Math.round( this.height * 0.97 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorPescadoDescongelado = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+    
+  }
+  calcularTartaDesongelada(){
+    let coord1x, coord1y, coord2x, coord2y;
+
+    coord1x = Math.round( this.width * 0.75 ); coord1y = Math.round( this.height * 0.82 ); coord2x = Math.round( this.width * 0.94 ); coord2y = Math.round( this.height * 0.97 ); 
+
+    let mapCoord = [ coord1x, coord1y, coord2x, coord2y];
+
+    this.mapCoorTartaDescongelada = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) return v_ant += `${v_act} `;else  return v_ant += `,${v_act} `;}, '');
+  }
 
   abrirCajon(){
     this.isOpen = !this.isOpen;
@@ -335,6 +372,15 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
     }
     if(alimentoNombre === "pera"){
       dialogConfig.data = this.alimentosService.getPera();
+    }
+    if(alimentoNombre === "carne-descongelada"){
+      dialogConfig.data = this.alimentosService.getCarneDescongelada();
+    }
+    if(alimentoNombre === "pescado-descongelado"){
+      dialogConfig.data = this.alimentosService.getPescadoDescongelado();
+    }
+    if(alimentoNombre === "tarta-descongelada"){
+      dialogConfig.data = this.alimentosService.getTartaDescongelada();
     }
 
     this.dialog.open(DialogInfoAlimentoComponent, dialogConfig);
