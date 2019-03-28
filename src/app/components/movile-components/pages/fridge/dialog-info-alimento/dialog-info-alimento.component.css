@@ -2,3 +2,39 @@
     background-image: url('/assets/img/all-fridge-con-alimentos/broccoli.png');
     background-size: cover;
   }
+
+mat-card-title{
+  font-size: 5em !important;
+}
+
+mat-card-subtitle{
+  font-size: 2em !important;
+}
+mat-card-actions{
+  text-align: center;
+}
+
+button{
+  margin: 1% !important;
+  width: 30% !important;
+
+  font-size: 1.5em;
+}
+
+.exit{
+  width: 95% !important;
+}
+
+@media (max-width: 600px) {
+  mat-card-title{
+    font-size: 3em !important;
+  }
+  
+  mat-card-subtitle{
+    font-size: 1.5em !important;
+  }
+
+  button{
+    width: 95% !important;
+  }
+}

@@ -2,11 +2,25 @@
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{alimento.nombre}}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
     <mat-card-subtitle>Cantidad: {{alimento.cantidad}}</mat-card-subtitle>
     <mat-card-subtitle>Fecha Caducidad: {{alimento.cantidad}}</mat-card-subtitle>
-  </mat-card-header>
+  </mat-card-content>
+  
   <mat-card-actions>
-    <button mat-button>Comprar</button>
-    <button mat-button (click)="close()">Cerrar</button>
+    <button mat-raised-button color="primary" (click)="comprar10()">
+        <mat-icon>store</mat-icon> Comprar
+    </button>
+    <button mat-raised-button color="accent" (click)="consumir()">
+        <mat-icon>restaurant</mat-icon> Consumir
+    </button>
+    <button mat-raised-button color="accent">
+        <mat-icon>swap_vert</mat-icon> Descongelar
+    </button>
+    <button mat-raised-button color="warn" class="exit" (click)="close()">
+        <mat-icon>close</mat-icon> Cerrar
+    </button>
   </mat-card-actions>
 </mat-card>

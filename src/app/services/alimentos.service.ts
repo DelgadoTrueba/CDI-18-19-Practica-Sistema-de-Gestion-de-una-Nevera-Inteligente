@@ -294,6 +294,13 @@ export class AlimentosService {
   }
   
   /*setters de cantidad*/
+
+  setCantidad(alimento, cantidad){
+    let pos = this.alimentos.indexOf(alimento);
+    this.alimentos[pos].cantidad = cantidad;
+	  this.notify();
+  }
+
   setAgua(cantidad){
     this.alimentos[0].cantidad = cantidad;
 	this.notify();
@@ -460,6 +467,14 @@ export class AlimentosService {
  }
 
  /*decrementar*/
+  decrementarCantidad(alimento){
+    let pos = this.alimentos.indexOf(alimento);
+    if(this.alimentos[pos].cantidad > 0){
+      this.alimentos[pos].cantidad--;
+      this.notify();
+    }
+  }
+
  decrementarAgua(){
   this.alimentos[0].cantidad--;
 	this.notify();
@@ -622,6 +637,7 @@ export class AlimentosService {
 
   decrementarZumo(){
     this.alimentos[32].cantidad--;
-	this.notify();
+	  this.notify();
   }
+
 }
