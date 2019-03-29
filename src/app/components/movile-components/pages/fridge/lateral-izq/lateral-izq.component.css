@@ -1,3 +1,21 @@
+
+.supermain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dosColumnas{
+    display: flex;
+    flex-direction: row;
+    justify-content:  center;
+}
+
+app-mostrador-de-alimentos{
+    margin-top: 2%;
+    width: 20%;
+}
+
 svg, defs, clipPath {
     height: 0; 
     position: absolute; 
@@ -13,7 +31,7 @@ svg, defs, clipPath {
     border-radius: 20px; 
     overflow: hidden; 
     
-    margin: 2% auto; 
+    margin-top: 2%; 
     
     background-color: gray;
     
@@ -80,9 +98,8 @@ svg, defs, clipPath {
     min-height: 9%;
     margin-top: 1%;
 
-    width: 100%;
+    width: 80%;
     display: flex;
-    align-items: center;
 }
 
 .mat-raised-button{

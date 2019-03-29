@@ -1,62 +1,67 @@
-<div id="main">
-    <figure id=figura appStyleGetter [height]="height" [width]="width">
-        <map name=recortes id=recortes>
-              <!--queso-->
-              <area shape=rect
-              [attr.coords]="mapCoorQueso" class="pointer" (click)="openDialog('queso')">
-              <!--yogurt-->
-              <area shape=rect
-              [attr.coords]="mapCoorYogurt" class="pointer" (click)="openDialog('yogurt')">  
-               <!--zumo-->
-               <area shape=rect
-               [attr.coords]="mapCoorZumo" class="pointer" (click)="openDialog('zumo')">
-               <!--sprite-->
-               <area shape=rect
-               [attr.coords]="mapCoorSprite" class="pointer" (click)="openDialog('sprite')"> 
-                <!--fanta-->
-              <area shape=rect
-              [attr.coords]="mapCoorFanta" class="pointer" (click)="openDialog('fanta')">
-              <!--coke-->
-              <area shape=rect
-              [attr.coords]="mapCoorCoke" class="pointer" (click)="openDialog('coke')" > 
- 
-      
-          <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
-        <img id=capaRecorte src="../../../../../../assets/img/rightSide/rightSide.png">
-        </map>
-      
-          <!--USA EL MAPS: ES TRANSPARENTE-->
-        <!--Imagenes de los alimentos-->
-        <div *ngFor="let alimento of alimentos">
-                <img *ngIf="alimento.cantidad > 0"
-                src="{{alimento.img.rightSide.rutaOk}}"
-                class="imagen" usemap=#recortes> 
-    
-                <img *ngIf="alimento.cantidad === 0"
-                src="{{alimento.img.rightSide.rutaEmpty}}"
-                class="imagen" usemap=#recortes> 
+<div class="supermain">
+        <div id="main">
+                <div class="dosColumnas">
+                        <figure id=figura appStyleGetter [height]="height" [width]="width">
+                                <map name=recortes id=recortes>
+                                      <!--queso-->
+                                      <area shape=rect
+                                      [attr.coords]="mapCoorQueso" class="pointer" (click)="openDialog('queso')">
+                                      <!--yogurt-->
+                                      <area shape=rect
+                                      [attr.coords]="mapCoorYogurt" class="pointer" (click)="openDialog('yogurt')">  
+                                       <!--zumo-->
+                                       <area shape=rect
+                                       [attr.coords]="mapCoorZumo" class="pointer" (click)="openDialog('zumo')">
+                                       <!--sprite-->
+                                       <area shape=rect
+                                       [attr.coords]="mapCoorSprite" class="pointer" (click)="openDialog('sprite')"> 
+                                        <!--fanta-->
+                                      <area shape=rect
+                                      [attr.coords]="mapCoorFanta" class="pointer" (click)="openDialog('fanta')">
+                                      <!--coke-->
+                                      <area shape=rect
+                                      [attr.coords]="mapCoorCoke" class="pointer" (click)="openDialog('coke')" > 
+                         
+                              
+                                  <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
+                                <img id=capaRecorte src="../../../../../../assets/img/rightSide/rightSide.png">
+                                </map>
+                              
+                                  <!--USA EL MAPS: ES TRANSPARENTE-->
+                                <!--Imagenes de los alimentos-->
+                                <div *ngFor="let alimento of alimentos">
+                                        <img *ngIf="alimento.cantidad > 0"
+                                        src="{{alimento.img.rightSide.rutaOk}}"
+                                        class="imagen" usemap=#recortes> 
+                            
+                                        <img *ngIf="alimento.cantidad === 0"
+                                        src="{{alimento.img.rightSide.rutaEmpty}}"
+                                        class="imagen" usemap=#recortes> 
+                                    </div>
+                                   <!--Fin Imagenes de los alimentos-->
+                              
+                              </figure>
+                              <app-mostrador-de-alimentos [alimentos]="alimentos"></app-mostrador-de-alimentos>
+                            
+                </div>
+                  <!--
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
+                      <defs>
+                          <clipPath id=A1>
+                              <polygon [attr.points]="mapCoorABCD"></polygon>
+                          </clipPath>
+                          <clipPath id=A2>
+                              <polygon [attr.points]="mapCoorMNOP" ></polygon>
+                          </clipPath>
+                          
+                           
+                      </defs>
+                  </svg>
+                -->
             </div>
-           <!--Fin Imagenes de los alimentos-->
-      
-      </figure>
-    
-      <!--
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
-          <defs>
-              <clipPath id=A1>
-                  <polygon [attr.points]="mapCoorABCD"></polygon>
-              </clipPath>
-              <clipPath id=A2>
-                  <polygon [attr.points]="mapCoorMNOP" ></polygon>
-              </clipPath>
-              
-               
-          </defs>
-      </svg>
-    -->
-    <div id="navegadorFridge">
-        <a mat-raised-button routerLink="../">
-            <mat-icon>exit_to_app</mat-icon>
-        </a>
-    </div>
+            <div id="navegadorFridge">
+                    <a mat-raised-button routerLink="../">
+                        <mat-icon>exit_to_app</mat-icon>
+                    </a>
+                </div>
 </div>

@@ -4,6 +4,17 @@
     align-items: center;
 }
 
+.dosColumnas{
+    display: flex;
+    flex-direction: row;
+    justify-content:  center;
+}
+
+app-mostrador-de-alimentos{
+    margin-top: 2%;
+    width: 20%;
+}
+
 svg, defs, clipPath {
     height: 0; 
     position: absolute; 
@@ -17,7 +28,7 @@ svg, defs, clipPath {
     border: 1px solid black; 
     border-radius: 20px; 
     overflow: hidden; 
- margin: 2% auto;
+    margin-top: 2%;
     
     background-color: gray;
     

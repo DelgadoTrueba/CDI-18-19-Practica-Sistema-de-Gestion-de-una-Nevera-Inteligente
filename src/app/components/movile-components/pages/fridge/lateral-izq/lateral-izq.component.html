@@ -1,60 +1,67 @@
-<div id="main">
-    <figure id=figura appStyleGetter [height]="height" [width]="width">
-        <map name=recortes id=recortes>
-              <!--agua-->
-              <area shape=rect
-              [attr.coords]="mapCoorAgua" class="pointer" (click)="openDialog('agua')">
-              <!--leche-->
-              <area shape=rect
-              [attr.coords]="mapCoorLeche" class="pointer" (click)="openDialog('leche')">
-              <!--ketchup-->
-              <area shape=rect
-              [attr.coords]="mapCoorKetchup" class="pointer" (click)="openDialog('ketchup')">
-              <!--mantequilla-->
-              <area shape=rect
-              [attr.coords]="mapCoorMantequilla" class="pointer" (click)="openDialog('mantequilla')">
-      
-          
-      
-          <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
-        <img id=capaRecorte src="../../../../../../assets/img/leftSide/leftSide.png" >
-        </map>
-      
-        <!--USA EL MAPS: ES TRANSPARENTE-->
-        <!--
-          <img src="../../../../../../assets/img/transparente.gif"
-        id=imagen usemap=#recortes>
-        -->
-         <!--Imagenes de los alimentos-->
-         <div *ngFor="let alimento of alimentos">
-                <img *ngIf="alimento.cantidad > 0"
-                src="{{alimento.img.leftSide.rutaOk}}"
-                class="imagen" usemap=#recortes> 
-    
-                <img *ngIf="alimento.cantidad === 0"
-                src="{{alimento.img.leftSide.rutaEmpty}}"
-                class="imagen" usemap=#recortes> 
+<div class="supermain">
+        <div id="main">
+                <div class="dosColumnas">
+                        <app-mostrador-de-alimentos [alimentos]="alimentos"></app-mostrador-de-alimentos>
+
+                        <figure id=figura appStyleGetter [height]="height" [width]="width">
+                                <map name=recortes id=recortes>
+                                      <!--agua-->
+                                      <area shape=rect
+                                      [attr.coords]="mapCoorAgua" class="pointer" (click)="openDialog('agua')">
+                                      <!--leche-->
+                                      <area shape=rect
+                                      [attr.coords]="mapCoorLeche" class="pointer" (click)="openDialog('leche')">
+                                      <!--ketchup-->
+                                      <area shape=rect
+                                      [attr.coords]="mapCoorKetchup" class="pointer" (click)="openDialog('ketchup')">
+                                      <!--mantequilla-->
+                                      <area shape=rect
+                                      [attr.coords]="mapCoorMantequilla" class="pointer" (click)="openDialog('mantequilla')">
+                              
+                                  
+                              
+                                  <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
+                                <img id=capaRecorte src="../../../../../../assets/img/leftSide/leftSide.png" >
+                                </map>
+                              
+                                <!--USA EL MAPS: ES TRANSPARENTE-->
+                                <!--
+                                  <img src="../../../../../../assets/img/transparente.gif"
+                                id=imagen usemap=#recortes>
+                                -->
+                                 <!--Imagenes de los alimentos-->
+                                 <div *ngFor="let alimento of alimentos">
+                                        <img *ngIf="alimento.cantidad > 0"
+                                        src="{{alimento.img.leftSide.rutaOk}}"
+                                        class="imagen" usemap=#recortes> 
+                            
+                                        <img *ngIf="alimento.cantidad === 0"
+                                        src="{{alimento.img.leftSide.rutaEmpty}}"
+                                        class="imagen" usemap=#recortes> 
+                                    </div>
+                                   <!--Fin Imagenes de los alimentos-->
+                              
+                              </figure>
+
+                </div>
+            <!--
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
+                      <defs>
+                          <clipPath id=A1>
+                              <polygon [attr.points]="mapCoorABCD"></polygon>
+                          </clipPath>
+                          <clipPath id=A2>
+                              <polygon [attr.points]="mapCoorMNOP" ></polygon>
+                          </clipPath>
+                          
+                           
+                      </defs>
+                  </svg>
+                -->
             </div>
-           <!--Fin Imagenes de los alimentos-->
-      
-      </figure>
-<!--
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
-          <defs>
-              <clipPath id=A1>
-                  <polygon [attr.points]="mapCoorABCD"></polygon>
-              </clipPath>
-              <clipPath id=A2>
-                  <polygon [attr.points]="mapCoorMNOP" ></polygon>
-              </clipPath>
-              
-               
-          </defs>
-      </svg>
-    -->
-    <div id="navegadorFridge">
-        <a mat-raised-button routerLink="../">
-            <mat-icon>exit_to_app</mat-icon>
-        </a>
-    </div>
+            <div id="navegadorFridge">
+                <a mat-raised-button routerLink="../">
+                    <mat-icon>exit_to_app</mat-icon>
+                </a>
+            </div>
 </div>
