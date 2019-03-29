@@ -84,7 +84,9 @@
                       
                       </figure>
             
-                      <app-mostrador-de-alimentos [alimentos]="alimentos"></app-mostrador-de-alimentos>
+                        <app-mostrador-de-alimentos *ngIf="!styleMobile" 
+                        [alimentos]="alimentos">
+                        </app-mostrador-de-alimentos>
                 </div>
                 <!--
                   <!-- AREA DE LA FIGURA 

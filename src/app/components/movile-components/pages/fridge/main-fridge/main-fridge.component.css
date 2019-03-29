@@ -94,8 +94,7 @@ svg, defs, clipPath {
 /*navegador*/
 #navegadorFridge{
     min-height: 9%;
-    margin-top: 1%;
-
+    
     width: 80%;
     display: flex;
 }

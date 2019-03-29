@@ -21,6 +21,8 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
   top:number;
   left:number;
 
+  styleMobile:boolean = false;
+
   isOpen: boolean = false;
 
   mapCoorPescado: string;
@@ -62,9 +64,12 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
       }
     );
 
-    this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
+    this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.75);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.9) : this.height;
     
+    if(window.innerWidth *0.7 <= window.innerHeight) this.styleMobile = true;
+    else this.styleMobile = false;
+
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
     //this.alimentos = Alimentos.filter( (alimento) => {
       //return false;
@@ -76,10 +81,13 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
+    this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.75);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.9) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
+
+    if(window.innerWidth *0.7 <= window.innerHeight ) this.styleMobile = true;
+    else this.styleMobile = false;
 
     this.calcularMapArea();
   }
