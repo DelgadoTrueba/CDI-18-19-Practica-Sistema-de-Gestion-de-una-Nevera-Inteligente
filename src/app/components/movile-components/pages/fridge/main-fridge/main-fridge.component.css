@@ -76,7 +76,6 @@ svg, defs, clipPath {
 
 /*navegador*/
 #navegadorFridge{
-    background: pink;
     min-height: 9%;
     margin-top: 1%;
 
@@ -85,8 +84,8 @@ svg, defs, clipPath {
     align-items: center;
 }
 
-.mat-stroked-button{
-    min-width: 15.75% !important;
+.mat-raised-button{
+    min-width: 50% !important;
     margin-left: 0.5%;
     margin-right: 0.5%;
 }
