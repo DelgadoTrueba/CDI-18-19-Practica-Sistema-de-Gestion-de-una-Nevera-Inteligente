@@ -17,19 +17,35 @@
 
 /*navegador*/
 #navegadorFridge{
-    background: pink;
     min-height: 9%;
     margin-top: 1%;
 
     width: 100%;
     display: flex;
     align-items: center;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
 }
 
-.mat-stroked-button{
-    min-width: 15.75% !important;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
+.mat-raised-button{
+    min-width: 20% !important;
+    margin: 0.5%;
+}
+
+@media (max-width: 700px){
+    .botonesVarios{
+        display: flex;
+        justify-content: center;    
+    }
+
+    #navegadorFridge{
+       width: 80%;
+    }
+    .mat-raised-button{
+        min-width: 30% !important;
+    }
 }
 
 mat-icon{

@@ -21,6 +21,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 
 
@@ -53,6 +57,8 @@ import { LateralIzqComponent } from './components/movile-components/pages/fridge
 import { LateralDerComponent } from './components/movile-components/pages/fridge/lateral-der/lateral-der.component';
 import { OverLapDirective } from './directives/over-lap.directive';
 import { DialogInfoAlimentoComponent } from './components/movile-components/pages/fridge/dialog-info-alimento/dialog-info-alimento.component';
+import { MostradorDeAlimentosComponent } from './components/movile-components/pages/fridge/mostrador-de-alimentos/mostrador-de-alimentos.component';
+import { MostradorAlimentosMocilComponent } from './components/movile-components/pages/fridge/mostrador-alimentos-mocil/mostrador-alimentos-mocil.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -88,6 +94,10 @@ import { DialogInfoAlimentoComponent } from './components/movile-components/page
     OverLapDirective,
     
     DialogInfoAlimentoComponent,
+    
+    MostradorDeAlimentosComponent,
+    
+    MostradorAlimentosMocilComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
@@ -101,6 +111,9 @@ import { DialogInfoAlimentoComponent } from './components/movile-components/page
     MatIconModule,
     MatCardModule,
     MatDialogModule,
+    MatTableModule,
+    MatDividerModule,
+    MatExpansionModule,
 
     FlexLayoutModule
   ],

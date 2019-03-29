@@ -73,7 +73,7 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
     
-    this.top = (window.innerHeight*0.0125);
+    this.top = (window.innerHeight*0.0275);
     this.left = (window.innerWidth/2) - (this.width/2);
     
     this.calcularMapArea();
@@ -85,7 +85,7 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
-    this.top = (window.innerHeight*0.0125);
+    this.top = (window.innerHeight*0.0275);
     this.left = (window.innerWidth/2) - (this.width/2);
 
     this.calcularMapArea();
@@ -348,20 +348,12 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
   }
 
   /*LOGICA ALIMENTOS*/
-  anadirPescado(){
-    this.alimentosService.setPescado(10);
+  abrirNevera(){
+    this.abiertoArriba = !this.abiertoArriba;
   }
 
-  anadirLeche(){
-    this.alimentosService.setLeche(10);
-  }
-
-  anadirQueso(){
-    this.alimentosService.setQueso(10);
-  }
-
-  anadirHelado(){
-    this.alimentosService.setHelado(10);
+  abrirCongelador(){
+    this.abiertoAbajo = !this.abiertoAbajo;
   }
 
 }

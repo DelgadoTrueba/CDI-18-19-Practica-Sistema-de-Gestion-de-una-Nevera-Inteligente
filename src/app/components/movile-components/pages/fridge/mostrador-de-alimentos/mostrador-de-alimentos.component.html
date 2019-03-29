@@ -1,0 +1,11 @@
+  <mat-card>
+  
+  <mat-card-header>
+    <mat-card-title>Alimentos</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-actions>
+      <mat-divider></mat-divider>
+      <button *ngFor="let element of dataSource" mat-button >{{element.nombre}}</button>
+  </mat-card-actions>
+</mat-card>

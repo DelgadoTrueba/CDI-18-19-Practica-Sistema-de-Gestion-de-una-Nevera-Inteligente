@@ -1,0 +1,13 @@
+<mat-accordion>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Alimentos
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-divider></mat-divider>
+    <button *ngFor="let alimento of alimentos" mat-button>{{alimento.nombre}}</button>
+  </mat-expansion-panel>
+  
+</mat-accordion>
