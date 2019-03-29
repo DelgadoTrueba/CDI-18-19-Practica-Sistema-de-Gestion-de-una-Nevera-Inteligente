@@ -46,7 +46,7 @@ export class FreezerComponent implements OnInit, OnDestroy {
       }
     );
     
-    this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
+    this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.75): (window.innerHeight*0.76);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.9) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
@@ -56,7 +56,7 @@ export class FreezerComponent implements OnInit, OnDestroy {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
+    this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.75): (window.innerHeight*0.76);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.9) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );

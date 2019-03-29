@@ -1,3 +1,9 @@
+.supermain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 svg, defs, clipPath {
     height: 0; 
     position: absolute; 
@@ -71,17 +77,16 @@ svg, defs, clipPath {
 
 /*navegador*/
 #navegadorFridge{
-    background: pink;
     min-height: 9%;
     margin-top: 1%;
 
-    width: 100%;
+    width: 90%;
     display: flex;
-    align-items: center;
 }
 
-.mat-stroked-button{
-    min-width: 15.75% !important;
+
+.mat-raised-button{
+    min-width: 24% !important;
     margin-left: 0.5%;
     margin-right: 0.5%;
 }

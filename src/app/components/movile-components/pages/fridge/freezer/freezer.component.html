@@ -1,97 +1,93 @@
-<div id="main">
-    <figure id=figura appStyleGetter [height]="height" [width]="width">
-        <map name=recortes id=recortes>
-              <!--helado-->
-              <area shape=rect
-              [attr.coords]="mapCoorHelado" class="pointer" (click)="openDialog('helado')">
-              <!--churro-->
-              <area shape=rect
-              [attr.coords]="mapCoorChurro" class="pointer" (click)="openDialog('churros')">
-               <!--Tarta-->
-              <area shape=rect
-               [attr.coords]="mapCoorTarta" class="pointer" (click)="openDialog('tarta')">
-                <!--Pizza-->
-              <area shape=rect
-               [attr.coords]="mapCoorPizza" class="pointer" (click)="openDialog('pizza-congelada')">
-               <!--Patatas-->
-              <area shape=rect
-               [attr.coords]="mapCoorPatata" class="pointer" (click)="openDialog('patatas-congeladas')">
-               <!--Verduras-->
-              <area shape=rect
-               [attr.coords]="mapCoorVerduras" class="pointer" (click)="openDialog('verduras-congeladas')">
-               <!--Pescado-->
-              <area shape=rect
-              [attr.coords]="mapCoorPescado" class="pointer" (click)="openDialog('pescado-congelado')">
-              <!--Carne-->
-              <area shape=rect
-                [attr.coords]="mapCoorCarne" class="pointer" (click)="openDialog('carne-congelada')">
-        </map>
-        
-        <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
-        <img id=capaRecorte src="../../../../../../assets/img/freezer/freezer.png">
-        <img *ngIf="arrayCajonIsOpen[0]" id=capaRecorte src="../../../../../../assets/img/freezer/freezer-cajon1-abierto.png" >
-        <img *ngIf="arrayCajonIsOpen[1]" id=capaRecorte src="../../../../../../assets/img/freezer/freezer-cajon2-abierto.png">
-        <img *ngIf="arrayCajonIsOpen[2]" id=capaRecorte src="../../../../../../assets/img/freezer/freezer-cajon3-abierto.png" >
-      
-          <!--USA EL MAPS: ES TRANSPARENTE-->
-        <!--Imagenes de los alimentos-->
-        <div *ngFor="let alimento of alimentos">
-                <div *ngIf="arrayCajonIsOpen[alimento.cajon]">
-                    <img *ngIf="alimento.cantidad > 0"
-                    src="{{alimento.img.freezer.rutaOk}}"
-                    class="imagen" usemap=#recortes> 
-        
-                    <img *ngIf="alimento.cantidad === 0"
-                    src="{{alimento.img.freezer.rutaEmpty}}"
-                    class="imagen" usemap=#recortes> 
-                </div>
+<div class="supermain">
+        <div id="main">
+                <figure id=figura appStyleGetter [height]="height" [width]="width">
+                    <map name=recortes id=recortes>
+                          <!--helado-->
+                          <area shape=rect
+                          [attr.coords]="mapCoorHelado" class="pointer" (click)="openDialog('helado')">
+                          <!--churro-->
+                          <area shape=rect
+                          [attr.coords]="mapCoorChurro" class="pointer" (click)="openDialog('churros')">
+                           <!--Tarta-->
+                          <area shape=rect
+                           [attr.coords]="mapCoorTarta" class="pointer" (click)="openDialog('tarta')">
+                            <!--Pizza-->
+                          <area shape=rect
+                           [attr.coords]="mapCoorPizza" class="pointer" (click)="openDialog('pizza-congelada')">
+                           <!--Patatas-->
+                          <area shape=rect
+                           [attr.coords]="mapCoorPatata" class="pointer" (click)="openDialog('patatas-congeladas')">
+                           <!--Verduras-->
+                          <area shape=rect
+                           [attr.coords]="mapCoorVerduras" class="pointer" (click)="openDialog('verduras-congeladas')">
+                           <!--Pescado-->
+                          <area shape=rect
+                          [attr.coords]="mapCoorPescado" class="pointer" (click)="openDialog('pescado-congelado')">
+                          <!--Carne-->
+                          <area shape=rect
+                            [attr.coords]="mapCoorCarne" class="pointer" (click)="openDialog('carne-congelada')">
+                    </map>
+                    
+                    <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
+                    <img id=capaRecorte src="../../../../../../assets/img/freezer/freezer.png">
+                    <img *ngIf="arrayCajonIsOpen[0]" id=capaRecorte src="../../../../../../assets/img/freezer/freezer-cajon1-abierto.png" >
+                    <img *ngIf="arrayCajonIsOpen[1]" id=capaRecorte src="../../../../../../assets/img/freezer/freezer-cajon2-abierto.png">
+                    <img *ngIf="arrayCajonIsOpen[2]" id=capaRecorte src="../../../../../../assets/img/freezer/freezer-cajon3-abierto.png" >
+                  
+                      <!--USA EL MAPS: ES TRANSPARENTE-->
+                    <!--Imagenes de los alimentos-->
+                    <div *ngFor="let alimento of alimentos">
+                            <div *ngIf="arrayCajonIsOpen[alimento.cajon]">
+                                <img *ngIf="alimento.cantidad > 0"
+                                src="{{alimento.img.freezer.rutaOk}}"
+                                class="imagen" usemap=#recortes> 
+                    
+                                <img *ngIf="alimento.cantidad === 0"
+                                src="{{alimento.img.freezer.rutaEmpty}}"
+                                class="imagen" usemap=#recortes> 
+                            </div>
+                        </div>
+                       <!--Fin Imagenes de los alimentos-->
+                  
+                  </figure>
+                  <!--
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
+                      <defs>
+                          <clipPath id=A1>
+                              <polygon [attr.points]="mapCoorABCD"></polygon>
+                          </clipPath>
+                          <clipPath id=A2>
+                              <polygon [attr.points]="mapCoorEFGH" ></polygon>
+                          </clipPath>
+                          <clipPath id=A3>
+                              <polygon [attr.points]="mapCoorIJKL" ></polygon>
+                          </clipPath>
+                      </defs>
+                  </svg>
+                -->
             </div>
-           <!--Fin Imagenes de los alimentos-->
-      
-      </figure>
-      <!--
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
-          <defs>
-              <clipPath id=A1>
-                  <polygon [attr.points]="mapCoorABCD"></polygon>
-              </clipPath>
-              <clipPath id=A2>
-                  <polygon [attr.points]="mapCoorEFGH" ></polygon>
-              </clipPath>
-              <clipPath id=A3>
-                  <polygon [attr.points]="mapCoorIJKL" ></polygon>
-              </clipPath>
-          </defs>
-      </svg>
-    -->
-</div>
-
-<div id="navegadorFridge">
-    <button (click)="abrirCajon1()"
-    mat-stroked-button  
-    class="flex-icon" >
-        <mat-icon>home</mat-icon>
-        <p class="p">Cajon1</p>
-    </button>
-    <button (click)="abrirCajon2()"
-    mat-stroked-button  color="primary"
-    class="flex-icon" >
-        <mat-icon>home</mat-icon>
-        <p class="p">Cajon2</p>
-    </button>
-    <button (click)="abrirCajon3()"
-    mat-stroked-button  color="accent"
-    class="flex-icon" >
-        <mat-icon>home</mat-icon>
-        <p class="p">Cajon3</p>
-    </button>
-    <button mat-stroked-button color="warn">
-        <mat-icon>home</mat-icon>
-    </button>
-    <button mat-stroked-button disabled>
-        <mat-icon>home</mat-icon>
-    </button>
-    <a mat-stroked-button routerLink="../">
-        <mat-icon>exit_to_app</mat-icon>
-    </a>
+            
+            <div id="navegadorFridge">
+                <button (click)="abrirCajon1()"
+                mat-raised-button  
+                class="flex-icon" >
+                    <mat-icon>home</mat-icon>
+                    <p class="p">Cajon1</p>
+                </button>
+                <button (click)="abrirCajon2()"
+                mat-raised-button  color="primary"
+                class="flex-icon" >
+                    <mat-icon>home</mat-icon>
+                    <p class="p">Cajon2</p>
+                </button>
+                <button (click)="abrirCajon3()"
+                mat-raised-button  color="accent"
+                class="flex-icon" >
+                    <mat-icon>home</mat-icon>
+                    <p class="p">Cajon3</p>
+                </button>
+                <a mat-raised-button routerLink="../">
+                    <mat-icon>exit_to_app</mat-icon>
+                </a>
+            </div>
 </div>
