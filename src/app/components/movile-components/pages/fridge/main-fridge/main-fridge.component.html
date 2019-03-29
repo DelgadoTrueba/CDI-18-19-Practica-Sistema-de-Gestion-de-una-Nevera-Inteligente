@@ -2,7 +2,8 @@
         <div id="main">
                 <div class="dosColumnas">
                     <!-- REMARCAR LA FIGURA -->
-                <figure id=figura appStyleGetter [height]="height" [width]="width">
+                <div class="supermain">
+                    <figure id=figura appStyleGetter [height]="height" [width]="width">
                         <map name=recortes id=recortes>
                               <!--pescado-->
                               <area shape="rect"
@@ -81,12 +82,29 @@
                                 class="imagen" usemap=#recortes> 
                             </div>
                            <!--Fin Imagenes de los alimentos-->
-                      
+                        
                       </figure>
-            
-                        <app-mostrador-de-alimentos *ngIf="!styleMobile" 
-                        [alimentos]="alimentos">
-                        </app-mostrador-de-alimentos>
+                      <div id="navegadorFridge">
+                        <button (click)="abrirCajon()"
+                        class="flex-icon"
+                        mat-raised-button>
+                            <mat-icon>home</mat-icon>
+                            <p class="p">Cajon1</p>
+                        </button>
+                        <button routerLink="../"
+                        class="flex-icon"
+                        mat-raised-button>
+                            <mat-icon>exit_to_app</mat-icon>
+                        </button>
+                    </div>
+                </div>
+
+                        
+                            <app-mostrador-de-alimentos
+                            [alimentos]="alimentos"
+                            appStyleGetter [height]="height" [width]="width">
+                            </app-mostrador-de-alimentos>
+                        
                 </div>
                 <!--
                   <!-- AREA DE LA FIGURA 
@@ -111,15 +129,5 @@
                   </svg>
                 -->
             </div>
-            <div id="navegadorFridge">
-                    <button (click)="abrirCajon()"
-                    class="flex-icon"
-                    mat-raised-button>
-                        <mat-icon>home</mat-icon>
-                        <p class="p">Cajon1</p>
-                    </button>
-                    <a mat-raised-button routerLink="../">
-                        <mat-icon>exit_to_app</mat-icon>
-                    </a>
-                </div>
+            
 </div>
