@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MostradorDeAlimentosComponent implements OnInit {
 
-  @Input() data;
+  @Input() alimentos;
 
   displayedColumns: string[] = ['nombre'];
   dataSource;
@@ -18,7 +18,7 @@ export class MostradorDeAlimentosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataSource = this.data;
+    this.dataSource = this.alimentos;
   }
 
 }

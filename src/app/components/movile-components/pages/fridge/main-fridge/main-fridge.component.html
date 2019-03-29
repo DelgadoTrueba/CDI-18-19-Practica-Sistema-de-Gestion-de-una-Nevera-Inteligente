@@ -1,117 +1,123 @@
-<div id="main">
-    <!-- REMARCAR LA FIGURA -->
-    <figure id=figura appStyleGetter [height]="height" [width]="width">
-        <map name=recortes id=recortes>
-              <!--pescado-->
-              <area shape="rect"
-              [attr.coords]="mapCoorPescado" class="pointer" (click)="openDialog('pescado')">
-              <!--carne-->
-              <area shape="rect"
-              [attr.coords]="mapCoorCarne" class="pointer" (click)="openDialog('carne')">
-              <!--salchicha-->
-              <area shape="rect"
-              [attr.coords]="mapCoorSalchicha" class="pointer" (click)="openDialog('salchica')">
-              <!--pollo-->
-              <area shape="rect"
-              [attr.coords]="mapCoorPollo" class="pointer" (click)="openDialog('pollo')">
-              <!--huevos-->
-              <area shape="rect"
-              [attr.coords]="mapCoorHuevos" class="pointer" (click)="openDialog('huevos')">
-              <!--zanahoria-->
-              <area shape="rect"
-              [attr.coords]="mapCoorZanahoria" class="pointer" (click)="openDialog('zanahoria')">
-              <!--pimiento-->
-              <area shape="rect"
-              [attr.coords]="mapCoorPimiento" class="pointer" (click)="openDialog('pimineto')">
-              <!--pepino-->
-              <area shape="rect"
-              [attr.coords]="mapCoorPepino" class="pointer" (click)="openDialog('pepino')">
-              <!--coliflor-->
-              <area shape="rect"
-              [attr.coords]="mapCoorColiflor" class="pointer" (click)="openDialog('coliflor')">
-              <!--broccoli-->
-              <area shape="rect"
-              [attr.coords]="mapCoorBroccoli" class="pointer" (click)="openDialog('broccoli')">
-              <!--cherry-->
-              <area shape="rect"
-              [attr.coords]="mapCoorCherry" class="pointer" (click)="openDialog('cherry')">
-              <!--manzana-->
-              <area shape="rect"
-              [attr.coords]="mapCoorManzana" class="pointer" (click)="openDialog('manzana')">
-              <!--platano-->
-              <area shape="rect"
-              [attr.coords]="mapCoorPlatano" class="pointer" (click)="openDialog('platano')">
-              <!--melon-->
-              <area shape="rect"
-              [attr.coords]="mapCoorMelon" class="pointer" (click)="openDialog('melon')">
-              <!--pera-->
-              <area shape="rect"
-              [attr.coords]="mapCoorPera" class="pointer" (click)="openDialog('pera')">
-              <!--carne descongelada-->
-              <area shape="rect"
-              [attr.coords]="mapCoorCarneDescongelada" class="pointer" (click)="openDialog('carne-descongelada')">
-              <!--pescado descongelado-->
-              <area shape="rect"
-              [attr.coords]="mapCoorPescadoDescongelado" class="pointer" (click)="openDialog('pescado-descongelado')">
-              <!--tarta descongelada-->
-              <area shape="rect"
-              [attr.coords]="mapCoorTartaDescongelada" class="pointer" (click)="openDialog('tarta-descongelada')">
-      
-          
-      
-          <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
-        <img id=capaRecorte src="../../../../../../assets/img/main/nevera-centro.png" >
-        <!--cajon abierto-->
-        <img *ngIf="isOpen===true" id=capaRecorte src="../../../../../../assets/img/main/nevera-cajon-abierto.png" >
-        
-        </map>
-
-          <!--USA EL MAPS: ES TRANSPARENTE-->
-
-            <!--Imagenes de los alimentos-->
-            <div *ngFor="let alimento of alimentos">
-                <img *ngIf="alimento.cantidad > 0"
-                src="{{alimento.img.main.rutaOk}}"
-                class="imagen" usemap=#recortes> 
-    
-                <img *ngIf="alimento.cantidad === 0"
-                src="{{alimento.img.main.rutaEmpty}}"
-                class="imagen" usemap=#recortes> 
+<div class="supermain">
+        <div id="main">
+                <div class="dosColumnas">
+                    <!-- REMARCAR LA FIGURA -->
+                <figure id=figura appStyleGetter [height]="height" [width]="width">
+                        <map name=recortes id=recortes>
+                              <!--pescado-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorPescado" class="pointer" (click)="openDialog('pescado')">
+                              <!--carne-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorCarne" class="pointer" (click)="openDialog('carne')">
+                              <!--salchicha-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorSalchicha" class="pointer" (click)="openDialog('salchica')">
+                              <!--pollo-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorPollo" class="pointer" (click)="openDialog('pollo')">
+                              <!--huevos-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorHuevos" class="pointer" (click)="openDialog('huevos')">
+                              <!--zanahoria-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorZanahoria" class="pointer" (click)="openDialog('zanahoria')">
+                              <!--pimiento-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorPimiento" class="pointer" (click)="openDialog('pimineto')">
+                              <!--pepino-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorPepino" class="pointer" (click)="openDialog('pepino')">
+                              <!--coliflor-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorColiflor" class="pointer" (click)="openDialog('coliflor')">
+                              <!--broccoli-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorBroccoli" class="pointer" (click)="openDialog('broccoli')">
+                              <!--cherry-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorCherry" class="pointer" (click)="openDialog('cherry')">
+                              <!--manzana-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorManzana" class="pointer" (click)="openDialog('manzana')">
+                              <!--platano-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorPlatano" class="pointer" (click)="openDialog('platano')">
+                              <!--melon-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorMelon" class="pointer" (click)="openDialog('melon')">
+                              <!--pera-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorPera" class="pointer" (click)="openDialog('pera')">
+                              <!--carne descongelada-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorCarneDescongelada" class="pointer" (click)="openDialog('carne-descongelada')">
+                              <!--pescado descongelado-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorPescadoDescongelado" class="pointer" (click)="openDialog('pescado-descongelado')">
+                              <!--tarta descongelada-->
+                              <area shape="rect"
+                              [attr.coords]="mapCoorTartaDescongelada" class="pointer" (click)="openDialog('tarta-descongelada')">
+                      
+                          
+                      
+                          <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
+                        <img id=capaRecorte src="../../../../../../assets/img/main/nevera-centro.png" >
+                        <!--cajon abierto-->
+                        <img *ngIf="isOpen===true" id=capaRecorte src="../../../../../../assets/img/main/nevera-cajon-abierto.png" >
+                        
+                        </map>
+                
+                          <!--USA EL MAPS: ES TRANSPARENTE-->
+                
+                            <!--Imagenes de los alimentos-->
+                            <div *ngFor="let alimento of alimentos">
+                                <img *ngIf="alimento.cantidad > 0"
+                                src="{{alimento.img.main.rutaOk}}"
+                                class="imagen" usemap=#recortes> 
+                    
+                                <img *ngIf="alimento.cantidad === 0"
+                                src="{{alimento.img.main.rutaEmpty}}"
+                                class="imagen" usemap=#recortes> 
+                            </div>
+                           <!--Fin Imagenes de los alimentos-->
+                      
+                      </figure>
+            
+                      <app-mostrador-de-alimentos [alimentos]="alimentos"></app-mostrador-de-alimentos>
+                </div>
+                <!--
+                  <!-- AREA DE LA FIGURA 
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
+                      <defs>
+                          <!--manzana
+                          <clipPath id=A1>
+                              <circle [attr.points]="mapCoorManzana"></circle>
+                          </clipPath>
+                          <clipPath id=A2>
+                              <polygon [attr.points]="mapCoorEFGH" ></polygon>
+                          </clipPath>
+                          <clipPath id=A3>
+                              <polygon [attr.points]="mapCoorIJKL" ></polygon>
+                          </clipPath>
+                          <clipPath id=A4>
+                              <polygon [attr.points]="mapCoorMNOP" ></polygon>
+                          </clipPath>
+                          
+                           
+                      </defs>
+                  </svg>
+                -->
             </div>
-           <!--Fin Imagenes de los alimentos-->
-      
-      </figure>
-    <!--
-      <!-- AREA DE LA FIGURA 
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
-          <defs>
-              <!--manzana
-              <clipPath id=A1>
-                  <circle [attr.points]="mapCoorManzana"></circle>
-              </clipPath>
-              <clipPath id=A2>
-                  <polygon [attr.points]="mapCoorEFGH" ></polygon>
-              </clipPath>
-              <clipPath id=A3>
-                  <polygon [attr.points]="mapCoorIJKL" ></polygon>
-              </clipPath>
-              <clipPath id=A4>
-                  <polygon [attr.points]="mapCoorMNOP" ></polygon>
-              </clipPath>
-              
-               
-          </defs>
-      </svg>
-    -->
-    <div id="navegadorFridge">
-        <button (click)="abrirCajon()"
-        class="flex-icon"
-        mat-raised-button>
-            <mat-icon>home</mat-icon>
-            <p class="p">Cajon1</p>
-        </button>
-        <a mat-raised-button routerLink="../">
-            <mat-icon>exit_to_app</mat-icon>
-        </a>
-    </div>
+            <div id="navegadorFridge">
+                    <button (click)="abrirCajon()"
+                    class="flex-icon"
+                    mat-raised-button>
+                        <mat-icon>home</mat-icon>
+                        <p class="p">Cajon1</p>
+                    </button>
+                    <a mat-raised-button routerLink="../">
+                        <mat-icon>exit_to_app</mat-icon>
+                    </a>
+                </div>
 </div>
