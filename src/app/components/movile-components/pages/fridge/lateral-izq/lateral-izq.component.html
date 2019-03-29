@@ -1,9 +1,13 @@
 <div class="supermain">
         <div id="main">
                 <div class="dosColumnas">
-                        <app-mostrador-de-alimentos [alimentos]="alimentos"></app-mostrador-de-alimentos>
+                        <app-mostrador-de-alimentos [alimentos]="alimentos"
+                        appStyleGetter [height]="height" [width]="width">
 
-                        <figure id=figura appStyleGetter [height]="height" [width]="width">
+                        </app-mostrador-de-alimentos>
+
+                        <div class="supermain">
+                            <figure id=figura appStyleGetter [height]="height" [width]="width">
                                 <map name=recortes id=recortes>
                                       <!--agua-->
                                       <area shape=rect
@@ -42,7 +46,14 @@
                                    <!--Fin Imagenes de los alimentos-->
                               
                               </figure>
-
+                              <div id="navegadorFridge">
+                                <button routerLink="../"
+                                class="flex-icon"
+                                mat-raised-button>
+                                    <mat-icon>exit_to_app</mat-icon>
+                                </button>
+                            </div>
+                        </div>
                 </div>
             <!--
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
@@ -59,9 +70,5 @@
                   </svg>
                 -->
             </div>
-            <div id="navegadorFridge">
-                <a mat-raised-button routerLink="../">
-                    <mat-icon>exit_to_app</mat-icon>
-                </a>
-            </div>
+           
 </div>
