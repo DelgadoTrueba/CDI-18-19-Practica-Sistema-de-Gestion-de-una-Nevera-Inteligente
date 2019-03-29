@@ -24,6 +24,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -114,6 +115,7 @@ import { MostradorAlimentosMocilComponent } from './components/movile-components
     MatTableModule,
     MatDividerModule,
     MatExpansionModule,
+    MatTooltipModule,
 
     FlexLayoutModule
   ],

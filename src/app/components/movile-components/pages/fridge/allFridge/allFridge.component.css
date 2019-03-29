@@ -1,5 +1,7 @@
 #main{
     margin: 2% auto; 
+    display: flex;
+    align-items: flex-start;
 }
 
 .imgSuperpuesta{
@@ -15,48 +17,60 @@
     cursor: zoom-in;
 }
 
-/*navegador*/
-#navegadorFridge{
-    min-height: 9%;
-    margin-top: 1%;
+/*nuevos botones*/
+button{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
 
-    width: 100%;
+.mat-success {
+    color: white;
+    background: #28a745 ;
+}
+
+.mat-management {
+    color: white;
+    background: #fd7e14 ;
+}
+
+.mat-practise {
+    color: white;
+    background: #6f42c1  ;
+}
+
+.example-spacer {
+    flex: 1 1 100%;
+  }
+
+.fixed2{
+bottom: 35%;
+right: 1.5%;
+
+position: fixed;
+z-index: 1;
+}
+
+.fixed{
+top: 5%;
+right: 1.5%;
+
+position: fixed;
+z-index: 1;
+}
+
+.fixed3{
+top: 5%;
+left: 1.5%;
+
+position: fixed;
+z-index: 1;
+}
+
+.btn{
     display: flex;
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.mat-raised-button{
-    min-width: 20% !important;
-    margin: 0.5%;
-}
-
-@media (max-width: 700px){
-    .botonesVarios{
-        display: flex;
-        justify-content: center;    
-    }
-
-    #navegadorFridge{
-       width: 80%;
-    }
-    .mat-raised-button{
-        min-width: 30% !important;
-    }
-}
-
-mat-icon{
-   font-size: 18px;
-}
-
-.flex-icon{
-    display: flex !important;
-    justify-content: center !important;
-}
-.p{
-    display: inline;
-}
-/*fin navegador*/

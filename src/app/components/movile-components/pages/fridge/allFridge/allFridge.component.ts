@@ -69,24 +69,24 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
     );
     
     this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
-    this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth) : this.height;
+    this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.70) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
     
-    this.top = (window.innerHeight*0.0275);
-    this.left = (window.innerWidth/2) - (this.width/2);
+    this.top = (window.innerHeight*0.0405);
+    this.left = (window.innerWidth/2) - (this.width/1.975);
     
     this.calcularMapArea();
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
-    this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth) : this.height;
+    this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.70): (window.innerHeight*0.76);
+    this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.70) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
-    this.top = (window.innerHeight*0.0275);
-    this.left = (window.innerWidth/2) - (this.width/2);
+    this.top = (window.innerHeight*0.0405);
+    this.left = (window.innerWidth/2) - (this.width/1.975);
 
     this.calcularMapArea();
   }
