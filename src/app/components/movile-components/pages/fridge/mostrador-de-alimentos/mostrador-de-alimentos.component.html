@@ -24,7 +24,7 @@
   </mat-expansion-panel>
 
   <mat-expansion-panel  *ngIf="cajon2.length !=0"
-  #panel2 (afterCollapse)="cerradoPanel2()">
+  #panel2 (closed)="cerradoPanel2()" (opened)="abiertoPanel2()">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Cajon 2
@@ -36,7 +36,7 @@
   </mat-expansion-panel>
 
   <mat-expansion-panel  *ngIf="cajon3.length !=0"
-  #panel3 (afterCollapse)="cerradoPanel3()">
+  #panel3 (closed)="cerradoPanel3()" (opened)="abiertoPanel3()">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Cajon 3

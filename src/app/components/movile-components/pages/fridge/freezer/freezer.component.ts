@@ -1,8 +1,9 @@
-import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy, ViewChild } from '@angular/core';
 //objeto con la información de los alimentos//
 import { AlimentosService } from 'src/app/services/alimentos.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { DialogInfoAlimentoComponent } from '../dialog-info-alimento/dialog-info-alimento.component';
+import { MostradorDeAlimentosComponent } from '../mostrador-de-alimentos/mostrador-de-alimentos.component';
 
 @Component({
   selector: 'app-freezer',
@@ -19,6 +20,8 @@ export class FreezerComponent implements OnInit, OnDestroy {
   height:number;
 
   arrayCajonIsOpen = [false, false, false]
+  @ViewChild("mostradorDeAlimentos") mostradorDeAlimentosComponent :MostradorDeAlimentosComponent;	
+
 
   mapCoorHelado: string;
   mapCoorChurro: string;
@@ -154,13 +157,37 @@ export class FreezerComponent implements OnInit, OnDestroy {
 
 
   abrirCajon1(){
-    this.arrayCajonIsOpen[0] = !this.arrayCajonIsOpen[0] ;
+    this.mostradorDeAlimentosComponent.abrirPanel1();
   }
   abrirCajon2(){
-    this.arrayCajonIsOpen[1]  = !this.arrayCajonIsOpen[1] ;
+    this.mostradorDeAlimentosComponent.abrirPanel2();
   }
   abrirCajon3(){
-    this.arrayCajonIsOpen[2]  = !this.arrayCajonIsOpen[2] ;
+    this.mostradorDeAlimentosComponent.abrirPanel3();
+  }
+
+  cerrarCajon1(){
+    this.arrayCajonIsOpen[0] = false ;
+  }
+
+  abrirCajon1Aux(){
+    this.arrayCajonIsOpen[0] = true ;
+  }
+
+  cerrarCajon2(){
+    this.arrayCajonIsOpen[1] = false ;
+  }
+
+  abrirCajon2Aux(){
+    this.arrayCajonIsOpen[1] = true ;
+  }
+
+  cerrarCajon3(){
+    this.arrayCajonIsOpen[2] = false ;
+  }
+
+  abrirCajon3Aux(){
+    this.arrayCajonIsOpen[2] = true ;
   }
 
   //A largo(X) B ancho(y)

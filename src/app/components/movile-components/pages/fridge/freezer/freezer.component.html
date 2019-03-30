@@ -106,9 +106,16 @@
             </div>
                     </div>
 
-                              <app-mostrador-de-alimentos [zona]="'freezer'"
-                              appStyleGetter [height]="height" [width]="width"></app-mostrador-de-alimentos>
-
+                            <app-mostrador-de-alimentos [zona]="'freezer'"
+                            appStyleGetter [height]="height" [width]="width"
+                            #mostradorDeAlimentos
+                            (onPanel1Closed)="cerrarCajon1()"
+                            (onPanel1Opened)="abrirCajon1Aux()"
+                            (onPanel2Closed)="cerrarCajon2()"
+                            (onPanel2Opened)="abrirCajon2Aux()"
+                            (onPanel3Closed)="cerrarCajon3()"
+                            (onPanel3Opened)="abrirCajon3Aux()">
+                            </app-mostrador-de-alimentos>
                               <!--
                               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
                                   <defs>

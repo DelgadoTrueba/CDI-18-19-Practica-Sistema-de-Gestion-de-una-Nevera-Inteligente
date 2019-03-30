@@ -16,6 +16,14 @@ export class MostradorDeAlimentosComponent implements OnInit {
   @Output() onPanel1Closed: EventEmitter<any> = new EventEmitter<any>();
   @Output() onPanel1Opened: EventEmitter<any> = new EventEmitter<any>();
 
+  @ViewChild("panel2") panel2: MatExpansionPanel;
+  @Output() onPanel2Closed: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onPanel2Opened: EventEmitter<any> = new EventEmitter<any>();
+
+  @ViewChild("panel3") panel3: MatExpansionPanel;
+  @Output() onPanel3Closed: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onPanel3Opened: EventEmitter<any> = new EventEmitter<any>();
+
   
   displayedColumns: string[] = ['nombre'];
   dataSource;
@@ -68,6 +76,30 @@ export class MostradorDeAlimentosComponent implements OnInit {
 
     this.dialog.open(DialogInfoAlimentoComponent, dialogConfig);
 
+  }
+
+  abrirPanel2(){
+    this.panel2.toggle();
+  }
+
+  cerradoPanel2(){
+    this.onPanel2Closed.emit();
+  }
+
+  abiertoPanel2(){
+    this.onPanel2Opened.emit();
+  }
+
+  abrirPanel3(){
+    this.panel3.toggle();
+  }
+
+  cerradoPanel3(){
+    this.onPanel3Closed.emit();
+  }
+
+  abiertoPanel3(){
+    this.onPanel3Opened.emit();
   }
 
   abrirPanel1(){
