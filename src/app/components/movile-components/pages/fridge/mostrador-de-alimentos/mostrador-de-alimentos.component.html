@@ -6,6 +6,7 @@
 
   <mat-card-actions>
       <mat-divider></mat-divider>
-      <button *ngFor="let element of dataSource" mat-button >{{element.nombre}}</button>
+      <button *ngFor="let element of dataSource" mat-stroked-button 
+      (click)="openDialog(element)" >{{element.nombre}}</button>
   </mat-card-actions>
 </mat-card>

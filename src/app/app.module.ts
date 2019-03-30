@@ -59,7 +59,6 @@ import { LateralDerComponent } from './components/movile-components/pages/fridge
 import { OverLapDirective } from './directives/over-lap.directive';
 import { DialogInfoAlimentoComponent } from './components/movile-components/pages/fridge/dialog-info-alimento/dialog-info-alimento.component';
 import { MostradorDeAlimentosComponent } from './components/movile-components/pages/fridge/mostrador-de-alimentos/mostrador-de-alimentos.component';
-import { MostradorAlimentosMocilComponent } from './components/movile-components/pages/fridge/mostrador-alimentos-mocil/mostrador-alimentos-mocil.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -97,8 +96,6 @@ import { MostradorAlimentosMocilComponent } from './components/movile-components
     DialogInfoAlimentoComponent,
     
     MostradorDeAlimentosComponent,
-    
-    MostradorAlimentosMocilComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
