@@ -54,23 +54,49 @@
                           </figure>
                           
             <div id="navegadorFridge">
-                <button (click)="abrirCajon1()"
-                mat-raised-button  
-                class="flex-icon" >
-                    <mat-icon>home</mat-icon>
-                    <p class="p">Cajon1</p>
+                    <button (click)="abrirCajon1()"
+                    mat-raised-button
+                    class="flex-icon" 
+                    *ngIf="!this.arrayCajonIsOpen[0]">
+                        <mat-icon >archive</mat-icon>
+                        <p class="p">Cajon 1</p>
+                    </button>
+                    <button (click)="abrirCajon1()"
+                    mat-raised-button  color="accent"
+                    class="flex-icon" 
+                    *ngIf="this.arrayCajonIsOpen[0]">
+                        <mat-icon>unarchive</mat-icon>
+                        <p class="p">Cajon 1</p>
+                    </button>
+
+                <button (click)="abrirCajon2()"
+                mat-raised-button
+                class="flex-icon" 
+                *ngIf="!this.arrayCajonIsOpen[1]">
+                    <mat-icon >archive</mat-icon>
+                    <p class="p">Cajon 2</p>
                 </button>
                 <button (click)="abrirCajon2()"
-                mat-raised-button  color="primary"
-                class="flex-icon" >
-                    <mat-icon>home</mat-icon>
-                    <p class="p">Cajon2</p>
+                mat-raised-button  color="accent"
+                class="flex-icon" 
+                *ngIf="this.arrayCajonIsOpen[1]">
+                    <mat-icon>unarchive</mat-icon>
+                    <p class="p">Cajon 2</p>
+                </button>
+
+                <button (click)="abrirCajon3()"
+                mat-raised-button
+                class="flex-icon" 
+                *ngIf="!this.arrayCajonIsOpen[2]">
+                    <mat-icon >archive</mat-icon>
+                    <p class="p">Cajon 3</p>
                 </button>
                 <button (click)="abrirCajon3()"
                 mat-raised-button  color="accent"
-                class="flex-icon" >
-                    <mat-icon>home</mat-icon>
-                    <p class="p">Cajon3</p>
+                class="flex-icon" 
+                *ngIf="this.arrayCajonIsOpen[2]">
+                    <mat-icon>unarchive</mat-icon>
+                    <p class="p">Cajon 3</p>
                 </button>
                 <button routerLink="../"
                 class="flex-icon"

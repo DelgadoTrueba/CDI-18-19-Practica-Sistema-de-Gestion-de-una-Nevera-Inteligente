@@ -85,12 +85,21 @@
                         
                       </figure>
                       <div id="navegadorFridge">
-                        <button (click)="abrirCajon()"
-                        class="flex-icon"
-                        mat-raised-button>
-                            <mat-icon>home</mat-icon>
-                            <p class="p">Cajon1</p>
-                        </button>
+                            <button (click)="abrirCajon()"
+                            mat-raised-button
+                            class="flex-icon" 
+                            *ngIf="!this.isOpen">
+                                <mat-icon >archive</mat-icon>
+                                <p class="p">Cajon 1</p>
+                            </button>
+                            <button (click)="abrirCajon()"
+                            mat-raised-button  color="accent"
+                            class="flex-icon" 
+                            *ngIf="this.isOpen">
+                                <mat-icon>unarchive</mat-icon>
+                                <p class="p">Cajon 1</p>
+                            </button>
+                            
                         <button routerLink="../"
                         class="flex-icon"
                         mat-raised-button>
