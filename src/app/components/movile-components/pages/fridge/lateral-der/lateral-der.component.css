@@ -13,6 +13,7 @@
 
 app-mostrador-de-alimentos{
     margin-top: 2%;
+    height: 20% !important;
 
     display: flex;
     flex-direction: row;
