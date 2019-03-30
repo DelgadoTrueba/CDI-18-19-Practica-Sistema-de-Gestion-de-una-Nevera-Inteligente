@@ -508,6 +508,7 @@ export let alimentos = [
         id: "carne-descongelada",
         nombre: "carne descongelada", 
         cantidad: 0,
+        cajon: 0,
         img: {
             main: {
                 rutaOk:"assets/img/main/carne-descongelada.png", 
@@ -520,6 +521,7 @@ export let alimentos = [
         id: "pescado-descongelado",
         nombre: "pescado descongelado", 
         cantidad: 0,
+        cajon: 0,
         img: {
             main: {
                 rutaOk:"assets/img/main/pescado-descongelado.png", 
@@ -532,6 +534,7 @@ export let alimentos = [
         id: "tarta-descongelada",
         nombre: "tarta descongelada", 
         cantidad: 0,
+        cajon: 0,
         img: {
             main: {
                 rutaOk:"assets/img/main/tarta-descongelada.png", 

@@ -1,12 +1,47 @@
-  <mat-card>
-  
-  <mat-card-header>
-    <mat-card-title>Alimentos</mat-card-title>
-  </mat-card-header>
+<mat-accordion multi="true">
 
-  <mat-card-actions>
+  <mat-expansion-panel *ngIf="noCajon.length !=0">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Alimentos
+        </mat-panel-title>
+      </mat-expansion-panel-header>
       <mat-divider></mat-divider>
-      <button *ngFor="let element of dataSource" mat-stroked-button 
+      <button *ngFor="let element of noCajon" mat-stroked-button 
+        (click)="openDialog(element)" >{{element.nombre}}</button>
+    </mat-expansion-panel>
+
+  <mat-expansion-panel  *ngIf="cajon1.length !=0">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Cajon 1
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-divider></mat-divider>
+    <button *ngFor="let element of cajon1" mat-stroked-button 
       (click)="openDialog(element)" >{{element.nombre}}</button>
-  </mat-card-actions>
-</mat-card>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel  *ngIf="cajon2.length !=0">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Cajon 2
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-divider></mat-divider>
+    <button *ngFor="let element of cajon2" mat-stroked-button 
+      (click)="openDialog(element)" >{{element.nombre}}</button>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel  *ngIf="cajon3.length !=0">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Cajon 3
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-divider></mat-divider>
+    <button *ngFor="let element of cajon3" mat-stroked-button 
+      (click)="openDialog(element)" >{{element.nombre}}</button>
+  </mat-expansion-panel>
+  
+</mat-accordion>

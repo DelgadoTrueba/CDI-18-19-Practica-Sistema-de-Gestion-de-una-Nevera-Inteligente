@@ -15,6 +15,10 @@ export class MostradorDeAlimentosComponent implements OnInit {
 
   displayedColumns: string[] = ['nombre'];
   dataSource;
+  noCajon: Array<any>;
+  cajon1: Array<any>;
+  cajon2: Array<any>;
+  cajon3: Array<any>;
 
   subscribeServiceAlimentos;
 
@@ -36,8 +40,11 @@ export class MostradorDeAlimentosComponent implements OnInit {
 
     this.subscribeServiceAlimentos = this.alimentosService.notification$.subscribe(
       (alimentos) => {
-        this.dataSource = alimentos.filter( (item) => filterFunction(item) );
-        console.log(this.dataSource);
+        let todosAlimentos = alimentos.filter( (item) => filterFunction(item) );
+        this.noCajon = todosAlimentos.filter( (item)=> item.cajon == null );
+        this.cajon1 = todosAlimentos.filter( (item)=> item.cajon === 0 );
+        this.cajon2 = todosAlimentos.filter( (item)=> item.cajon === 1 );
+        this.cajon3 = todosAlimentos.filter( (item)=> item.cajon === 2 );
       }
     );
   }
