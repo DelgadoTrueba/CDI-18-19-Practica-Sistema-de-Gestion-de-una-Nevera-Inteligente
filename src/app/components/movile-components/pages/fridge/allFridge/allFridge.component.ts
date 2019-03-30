@@ -1,8 +1,9 @@
-import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 //objeto con la información de los alimentos//
 import { AlimentosService } from 'src/app/services/alimentos.service';
+import { MatTooltip } from '@angular/material';
 
 
 @Component({
@@ -47,6 +48,15 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
   mapCoorAbajoDer;
   
   lateral: string;
+
+  @ViewChild('tooltip1') tooltip1:MatTooltip;
+  @ViewChild('tooltip2') tooltip2:MatTooltip;
+  @ViewChild('tooltip3') tooltip3:MatTooltip;
+  @ViewChild('tooltip4') tooltip4:MatTooltip;
+  @ViewChild('tooltip5') tooltip5:MatTooltip;
+  @ViewChild('tooltip6') tooltip6:MatTooltip;
+  @ViewChild('tooltip7') tooltip7:MatTooltip;
+  @ViewChild('tooltip8') tooltip8:MatTooltip;
 
   constructor(
     private router: Router, private r:ActivatedRoute,
@@ -93,6 +103,25 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscribeServiceAlimentos.unsubscribe();
+  }
+
+  ngAfterViewInit() {
+    setTimeout(_ =>{
+      this.tooltip1.show();
+
+      this.tooltip5.show();
+      
+      this.tooltip7.show();
+      this.tooltip8.show();
+    });
+    setTimeout(_ =>{
+      this.tooltip1.hide();
+    
+      this.tooltip5.hide();
+    
+      this.tooltip7.hide();
+      this.tooltip8.hide();
+    }, 2500);
   }
 
   calcularMapArea(){
@@ -350,10 +379,30 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
   /*LOGICA ALIMENTOS*/
   abrirNevera(){
     this.abiertoArriba = !this.abiertoArriba;
+    if(this.abiertoArriba === true){
+      setTimeout(_ =>{
+        this.tooltip2.show();
+        this.tooltip3.show();
+        this.tooltip4.show();
+      });
+      setTimeout(_ =>{
+        this.tooltip2.hide();
+        this.tooltip3.hide();
+        this.tooltip4.hide();
+      }, 2500);
+    }
   }
 
   abrirCongelador(){
     this.abiertoAbajo = !this.abiertoAbajo;
+    if(this.abiertoAbajo === true){
+      setTimeout(_ =>{
+        this.tooltip6.show();
+      });
+      setTimeout(_ =>{
+        this.tooltip6.hide();
+      }, 2500);
+    }
   }
 
 }
