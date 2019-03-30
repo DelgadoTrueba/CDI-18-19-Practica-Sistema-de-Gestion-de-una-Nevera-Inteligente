@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { AlimentosService } from 'src/app/services/alimentos.service';
-import { MatDialog, MatDialogConfig } from '@angular/material';
+import { MatDialog, MatDialogConfig, MatExpansionPanel } from '@angular/material';
 import { DialogInfoAlimentoComponent } from '../dialog-info-alimento/dialog-info-alimento.component';
 
 
@@ -12,7 +12,11 @@ import { DialogInfoAlimentoComponent } from '../dialog-info-alimento/dialog-info
 export class MostradorDeAlimentosComponent implements OnInit {
 
   @Input() zona:string;
+  @ViewChild("panel1") panel1: MatExpansionPanel;
+  @Output() onPanel1Closed: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onPanel1Opened: EventEmitter<any> = new EventEmitter<any>();
 
+  
   displayedColumns: string[] = ['nombre'];
   dataSource;
   noCajon: Array<any>;
@@ -65,4 +69,17 @@ export class MostradorDeAlimentosComponent implements OnInit {
     this.dialog.open(DialogInfoAlimentoComponent, dialogConfig);
 
   }
+
+  abrirPanel1(){
+    this.panel1.toggle();
+  }
+
+  cerradoPanel1(){
+    this.onPanel1Closed.emit();
+  }
+
+  abiertoPanel1(){
+    this.onPanel1Opened.emit();
+  }
+
 }

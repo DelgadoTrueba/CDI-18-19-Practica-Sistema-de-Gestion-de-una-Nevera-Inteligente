@@ -1,6 +1,6 @@
 <mat-accordion multi="true">
 
-  <mat-expansion-panel *ngIf="noCajon.length !=0">
+  <mat-expansion-panel *ngIf="noCajon.length !=0" [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Alimentos
@@ -11,7 +11,8 @@
         (click)="openDialog(element)" >{{element.nombre}}</button>
     </mat-expansion-panel>
 
-  <mat-expansion-panel  *ngIf="cajon1.length !=0">
+  <mat-expansion-panel  *ngIf="cajon1.length !=0"
+  #panel1 (closed)="cerradoPanel1()" (opened)="abiertoPanel1()">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Cajon 1
@@ -22,7 +23,8 @@
       (click)="openDialog(element)" >{{element.nombre}}</button>
   </mat-expansion-panel>
 
-  <mat-expansion-panel  *ngIf="cajon2.length !=0">
+  <mat-expansion-panel  *ngIf="cajon2.length !=0"
+  #panel2 (afterCollapse)="cerradoPanel2()">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Cajon 2
@@ -33,7 +35,8 @@
       (click)="openDialog(element)" >{{element.nombre}}</button>
   </mat-expansion-panel>
 
-  <mat-expansion-panel  *ngIf="cajon3.length !=0">
+  <mat-expansion-panel  *ngIf="cajon3.length !=0"
+  #panel3 (afterCollapse)="cerradoPanel3()">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Cajon 3

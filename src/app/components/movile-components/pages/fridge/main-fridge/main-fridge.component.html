@@ -99,7 +99,7 @@
                                 <mat-icon>unarchive</mat-icon>
                                 <p class="p">Cajon 1</p>
                             </button>
-                            
+
                         <button routerLink="../"
                         class="flex-icon"
                         mat-raised-button>
@@ -110,7 +110,10 @@
 
                         
                             <app-mostrador-de-alimentos [zona]="'main'"
-                            appStyleGetter [height]="height" [width]="width">
+                            appStyleGetter [height]="height" [width]="width"
+                            #mostradorDeAlimentos
+                            (onPanel1Closed)="cerrarCajon()"
+                            (onPanel1Opened)="abrirCajonAux()">
                             </app-mostrador-de-alimentos>
                         
                 </div>

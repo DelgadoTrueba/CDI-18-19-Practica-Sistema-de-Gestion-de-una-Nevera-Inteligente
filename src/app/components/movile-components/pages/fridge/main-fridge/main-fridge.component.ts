@@ -1,9 +1,10 @@
-import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy, ViewChild } from '@angular/core';
 
 //objeto con la información de los alimentos//
 import { AlimentosService } from 'src/app/services/alimentos.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { DialogInfoAlimentoComponent } from '../dialog-info-alimento/dialog-info-alimento.component';
+import { MostradorDeAlimentosComponent } from '../mostrador-de-alimentos/mostrador-de-alimentos.component';
 
 @Component({
   selector: 'app-main-fridge',
@@ -22,6 +23,9 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
   left:number;
 
   isOpen: boolean = false;
+
+  @ViewChild("mostradorDeAlimentos") mostradorDeAlimentosComponent :MostradorDeAlimentosComponent;	
+
 
   mapCoorPescado: string;
   mapCoorCarne: string;
@@ -44,6 +48,7 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
 
 
   mapCoorCajon: string;
+
 
   constructor(
     private alimentosService: AlimentosService,
@@ -306,7 +311,15 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
   }
 
   abrirCajon(){
-    this.isOpen = !this.isOpen;
+    this.mostradorDeAlimentosComponent.abrirPanel1();
+  }
+  
+  cerrarCajon(){
+    this.isOpen = false;
+  }
+
+  abrirCajonAux(){
+    this.isOpen = true;
   }
   
 
