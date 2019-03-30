@@ -67,10 +67,9 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
       }
     );
 
-    this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.65): (window.innerHeight*0.75);
-    this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.9) : this.height;
-
-
+    this.height = (window.innerHeight*0.75);
+    this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.8) : 350;
+    
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
     //this.alimentos = Alimentos.filter( (alimento) => {
       //return false;
@@ -82,8 +81,8 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.65): (window.innerHeight*0.75);
-    this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.9) : this.height;
+    this.height = (window.innerHeight*0.75);
+    this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.8) : 350;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
 
