@@ -3,7 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 //objeto con la información de los alimentos//
 import { AlimentosService } from 'src/app/services/alimentos.service';
-import { MatTooltip } from '@angular/material';
+import { MatTooltip, MatDialogConfig, MatDialog } from '@angular/material';
+import { DialogAguaComponent } from '../dialog-agua/dialog-agua.component';
 
 
 @Component({
@@ -60,7 +61,9 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router, private r:ActivatedRoute,
-    private alimentosService: AlimentosService
+    private alimentosService: AlimentosService,
+    private dialog: MatDialog
+
   ) { 
     this.width= 0; 
     this.height = 0;
@@ -403,6 +406,16 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
         this.tooltip6.hide();
       }, 2500);
     }
+  }
+
+  abrirDialogAgua()
+  {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(DialogAguaComponent, dialogConfig);
   }
 
 }

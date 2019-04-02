@@ -59,6 +59,7 @@ import { LateralDerComponent } from './components/movile-components/pages/fridge
 import { OverLapDirective } from './directives/over-lap.directive';
 import { DialogInfoAlimentoComponent } from './components/movile-components/pages/fridge/dialog-info-alimento/dialog-info-alimento.component';
 import { MostradorDeAlimentosComponent } from './components/movile-components/pages/fridge/mostrador-de-alimentos/mostrador-de-alimentos.component';
+import { DialogAguaComponent } from './components/movile-components/pages/fridge/dialog-agua/dialog-agua.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -96,6 +97,8 @@ import { MostradorDeAlimentosComponent } from './components/movile-components/pa
     DialogInfoAlimentoComponent,
     
     MostradorDeAlimentosComponent,
+    
+    DialogAguaComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
@@ -124,6 +127,9 @@ import { MostradorDeAlimentosComponent } from './components/movile-components/pa
     }
   ],
   bootstrap: [AppComponent],
-  entryComponents: [DialogInfoAlimentoComponent]
+  entryComponents: [
+      DialogInfoAlimentoComponent,
+      DialogAguaComponent
+    ]
 })
 export class AppModule { }
