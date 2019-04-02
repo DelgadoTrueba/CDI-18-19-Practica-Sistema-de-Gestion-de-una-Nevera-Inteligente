@@ -120,14 +120,26 @@
         <div class="fixed">
             <div class="btn">
                 <button mat-mini-fab 
+                        *ngIf="!abiertoArriba"
                         [color]="'success'"     
                         (click)="abrirNevera('add_deck')"
                         
                         #tooltip1="matTooltip"
-                        matTooltip="Abrir/Cerrar Nevera"
+                        matTooltip="Abrir Nevera"
                         [matTooltipPosition]="'before'">
-                        <mat-icon>note_add</mat-icon>
+                        <mat-icon>meeting_room</mat-icon>
                 </button>
+                <button mat-mini-fab 
+                        *ngIf="abiertoArriba"
+                        [color]="'success'"     
+                        (click)="abrirNevera('add_deck')"
+                        
+                        #tooltip1="matTooltip"
+                        matTooltip="Cerrar Nevera"
+                        [matTooltipPosition]="'before'">
+                        <mat-icon>no_meeting_room</mat-icon>
+                </button>
+
                 <button mat-mini-fab 
                         [color]="'management'"  
                         (click)="main()" 
@@ -136,7 +148,7 @@
                         #tooltip2="matTooltip"
                         matTooltip="Acceder a zona central"
                         [matTooltipPosition]="'before'">
-                        <mat-icon>edit</mat-icon>
+                        <mat-icon>expand_less</mat-icon>
                 </button>
                 <button mat-mini-fab 
                     [color]="'management'"  
@@ -146,7 +158,7 @@
                     #tooltip3="matTooltip"
                     matTooltip="Acceder a lateral derecho"
                     [matTooltipPosition]="'before'">
-                    <mat-icon>edit</mat-icon>
+                    <mat-icon>chevron_right</mat-icon>
                 </button>
                 <button mat-mini-fab 
                     [color]="'management'"  
@@ -156,7 +168,7 @@
                     #tooltip4="matTooltip"
                     matTooltip="Acceder a lateral izquierdo"
                     [matTooltipPosition]="'before'">
-                    <mat-icon>edit</mat-icon>
+                    <mat-icon>chevron_left</mat-icon>
                 </button>
             </div>
           </div>
@@ -164,6 +176,7 @@
           <div class="fixed2">
                 <div class="btn">
                         <button mat-mini-fab 
+                                *ngIf="!abiertoAbajo"
                                 color="warn"            
                                 (click)="abrirCongelador()" 
                                
@@ -171,7 +184,18 @@
                                 #tooltip5="matTooltip"
                                 matTooltip="Abrir Congelador"
                                 [matTooltipPosition]="'before'">
-                                <mat-icon>delete</mat-icon>
+                                <mat-icon>meeting_room</mat-icon>
+                        </button>
+                        <button mat-mini-fab 
+                                *ngIf="abiertoAbajo"
+                                color="warn"            
+                                (click)="abrirCongelador()" 
+                               
+                                
+                                #tooltip5="matTooltip"
+                                matTooltip="Cerrar Congelador"
+                                [matTooltipPosition]="'before'">
+                                <mat-icon>no_meeting_room</mat-icon>
                         </button>
                         <button mat-mini-fab 
                                 [color]="'practise'"    
@@ -182,7 +206,7 @@
                                 matTooltip="Acceder a congelador"
                                 [matTooltipPosition]="'before'">
                                 
-                                <mat-icon>forward</mat-icon>
+                                <mat-icon>expand_more</mat-icon>
                         </button>
                     </div>
           </div>
@@ -197,7 +221,7 @@
                                 #tooltip7="matTooltip"
                                 matTooltip="Agua"
                                 [matTooltipPosition]="'before'">
-                                <mat-icon>delete</mat-icon>
+                                <mat-icon>local_drink</mat-icon>
                         </button>
                         <button mat-mini-fab 
                                 [color]="'practise'"    
@@ -208,7 +232,7 @@
                                 matTooltip="Hielos"
                                 [matTooltipPosition]="'after'">
                                 
-                                <mat-icon>forward</mat-icon>
+                                <mat-icon>ac_unit</mat-icon>
                         </button>
                     </div>
           </div>
