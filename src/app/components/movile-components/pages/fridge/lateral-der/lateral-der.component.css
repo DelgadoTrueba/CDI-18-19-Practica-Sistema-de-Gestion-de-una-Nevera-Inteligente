@@ -38,23 +38,8 @@ svg, defs, clipPath {
     margin-top: 2%; 
     
     background-color: gray;
-    
-}
-#figura::before {
-    content: ""; 
-    
-    
-    /*IMPORTANTE CAPA ABAJO*/
     background-image: url('../../../../../../assets/img/rightSide/rightSide.png'); 
-    background-size: 100% 100%;  
-    opacity: .4;
-    /*IMPORTANTE*/
-    
-    /*IGUAL 1*/
-    display: block; 
-    width: 100%; height: 100%; 
-    position: absolute; 
-    top: 0; left: 0; 
+    background-size: 100% 100%;      
 }
 
 #capaRecorte {
@@ -108,3 +93,60 @@ mat-icon{
    font-size: 18px;
 }
 /*fin navegador*/
+/*btn de alimentos*/
+.responsive{
+    height: 100%;
+    width: 100%;
+}
+
+
+.btn-coca-cola{
+    position: absolute;
+    top: 57%; right: 10%; 
+
+    width: 15%; height: 25%;
+}
+
+.btn-fanta{
+    position: absolute;
+    top: 57%; right: 30%; 
+
+    width: 15%; height: 25%;
+}
+
+.btn-sprite{
+    position: absolute;
+    top: 58%; left: 30%; 
+
+    width: 15%; height: 25%;
+}
+
+.btn-zumo{
+    position: absolute;
+    top: 58%; left: 10%; 
+
+    width: 15%; height: 25%;
+}
+
+.btn-queso{
+    position: absolute;
+    top: 20%; left: 25%; 
+
+    width: 15%; height: 10%;
+}
+
+.btn-yogurt{
+    position: absolute;
+    top: 20%; right: 25%; 
+
+    width: 15%; height: 10%;
+}
+
+@media (max-width: 445px){
+    .mat-stroked-button{
+        padding: 2px;
+        min-width: 0px !important;
+    }
+}
+
+/**/

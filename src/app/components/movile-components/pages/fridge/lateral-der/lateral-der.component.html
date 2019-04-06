@@ -2,6 +2,7 @@
         <div id="main">
                 <div class="dosColumnas">
                     <div class="supermain">
+
                         <figure id=figura appStyleGetter [height]="height" [width]="width">
                             <map name=recortes id=recortes>
                                   <!--queso-->
@@ -25,11 +26,14 @@
                      
                           
                               <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
+                              <!--
                             <img id=capaRecorte src="../../../../../../assets/img/rightSide/rightSide.png">
-                            </map>
-                          
+                            -->    
+                        </map>
+                        
                               <!--USA EL MAPS: ES TRANSPARENTE-->
                             <!--Imagenes de los alimentos-->
+                            <!--
                             <div *ngFor="let alimento of alimentos">
                                     <img *ngIf="alimento.cantidad > 0"
                                     src="{{alimento.img.rightSide.rutaOk}}"
@@ -39,8 +43,71 @@
                                     src="{{alimento.img.rightSide.rutaEmpty}}"
                                     class="imagen" usemap=#recortes> 
                                 </div>
+                            -->
                                <!--Fin Imagenes de los alimentos-->
-                          
+                            <button (click)="openDialog('coke')"
+                                    mat-stroked-button 
+                                    class="btn-coca-cola">
+                                <img src="/assets/img/rightSide/coca-cola.png"
+                                    *ngIf="alimentos[0].cantidad > 0"
+                                    class="responsive">
+                                <img src="/assets/img/rightSide/coca-cola-cruz.png"
+                                    *ngIf="alimentos[0].cantidad === 0"
+                                    class="responsive">
+                            </button>
+                            <button (click)="openDialog('fanta')"
+                                    mat-stroked-button 
+                                    class="btn-fanta">
+                                <img src="/assets/img/rightSide/fanta.png"
+                                    *ngIf="alimentos[1].cantidad > 0"
+                                    class="responsive">
+                                <img src="/assets/img/rightSide/fanta-cruz.png"
+                                    *ngIf="alimentos[1].cantidad === 0"
+                                    class="responsive">
+                            </button>
+                            <button (click)="openDialog('queso')"
+                                    mat-stroked-button 
+                                    class="btn-queso">
+                                <img src="/assets/img/rightSide/queso.png"
+                                    *ngIf="alimentos[2].cantidad > 0"
+                                    class="responsive">
+                                <img src="/assets/img/rightSide/queso-cruz.png"
+                                    *ngIf="alimentos[2].cantidad === 0"
+                                    class="responsive">
+                            </button>
+                            <button (click)="openDialog('sprite')"
+                                    mat-stroked-button 
+                                    class="btn-sprite">
+                                <img src="/assets/img/rightSide/sprite.png"
+                                    *ngIf="alimentos[3].cantidad > 0"
+                                    class="responsive">
+                                <img src="/assets/img/rightSide/sprite-cruz.png"
+                                    *ngIf="alimentos[3].cantidad === 0"
+                                    class="responsive">
+                            </button>
+                            <button (click)="openDialog('yogurt')"
+                                    mat-stroked-button 
+                                    class="btn-yogurt">
+                                <img src="/assets/img/rightSide/yogurt.png"
+                                    *ngIf="alimentos[4].cantidad > 0"
+                                    class="responsive">
+                                <img src="/assets/img/rightSide/yogurt-cruz.png"
+                                    *ngIf="alimentos[4].cantidad === 0"
+                                    class="responsive">
+                            </button>
+                            <button (click)="openDialog('zumo')"
+                                    mat-stroked-button 
+                                    class="btn-zumo">
+                                <img src="/assets/img/rightSide/zumo.png"
+                                    *ngIf="alimentos[5].cantidad > 0"
+                                    class="responsive">
+                                <img src="/assets/img/rightSide/zumo-cruz.png"
+                                    *ngIf="alimentos[5].cantidad === 0"
+                                    class="responsive">
+                            </button>
+                       
+
+
                           </figure>
                     
                           <div id="navegadorFridge">
@@ -51,9 +118,6 @@
                             </button>
                         </div>
                     </div>    
-                    <app-mostrador-de-alimentos [zona]="'lateralDerecho'"
-                    appStyleGetter [width]="width">
-                    </app-mostrador-de-alimentos>
                             
                 </div>
                   <!--
