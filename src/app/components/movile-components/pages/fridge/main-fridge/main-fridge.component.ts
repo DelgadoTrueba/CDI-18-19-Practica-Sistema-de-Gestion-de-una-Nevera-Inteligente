@@ -4,7 +4,6 @@ import { Component, OnInit, HostListener, OnDestroy, ViewChild } from '@angular/
 import { AlimentosService } from 'src/app/services/alimentos.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { DialogInfoAlimentoComponent } from '../dialog-info-alimento/dialog-info-alimento.component';
-import { MostradorDeAlimentosComponent } from '../mostrador-de-alimentos/mostrador-de-alimentos.component';
 
 @Component({
   selector: 'app-main-fridge',
@@ -23,8 +22,6 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
   left:number;
 
   isOpen: boolean = false;
-
-  @ViewChild("mostradorDeAlimentos") mostradorDeAlimentosComponent :MostradorDeAlimentosComponent;	
 
 
   mapCoorPescado: string;

@@ -177,7 +177,7 @@
                 <div class="btn">
                         <button mat-mini-fab 
                                 *ngIf="!abiertoAbajo"
-                                color="warn"            
+                                [color]="'success'"          
                                 (click)="abrirCongelador()" 
                                
                                 
@@ -188,7 +188,7 @@
                         </button>
                         <button mat-mini-fab 
                                 *ngIf="abiertoAbajo"
-                                color="warn"            
+                                [color]="'success'"         
                                 (click)="abrirCongelador()" 
                                
                                 
@@ -198,7 +198,7 @@
                                 <mat-icon>no_meeting_room</mat-icon>
                         </button>
                         <button mat-mini-fab 
-                                [color]="'practise'"    
+                                [color]="'management'"  
                                 (click)="freezer()" 
                                 [disabled]="!abiertoAbajo"
                   
@@ -214,7 +214,7 @@
           <div class="fixed3">
                 <div class="btn">
                         <button mat-mini-fab 
-                                color="warn"            
+                                [color]="'success'"             
 
                                 [disabled]="abiertoArriba"
                                 
@@ -225,7 +225,7 @@
                                 <mat-icon>delete</mat-icon>
                         </button>
                         <button mat-mini-fab 
-                                [color]="'practise'"    
+                                [color]="'success'"     
 
                                 [disabled]="abiertoArriba"
                   

@@ -3,7 +3,6 @@ import { Component, OnInit, HostListener, OnDestroy, ViewChild } from '@angular/
 import { AlimentosService } from 'src/app/services/alimentos.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { DialogInfoAlimentoComponent } from '../dialog-info-alimento/dialog-info-alimento.component';
-import { MostradorDeAlimentosComponent } from '../mostrador-de-alimentos/mostrador-de-alimentos.component';
 
 @Component({
   selector: 'app-freezer',
@@ -20,7 +19,6 @@ export class FreezerComponent implements OnInit, OnDestroy {
   height:number;
 
   arrayCajonIsOpen = [false, false, false]
-  @ViewChild("mostradorDeAlimentos") mostradorDeAlimentosComponent :MostradorDeAlimentosComponent;	
 
 
   mapCoorHelado: string;
