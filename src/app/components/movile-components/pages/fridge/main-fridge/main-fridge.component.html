@@ -169,6 +169,7 @@
 
 
                         <button (click)="openDialog('carne-descongelada')"
+                                *ngIf="this.isOpen"
                                 mat-stroked-button 
                                 class="btn-carne-descongelada">
                             <img src="/assets/img/main/carne-descongelada.png"
@@ -179,6 +180,7 @@
                                 class="responsive">
                         </button>
                         <button (click)="openDialog('pescado-descongelado')"
+                                *ngIf="this.isOpen"
                                 mat-stroked-button 
                                 class="btn-pescado-descongelada">
                             <img src="/assets/img/main/pescado-descongelado.png"
@@ -189,6 +191,7 @@
                                 class="responsive">
                         </button>
                         <button (click)="openDialog('tarta-descongelada')"
+                                *ngIf="this.isOpen"
                                 mat-stroked-button 
                                 class="btn-tarta-descongelada">
                             <img src="/assets/img/main/tarta-descongelada.png"

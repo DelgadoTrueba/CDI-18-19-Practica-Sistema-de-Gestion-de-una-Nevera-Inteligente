@@ -40,23 +40,7 @@ svg, defs, clipPath {
     margin-top: 2%;
     
     background-color: gray;
-    
-}
-#figura::before {
-    content: ""; 
-    
-    
-    /*IMPORTANTE CAPA ABAJO*/
-    background-image: url('../../../../../../assets/img/freezer/freezer.png'); 
-    background-size: 100% 100%;  
-    opacity: .4;
-    /*IMPORTANTE*/
-    
-    /*IGUAL 1*/
-    display: block; 
-    width: 100%; height: 100%; 
-    position: absolute; 
-    top: 0; left: 0; 
+    background-size: 100% 100%;
 }
 
 #capaRecorte {
@@ -123,3 +107,71 @@ mat-icon{
     display: inline;
 }
 /*fin navegador*/
+.responsive{
+    height: 100%;
+    width: 100%;
+}
+
+.mat-stroked-button{
+    padding: 2px;
+    min-width: 0px !important;
+}
+
+.btn-helado{
+    position: absolute;
+    top: 4%; left: 10%; 
+
+    width: 20%; height: 25%;
+}
+
+.btn-churros{
+    position: absolute;
+    top: 4%; right: 40%; 
+
+    width: 20%; height: 25%;
+}
+.btn-tarta{
+    position: absolute;
+    top: 4%; right: 10%; 
+
+    width: 20%; height: 25%;
+}
+
+
+
+.btn-pizza{
+    position: absolute;
+    top: 32%; left: 10%; 
+
+    width: 20%; height: 25%;
+}
+.btn-patatas-congeladas{
+    position: absolute;
+    top: 32%; right: 40%; 
+
+    width: 20%; height: 25%;
+}
+.btn-verduras{
+    position: absolute;
+    top: 32%; right: 10%; 
+
+    width: 20%; height: 25%;
+}
+
+
+
+
+.btn-pescado-congelado{
+    position: absolute;
+    top: 59%; left: 15%; 
+
+    width: 30%; height: 25%;
+}
+
+
+.btn-carne-congelada{
+    position: absolute;
+    top: 59%; right: 20%; 
+
+    width: 20%; height: 25%;
+}

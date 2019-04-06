@@ -3,32 +3,6 @@
                 <div class="dosColumnas">
                     <div class="supermain">
                         <figure id=figura appStyleGetter [height]="height" [width]="width">
-                            <map name=recortes id=recortes>
-                                  <!--helado-->
-                                  <area shape=rect
-                                  [attr.coords]="mapCoorHelado" class="pointer" (click)="openDialog('helado')">
-                                  <!--churro-->
-                                  <area shape=rect
-                                  [attr.coords]="mapCoorChurro" class="pointer" (click)="openDialog('churros')">
-                                   <!--Tarta-->
-                                  <area shape=rect
-                                   [attr.coords]="mapCoorTarta" class="pointer" (click)="openDialog('tarta')">
-                                    <!--Pizza-->
-                                  <area shape=rect
-                                   [attr.coords]="mapCoorPizza" class="pointer" (click)="openDialog('pizza-congelada')">
-                                   <!--Patatas-->
-                                  <area shape=rect
-                                   [attr.coords]="mapCoorPatata" class="pointer" (click)="openDialog('patatas-congeladas')">
-                                   <!--Verduras-->
-                                  <area shape=rect
-                                   [attr.coords]="mapCoorVerduras" class="pointer" (click)="openDialog('verduras-congeladas')">
-                                   <!--Pescado-->
-                                  <area shape=rect
-                                  [attr.coords]="mapCoorPescado" class="pointer" (click)="openDialog('pescado-congelado')">
-                                  <!--Carne-->
-                                  <area shape=rect
-                                    [attr.coords]="mapCoorCarne" class="pointer" (click)="openDialog('carne-congelada')">
-                            </map>
                             
                             <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
                             <img id=capaRecorte src="../../../../../../assets/img/freezer/freezer.png">
@@ -36,21 +10,102 @@
                             <img *ngIf="arrayCajonIsOpen[1]" id=capaRecorte src="../../../../../../assets/img/freezer/freezer-cajon2-abierto.png">
                             <img *ngIf="arrayCajonIsOpen[2]" id=capaRecorte src="../../../../../../assets/img/freezer/freezer-cajon3-abierto.png" >
                           
-                              <!--USA EL MAPS: ES TRANSPARENTE-->
-                            <!--Imagenes de los alimentos-->
-                            <div *ngFor="let alimento of alimentos">
-                                    <div *ngIf="arrayCajonIsOpen[alimento.cajon]">
-                                        <img *ngIf="alimento.cantidad > 0"
-                                        src="{{alimento.img.freezer.rutaOk}}"
-                                        class="imagen" usemap=#recortes> 
+                            <button (click)="openDialog('helado')"
+                                    *ngIf="this.arrayCajonIsOpen[0]"
+                                    mat-stroked-button 
+                                    class="btn-helado">
+                                <img src="/assets/img/freezer/helado.png"
+                                    *ngIf="alimentos[2].cantidad > 0"
+                                    class="responsive">
+                                <img src="/assets/img/freezer/helado-cruz.png"
+                                    *ngIf="alimentos[2].cantidad === 0"
+                                    class="responsive">
+                            </button>
+                            <button (click)="openDialog('churros')"
+                                    *ngIf="this.arrayCajonIsOpen[0]"
+                                    mat-stroked-button 
+                                    class="btn-churros">
+                                <img src="/assets/img/freezer/churros.png"
+                                    *ngIf="alimentos[1].cantidad > 0"
+                                    class="responsive">
+                                <img src="/assets/img/freezer/churros-cruz.png"
+                                    *ngIf="alimentos[1].cantidad === 0"
+                                    class="responsive">
+                            </button>
+                            <button (click)="openDialog('tarta')"
+                                    *ngIf="this.arrayCajonIsOpen[0]"
+                                    mat-stroked-button 
+                                    class="btn-tarta">
+                                <img src="/assets/img/freezer/tarta.png"
+                                    *ngIf="alimentos[6].cantidad > 0"
+                                    class="responsive">
+                                <img src="/assets/img/freezer/tarta-cruz.png"
+                                    *ngIf="alimentos[6].cantidad === 0"
+                                    class="responsive">
+                            </button>
+
+
+
+
+                            <button (click)="openDialog('pizza-congelada')"
+                                    *ngIf="this.arrayCajonIsOpen[1]"
+                                    mat-stroked-button 
+                                    class="btn-pizza">
+                                <img src="/assets/img/freezer/pizza.png"
+                                    *ngIf="alimentos[5].cantidad > 0"
+                                    class="responsive">
+                                <img src="/assets/img/freezer/pizza-cruz.png"
+                                    *ngIf="alimentos[5].cantidad === 0"
+                                    class="responsive">
+                            </button>
+                            <button (click)="openDialog('patatas-congeladas')"
+                                    *ngIf="this.arrayCajonIsOpen[1]"
+                                    mat-stroked-button 
+                                    class="btn-patatas-congeladas">
+                                <img src="/assets/img/freezer/patatas.png"
+                                    *ngIf="alimentos[3].cantidad > 0"
+                                    class="responsive">
+                                <img src="/assets/img/freezer/patatas-cruz.png"
+                                    *ngIf="alimentos[3].cantidad === 0"
+                                    class="responsive">
+                            </button>
+                            <button (click)="openDialog('verduras-congeladas')"
+                                    *ngIf="this.arrayCajonIsOpen[1]"
+                                    mat-stroked-button 
+                                    class="btn-verduras">
+                                <img src="/assets/img/freezer/verduras.png"
+                                    *ngIf="alimentos[7].cantidad > 0"
+                                    class="responsive">
+                                <img src="/assets/img/freezer/verdura-cruz.png"
+                                    *ngIf="alimentos[7].cantidad === 0"
+                                    class="responsive">
+                            </button>
+
+
                             
-                                        <img *ngIf="alimento.cantidad === 0"
-                                        src="{{alimento.img.freezer.rutaEmpty}}"
-                                        class="imagen" usemap=#recortes> 
-                                    </div>
-                                </div>
-                               <!--Fin Imagenes de los alimentos-->
-                          
+                            <button (click)="openDialog('pescado-congelado')"
+                                    *ngIf="this.arrayCajonIsOpen[2]"
+                                    mat-stroked-button 
+                                    class="btn-pescado-congelado">
+                                <img src="/assets/img/freezer/pescado.png"
+                                    *ngIf="alimentos[4].cantidad > 0"
+                                    class="responsive">
+                                <img src="/assets/img/freezer/pescado-cruz.png"
+                                    *ngIf="alimentos[4].cantidad === 0"
+                                    class="responsive">
+                            </button>
+                            <button (click)="openDialog('carne-congelada')"
+                                    *ngIf="this.arrayCajonIsOpen[2]"
+                                    mat-stroked-button 
+                                    class="btn-carne-congelada">
+                                <img src="/assets/img/freezer/carne.png"
+                                    *ngIf="alimentos[0].cantidad > 0"
+                                    class="responsive">
+                                <img src="/assets/img/freezer/carne-cruz.png"
+                                    *ngIf="alimentos[0].cantidad === 0"
+                                    class="responsive">
+                            </button>
+                            
                           </figure>
                           
             <div id="navegadorFridge">
@@ -106,17 +161,7 @@
             </div>
                     </div>
 
-                            <app-mostrador-de-alimentos [zona]="'freezer'"
-                            appStyleGetter [height]="height" [width]="width"
-                            #mostradorDeAlimentos
-                            (onPanel1Closed)="cerrarCajon1()"
-                            (onPanel1Opened)="abrirCajon1Aux()"
-                            (onPanel2Closed)="cerrarCajon2()"
-                            (onPanel2Opened)="abrirCajon2Aux()"
-                            (onPanel3Closed)="cerrarCajon3()"
-                            (onPanel3Opened)="abrirCajon3Aux()">
-                            </app-mostrador-de-alimentos>
-                              <!--
+                             <!--
                               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" >
                                   <defs>
                                       <clipPath id=A1>
