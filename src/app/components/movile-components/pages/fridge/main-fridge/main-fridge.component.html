@@ -4,84 +4,200 @@
                     <!-- REMARCAR LA FIGURA -->
                 <div class="supermain">
                     <figure id=figura appStyleGetter [height]="height" [width]="width">
-                        <map name=recortes id=recortes>
-                              <!--pescado-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorPescado" class="pointer" (click)="openDialog('pescado')">
-                              <!--carne-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorCarne" class="pointer" (click)="openDialog('carne')">
-                              <!--salchicha-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorSalchicha" class="pointer" (click)="openDialog('salchica')">
-                              <!--pollo-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorPollo" class="pointer" (click)="openDialog('pollo')">
-                              <!--huevos-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorHuevos" class="pointer" (click)="openDialog('huevos')">
-                              <!--zanahoria-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorZanahoria" class="pointer" (click)="openDialog('zanahoria')">
-                              <!--pimiento-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorPimiento" class="pointer" (click)="openDialog('pimineto')">
-                              <!--pepino-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorPepino" class="pointer" (click)="openDialog('pepino')">
-                              <!--coliflor-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorColiflor" class="pointer" (click)="openDialog('coliflor')">
-                              <!--broccoli-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorBroccoli" class="pointer" (click)="openDialog('broccoli')">
-                              <!--cherry-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorCherry" class="pointer" (click)="openDialog('cherry')">
-                              <!--manzana-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorManzana" class="pointer" (click)="openDialog('manzana')">
-                              <!--platano-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorPlatano" class="pointer" (click)="openDialog('platano')">
-                              <!--melon-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorMelon" class="pointer" (click)="openDialog('melon')">
-                              <!--pera-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorPera" class="pointer" (click)="openDialog('pera')">
-                              <!--carne descongelada-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorCarneDescongelada" class="pointer" (click)="openDialog('carne-descongelada')">
-                              <!--pescado descongelado-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorPescadoDescongelado" class="pointer" (click)="openDialog('pescado-descongelado')">
-                              <!--tarta descongelada-->
-                              <area shape="rect"
-                              [attr.coords]="mapCoorTartaDescongelada" class="pointer" (click)="openDialog('tarta-descongelada')">
-                      
-                          
                       
                           <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
                         <img id=capaRecorte src="../../../../../../assets/img/main/nevera-centro.png" >
                         <!--cajon abierto-->
                         <img *ngIf="isOpen===true" id=capaRecorte src="../../../../../../assets/img/main/nevera-cajon-abierto.png" >
                         
-                        </map>
-                
-                          <!--USA EL MAPS: ES TRANSPARENTE-->
-                
-                            <!--Imagenes de los alimentos-->
-                            <div *ngFor="let alimento of alimentos">
-                                <img *ngIf="alimento.cantidad > 0"
-                                src="{{alimento.img.main.rutaOk}}"
-                                class="imagen" usemap=#recortes> 
-                    
-                                <img *ngIf="alimento.cantidad === 0"
-                                src="{{alimento.img.main.rutaEmpty}}"
-                                class="imagen" usemap=#recortes> 
-                            </div>
-                           <!--Fin Imagenes de los alimentos-->
+
+
+                        <button (click)="openDialog('pera')"
+                                mat-stroked-button 
+                                class="btn-pera">
+                            <img src="/assets/img/main/pera.png"
+                                *ngIf="alimentos[8].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/pera-cruz.png"
+                                *ngIf="alimentos[8].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        <button (click)="openDialog('melon')"
+                                mat-stroked-button 
+                                class="btn-melon">
+                            <img src="/assets/img/main/melon.png"
+                                *ngIf="alimentos[6].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/melon-cruz.png"
+                                *ngIf="alimentos[6].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        <button (click)="openDialog('platano')"
+                                mat-stroked-button 
+                                class="btn-platano">
+                            <img src="/assets/img/main/platano.png"
+                                *ngIf="alimentos[11].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/platano-cruz.png"
+                                *ngIf="alimentos[11].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        <button (click)="openDialog('manzana')"
+                                mat-stroked-button 
+                                class="btn-manzana">
+                            <img src="/assets/img/main/manzana.png"
+                                *ngIf="alimentos[5].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/manzana-cruz.png"
+                                *ngIf="alimentos[5].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        <button (click)="openDialog('cherry')"
+                                mat-stroked-button 
+                                class="btn-cherry">
+                            <img src="/assets/img/main/cherry.png"
+                                *ngIf="alimentos[2].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/cherry-cruz.png"
+                                *ngIf="alimentos[2].cantidad === 0"
+                                class="responsive">
+                        </button>
+
+                        <button (click)="openDialog('broccoli')"
+                                mat-stroked-button 
+                                class="btn-broccoli">
+                            <img src="/assets/img/main/broccoli.png"
+                                *ngIf="alimentos[0].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/broccoli-cruz.png"
+                                *ngIf="alimentos[0].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        <button (click)="openDialog('coliflor')"
+                                mat-stroked-button 
+                                class="btn-coliflor">
+                            <img src="/assets/img/main/coliflor.png"
+                                *ngIf="alimentos[3].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/coliflor-cruz.png"
+                                *ngIf="alimentos[3].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        <button (click)="openDialog('pepino')"
+                                mat-stroked-button 
+                                class="btn-pepino">
+                            <img src="/assets/img/main/pepino.png"
+                                *ngIf="alimentos[7].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/pepino-cruz.png"
+                                *ngIf="alimentos[7].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        <button (click)="openDialog('pimineto')"
+                                mat-stroked-button 
+                                class="btn-pimiento">
+                            <img src="/assets/img/main/pimiento.png"
+                                *ngIf="alimentos[10].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/pimiento-cruz.png"
+                                *ngIf="alimentos[10].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        <button (click)="openDialog('zanahoria')"
+                                mat-stroked-button 
+                                class="btn-zanahoria">
+                            <img src="/assets/img/main/zanahoria.png"
+                                *ngIf="alimentos[14].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/zanahoria-cruz.png"
+                                *ngIf="alimentos[14].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        
+
+
+                        <button (click)="openDialog('huevos')"
+                                mat-stroked-button 
+                                class="btn-huevos">
+                            <img src="/assets/img/main/huevos.png"
+                                *ngIf="alimentos[4].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/huevos-cruz.png"
+                                *ngIf="alimentos[4].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        <button (click)="openDialog('pollo')"
+                                mat-stroked-button 
+                                class="btn-pollo">
+                            <img src="/assets/img/main/pollo.png"
+                                *ngIf="alimentos[12].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/pollo-cruz.png"
+                                *ngIf="alimentos[12].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        <button (click)="openDialog('salchica')"
+                                mat-stroked-button 
+                                class="btn-salchicha">
+                            <img src="/assets/img/main/salchicha.png"
+                                *ngIf="alimentos[13].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/salchicha-cruz.png"
+                                *ngIf="alimentos[13].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        <button (click)="openDialog('carne')"
+                                mat-stroked-button 
+                                class="btn-carne">
+                            <img src="/assets/img/main/carne.png"
+                                *ngIf="alimentos[1].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/carne-cruz.png"
+                                *ngIf="alimentos[1].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        <button (click)="openDialog('pescado')"
+                                mat-stroked-button 
+                                class="btn-pescado">
+                            <img src="/assets/img/main/pescado.png"
+                                *ngIf="alimentos[9].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/pescado-cruz.png"
+                                *ngIf="alimentos[9].cantidad === 0"
+                                class="responsive">
+                        </button>
+
+
+                        <button (click)="openDialog('carne-descongelada')"
+                                mat-stroked-button 
+                                class="btn-carne-descongelada">
+                            <img src="/assets/img/main/carne-descongelada.png"
+                                *ngIf="alimentos[15].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/carne-descongelada-cruz.png"
+                                *ngIf="alimentos[15].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        <button (click)="openDialog('pescado-descongelado')"
+                                mat-stroked-button 
+                                class="btn-pescado-descongelada">
+                            <img src="/assets/img/main/pescado-descongelado.png"
+                                *ngIf="alimentos[16].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/pescado-descongelado-cruz.png"
+                                *ngIf="alimentos[16].cantidad === 0"
+                                class="responsive">
+                        </button>
+                        <button (click)="openDialog('tarta-descongelada')"
+                                mat-stroked-button 
+                                class="btn-tarta-descongelada">
+                            <img src="/assets/img/main/tarta-descongelada.png"
+                                *ngIf="alimentos[17].cantidad > 0"
+                                class="responsive">
+                            <img src="/assets/img/main/tarta-descongelada-cruz.png"
+                                *ngIf="alimentos[17].cantidad === 0"
+                                class="responsive">
+                        </button>
                         
                       </figure>
                       <div id="navegadorFridge">
@@ -107,14 +223,6 @@
                         </button>
                     </div>
                 </div>
-
-                        
-                            <app-mostrador-de-alimentos [zona]="'main'"
-                            appStyleGetter [height]="height" [width]="width"
-                            #mostradorDeAlimentos
-                            (onPanel1Closed)="cerrarCajon()"
-                            (onPanel1Opened)="abrirCajonAux()">
-                            </app-mostrador-de-alimentos>
                         
                 </div>
                 <!--

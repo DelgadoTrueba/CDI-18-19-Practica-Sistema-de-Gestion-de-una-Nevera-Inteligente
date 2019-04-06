@@ -310,16 +310,9 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
   }
 
   abrirCajon(){
-    this.mostradorDeAlimentosComponent.abrirPanel1();
-  }
-  
-  cerrarCajon(){
-    this.isOpen = false;
+    this.isOpen =  !this.isOpen;
   }
 
-  abrirCajonAux(){
-    this.isOpen = true;
-  }
   
 
   //A largo(X) B ancho(y)

@@ -37,23 +37,7 @@ svg, defs, clipPath {
     margin-top: 2% ; 
     
     background-color: gray;
-    
-}
-#figura::before {
-    content: ""; 
-    
-    
-    /*IMPORTANTE CAPA ABAJO*/
-    background-image: url('../../../../../../assets/img/main/nevera-centro.png'); 
-    background-size: 100% 100%;  
-    opacity: .4;
-    /*IMPORTANTE*/
-    
-    /*IGUAL 1*/
-    display: block; 
-    width: 100%; height: 100%; 
-    position: absolute; 
-    top: 0; left: 0; 
+    background-size: 100% 100%;
 }
 
 #capaRecorte {
@@ -121,3 +105,141 @@ mat-icon{
     display: inline;
 }
 /*fin navegador*/
+.responsive{
+    height: 100%;
+    width: 100%;
+}
+
+.mat-stroked-button{
+    padding: 2px;
+    min-width: 0px !important;
+}
+
+.btn-pera{
+    position: absolute;
+    top: 60%; right: 80%; 
+
+    width: 17%; height: 17%;
+}
+
+.btn-melon{
+    position: absolute;
+    top: 60%; right: 61%; 
+
+    width: 17%; height: 17%;
+}
+
+.btn-platano{
+    position: absolute;
+    top: 60%; left: 41.5%; 
+
+    width: 17%; height: 17%;
+}
+
+.btn-manzana{
+    position: absolute;
+    top: 60%; left: 61%; 
+
+    width: 17%; height: 17%;
+}
+
+.btn-cherry{
+    position: absolute;
+    top: 60%; left: 80%; 
+
+    width: 17%; height: 17%;
+}
+
+
+
+.btn-broccoli{
+    position: absolute;
+    top: 37%; right: 80%; 
+
+    width: 17%; height: 17%;
+}
+
+.btn-coliflor{
+    position: absolute;
+    top: 37%; right: 61%; 
+
+    width: 17%; height: 17%;
+}
+
+.btn-pepino{
+    position: absolute;
+    top: 37%; left: 41.5%; 
+
+    width: 17%; height: 17%;
+}
+
+.btn-pimiento{
+    position: absolute;
+    top: 37%; left: 61%; 
+
+    width: 17%; height: 17%;
+}
+
+.btn-zanahoria{
+    position: absolute;
+    top: 37%; left: 80%; 
+
+    width: 17%; height: 17%;
+}
+
+
+
+.btn-huevos{
+    position: absolute;
+    top: 13%; right: 80%; 
+
+    width: 17%; height: 17%;
+}
+
+.btn-pollo{
+    position: absolute;
+    top: 13%; right: 61%; 
+
+    width: 17%; height: 17%;
+}
+
+.btn-salchicha{
+    position: absolute;
+    top: 13%; left: 41.5%; 
+
+    width: 17%; height: 17%;
+}
+
+.btn-carne{
+    position: absolute;
+    top: 13%; left: 61%; 
+
+    width: 17%; height: 17%;
+}
+
+.btn-pescado{
+    position: absolute;
+    top: 13%; left: 80%; 
+
+    width: 17%; height: 17%;
+}
+
+
+.btn-carne-descongelada{
+    position: absolute;
+    top: 80%; right: 70%; 
+
+    width: 17%; height: 17%;
+}
+.btn-pescado-descongelada{
+    position: absolute;
+    top: 80%; left: 37.5%; 
+
+    width: 25%; height: 17%;
+}
+.btn-tarta-descongelada{
+    position: absolute;
+    top: 80%; left: 70%; 
+
+    width: 17%; height: 17%;
+}
