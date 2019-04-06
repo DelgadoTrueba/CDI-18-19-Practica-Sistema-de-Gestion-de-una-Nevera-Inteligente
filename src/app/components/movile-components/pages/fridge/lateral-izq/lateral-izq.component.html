@@ -1,49 +1,54 @@
 <div class="supermain">
         <div id="main">
                 <div class="dosColumnas">
-                        <app-mostrador-de-alimentos [zona]="'lateralIzquierdo'"
-                        appStyleGetter [height]="height" [width]="width">
-
-                        </app-mostrador-de-alimentos>
 
                         <div class="supermain">
                             <figure id=figura appStyleGetter [height]="height" [width]="width">
-                                <map name=recortes id=recortes>
-                                      <!--agua-->
-                                      <area shape=rect
-                                      [attr.coords]="mapCoorAgua" class="pointer" (click)="openDialog('agua')">
-                                      <!--leche-->
-                                      <area shape=rect
-                                      [attr.coords]="mapCoorLeche" class="pointer" (click)="openDialog('leche')">
-                                      <!--ketchup-->
-                                      <area shape=rect
-                                      [attr.coords]="mapCoorKetchup" class="pointer" (click)="openDialog('ketchup')">
-                                      <!--mantequilla-->
-                                      <area shape=rect
-                                      [attr.coords]="mapCoorMantequilla" class="pointer" (click)="openDialog('mantequilla')">
-                              
-                                  
-                              
-                                  <!--IMPORTANTE CAPA ARRIBA CUANDO SE SELECIONA ALGO-->
+                                                        
                                 <img id=capaRecorte src="../../../../../../assets/img/leftSide/leftSide.png" >
-                                </map>
+                                
                               
-                                <!--USA EL MAPS: ES TRANSPARENTE-->
-                                <!--
-                                  <img src="../../../../../../assets/img/transparente.gif"
-                                id=imagen usemap=#recortes>
-                                -->
-                                 <!--Imagenes de los alimentos-->
-                                 <div *ngFor="let alimento of alimentos">
-                                        <img *ngIf="alimento.cantidad > 0"
-                                        src="{{alimento.img.leftSide.rutaOk}}"
-                                        class="imagen" usemap=#recortes> 
-                            
-                                        <img *ngIf="alimento.cantidad === 0"
-                                        src="{{alimento.img.leftSide.rutaEmpty}}"
-                                        class="imagen" usemap=#recortes> 
-                                    </div>
-                                   <!--Fin Imagenes de los alimentos-->
+                                <button (click)="openDialog('agua')"
+                                        mat-stroked-button 
+                                        class="btn-agua">
+                                    <img src="/assets/img/leftSide/agua.png"
+                                        *ngIf="alimentos[0].cantidad > 0"
+                                        class="responsive">
+                                    <img src="/assets/img/leftSide/agua-cruz.png"
+                                        *ngIf="alimentos[0].cantidad === 0"
+                                        class="responsive">
+                                </button>
+                                <button (click)="openDialog('leche')"
+                                        mat-stroked-button 
+                                        class="btn-leche">
+                                    <img src="/assets/img/leftSide/leche.png"
+                                        *ngIf="alimentos[1].cantidad > 0"
+                                        class="responsive">
+                                    <img src="/assets/img/leftSide/leche-cruz.png"
+                                        *ngIf="alimentos[1].cantidad === 0"
+                                        class="responsive">
+                                </button>
+                                <button (click)="openDialog('mantequilla')"
+                                        mat-stroked-button 
+                                        class="btn-mantequilla">
+                                    <img src="/assets/img/leftSide/mantequilla.png"
+                                        *ngIf="alimentos[2].cantidad > 0"
+                                        class="responsive">
+                                    <img src="/assets/img/leftSide/mantequilla-cruz.png"
+                                        *ngIf="alimentos[2].cantidad === 0"
+                                        class="responsive">
+                                </button>
+                                <button (click)="openDialog('ketchup')"
+                                        mat-stroked-button 
+                                        class="btn-salsaDeTomate">
+                                    <img src="/assets/img/leftSide/salsaTomate.png"
+                                        *ngIf="alimentos[3].cantidad > 0"
+                                        class="responsive">
+                                    <img src="/assets/img/leftSide/salsaTomate-cruz.png"
+                                        *ngIf="alimentos[3].cantidad === 0"
+                                        class="responsive">
+                                </button>
+                                    
                               
                               </figure>
                               <div id="navegadorFridge">
