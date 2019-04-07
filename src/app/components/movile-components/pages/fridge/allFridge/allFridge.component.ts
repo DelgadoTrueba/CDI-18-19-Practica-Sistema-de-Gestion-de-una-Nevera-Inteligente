@@ -58,6 +58,8 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
   @ViewChild('tooltip6') tooltip6:MatTooltip;
   @ViewChild('tooltip7') tooltip7:MatTooltip;
   @ViewChild('tooltip8') tooltip8:MatTooltip;
+  @ViewChild('tooltip9') tooltip9:MatTooltip;
+  @ViewChild('tooltip10') tooltip10:MatTooltip;
 
   constructor(
     private router: Router, private r:ActivatedRoute,
@@ -94,7 +96,7 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.70): (window.innerHeight*0.76);
+    this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.70) : this.height;
     
     //console.log("width: "+ this.width+", "+"height: "+ this.height );
@@ -116,15 +118,18 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
       
       this.tooltip7.show();
       this.tooltip8.show();
-    });
-    setTimeout(_ =>{
-      this.tooltip1.hide();
+
+      setTimeout(_ =>{
+        this.tooltip1.hide();
+      
+        this.tooltip5.hide();
+      
+        this.tooltip7.hide();
+        this.tooltip8.hide();
+      }, 3500);
+
+    }, 500);
     
-      this.tooltip5.hide();
-    
-      this.tooltip7.hide();
-      this.tooltip8.hide();
-    }, 2500);
   }
 
   calcularMapArea(){
@@ -387,13 +392,30 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
         this.tooltip2.show();
         this.tooltip3.show();
         this.tooltip4.show();
+        this.tooltip9.show();
+
+        setTimeout(_ =>{
+          this.tooltip2.hide();
+          this.tooltip3.hide();
+          this.tooltip4.hide();
+          this.tooltip9.hide();
+        }, 3500);
       });
-      setTimeout(_ =>{
-        this.tooltip2.hide();
-        this.tooltip3.hide();
-        this.tooltip4.hide();
-      }, 2500);
     }
+      else{
+        setTimeout(() =>{
+          this.tooltip1.show();
+          this.tooltip7.show();
+          this.tooltip8.show();
+
+          setTimeout(_ =>{
+            this.tooltip1.hide();
+            this.tooltip7.hide();
+            this.tooltip8.hide();
+
+          }, 1250);
+        });
+      }
   }
 
   abrirCongelador(){
@@ -401,10 +423,23 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
     if(this.abiertoAbajo === true){
       setTimeout(_ =>{
         this.tooltip6.show();
+        this.tooltip10.show();
+
+        setTimeout(_ =>{
+          this.tooltip6.hide();
+          this.tooltip10.hide();
+        }, 3500);
       });
-      setTimeout(_ =>{
-        this.tooltip6.hide();
-      }, 2500);
+    }
+    else{
+      setTimeout(() =>{
+        this.tooltip5.show();
+
+        setTimeout(_ =>{
+          this.tooltip5.hide();
+
+        }, 1250);
+      });
     }
   }
 
