@@ -17,7 +17,7 @@ import { filter } from 'rxjs/operators';
 })
 export class AppMovileComponent implements OnInit {
 
-  private position;
+  public position;
   private arrayDeNavegacion:Array<string> = arrayDeNavegacion;
 
   constructor(
