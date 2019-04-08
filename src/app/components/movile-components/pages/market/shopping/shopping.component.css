@@ -1,0 +1,38 @@
+.activado{
+    font-weight: bold;
+}
+
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+
+  .mostrador{
+    display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+  }
+
+  .blateral{
+    flex: 0 1 100%;
+  }
+
+  mat-sidenav-content{
+      min-height: 90vh !important;
+  }
+
+  .mat-nav-list{
+      padding-top: 0px;
+  }
+
+  /*
+@media (min-aspect-ratio: 18/9) {
+    mat-sidenav-content{
+        min-height: 82vh !important;
+    }
+}
+*/

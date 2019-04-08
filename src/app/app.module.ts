@@ -25,9 +25,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
-
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 //Importar Flex-Layout
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -59,6 +59,7 @@ import { LateralDerComponent } from './components/movile-components/pages/fridge
 import { OverLapDirective } from './directives/over-lap.directive';
 import { DialogInfoAlimentoComponent } from './components/movile-components/pages/fridge/dialog-info-alimento/dialog-info-alimento.component';
 import { DialogAguaComponent } from './components/movile-components/pages/fridge/dialog-agua/dialog-agua.component';
+import { ShoppingComponent } from './components/movile-components/pages/market/shopping/shopping.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -96,6 +97,8 @@ import { DialogAguaComponent } from './components/movile-components/pages/fridge
     DialogInfoAlimentoComponent,
         
     DialogAguaComponent,
+        
+    ShoppingComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
@@ -113,6 +116,9 @@ import { DialogAguaComponent } from './components/movile-components/pages/fridge
     MatDividerModule,
     MatExpansionModule,
     MatTooltipModule,
+    MatToolbarModule,
+    MatListModule,
+    MatSidenavModule,
 
     FlexLayoutModule
   ],

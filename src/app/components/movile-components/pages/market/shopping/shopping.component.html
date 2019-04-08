@@ -1,0 +1,43 @@
+<mat-sidenav-container fxFlexFill (swipeleft)="onSwipeLeft($event)">
+
+  <mat-sidenav #sidenav>
+    <mat-nav-list class="mostrador">
+
+        <mat-toolbar color="primary" class="mat-toolbar1">
+            <mat-toolbar-row>
+        
+              <span>Filtros</span>
+        
+            </mat-toolbar-row>
+          </mat-toolbar>
+
+        <a mat-list-item (click)="sidenav.toggle()"
+        [routerLink]="['/rxjs']" [routerLinkActive]="['activado']" class="blateral">
+          <mat-icon>filter_9</mat-icon>&nbsp;rxjs</a>
+
+        <a (click)="sidenav.toggle()" mat-list-item class="blateral"><mat-icon>close</mat-icon>&nbsp;Close</a>
+    
+      </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content fxFlexFill (swipeleft)="onSwipeLeft($event)">
+      <mat-toolbar color="primary">
+          <mat-toolbar-row>
+      
+            <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+              <mat-icon>menu</mat-icon>
+            </button>
+      
+            <span>Market</span>
+            <span class="example-spacer"></span>
+            <div fxShow="true" fxHide.lt-md="true">
+              <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+   
+            </div>
+      
+          </mat-toolbar-row>
+        </mat-toolbar>
+      <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
