@@ -22,7 +22,7 @@
   }
 
   mat-sidenav-content{
-      min-height: 90vh !important;
+      min-height: 100vh !important;
   }
 
   .mat-nav-list{
@@ -36,3 +36,7 @@
     }
 }
 */
+
+.mat-drawer-container, .mat-sidenav-container{
+    /*background-color:transparent !important;*/
+}

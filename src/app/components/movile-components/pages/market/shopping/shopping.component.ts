@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 import { arrayDeNavegacion } from 'src/app/model/array-de-navegacion/array-de-navegacion.component';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-shopping',
@@ -14,7 +15,9 @@ export class ShoppingComponent implements OnInit {
 
   @ViewChild("sidenav") sidenav: MatSidenav;
 
-  constructor() { }
+  constructor(
+    private router: Router, private r:ActivatedRoute,
+  ) { }
 
   ngOnInit() {
   }
@@ -36,6 +39,10 @@ export class ShoppingComponent implements OnInit {
       return ++this.position;
     }
     else return -1;
+  }
+
+  todosLosArticulos(){
+    this.router.navigate(["../articulo"], { relativeTo: this.r });
   }
 
 }

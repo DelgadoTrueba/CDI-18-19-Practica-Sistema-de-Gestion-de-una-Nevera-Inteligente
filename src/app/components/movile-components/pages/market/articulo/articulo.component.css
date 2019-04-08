@@ -1,0 +1,23 @@
+.card-actions{
+    display: flex;
+    justify-content: flex-end;
+}
+
+img{
+    max-width: 50px !important;
+    max-height: 50px !important;
+
+    margin: 10px !important;
+}
+
+.main-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+mat-card-content{
+    display: flex;
+    justify-content: flex-start;
+}

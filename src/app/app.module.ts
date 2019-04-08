@@ -28,6 +28,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSelectModule} from '@angular/material/select';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 //Importar Flex-Layout
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -60,6 +63,8 @@ import { OverLapDirective } from './directives/over-lap.directive';
 import { DialogInfoAlimentoComponent } from './components/movile-components/pages/fridge/dialog-info-alimento/dialog-info-alimento.component';
 import { DialogAguaComponent } from './components/movile-components/pages/fridge/dialog-agua/dialog-agua.component';
 import { ShoppingComponent } from './components/movile-components/pages/market/shopping/shopping.component';
+import { MostradorDeArticulosComponent } from './components/movile-components/pages/market/mostrador-de-articulos/mostrador-de-articulos.component';
+import { ArticuloComponent } from './components/movile-components/pages/market/articulo/articulo.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -99,6 +104,10 @@ import { ShoppingComponent } from './components/movile-components/pages/market/s
     DialogAguaComponent,
         
     ShoppingComponent,
+        
+    MostradorDeArticulosComponent,
+        
+    ArticuloComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
@@ -119,6 +128,8 @@ import { ShoppingComponent } from './components/movile-components/pages/market/s
     MatToolbarModule,
     MatListModule,
     MatSidenavModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
 
     FlexLayoutModule
   ],
