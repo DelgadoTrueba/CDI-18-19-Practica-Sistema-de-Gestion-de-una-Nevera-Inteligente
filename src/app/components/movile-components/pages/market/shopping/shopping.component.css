@@ -23,6 +23,7 @@
 
   mat-sidenav-content{
       min-height: 100vh !important;
+      margin-bottom: 25%;
   }
 
   .mat-nav-list{
@@ -39,4 +40,12 @@
 
 .mat-drawer-container, .mat-sidenav-container{
     /*background-color:transparent !important;*/
+}
+
+.upm-market{
+  position:fixed;
+  left:0px;
+  top:0px;
+
+  z-index: 1;
 }
