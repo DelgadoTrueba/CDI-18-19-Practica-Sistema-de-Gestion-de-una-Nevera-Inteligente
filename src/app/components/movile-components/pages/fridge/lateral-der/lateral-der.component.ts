@@ -33,6 +33,8 @@ export class LateralDerComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.alimentos = this.alimentosService.alimentosLateralDerFilter();
+    /*
     this.subscribeServiceAlimentos = this.alimentosService.notification$.subscribe(
       (alimentos) => {
         let filterFunction = this.alimentosService.alimentosLateralDerFilter;
@@ -40,6 +42,7 @@ export class LateralDerComponent implements OnInit, OnDestroy {
         console.log(this.alimentos);
       }
     );
+    */
    
     this.height = (window.innerHeight*0.75);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.8) : 350;
@@ -56,7 +59,7 @@ export class LateralDerComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscribeServiceAlimentos.unsubscribe();
+    //this.subscribeServiceAlimentos.unsubscribe();
   }
 
   openDialog(alimentoNombre) {

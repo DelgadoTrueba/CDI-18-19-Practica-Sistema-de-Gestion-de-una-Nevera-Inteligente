@@ -75,6 +75,8 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.alimentos = this.alimentosService.alimentosAllFridgeFilter();
+    /*
     this.subscribeServiceAlimentos = this.alimentosService.notification$.subscribe(
       (alimentos) => {
         let filterFunction = this.alimentosService.alimentosAllFridgeFilter
@@ -82,6 +84,7 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
         console.log(this.alimentos);
       }
     );
+    */
     
     this.height = ( window.innerHeight >= window.innerWidth ) ? (window.innerHeight*0.80): (window.innerHeight*0.76);
     this.width = ( window.innerHeight >= window.innerWidth ) ? (window.innerWidth*0.70) : this.height;
@@ -107,7 +110,7 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscribeServiceAlimentos.unsubscribe();
+    //this.subscribeServiceAlimentos.unsubscribe();
   }
 
   ngAfterViewInit() {
