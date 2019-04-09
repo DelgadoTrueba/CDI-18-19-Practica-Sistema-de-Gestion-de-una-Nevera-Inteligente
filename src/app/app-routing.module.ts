@@ -10,6 +10,7 @@ import { LateralIzqComponent } from './components/movile-components/pages/fridge
 import { LateralDerComponent } from './components/movile-components/pages/fridge/lateral-der/lateral-der.component';
 import { TodosAlimentosComponent } from './components/movile-components/pages/market/todos-alimentos/todos-alimentos.component';
 import { VerdurasComponent } from './components/movile-components/pages/market/verduras/verduras.component';
+import { FrutaComponent } from './components/movile-components/pages/market/fruta/fruta.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'fridge', pathMatch: 'full' },
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'todosAlimentos', pathMatch: 'full' },
       { path: 'todosAlimentos', component: TodosAlimentosComponent },
       { path: 'VerdurasAlimentos', component: VerdurasComponent},
+      { path: 'frutasAlimentos', component: FrutaComponent },
     ]
   },
   { path: 'settings', component: SettingsComponent, data: {animation: 'settings'}},
