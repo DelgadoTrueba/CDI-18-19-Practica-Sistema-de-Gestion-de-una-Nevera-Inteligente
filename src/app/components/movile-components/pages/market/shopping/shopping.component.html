@@ -31,6 +31,12 @@
           (click)="irAFruta()">
           <mat-icon>shopping_basket</mat-icon>&nbsp;Fruta
         </a>
+
+        <a mat-list-item (click)="sidenav.toggle()" 
+          [routerLinkActive]="['activado']" class="blateral"
+          (click)="irACarnePescado()">
+          <mat-icon>shopping_basket</mat-icon>&nbsp;Carnes, Huevos y Pescados
+        </a>
     
       </mat-nav-list>
   </mat-sidenav>

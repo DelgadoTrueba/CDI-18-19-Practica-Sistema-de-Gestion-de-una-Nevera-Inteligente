@@ -71,6 +71,7 @@ import { ArticuloComponent } from './components/movile-components/pages/market/a
 import { TodosAlimentosComponent } from './components/movile-components/pages/market/todos-alimentos/todos-alimentos.component';
 import { VerdurasComponent } from './components/movile-components/pages/market/verduras/verduras.component';
 import { FrutaComponent } from './components/movile-components/pages/market/fruta/fruta.component';
+import { CarnePescadoComponent } from './components/movile-components/pages/market/carne-pescado/carne-pescado.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -119,6 +120,7 @@ import { FrutaComponent } from './components/movile-components/pages/market/frut
         
     VerdurasComponent,
     FrutaComponent,
+    CarnePescadoComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [

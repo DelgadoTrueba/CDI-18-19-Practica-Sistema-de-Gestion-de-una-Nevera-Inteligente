@@ -206,6 +206,29 @@ export class AlimentosService {
 
   }
 
+  alimentosCarnePescadoFilter(){
+
+    let isContent = function(id: string, ids:Array<any>){
+      for(let i=0; i<ids.length; i++){
+          if(ids[i] === id){
+              return true;
+          }
+      }
+      return false;
+    }
+    let ids = [
+        "carne",
+        "carne-congelada",
+        "huevos",
+        "pescado",
+        "pescado-congelado",
+        "pollo",
+        "salchicha",
+        ]
+        return this.alimentos.filter( (element) => isContent(element.id, ids) );
+
+  }
+
   /*getters*/
   getAgua(){
     return this.alimentos[0];
