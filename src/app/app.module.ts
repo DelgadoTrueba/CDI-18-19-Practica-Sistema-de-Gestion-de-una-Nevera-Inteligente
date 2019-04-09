@@ -32,6 +32,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 //Importar Flex-Layout
@@ -67,6 +68,7 @@ import { DialogAguaComponent } from './components/movile-components/pages/fridge
 import { ShoppingComponent } from './components/movile-components/pages/market/shopping/shopping.component';
 import { MostradorDeArticulosComponent } from './components/movile-components/pages/market/mostrador-de-articulos/mostrador-de-articulos.component';
 import { ArticuloComponent } from './components/movile-components/pages/market/articulo/articulo.component';
+import { TodosAlimentosComponent } from './components/movile-components/pages/market/todos-alimentos/todos-alimentos.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -110,6 +112,8 @@ import { ArticuloComponent } from './components/movile-components/pages/market/a
     MostradorDeArticulosComponent,
         
     ArticuloComponent,
+        
+    TodosAlimentosComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
@@ -134,6 +138,7 @@ import { ArticuloComponent } from './components/movile-components/pages/market/a
     MatProgressSpinnerModule,
     MatFormFieldModule,
     MatInputModule,
+    MatBadgeModule,
 
     FlexLayoutModule
   ],

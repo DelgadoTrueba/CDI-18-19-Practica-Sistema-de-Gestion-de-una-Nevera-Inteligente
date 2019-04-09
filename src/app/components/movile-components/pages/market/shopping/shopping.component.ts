@@ -41,8 +41,8 @@ export class ShoppingComponent implements OnInit {
     else return -1;
   }
 
-  todosLosArticulos(){
-    this.router.navigate(["../articulo"], { relativeTo: this.r });
+  irATodosLosAlimentos(){
+    this.router.navigate(["todosAlimentos"], { relativeTo: this.r });
   }
 
 }

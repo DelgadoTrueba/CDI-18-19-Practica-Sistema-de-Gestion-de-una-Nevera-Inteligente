@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { alimentos as alimentosFile } from "../../../../../model/alimentos/alimentos"
 
 
 @Component({
@@ -16,6 +15,9 @@ export class MostradorDeArticulosComponent implements OnInit {
 
   public selectValue = "All";
 
+
+  @Input("alimentos") alimentos;
+  
   constructor(
   ) { }
 
@@ -26,14 +28,14 @@ export class MostradorDeArticulosComponent implements OnInit {
 
    setTimeout( ()=>{
 
-    this.articles = alimentosFile.filter( () =>{return true}).splice(0,33);
+    this.articles = this.alimentos.filter( () =>{return true}).splice(0,33);
     
     /*[
       {"title":"Pera", "description":"magnifica pera","photo":"assets/img/main/pera.png", "tags": [1,2,3]},
       {"title":"Pescado Congelado", "description":"magnifica pera","photo":"assets/img/main/pera.png", "tags": [1,2,3]},
       {"title":"Pera", "description":"magnifica pera","photo":"assets/img/main/pera.png", "tags": [1,2,3]}
     ];*/
-   }, 0);
+   }, 1000);
   
   }
 
@@ -60,7 +62,7 @@ export class MostradorDeArticulosComponent implements OnInit {
    this.articles = null;
 
    setTimeout( ()=>{
-    this.articles = alimentosFile.filter( () => {return true}).splice(0,33);
+    this.articles = this.alimentos.filter( () => {return true}).splice(0,33);
 
    }, 2000);
   }
