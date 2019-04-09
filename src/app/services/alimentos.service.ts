@@ -135,7 +135,7 @@ export class AlimentosService {
         "queso",
         "sprite",
         "yogurt",
-        "zumo"
+        "zumo",
         ]
         return this.alimentos.filter( (element) => isContent(element.id, ids) );
   }
@@ -163,8 +163,28 @@ export class AlimentosService {
         return this.alimentos.filter( (element) => isContent(element.id, ids) );
 
   }
+  alimentosFrutaFilter(){
+    
+    let isContent = function(id: string, ids:Array<any>){
+      for(let i=0; i<ids.length; i++){
+          if(ids[i] === id){
+              return true;
+          }
+      }
+      return false;
+    }
+    let ids = [
+      "cereza",
+      "manzana",
+      "melon",
+      "pera",
+      "platano",
+        ]
+        return this.alimentos.filter( (element) => isContent(element.id, ids) );
 
-  alimentosOtrosFilter(){
+  }
+
+  alimentosLacteosFilter(){
 
     let isContent = function(id: string, ids:Array<any>){
       for(let i=0; i<ids.length; i++){
@@ -175,16 +195,79 @@ export class AlimentosService {
       return false;
     }
     let ids = [
-        "churros",
-        "patatas-congeladas",
-        "pizza-congelada",
-        "salsaDeTomate",
-        "tarta",
+        "helado",
+        "queso",
+        "yogurt",
+        "leche",
+        "mantequilla",
         ]
         return this.alimentos.filter( (element) => isContent(element.id, ids) );
 
   }
 
+  alimentosOtrosFilter(){
+    let isContent = function(id: string, ids:Array<any>){
+      for(let i=0; i<ids.length; i++){
+          if(ids[i] === id){
+              return true;
+          }
+      }
+      return false;
+    }
+    let ids = [
+    "churros",
+    "patatas-congeladas",
+    "pizza-congelada",
+    "salsaDeTomate",
+    "tarta",
+    ]
+
+    return this.alimentos.filter( (element) => isContent(element.id, ids) );
+
+  }
+
+  alimentosVerdurasFilter(){
+
+    let isContent = function(id: string, ids:Array<any>){
+      for(let i=0; i<ids.length; i++){
+          if(ids[i] === id){
+              return true;
+          }
+      }
+      return false;
+    }
+    let ids = [
+        "broccoli",
+        "coliflor",
+        "pepino",
+        "pimiento",
+        "verduras-congeladas",
+        "zanahoria",
+        ]
+        return this.alimentos.filter( (element) => isContent(element.id, ids) );
+
+  }
+
+  alimentosBebidasFilter(){
+
+    let isContent = function(id: string, ids:Array<any>){
+      for(let i=0; i<ids.length; i++){
+          if(ids[i] === id){
+              return true;
+          }
+      }
+      return false;
+    }
+    let ids = [
+      "cocaCola",
+      "fanta",
+      "sprite",
+      "zumo",
+      "agua", 
+        ]
+        return this.alimentos.filter( (element) => isContent(element.id, ids) );
+
+  }
 
   /*getters*/
   getAgua(){

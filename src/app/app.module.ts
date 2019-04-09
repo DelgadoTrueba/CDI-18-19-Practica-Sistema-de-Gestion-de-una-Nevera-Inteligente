@@ -70,6 +70,10 @@ import { MostradorDeArticulosComponent } from './components/movile-components/pa
 import { ArticuloComponent } from './components/movile-components/pages/market/articulo/articulo.component';
 import { TodosAlimentosComponent } from './components/movile-components/pages/market/todos-alimentos/todos-alimentos.component';
 import { OtrosComponent } from './components/movile-components/pages/market/otros/otros.component';
+import { LacteosComponent } from './components/movile-components/pages/market/lacteos/lacteos.component';
+import { BebidasComponent } from './components/movile-components/pages/market/bebidas/bebidas.component';
+import { VerdurasComponent } from './components/movile-components/pages/market/verduras/verduras.component';
+import { FrutaComponent } from './components/movile-components/pages/market/fruta/fruta.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -117,6 +121,11 @@ import { OtrosComponent } from './components/movile-components/pages/market/otro
     TodosAlimentosComponent,
         
     OtrosComponent,
+    LacteosComponent,
+        
+    BebidasComponent,
+    VerdurasComponent,
+    FrutaComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
