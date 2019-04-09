@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav, MatDialogConfig, MatDialog } from '@angular/material';
 import { arrayDeNavegacion } from 'src/app/model/array-de-navegacion/array-de-navegacion.component';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CarritoService } from 'src/app/services/carrito.service';
+import { DialogCarritoComponent } from '../dialog-carrito/dialog-carrito.component';
 
 @Component({
   selector: 'app-shopping',
@@ -20,7 +21,8 @@ export class ShoppingComponent implements OnInit {
 
   constructor(
     private router: Router, private r:ActivatedRoute,
-    private carritoService: CarritoService
+    private carritoService: CarritoService,
+    private dialog :MatDialog
   ) { }
 
   ngOnInit() {
@@ -78,6 +80,17 @@ export class ShoppingComponent implements OnInit {
 
   irAOtros(){
     this.router.navigate(["otrosAlimentos"], { relativeTo: this.r });
+  }
+
+  abrirCarrito(){
+    let dialogConfig = new MatDialogConfig();
+
+    dialogConfig = {
+      height: '90%',
+      width: '90%',
+    }
+
+    this.dialog.open(DialogCarritoComponent, dialogConfig)
   }
 
 }

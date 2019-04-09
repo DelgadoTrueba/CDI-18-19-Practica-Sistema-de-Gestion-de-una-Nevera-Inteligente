@@ -1,0 +1,13 @@
+table{
+    width: 100% !important;
+    padding: 0% !important;
+}
+
+.total{
+    display: flex !important;
+    justify-content:  space-between !important;
+    font-family: Roboto;
+    padding-left: 5%;
+    padding-right: 5%;
+
+}

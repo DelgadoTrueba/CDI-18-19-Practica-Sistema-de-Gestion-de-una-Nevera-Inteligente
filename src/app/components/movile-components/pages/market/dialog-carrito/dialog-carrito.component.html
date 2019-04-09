@@ -1,0 +1,34 @@
+<table mat-table [dataSource]="alimentosEnCarrito" class="mat-elevation-z8" class="mat-elevation-z0">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="cantidad">
+      <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+      <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <br/>
+  <mat-list role="list">
+      <mat-divider></mat-divider>
+      <div class="total">
+        <p>Total</p>
+        <p><b>0€</b></p>
+      </div>
+      <mat-divider></mat-divider>
+
+    </mat-list>
+  
+  

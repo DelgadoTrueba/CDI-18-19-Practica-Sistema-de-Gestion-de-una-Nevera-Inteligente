@@ -75,6 +75,7 @@ import { BebidasComponent } from './components/movile-components/pages/market/be
 import { VerdurasComponent } from './components/movile-components/pages/market/verduras/verduras.component';
 import { FrutaComponent } from './components/movile-components/pages/market/fruta/fruta.component';
 import { CarnePescadoComponent } from './components/movile-components/pages/market/carne-pescado/carne-pescado.component';
+import { DialogCarritoComponent } from './components/movile-components/pages/market/dialog-carrito/dialog-carrito.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -128,6 +129,7 @@ import { CarnePescadoComponent } from './components/movile-components/pages/mark
     VerdurasComponent,
     FrutaComponent,
     CarnePescadoComponent,
+    DialogCarritoComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
@@ -166,7 +168,8 @@ import { CarnePescadoComponent } from './components/movile-components/pages/mark
   bootstrap: [AppComponent],
   entryComponents: [
       DialogInfoAlimentoComponent,
-      DialogAguaComponent
+      DialogAguaComponent,
+      DialogCarritoComponent
     ]
 })
 export class AppModule { }

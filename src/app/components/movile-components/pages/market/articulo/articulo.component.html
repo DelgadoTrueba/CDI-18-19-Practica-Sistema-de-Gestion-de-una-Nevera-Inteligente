@@ -7,10 +7,8 @@
     </div>
     
     <mat-card-content>
-      <p>
-        Usted tiene: {{article.cantidad}} unidades;
-        EstaEnCarrito: {{estaEnCarrito}}
-      </p>
+      <mat-card-subtitle>Usted tiene: {{article.cantidad}} unidades.</mat-card-subtitle>
+
     </mat-card-content>
     <mat-card-actions class="card-actions">
             <button mat-mini-fab (click)="remove()">
@@ -41,10 +39,10 @@
         </mat-card-title>
     </div>
     
-    <mat-card-content>
-      <p>
-        Usted tiene: {{article.cantidad}} unidades;
-      </p>
+    <mat-card-content class="mat-card-content2">
+      <mat-card-subtitle>
+        Añadido al carrito.
+      </mat-card-subtitle>
     </mat-card-content>
     <mat-card-actions class="card-actions">
         <button mat-raised-button color="warn">
