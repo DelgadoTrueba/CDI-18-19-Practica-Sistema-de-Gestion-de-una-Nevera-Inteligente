@@ -35,6 +35,14 @@ img{
     align-content: center;
 }
 
+.atributos{
+  text-align: center;
+}
+
+mat-card-subtitle{
+    font-size: 1em !important;
+}
+
 .mat-card-content2{
     display: flex ;
     justify-content: center;

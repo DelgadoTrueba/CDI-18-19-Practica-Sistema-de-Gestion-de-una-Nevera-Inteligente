@@ -5,10 +5,12 @@
           <p><b>{{article.nombre}}</b></p>
         </mat-card-title>
     </div>
-    
+    <div class="atributos">
+      <mat-card-subtitle>Precio: <b>{{article.precio}}€/{{article.unidad}}.</b></mat-card-subtitle>
+      <mat-card-subtitle>Usted tiene: {{article.cantidad}} {{article.unidad}}.</mat-card-subtitle>
+    </div>
     <mat-card-content>
-      <mat-card-subtitle>Usted tiene: {{article.cantidad}} unidades.</mat-card-subtitle>
-
+     
     </mat-card-content>
     <mat-card-actions class="card-actions">
             <button mat-mini-fab (click)="remove()">
@@ -38,11 +40,10 @@
           <p><b>{{article.nombre}}</b></p>
         </mat-card-title>
     </div>
-    
+    <mat-card-subtitle>Añadido al carrito.</mat-card-subtitle>
+
     <mat-card-content class="mat-card-content2">
-      <mat-card-subtitle>
-        Añadido al carrito.
-      </mat-card-subtitle>
+    
     </mat-card-content>
     <mat-card-actions class="card-actions">
         <button mat-raised-button color="warn">

@@ -10,7 +10,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/agua-cruz.png", 
             }
         },
-        photo: "/assets/img/leftSide/agua.png"
+        photo: "/assets/img/leftSide/agua.png",
+        unidad: "Litros",
+        precio: 1
     },
     //1
     {
@@ -23,7 +25,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/broccoli-cruz.png", 
             }
         },
-        photo: "/assets/img/main/broccoli.png"
+        photo: "/assets/img/main/broccoli.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //2
     {
@@ -36,7 +40,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/carne-cruz.png", 
             }
         },
-        photo: "/assets/img/main/carne.png"
+        photo: "/assets/img/main/carne.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //3
     {
@@ -44,7 +50,9 @@ export let alimentos = [
         nombre: "Carne Congelada",
         cantidad: 0,
         cajon: 2,
-        photo: "/assets/img/freezer/carne.png"
+        photo: "/assets/img/freezer/carne.png",
+        unidad:"Gramos",
+        precio: 1
     },
     //4
     {
@@ -57,7 +65,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/cherry-cruz.png", 
             }
         },
-        photo: "/assets/img/main/cherry.png"
+        photo: "/assets/img/main/cherry.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //5
     {
@@ -65,7 +75,9 @@ export let alimentos = [
         nombre: "Churros", 
         cantidad: 0,
         cajon: 0,
-        photo: "/assets/img/freezer/churros.png"
+        photo: "/assets/img/freezer/churros.png",
+        unidad:"Packs",
+        precio: 1
     },
     //6
     {
@@ -78,7 +90,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/coca-cola-cruz.png", 
             }
         },
-        photo: "/assets/img/rightSide/coca-cola.png"
+        photo: "/assets/img/rightSide/coca-cola.png",
+        unidad:"Litros",
+        precio: 1
     },
     //7
     {
@@ -91,7 +105,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/coliflor-cruz.png", 
             }
         },
-        photo: "/assets/img/main/coliflor.png"
+        photo: "/assets/img/main/coliflor.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //8
     {
@@ -104,7 +120,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/fanta-cruz.png",
             }
         },
-        photo: "/assets/img/rightSide/fanta.png"
+        photo: "/assets/img/rightSide/fanta.png",
+        unidad: "Litros",
+        precio: 1
     },
     //9
     {
@@ -112,7 +130,9 @@ export let alimentos = [
         nombre: "Helado", 
         cantidad: 0,
         cajon: 0,
-        photo: "/assets/img/freezer/helado.png"
+        photo: "/assets/img/freezer/helado.png",
+        unidad: "Unidades",
+        precio: 1
     },
     //10
     {
@@ -125,7 +145,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/huevo-cruz.png", 
             }
         },
-        photo: "/assets/img/main/huevos.png"
+        photo: "/assets/img/main/huevos.png",
+        unidad: "Packs",
+        precio: 1
     },
     //11
     {
@@ -138,7 +160,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/leche-cruz.png", 
             }
         },
-        photo: "/assets/img/leftSide/leche.png"
+        photo: "/assets/img/leftSide/leche.png",
+        unidad: "Litros",
+        precio: 1
     },
     //12
     {
@@ -151,7 +175,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/mantequilla-cruz.png", 
             }
         },
-        photo: "/assets/img/leftSide/mantequilla.png"
+        photo: "/assets/img/leftSide/mantequilla.png",
+        unidad: "Unidades",
+        precio: 1
     },
     //13
     {
@@ -164,7 +190,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/manzana-cruz.png", 
             }
         },
-        photo: "/assets/img/main/manzana.png"
+        photo: "/assets/img/main/manzana.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //14
     {
@@ -177,7 +205,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/melon-cruz.png", 
             }
         },
-        photo: "/assets/img/main/melon.png"
+        photo: "/assets/img/main/melon.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //15
     {
@@ -185,7 +215,9 @@ export let alimentos = [
         nombre: "Patatas Congeladas", 
         cantidad: 0,
         cajon: 1,
-        photo: "/assets/img/freezer/patatas.png"
+        photo: "/assets/img/freezer/patatas.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //16
     {
@@ -198,7 +230,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/pepino-cruz.png", 
             }
         },
-        photo: "/assets/img/main/pepino.png"
+        photo: "/assets/img/main/pepino.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //17
     {
@@ -211,7 +245,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/pera-cruz.png", 
             }
         },
-        photo: "/assets/img/main/pera.png"
+        photo: "/assets/img/main/pera.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //18
     {
@@ -224,7 +260,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/pescado-cruz.png", 
             }
         },
-        photo: "/assets/img/main/pescado.png"
+        photo: "/assets/img/main/pescado.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //19
     {
@@ -232,8 +270,9 @@ export let alimentos = [
         nombre: "Pescado Congelado", 
         cantidad: 0,
         cajon: 2,
-        photo: "/assets/img/freezer/pescado.png"
-
+        photo: "/assets/img/freezer/pescado.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //20
     {
@@ -246,7 +285,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/pimiento-cruz.png", 
             }
         },
-        photo: "/assets/img/main/pimiento.png"
+        photo: "/assets/img/main/pimiento.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //21
     {
@@ -254,7 +295,9 @@ export let alimentos = [
         nombre: "Pizza Congelada", 
         cantidad: 0,
         cajon: 1,
-        photo: "/assets/img/freezer/pizza.png"
+        photo: "/assets/img/freezer/pizza.png",
+        unidad: "Unidades",
+        precio: 1
     },
     //22
     {
@@ -267,7 +310,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/platano-cruz.png", 
             }
         },
-        photo: "/assets/img/main/platano.png"
+        photo: "/assets/img/main/platano.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //23
     {
@@ -280,7 +325,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/pollo-cruz.png", 
             }
         },
-        photo: "/assets/img/main/pollo.png"
+        photo: "/assets/img/main/pollo.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //24
     {
@@ -293,7 +340,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/queso-cruz.png", 
             }
         },
-        photo: "/assets/img/rightSide/queso.png"
+        photo: "/assets/img/rightSide/queso.png",
+        unidad: "Unidades",
+        precio: 1
     },
     //25
     {
@@ -306,7 +355,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/salchicha-cruz.png", 
             }
         },
-        photo: "/assets/img/main/salchicha.png"
+        photo: "/assets/img/main/salchicha.png",
+        unidad: "Unidades",
+        precio: 1
     },
     //26
     {
@@ -319,7 +370,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/salsa-tomate-cruz.png", 
             }
         },
-        photo: "/assets/img/leftSide/salsaTomate.png"
+        photo: "/assets/img/leftSide/salsaTomate.png",
+        unidad: "Unidades",
+        precio: 1
     },
     //27
     {
@@ -332,7 +385,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/sprite-cruz.png", 
             }
         },
-        photo: "/assets/img/rightSide/sprite.png"
+        photo: "/assets/img/rightSide/sprite.png",
+        unidad: "Litros",
+        precio: 1
     },
     //28
     {
@@ -340,7 +395,9 @@ export let alimentos = [
         nombre: "Tarta",
         cantidad: 0,
         cajon: 0,
-        photo: "/assets/img/freezer/tarta.png"
+        photo: "/assets/img/freezer/tarta.png",
+        unidad: "Unidades",
+        precio: 1
     },
     //29
     {
@@ -348,7 +405,9 @@ export let alimentos = [
         nombre: "Verduras Congeladas",  
         cantidad: 0,
         cajon: 1,
-        photo: "/assets/img/freezer/verduras.png"
+        photo: "/assets/img/freezer/verduras.png",
+        unidad: "Packs",
+        precio: 1
     },
     //30
     {
@@ -361,7 +420,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/yogurt-cruz.png", 
             }
         },
-        photo: "/assets/img/rightSide/yogurt.png"
+        photo: "/assets/img/rightSide/yogurt.png",
+        unidad: "Unidades",
+        precio: 1
     },
     //31
     {
@@ -374,7 +435,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/zanahoria-cruz.png",
             }
         },
-        photo: "/assets/img/main/zanahoria.png"
+        photo: "/assets/img/main/zanahoria.png",
+        unidad: "Gramos",
+        precio: 1
     },
     //32
     {
@@ -387,7 +450,9 @@ export let alimentos = [
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/zumo-cruz.png", 
             }
         },
-        photo: "/assets/img/rightSide/zumo.png"
+        photo: "/assets/img/rightSide/zumo.png",
+        unidad: "Litros",
+        precio: 1
     },
     //33
     {

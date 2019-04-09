@@ -9,7 +9,7 @@ import { CarritoService } from 'src/app/services/carrito.service';
 export class DialogCarritoComponent implements OnInit {
   
   alimentosEnCarrito = null;
-  displayedColumns: string[] = ['nombre', 'cantidad'];
+  displayedColumns: string[] = ['nombre', 'cantidad', "precio"];
 
 
   constructor(
