@@ -30,6 +30,17 @@
           (click)="irABebidas()">
           <mat-icon>shopping_basket</mat-icon>&nbsp;Bebidas</a>
         
+          <a mat-list-item (click)="sidenav.toggle()" 
+          [routerLinkActive]="['activado']" class="blateral"
+          (click)="irAVerdurasAlimentos()">
+          <mat-icon>shopping_basket</mat-icon>&nbsp;Verduras
+        </a>
+      
+        <a mat-list-item (click)="sidenav.toggle()" 
+          [routerLinkActive]="['activado']" class="blateral"
+          (click)="irAFruta()">
+          <mat-icon>shopping_basket</mat-icon>&nbsp;Fruta
+        </a>
     
       </mat-nav-list>
   </mat-sidenav>

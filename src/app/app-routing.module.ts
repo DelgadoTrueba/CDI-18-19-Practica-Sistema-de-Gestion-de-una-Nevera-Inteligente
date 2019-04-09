@@ -11,6 +11,8 @@ import { LateralDerComponent } from './components/movile-components/pages/fridge
 import { TodosAlimentosComponent } from './components/movile-components/pages/market/todos-alimentos/todos-alimentos.component';
 import { LacteosComponent } from './components/movile-components/pages/market/lacteos/lacteos.component';
 import { BebidasComponent } from './components/movile-components/pages/market/bebidas/bebidas.component';
+import { VerdurasComponent } from './components/movile-components/pages/market/verduras/verduras.component';
+import { FrutaComponent } from './components/movile-components/pages/market/fruta/fruta.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'fridge', pathMatch: 'full' },
@@ -30,6 +32,8 @@ const routes: Routes = [
       { path: 'todosAlimentos', component: TodosAlimentosComponent },
       { path: 'lacteosAlimentos', component: LacteosComponent },
       { path: 'bebidasAlimentos', component: BebidasComponent },
+      { path: 'VerdurasAlimentos', component: VerdurasComponent},
+      { path: 'frutasAlimentos', component: FrutaComponent },
     ]
   },
   { path: 'settings', component: SettingsComponent, data: {animation: 'settings'}},
