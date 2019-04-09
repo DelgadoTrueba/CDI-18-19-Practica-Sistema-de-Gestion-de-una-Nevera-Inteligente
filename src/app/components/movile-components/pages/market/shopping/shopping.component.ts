@@ -45,4 +45,12 @@ export class ShoppingComponent implements OnInit {
     this.router.navigate(["todosAlimentos"], { relativeTo: this.r });
   }
 
+  irALacteos(){
+    this.router.navigate(["lacteosAlimentos"], { relativeTo: this.r });
+  }
+
+  irABebidas(){
+    this.router.navigate(["bebidasAlimentos"], { relativeTo: this.r });
+  }
+
 }

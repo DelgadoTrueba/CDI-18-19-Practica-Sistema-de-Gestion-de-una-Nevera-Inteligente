@@ -19,6 +19,17 @@
           [routerLinkActive]="['activado']" class="blateral"
           (click)="irATodosLosAlimentos()">
           <mat-icon>shopping_basket</mat-icon>&nbsp;Todos los Alimentos</a>
+
+        <a mat-list-item (click)="sidenav.toggle()" 
+          [routerLinkActive]="['activado']" class="blateral"
+          (click)="irALacteos()">
+          <mat-icon>shopping_basket</mat-icon>&nbsp;Lácteos</a>
+
+        <a mat-list-item (click)="sidenav.toggle()" 
+          [routerLinkActive]="['activado']" class="blateral"
+          (click)="irABebidas()">
+          <mat-icon>shopping_basket</mat-icon>&nbsp;Bebidas</a>
+        
     
       </mat-nav-list>
   </mat-sidenav>

@@ -135,7 +135,7 @@ export class AlimentosService {
         "queso",
         "sprite",
         "yogurt",
-        "zumo"
+        "zumo",
         ]
         return this.alimentos.filter( (element) => isContent(element.id, ids) );
   }
@@ -159,6 +159,48 @@ export class AlimentosService {
         "pizza-congelada",
         "tarta",
         "verduras-congeladas",
+        ]
+        return this.alimentos.filter( (element) => isContent(element.id, ids) );
+
+  }
+
+  alimentosLacteosFilter(){
+
+    let isContent = function(id: string, ids:Array<any>){
+      for(let i=0; i<ids.length; i++){
+          if(ids[i] === id){
+              return true;
+          }
+      }
+      return false;
+    }
+    let ids = [
+        "helado",
+        "queso",
+        "yogurt",
+        "leche",
+        "mantequilla",
+        ]
+        return this.alimentos.filter( (element) => isContent(element.id, ids) );
+
+  }
+
+  alimentosBebidasFilter(){
+
+    let isContent = function(id: string, ids:Array<any>){
+      for(let i=0; i<ids.length; i++){
+          if(ids[i] === id){
+              return true;
+          }
+      }
+      return false;
+    }
+    let ids = [
+        "cocaCola",
+        "fanta",
+        "sprite",
+        "zumo",
+        "agua",
         ]
         return this.alimentos.filter( (element) => isContent(element.id, ids) );
 
