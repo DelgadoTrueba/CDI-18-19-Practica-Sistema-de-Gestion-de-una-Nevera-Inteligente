@@ -11,3 +11,11 @@ table{
     padding-right: 5%;
 
 }
+
+th{
+    width: 25% !important;
+}
+
+td{
+    text-align: center;
+}
