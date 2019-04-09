@@ -69,6 +69,9 @@ import { ShoppingComponent } from './components/movile-components/pages/market/s
 import { MostradorDeArticulosComponent } from './components/movile-components/pages/market/mostrador-de-articulos/mostrador-de-articulos.component';
 import { ArticuloComponent } from './components/movile-components/pages/market/articulo/articulo.component';
 import { TodosAlimentosComponent } from './components/movile-components/pages/market/todos-alimentos/todos-alimentos.component';
+import { OtrosComponent } from './components/movile-components/pages/market/otros/otros.component';
+import { LacteosComponent } from './components/movile-components/pages/market/lacteos/lacteos.component';
+import { BebidasComponent } from './components/movile-components/pages/market/bebidas/bebidas.component';
 import { VerdurasComponent } from './components/movile-components/pages/market/verduras/verduras.component';
 import { FrutaComponent } from './components/movile-components/pages/market/fruta/fruta.component';
 import { CarnePescadoComponent } from './components/movile-components/pages/market/carne-pescado/carne-pescado.component';
@@ -118,6 +121,10 @@ import { CarnePescadoComponent } from './components/movile-components/pages/mark
         
     TodosAlimentosComponent,
         
+    OtrosComponent,
+    LacteosComponent,
+        
+    BebidasComponent,
     VerdurasComponent,
     FrutaComponent,
     CarnePescadoComponent,
