@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 import { arrayDeNavegacion } from 'src/app/model/array-de-navegacion/array-de-navegacion.component';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CarritoService } from 'src/app/services/carrito.service';
 
 @Component({
   selector: 'app-shopping',
@@ -13,13 +14,24 @@ export class ShoppingComponent implements OnInit {
   public position;
   private arrayDeNavegacion:Array<string> = arrayDeNavegacion;
 
+  carritonumber:number = 0;
+
   @ViewChild("sidenav") sidenav: MatSidenav;
 
   constructor(
     private router: Router, private r:ActivatedRoute,
+    private carritoService: CarritoService
   ) { }
 
   ngOnInit() {
+    this.carritoService.notification$.subscribe( (alimentosEnCarrito) =>{
+        this.carritonumber = alimentosEnCarrito.reduce( (sum, alimento)=>{
+          if(alimento.cantidad > 0){
+            return ++sum;
+          }
+          return sum;
+        }, 0);
+    } )
   }
 
   public onSwipeLeft(evt) {
