@@ -8,8 +8,10 @@ import { Article } from 'src/app/model/article';
 })
 export class ArticuloComponent implements OnInit {
 
-  @Input() article: Article;
+  @Input() article: any;
   added: boolean = false;
+
+  cantidad: number = 0;
 
   constructor() { }
 
@@ -21,6 +23,15 @@ export class ArticuloComponent implements OnInit {
     setTimeout( ()=>{
       this.added = false;
     },1000 );
+  }
+
+  add(){
+    this.cantidad++;
+  }
+
+  remove(){
+    if(this.cantidad>0)
+      this.cantidad--;
   }
 
 }
