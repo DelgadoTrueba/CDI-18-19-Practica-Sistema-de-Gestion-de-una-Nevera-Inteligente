@@ -19,6 +19,10 @@
           [routerLinkActive]="['activado']" class="blateral"
           (click)="irATodosLosAlimentos()">
           <mat-icon>shopping_basket</mat-icon>&nbsp;Todos los Alimentos</a>
+        <a mat-list-item (click)="sidenav.toggle()" 
+          [routerLinkActive]="['activado']" class="blateral"
+          (click)="irAVerdurasAlimentos()">
+          <mat-icon>shopping_basket</mat-icon>&nbsp;Verduras</a>
     
       </mat-nav-list>
   </mat-sidenav>

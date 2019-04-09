@@ -164,6 +164,27 @@ export class AlimentosService {
 
   }
 
+  alimentosVerdurasFilter(){
+
+    let isContent = function(id: string, ids:Array<any>){
+      for(let i=0; i<ids.length; i++){
+          if(ids[i] === id){
+              return true;
+          }
+      }
+      return false;
+    }
+    let ids = [
+        "broccoli",
+        "coliflor",
+        "pepino",
+        "pimiento",
+        "verduras-congeladas",
+        "zanahoria",
+        ]
+        return this.alimentos.filter( (element) => isContent(element.id, ids) );
+
+  }
 
   /*getters*/
   getAgua(){
