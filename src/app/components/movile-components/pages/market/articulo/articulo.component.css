@@ -1,7 +1,24 @@
 .card-actions{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
+
+mat-form-field{
+    width: 20% !important;
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+    cursor: default;
+}
+
+input{
+    cursor: default;
+}
+
+
+
 
 img{
     max-width: 50px !important;
@@ -21,7 +38,10 @@ mat-card-content{
     display: flex;
     justify-content: flex-start;
 }
-
+.mat-success {
+    color: black !important;
+    background: white !important;
+}
 .carrito-foto{
     position: fixed;
     top: 1%;
@@ -31,6 +51,11 @@ mat-card-content{
     width: 25px;
     height: 25px;
     animation: zoom 1s forwards;
+}
+
+.comprar{
+    width: 30%;
+    margin-left: 10% !important;
 }
 
 @keyframes zoom{
@@ -84,5 +109,16 @@ mat-card-content{
         50%{opacity: 1;}
         100%{opacity: 0; right: 6%;} 
     }
+
+    .comprar{
+        width: 100%;
+    }
     
+}
+
+@media (max-width: 460px){
+    .comprar{
+        width: 100%;
+        margin-left: 3% !important;
+    }
 }

@@ -30,6 +30,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSelectModule} from '@angular/material/select';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 //Importar Flex-Layout
@@ -130,6 +132,8 @@ import { ArticuloComponent } from './components/movile-components/pages/market/a
     MatSidenavModule,
     MatSelectModule,
     MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatInputModule,
 
     FlexLayoutModule
   ],

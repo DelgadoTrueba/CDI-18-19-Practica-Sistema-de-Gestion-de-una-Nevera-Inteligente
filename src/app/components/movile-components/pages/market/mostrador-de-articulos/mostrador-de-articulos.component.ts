@@ -21,11 +21,12 @@ export class MostradorDeArticulosComponent implements OnInit {
 
   ngOnInit() {
    
-    this.tags = [];
+    this.tags = [{_id: "Orden Alfabético"}];
     this.articles = null;
 
    setTimeout( ()=>{
-    this.articles = alimentosFile.splice(0,33);
+
+    this.articles = alimentosFile.filter( () =>{return true}).splice(0,33);
     
     /*[
       {"title":"Pera", "description":"magnifica pera","photo":"assets/img/main/pera.png", "tags": [1,2,3]},
@@ -56,6 +57,12 @@ export class MostradorDeArticulosComponent implements OnInit {
       )
     }
     */
+   this.articles = null;
+
+   setTimeout( ()=>{
+    this.articles = alimentosFile.filter( () => {return true}).splice(0,33);
+
+   }, 2000);
   }
 
   /*
