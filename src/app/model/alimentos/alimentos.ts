@@ -9,7 +9,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/agua.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/agua-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/leftSide/agua.png"
     },
     //1
     {
@@ -21,7 +22,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/broccoli.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/broccoli-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/main/broccoli.png"
     },
     //2
     {
@@ -33,7 +35,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/carne.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/carne-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/main/carne.png"
     },
     //3
     {
@@ -41,6 +44,7 @@ export let alimentos = [
         nombre: "Carne Congelada",
         cantidad: 0,
         cajon: 2,
+        photo: "/assets/img/freezer/carne.png"
     },
     //4
     {
@@ -52,7 +56,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/cherry.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/cherry-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/main/cherry.png"
     },
     //5
     {
@@ -60,6 +65,7 @@ export let alimentos = [
         nombre: "Churros", 
         cantidad: 0,
         cajon: 0,
+        photo: "/assets/img/freezer/churros.png"
     },
     //6
     {
@@ -71,7 +77,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/coca-cola.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/coca-cola-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/rightSide/coca-cola.png"
     },
     //7
     {
@@ -83,7 +90,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/coliflor.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/coliflor-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/main/coliflor.png"
     },
     //8
     {
@@ -95,7 +103,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/fanta.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/fanta-cruz.png",
             }
-        }
+        },
+        photo: "/assets/img/rightSide/fanta.png"
     },
     //9
     {
@@ -103,6 +112,7 @@ export let alimentos = [
         nombre: "Helado", 
         cantidad: 0,
         cajon: 0,
+        photo: "/assets/img/freezer/helado.png"
     },
     //10
     {
@@ -114,7 +124,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/huevo.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/huevo-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/main/huevos.png"
     },
     //11
     {
@@ -126,7 +137,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/leche.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/leche-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/leftSide/leche.png"
     },
     //12
     {
@@ -138,7 +150,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/mantequilla.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/mantequilla-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/leftSide/mantequilla.png"
     },
     //13
     {
@@ -150,7 +163,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/manzana.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/manzana-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/main/manzana.png"
     },
     //14
     {
@@ -162,7 +176,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/melon.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/melon-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/main/melon.png"
     },
     //15
     {
@@ -170,6 +185,7 @@ export let alimentos = [
         nombre: "Patatas Congeladas", 
         cantidad: 0,
         cajon: 1,
+        photo: "/assets/img/freezer/patatas.png"
     },
     //16
     {
@@ -181,7 +197,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/pepino.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/pepino-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/main/pepino.png"
     },
     //17
     {
@@ -193,7 +210,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/pera.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/pera-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/main/pera.png"
     },
     //18
     {
@@ -205,7 +223,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/pescado.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/pescado-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/main/pescado.png"
     },
     //19
     {
@@ -213,6 +232,8 @@ export let alimentos = [
         nombre: "Pescado Congelado", 
         cantidad: 0,
         cajon: 2,
+        photo: "/assets/img/freezer/pescado.png"
+
     },
     //20
     {
@@ -224,7 +245,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/pimiento.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/pimiento-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/main/pimiento.png"
     },
     //21
     {
@@ -232,6 +254,7 @@ export let alimentos = [
         nombre: "Pizza Congelada", 
         cantidad: 0,
         cajon: 1,
+        photo: "/assets/img/freezer/pizza.png"
     },
     //22
     {
@@ -243,7 +266,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/platano.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/platano-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/main/platano.png"
     },
     //23
     {
@@ -255,7 +279,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/pollo.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/pollo-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/main/pollo.png"
     },
     //24
     {
@@ -267,7 +292,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/queso.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/queso-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/rightSide/queso.png"
     },
     //25
     {
@@ -279,7 +305,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/salchicha.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/salchicha-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/main/salchicha.png"
     },
     //26
     {
@@ -291,7 +318,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/salsa-tomate.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/salsa-tomate-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/leftSide/salsaTomate.png"
     },
     //27
     {
@@ -303,14 +331,16 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/sprite.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/sprite-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/rightSide/sprite.png"
     },
     //28
     {
         id: "tarta",
         nombre: "Tarta",
         cantidad: 0,
-        cajon: 0
+        cajon: 0,
+        photo: "/assets/img/freezer/tarta.png"
     },
     //29
     {
@@ -318,6 +348,7 @@ export let alimentos = [
         nombre: "Verduras Congeladas",  
         cantidad: 0,
         cajon: 1,
+        photo: "/assets/img/freezer/verduras.png"
     },
     //30
     {
@@ -329,7 +360,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/yogurt.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/yogurt-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/rightSide/yogurt.png"
     },
     //31
     {
@@ -341,7 +373,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/zanahoria.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/zanahoria-cruz.png",
             }
-        }
+        },
+        photo: "/assets/img/main/zanahoria.png"
     },
     //32
     {
@@ -353,7 +386,8 @@ export let alimentos = [
                 rutaOk:"assets/img/all-fridge-con-alimentos/zumo.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/zumo-cruz.png", 
             }
-        }
+        },
+        photo: "/assets/img/rightSide/zumo.png"
     },
     //33
     {

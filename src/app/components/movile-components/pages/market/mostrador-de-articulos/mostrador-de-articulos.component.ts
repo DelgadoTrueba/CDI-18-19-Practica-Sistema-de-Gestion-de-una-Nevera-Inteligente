@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { alimentos as alimentosFile } from "../../../../../model/alimentos/alimentos"
+
+
 @Component({
   selector: 'app-mostrador-de-articulos',
   templateUrl: './mostrador-de-articulos.component.html',
@@ -22,11 +25,13 @@ export class MostradorDeArticulosComponent implements OnInit {
     this.articles = null;
 
    setTimeout( ()=>{
-    this.articles = [
+    this.articles = alimentosFile.splice(0,33);
+    
+    /*[
       {"title":"Pera", "description":"magnifica pera","photo":"assets/img/main/pera.png", "tags": [1,2,3]},
       {"title":"Pescado Congelado", "description":"magnifica pera","photo":"assets/img/main/pera.png", "tags": [1,2,3]},
       {"title":"Pera", "description":"magnifica pera","photo":"assets/img/main/pera.png", "tags": [1,2,3]}
-    ];
+    ];*/
    }, 0);
   
   }

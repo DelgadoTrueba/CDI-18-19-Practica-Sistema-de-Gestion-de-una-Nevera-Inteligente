@@ -1,10 +1,8 @@
 export class Article {
 
     constructor(
-        public title: String,
-        public description: String,
+        public nombre: String,
         public photo: String,
-        public tags: String[]
     ){}
 
 }
