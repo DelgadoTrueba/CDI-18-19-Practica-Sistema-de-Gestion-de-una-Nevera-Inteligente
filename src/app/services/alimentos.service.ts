@@ -163,6 +163,26 @@ export class AlimentosService {
         return this.alimentos.filter( (element) => isContent(element.id, ids) );
 
   }
+  alimentosFrutaFilter(){
+
+    let isContent = function(id: string, ids:Array<any>){
+      for(let i=0; i<ids.length; i++){
+          if(ids[i] === id){
+              return true;
+          }
+      }
+      return false;
+    }
+    let ids = [
+        "cereza",
+        "manzana",
+        "melon",
+        "pera",
+        "platano",
+        ]
+        return this.alimentos.filter( (element) => isContent(element.id, ids) );
+
+  }
 
 
   /*getters*/
