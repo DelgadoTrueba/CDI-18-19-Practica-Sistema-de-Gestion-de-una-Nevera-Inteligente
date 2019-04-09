@@ -237,12 +237,11 @@ export class AlimentosService {
       return false;
     }
     let ids = [
-      "broccoli",
-      "coliflor",
-      "pepino",
-      "pimiento",
-      "verduras-congeladas",
-      "zanahoria",
+      "cocaCola",
+      "fanta",
+      "sprite",
+      "zumo",
+      "agua", 
         ]
         return this.alimentos.filter( (element) => isContent(element.id, ids) );
 
