@@ -38,10 +38,10 @@ const routes: Routes = [
       { path: 'frutasAlimentos', component: FrutaComponent },
       { path: 'CarnePescadoAlimentos', component: CarnePescadoComponent },
       { path: 'bebidasAlimentos', component: BebidasComponent },
-
     ]
   },
-];
+  { path: 'settings', component: SettingsComponent, data: {animation: 'settings'} }
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
