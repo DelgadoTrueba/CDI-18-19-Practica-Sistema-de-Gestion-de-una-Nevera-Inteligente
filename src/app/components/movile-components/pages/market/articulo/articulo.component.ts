@@ -9,10 +9,18 @@ import { Article } from 'src/app/model/article';
 export class ArticuloComponent implements OnInit {
 
   @Input() article: Article;
-  
+  added: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  comprar(){
+    this.added = true;
+    setTimeout( ()=>{
+      this.added = false;
+    },1000 );
   }
 
 }

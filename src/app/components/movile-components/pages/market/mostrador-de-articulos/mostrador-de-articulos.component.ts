@@ -27,7 +27,7 @@ export class MostradorDeArticulosComponent implements OnInit {
       {"title":"Pescado Congelado", "description":"magnifica pera","photo":"assets/img/main/pera.png", "tags": [1,2,3]},
       {"title":"Pera", "description":"magnifica pera","photo":"assets/img/main/pera.png", "tags": [1,2,3]}
     ];
-   }, 2000);
+   }, 0);
   
   }
 

@@ -20,8 +20,7 @@
     margin-left: 1%;
     margin-right: 1%;
     
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 2%;
     
     text-align: center;
 }
@@ -38,7 +37,7 @@
 
 .displayer{
     text-align: center;
-    margin-top: 65px !important;
+    margin-top: 70px !important;
 }
 
 .button{
