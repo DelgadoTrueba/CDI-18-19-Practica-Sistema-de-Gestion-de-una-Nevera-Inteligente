@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {alimentos as AlimentosFile} from "../../../../../model/alimentos/alimentos";
+import { GlobalService } from 'src/app/services/global.service';
 
 @Component({
   selector: 'app-todos-alimentos',
@@ -10,11 +11,16 @@ import {alimentos as AlimentosFile} from "../../../../../model/alimentos/aliment
 export class TodosAlimentosComponent implements OnInit {
 
   alimentos;
+  alta: any;
 
-  constructor() { }
+  constructor(
+    private globalService: GlobalService
+  ) { }
 
   ngOnInit() {
     this.alimentos = AlimentosFile;
+    this.alta = this.globalService.getAlta();
+
   }
 
 }
