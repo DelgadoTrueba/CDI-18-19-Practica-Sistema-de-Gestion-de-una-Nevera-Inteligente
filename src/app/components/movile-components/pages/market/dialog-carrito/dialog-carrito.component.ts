@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarritoService } from 'src/app/services/carrito.service';
 import { MatDialogConfig, MatDialog } from '@angular/material';
 import { DialogCancelComponent } from 'src/app/components/core/dialog-cancel/dialog-cancel.component';
+import { DialogModificarComponent } from '../dialog-modificar/dialog-modificar.component';
 
 @Component({
   selector: 'app-dialog-carrito',
@@ -50,6 +51,23 @@ export class DialogCarritoComponent implements OnInit {
         }
     );
   
+  }
+
+  onUpdate(alimento){
+    const dialogConfig = new MatDialogConfig();
+    
+    dialogConfig.data = {
+      articulo: alimento,
+      cantidad: alimento.cantidad
+    }
+    const dialogRef = this.dialog.open(DialogModificarComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+        data =>{
+          if(data >= 0){
+            this.carritoServicie.setCantidad(alimento.id, data);
+          }
+        }
+    );
   }
 
 }

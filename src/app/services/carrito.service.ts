@@ -187,4 +187,12 @@ export class CarritoService {
     return -1;
   }
 
+  getCantidad(id){
+    let pos = this.indexOfId(id);
+    console.log(pos);
+    if(pos !== -1){
+      return this.alimentos[pos].cantidad;
+    }
+  }
+
 }

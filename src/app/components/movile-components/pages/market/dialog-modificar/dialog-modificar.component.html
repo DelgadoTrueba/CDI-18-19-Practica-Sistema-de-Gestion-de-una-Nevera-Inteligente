@@ -1,0 +1,36 @@
+<!--Esta en carrito-->
+<mat-card class="example-card" class="mat-elevation-z0">
+    <div class="main-card">
+        <mat-card-title >
+          <p><b>{{article.nombre}}</b></p>
+        </mat-card-title>
+    </div>
+    <div class="atributos">
+      <mat-card-subtitle>Precio: <b>{{article.precio}}€/{{article.unidad}}.</b></mat-card-subtitle>
+      <mat-card-subtitle>Usted tiene: {{article.cantidad}} {{article.unidad}}.</mat-card-subtitle>
+    </div>
+    <mat-card-content class="mat-card-content2">
+        <mat-card-subtitle>Actualizando carrito.</mat-card-subtitle>
+    </mat-card-content>
+    <mat-card-actions class="card-actions">
+            <button mat-mini-fab (click)="remove()">
+                <mat-icon>remove</mat-icon>
+              </button>
+              <mat-form-field>
+                  <input matInput readonly="true" [value]="cantidad">
+              </mat-form-field>
+              <button mat-mini-fab (click)="add()">
+                <mat-icon>add</mat-icon>
+              </button>
+        <button  *ngIf="cantidad !== 0" mat-raised-button color="accent" (click)="comprar()" class="comprar">
+          <mat-icon >add_shopping_cart</mat-icon>
+        </button>
+
+        <button *ngIf="cantidad === 0" mat-raised-button color="warn" (click)="comprar()" class="comprar">
+            <mat-icon >delete</mat-icon>
+          </button>
+
+    </mat-card-actions>
+  </mat-card>
+
+  <img *ngIf="added" src="{{article.photo}}" class="carrito-foto">

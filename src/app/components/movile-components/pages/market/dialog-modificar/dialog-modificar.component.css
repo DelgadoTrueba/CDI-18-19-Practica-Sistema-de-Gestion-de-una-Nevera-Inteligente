@@ -1,0 +1,150 @@
+.card-actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+mat-form-field{
+    width: 20% !important;
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+    cursor: default;
+}
+
+input{
+    cursor: default;
+    text-align: center;
+}
+
+
+
+
+img{
+    max-width: 50px !important;
+    max-height: 50px !important;
+
+    margin: 10px !important;
+}
+
+.main-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+.atributos{
+  text-align: center;
+}
+
+mat-card-subtitle{
+    font-size: 1em !important;
+}
+
+.mat-card-content2{
+    display: flex ;
+    justify-content: center;
+}
+
+mat-card-content{
+    display: flex;
+    justify-content: flex-start;
+}
+.mat-success {
+    color: black !important;
+    background: white !important;
+}
+.carrito-foto{
+    position: fixed;
+    top: 1%;
+    right: 15%;
+
+    z-index: 2;
+    width: 25px;
+    height: 25px;
+    animation: zoom 1.5s forwards;
+}
+
+.comprar{
+    width: 30%;
+    margin-left: 10% !important;
+}
+
+@keyframes zoom{
+    0%{opacity: 0;}
+    50%{opacity: 1;}
+    100%{opacity: 0; right: 1.5%;}
+}
+
+@media (max-width: 800px){
+    .carrito-foto{
+        position: fixed;
+
+        top: 1%;
+        right: 20%;
+    }
+
+    @keyframes zoom{
+        0%{opacity: 0;}
+        50%{opacity: 1;}
+        100%{opacity: 0; right: 3%;} 
+    }
+    
+}
+
+@media (max-width: 600px){
+    .carrito-foto{
+        position: fixed;
+
+
+        top: 1%;
+        right: 30%;
+    }
+
+    @keyframes zoom{
+        0%{opacity: 0;}
+        50%{opacity: 1;}
+        100%{opacity: 0; right: 4%;} 
+    }
+    
+}
+
+@media (max-width: 400px){
+    .carrito-foto{
+        position: fixed;
+        top: 1%;
+        right: 30%;
+    }
+
+    @keyframes zoom{
+        0%{opacity: 0;}
+        50%{opacity: 1;}
+        100%{opacity: 0; right: 6%;} 
+    }
+
+    .comprar{
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 460px){
+    .comprar{
+        width: 100%;
+        margin-left: 3% !important;
+    }
+}
+
+/***/
+.example-card-estaEnCarrito{
+    background: #5BB9F5;
+}
+
+.mat-success {
+    color: white !important;
+    background: #28a745 !important;
+    margin-bottom: 5% !important;
+    margin-top: 5% !important;
+}

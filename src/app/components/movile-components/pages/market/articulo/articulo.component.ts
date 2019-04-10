@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Article } from 'src/app/model/article';
 import { CarritoService } from 'src/app/services/carrito.service';
 import { DialogCancelComponent } from 'src/app/components/core/dialog-cancel/dialog-cancel.component';
 import { MatDialog, MatDialogConfig } from '@angular/material';
+import { DialogModificarComponent } from '../dialog-modificar/dialog-modificar.component';
 
 @Component({
   selector: 'app-articulo',
@@ -14,18 +14,21 @@ export class ArticuloComponent implements OnInit {
   @Input() article: any;
   added: boolean = false;
 
-  cantidad: number = 0;
+  cantidad = 0;
   estaEnCarrito = false;
 
   constructor(
     private carritoService: CarritoService,
-    private dialog :MatDialog
+    private dialog :MatDialog,
   ) { }
 
   ngOnInit() {
     this.carritoService.notification$.subscribe( (alimentosDelCarrito)=> {
       this.estaEnCarrito = alimentosDelCarrito.reduce( (resul, aliemento)=>{
-        if(aliemento.id === this.article.id && aliemento.cantidad > 0) resul = true;
+        if(aliemento.id === this.article.id && aliemento.cantidad > 0){
+          this.cantidad = aliemento.cantidad;
+          return true;
+        }
         return resul;
       }, false)
     })
@@ -67,6 +70,24 @@ export class ArticuloComponent implements OnInit {
           if(data){
             this.carritoService.setCantidad(this.article.id, 0);
             /*this.cantidad = 0;*/
+          }
+        }
+    );
+  }
+
+  modificar(){
+    const dialogConfig = new MatDialogConfig();
+    
+    dialogConfig.data = {
+      articulo: this.article,
+      cantidad: this.cantidad
+    }
+    const dialogRef = this.dialog.open(DialogModificarComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+        data =>{
+          if(data >= 0){
+            this.cantidad = data;
+            this.carritoService.setCantidad(this.article.id, data);
           }
         }
     );
