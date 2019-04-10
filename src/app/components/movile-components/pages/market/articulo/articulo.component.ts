@@ -66,7 +66,7 @@ export class ArticuloComponent implements OnInit {
         data =>{
           if(data){
             this.carritoService.setCantidad(this.article.id, 0);
-            this.cantidad = 0;
+            /*this.cantidad = 0;*/
           }
         }
     );

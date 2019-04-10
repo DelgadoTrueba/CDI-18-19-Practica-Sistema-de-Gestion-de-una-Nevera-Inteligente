@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarritoService } from 'src/app/services/carrito.service';
+import { MatDialogConfig, MatDialog } from '@angular/material';
+import { DialogCancelComponent } from 'src/app/components/core/dialog-cancel/dialog-cancel.component';
 
 @Component({
   selector: 'app-dialog-carrito',
@@ -13,7 +15,8 @@ export class DialogCarritoComponent implements OnInit {
 
 
   constructor(
-    private carritoServicie: CarritoService
+    private carritoServicie: CarritoService,
+    private dialog :MatDialog
   ) { }
 
   ngOnInit() {
@@ -24,6 +27,29 @@ export class DialogCarritoComponent implements OnInit {
           else return false;
         })
       });
+  }
+
+  onDelete(alimento){
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    
+    
+    dialogConfig.data = {
+      nombre: alimento.nombre,
+    }
+    
+   
+    const dialogRef = this.dialog.open(DialogCancelComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+        data =>{
+          if(data){
+            this.carritoServicie.setCantidad(alimento.id, 0);
+          }
+        }
+    );
+  
   }
 
 }
