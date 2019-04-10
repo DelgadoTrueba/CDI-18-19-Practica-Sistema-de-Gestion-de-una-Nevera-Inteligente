@@ -15,6 +15,11 @@
             </mat-toolbar-row>
           </mat-toolbar>
 
+          <a mat-list-item (click)="sidenav.toggle()" 
+          [routerLinkActive]="['activado']" class="blateral"
+          (click)="irAPaymarket()">
+          <mat-icon>shopping_basket</mat-icon>&nbsp;Paymarket</a>
+
         <a mat-list-item (click)="sidenav.toggle()" 
           [routerLinkActive]="['activado']" class="blateral"
           (click)="irATodosLosAlimentos()">
@@ -69,7 +74,6 @@
             <span>UPM Market</span>
             <span class="example-spacer"></span>
             <div>
-              <!-- The following menu items will be hidden on both SM and XS screen sizes -->
    
                 <button mat-stroked-button
                 [matBadge]="carritonumber" matBadgePosition="before" matBadgeColor="warn"

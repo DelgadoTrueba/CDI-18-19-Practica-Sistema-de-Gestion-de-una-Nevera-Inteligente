@@ -1,0 +1,56 @@
+<div class="main">
+    
+    <mat-toolbar class="paymarket">
+          <span style="margin: auto;">Servicio Paymarket</span>
+    </mat-toolbar>
+    
+    <form (ngSubmit)="onSubmit(); onReset(myUserform)" [formGroup]="userForm" #myUserform="ngForm">
+    
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nombre" formControlName="nombre" required>
+        <mat-error *ngIf="email.errors && email.errors.required">
+            El nombre es obligatorio.
+          </mat-error>
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Apellidos" formControlName="apellidos" required>
+          <mat-error *ngIf="email.errors && email.errors.required">
+              Los apellidos son obligatorios.
+            </mat-error>
+        </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" formControlName="email" required>
+          <mat-error *ngIf="email.errors && email.errors.required">
+            El email es obligatorio.
+          </mat-error>
+          <mat-error *ngIf="email.errors && email.errors.pattern">
+              El email debe contener almenos un caracter @.
+          </mat-error>
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Contraseña" formControlName="password" required type="password">
+        <mat-error *ngIf="userForm.hasError('required', 'password')">
+          Por favor introduzca una contraseña
+        </mat-error>
+        <mat-error *ngIf="password.errors && password.errors.pattern">
+            La contraseña debe contener un minúscula, una mayúscula, un simbolo especial @#$%_, una 
+            longitud de al menos 6 carácteres y máximo 20.
+          </mat-error>
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Confirma la contraseña" formControlName="confirmPassword" [errorStateMatcher]="matcher" type="password" required>
+          <mat-error *ngIf="userForm.hasError('notSame')">
+           La contraseña no coincide
+        </mat-error>  
+      </mat-form-field>
+    
+      <br><br>
+    
+      <button mat-raised-button color="primary" type="submit" value="Enviar" [disabled]="!userForm.valid">Dame de alta!</button>
+    
+    </form> 
+</div>

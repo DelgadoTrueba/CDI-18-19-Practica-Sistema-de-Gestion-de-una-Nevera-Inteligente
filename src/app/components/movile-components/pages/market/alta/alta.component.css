@@ -1,0 +1,16 @@
+
+  .example-full-width {
+    width: 80% !important;
+  }
+
+form{
+ text-align: center !important;
+}
+
+.main{
+  margin-top: 70px !important;
+}
+
+.mat-toolbar{
+  background-color: transparent !important;
+}

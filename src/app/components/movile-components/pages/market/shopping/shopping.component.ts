@@ -93,4 +93,8 @@ export class ShoppingComponent implements OnInit {
     this.dialog.open(DialogCarritoComponent, dialogConfig)
   }
 
+  irAPaymarket(){
+    this.router.navigate(["registro"], { relativeTo: this.r });
+  }
+
 }

@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
@@ -80,6 +82,7 @@ import { CarnePescadoComponent } from './components/movile-components/pages/mark
 import { DialogCarritoComponent } from './components/movile-components/pages/market/dialog-carrito/dialog-carrito.component';
 import { DialogCancelComponent } from './components/core/dialog-cancel/dialog-cancel.component';
 import { DialogModificarComponent } from './components/movile-components/pages/market/dialog-modificar/dialog-modificar.component';
+import { AltaComponent } from './components/movile-components/pages/market/alta/alta.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -136,12 +139,14 @@ import { DialogModificarComponent } from './components/movile-components/pages/m
     DialogCarritoComponent,
     DialogCancelComponent,
     DialogModificarComponent,
+    AltaComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
 
     BrowserAnimationsModule,
     MatButtonModule,
