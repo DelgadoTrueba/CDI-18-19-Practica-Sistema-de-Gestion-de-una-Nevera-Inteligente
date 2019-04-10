@@ -76,6 +76,7 @@ import { VerdurasComponent } from './components/movile-components/pages/market/v
 import { FrutaComponent } from './components/movile-components/pages/market/fruta/fruta.component';
 import { CarnePescadoComponent } from './components/movile-components/pages/market/carne-pescado/carne-pescado.component';
 import { DialogCarritoComponent } from './components/movile-components/pages/market/dialog-carrito/dialog-carrito.component';
+import { DialogCancelComponent } from './components/core/dialog-cancel/dialog-cancel.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -130,6 +131,7 @@ import { DialogCarritoComponent } from './components/movile-components/pages/mar
     FrutaComponent,
     CarnePescadoComponent,
     DialogCarritoComponent,
+    DialogCancelComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
@@ -169,7 +171,8 @@ import { DialogCarritoComponent } from './components/movile-components/pages/mar
   entryComponents: [
       DialogInfoAlimentoComponent,
       DialogAguaComponent,
-      DialogCarritoComponent
+      DialogCarritoComponent,
+      DialogCancelComponent
     ]
 })
 export class AppModule { }
