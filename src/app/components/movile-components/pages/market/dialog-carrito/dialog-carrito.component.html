@@ -48,10 +48,18 @@
       <mat-divider></mat-divider>
       <div class="total">
         <p>Total</p>
-        <p><b>0€</b></p>
+        <p><b>{{total}}€</b></p>
       </div>
       <mat-divider></mat-divider>
 
     </mat-list>
+
+    <div style="    text-align: center;   ">
+        <button [disabled]="alimentosEnCarrito.length === 0" mat-raised-button color="accent" class="pagar">
+            Realizar el pago
+          </button>
+    
+    </div>
+   
   
   

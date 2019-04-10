@@ -13,7 +13,7 @@ export class DialogCarritoComponent implements OnInit {
   
   alimentosEnCarrito = null;
   displayedColumns: string[] = ['nombre', 'cantidad', "precio", "actions"];
-
+  total: number;
 
   constructor(
     private carritoServicie: CarritoService,
@@ -27,6 +27,10 @@ export class DialogCarritoComponent implements OnInit {
           if(alimento.cantidad>0) return true;
           else return false;
         })
+
+        this.total = this.alimentosEnCarrito.reduce( (sum, alimento) =>{
+          return sum += alimento.cantidad * alimento.precio;
+        },0)
       });
   }
 

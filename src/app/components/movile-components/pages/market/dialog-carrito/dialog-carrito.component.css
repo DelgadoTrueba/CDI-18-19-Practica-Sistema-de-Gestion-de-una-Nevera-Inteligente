@@ -16,6 +16,7 @@ th{
     width: 25% !important;
 }
 
-td{
-    text-align: center;
+.pagar{
+    margin-top: 2%;
+    width: 80%;
 }
