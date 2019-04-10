@@ -5,7 +5,7 @@ table{
 
 .total{
     display: flex !important;
-    justify-content:  space-between !important;
+    justify-content:  center !important;
     font-family: Roboto;
     padding-left: 5%;
     padding-right: 5%;
@@ -16,7 +16,24 @@ th{
     width: 25% !important;
 }
 
-.pagar{
-    margin-top: 2%;
-    width: 80%;
+.date{
+    width:45% !important;
+}
+
+.main{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-top: 3%;
+}
+
+.mat-dialog-container {
+    padding: 0px !important;
+}
+
+
+.mat-toolbar1{
+    border-radius: 10px !important;
 }

@@ -195,4 +195,11 @@ export class CarritoService {
     }
   }
 
+  deleteAll(){
+    this.alimentos.forEach(alimento => {
+      alimento.cantidad = 0;
+    });
+    this.notify();
+  }
+
 }

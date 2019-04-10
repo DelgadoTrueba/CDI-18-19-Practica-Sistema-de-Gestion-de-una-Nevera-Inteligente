@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CarritoService } from 'src/app/services/carrito.service';
-import { MatDialogConfig, MatDialog } from '@angular/material';
+import { MatDialogConfig, MatDialog, MatTooltip } from '@angular/material';
 import { DialogCancelComponent } from 'src/app/components/core/dialog-cancel/dialog-cancel.component';
 import { DialogModificarComponent } from '../dialog-modificar/dialog-modificar.component';
 
 @Component({
   selector: 'app-dialog-carrito',
   templateUrl: './dialog-carrito.component.html',
-  styleUrls: ['./dialog-carrito.component.css']
+  styleUrls: ['./dialog-carrito.component.css'],
 })
 export class DialogCarritoComponent implements OnInit {
   
@@ -41,6 +41,7 @@ export class DialogCarritoComponent implements OnInit {
     dialogConfig.autoFocus = true;
     
     
+    
     dialogConfig.data = {
       nombre: alimento.nombre,
     }
@@ -72,6 +73,31 @@ export class DialogCarritoComponent implements OnInit {
           }
         }
     );
+  }
+
+  onDeleteAll(){
+  
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    
+    
+    dialogConfig.data = {
+      nombre: "",
+    }
+    
+   
+    const dialogRef = this.dialog.open(DialogCancelComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+        data =>{
+          if(data){
+            this.carritoServicie.deleteAll();
+          }
+        }
+    );
+  
+
   }
 
 }

@@ -33,6 +33,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material';
 
 
 //Importar Flex-Layout
@@ -159,6 +161,8 @@ import { DialogModificarComponent } from './components/movile-components/pages/m
     MatFormFieldModule,
     MatInputModule,
     MatBadgeModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
 
     FlexLayoutModule
   ],
