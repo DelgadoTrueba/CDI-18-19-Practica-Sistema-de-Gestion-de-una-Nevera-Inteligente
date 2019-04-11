@@ -84,6 +84,9 @@ export class DialogCarritoComponent implements OnInit {
         data =>{
           if(data >= 0){
             this.carritoServicie.setCantidad(alimento.id, data);
+            this.total = this.alimentosEnCarrito.reduce( (sum, alimento) =>{
+              return sum += alimento.cantidad * alimento.precio;
+            },0)
           }
         }
     );

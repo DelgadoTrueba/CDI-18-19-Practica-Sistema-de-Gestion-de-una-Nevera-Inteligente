@@ -110,7 +110,6 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
 
     const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
     if(alimentoNombre === "pescado"){

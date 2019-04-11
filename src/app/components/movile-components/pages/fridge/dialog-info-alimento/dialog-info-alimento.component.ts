@@ -49,6 +49,7 @@ export class DialogInfoAlimentoComponent implements OnInit {
 
   irATodosLosAlimentos(){
     this.router.navigate(["../market/todosAlimentos"]);
+    this.dialogRef.close();
   }
 
 }

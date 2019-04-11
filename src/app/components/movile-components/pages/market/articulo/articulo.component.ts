@@ -24,6 +24,8 @@ export class ArticuloComponent implements OnInit {
 
   ngOnInit() {
     this.carritoService.notification$.subscribe( (alimentosDelCarrito)=> {
+      this.cantidad = 0;
+
       this.estaEnCarrito = alimentosDelCarrito.reduce( (resul, aliemento)=>{
         if(aliemento.id === this.article.id && aliemento.cantidad > 0){
           this.cantidad = aliemento.cantidad;

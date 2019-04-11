@@ -66,7 +66,6 @@ export class LateralDerComponent implements OnInit, OnDestroy {
 
     const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
     if(alimentoNombre === "queso"){

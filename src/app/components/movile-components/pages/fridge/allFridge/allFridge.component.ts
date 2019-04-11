@@ -451,7 +451,6 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
   {
     const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
     this.dialog.open(DialogAguaComponent, dialogConfig);
@@ -461,7 +460,6 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
   {
     const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
     this.dialog.open(DialogHieloComponent, dialogConfig);
