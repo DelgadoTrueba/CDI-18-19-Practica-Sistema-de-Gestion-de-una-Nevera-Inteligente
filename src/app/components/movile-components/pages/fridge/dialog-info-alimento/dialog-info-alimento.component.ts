@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class DialogInfoAlimentoComponent implements OnInit {
 
   alimento;
+  alimentoCong: boolean = false;
 
   constructor(
       @Inject(MAT_DIALOG_DATA) data,
@@ -23,6 +24,14 @@ export class DialogInfoAlimentoComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(this.alimento.id === "carne-congelada")
+       this.alimentoCong = true;
+
+    if(this.alimento.id === "pescado-congelado")
+       this.alimentoCong = true;
+
+    if(this.alimento.id === "tarta")
+       this.alimentoCong = true;
   }
 
   close()

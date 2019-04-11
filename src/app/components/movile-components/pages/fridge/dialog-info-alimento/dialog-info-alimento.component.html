@@ -13,7 +13,7 @@
     <button mat-raised-button color="accent" (click)="consumir()">
         <mat-icon>restaurant</mat-icon> Consumir
     </button>
-    <button mat-raised-button color="accent">
+    <button *ngIf = "alimentoCong"mat-raised-button color="accent">
         <mat-icon>swap_vert</mat-icon> Descongelar
     </button>
     <button mat-raised-button color="warn" class="exit" (click)="close()">
