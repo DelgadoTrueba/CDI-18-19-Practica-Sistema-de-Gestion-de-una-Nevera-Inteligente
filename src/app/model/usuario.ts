@@ -6,7 +6,8 @@ export class User {
         public email: string,
         public contrasena: string,
         public repContrasena: string,
-        public nTarjeta: string
+        public nTarjeta: string,
+        public dominicilio: string
     ){ }
 
 }

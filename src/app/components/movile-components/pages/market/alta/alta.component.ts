@@ -21,7 +21,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class AltaComponent implements OnInit {
 
   public userForm: FormGroup; 
-  public user: User = new User("", "", "", "","","123456789101112");
+  public user: User = new User("", "", "", "","","123456789101112", "");
 
   matcher = new MyErrorStateMatcher();
   alta;
@@ -43,6 +43,7 @@ export class AltaComponent implements OnInit {
   email;
   password;
   confirmPassword;
+  dominicilio;
 
   createFormControls(){
       this.nombre = new FormControl('', [Validators.required]),
@@ -55,7 +56,8 @@ export class AltaComponent implements OnInit {
         Validators.required,
         Validators.pattern("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$_%]).{6,20})"),
       ]),
-      this.confirmPassword = [''];
+      this.confirmPassword = [''],
+      this.dominicilio = new FormControl('', [Validators.required]);
 
   }
   createForm(){
@@ -64,7 +66,8 @@ export class AltaComponent implements OnInit {
       apellidos: this.apellidos ,
       email: this.email ,
       password: this.password ,
-      confirmPassword: this.confirmPassword 
+      confirmPassword: this.confirmPassword ,
+      dominicilio: this.dominicilio
     }, { validator: this.checkPasswords });
 
   }

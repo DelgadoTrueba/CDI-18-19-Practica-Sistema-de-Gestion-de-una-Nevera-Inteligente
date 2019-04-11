@@ -19,6 +19,13 @@
               Los apellidos son obligatorios.
             </mat-error>
         </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Dominicilio" formControlName="dominicilio" required>
+            <mat-error *ngIf="email.errors && email.errors.required">
+                El dominicilio es obligatorio.
+              </mat-error>
+          </mat-form-field>
     
       <mat-form-field class="example-full-width">
           <input matInput placeholder="Email" formControlName="email" required>
