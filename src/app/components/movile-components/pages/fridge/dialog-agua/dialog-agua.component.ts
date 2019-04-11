@@ -1,4 +1,4 @@
-import {MatDialog, MatDialogConfig} from "@angular/material";
+import {MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material";
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,7 +9,11 @@ import { Component } from '@angular/core';
 
 export class  DialogAguaComponent{
 
-    constructor(private dialog: MatDialog) {}
+    toggleIsOn = true;
+
+    constructor(
+        private dialog: MatDialog,
+        private dialogRef: MatDialogRef<DialogAguaComponent>,) {}
 
     openDialog() {
 
@@ -19,5 +23,15 @@ export class  DialogAguaComponent{
         dialogConfig.autoFocus = true;
 
         this.dialog.open(DialogAguaComponent, dialogConfig);
+    }
+
+    close()
+  {
+    this.dialogRef.close();
+  }
+
+    changeImg()
+    {
+      this.toggleIsOn = !this.toggleIsOn;
     }
 }
