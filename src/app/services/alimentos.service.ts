@@ -439,7 +439,12 @@ export class AlimentosService {
   setCantidad(alimento, cantidad){
     let pos = this.alimentos.indexOf(alimento);
     this.alimentos[pos].cantidad = cantidad;
-	  
+  }
+
+  setCantidadId(id,cantidad){
+    this.alimentos.forEach((alimento)=>{
+      if(alimento.id === id) alimento.cantidad += cantidad;
+    })
   }
 
   setAgua(cantidad){

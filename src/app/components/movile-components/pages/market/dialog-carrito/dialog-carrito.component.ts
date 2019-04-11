@@ -121,6 +121,7 @@ export class DialogCarritoComponent implements OnInit {
     dialogRef.afterClosed().subscribe(
         data =>{
           if(data){
+            this.carritoServicie.addToFridge();
             this.carritoServicie.deleteAll();
             this.router.navigate(["fridge"]);
             this.dialog.closeAll();

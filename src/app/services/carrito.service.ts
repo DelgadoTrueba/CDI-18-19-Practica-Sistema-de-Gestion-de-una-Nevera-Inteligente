@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 /*Archivo de los alimentos*/
 import { carrito as carritoFile } from '../model/carrito';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { AlimentosService } from './alimentos.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,9 @@ export class CarritoService {
   private notification: BehaviorSubject<any>;
   public notification$: Observable<any>;
 
-  constructor() {
+  constructor(
+    private alimentosService: AlimentosService
+  ) {
     this.notification = new BehaviorSubject<any>(this.alimentos);
     this.notification$ = this.notification.asObservable();
   }
@@ -201,5 +204,12 @@ export class CarritoService {
     });
     this.notify();
   }
+
+  addToFridge(){
+    this.alimentos.forEach(alimento => {
+      this.alimentosService.setCantidadId(alimento.id,alimento.cantidad);
+    });
+  }
+
 
 }
