@@ -1,7 +1,17 @@
-.miAnimacion{
-    height: 400px;
+mat-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.miAnimacion{
+    height: 325px;
+}
+
+.indicador{
+    height: 20%;
+    width: 20%
+}
 
 .exit{
     width: 95% !important;

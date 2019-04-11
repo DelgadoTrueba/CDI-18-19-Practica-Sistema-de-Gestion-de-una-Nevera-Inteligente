@@ -1,11 +1,21 @@
 <mat-card class="mat-elevation-z0">
 
+<p *ngIf="!a0">Deposito de Agua:</p>
+<button *ngIf="a0" mat-raised-button color="primary" 
+style="margin: 3%;" (click)="reset()">
+    Recargar Deposito</button>
+
+    <img *ngIf="a0" src="assets\img\indicadores\0.PNG" class="indicador">
+    <img *ngIf="a20" src="assets\img\indicadores\20.PNG" class="indicador">
+    <img *ngIf="a40" src="assets\img\indicadores\40.PNG" class="indicador">
+    <img *ngIf="a60" src="assets\img\indicadores\60.PNG" class="indicador">
+    <img *ngIf="a80" src="assets\img\indicadores\80.PNG" class="indicador">
+    <img *ngIf="a100" src="assets\img\indicadores\100.PNG" class="indicador">
+
 <img *ngIf="toggleIsOn" src="assets\img\animations\grifo-cerrado.png" class="miAnimacion">
 <img *ngIf="!toggleIsOn" src="assets\img\animations\agua.gif" class="miAnimacion">
-
-
     <mat-card-actions>
-        <mat-slide-toggle id="toggle" (click)="changeImg()">
+        <mat-slide-toggle #grifo id="toggle" (change)="changeImg()" [disabled]="a0">
             Abrir Grifo
         </mat-slide-toggle>
 
