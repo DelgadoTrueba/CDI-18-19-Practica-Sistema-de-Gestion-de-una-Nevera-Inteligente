@@ -4,6 +4,7 @@ import { MatDialogConfig, MatDialog, MatTooltip } from '@angular/material';
 import { DialogCancelComponent } from 'src/app/components/core/dialog-cancel/dialog-cancel.component';
 import { DialogModificarComponent } from '../dialog-modificar/dialog-modificar.component';
 import { GlobalService } from 'src/app/services/global.service';
+import { DialogConfirmarComponent } from '../dialog-confirmar/dialog-confirmar.component';
 
 @Component({
   selector: 'app-dialog-carrito',
@@ -107,6 +108,31 @@ export class DialogCarritoComponent implements OnInit {
     );
   
 
+  }
+
+  confirmar(){
+    const dialogConfig = new MatDialogConfig();
+       
+    const dialogRef = this.dialog.open(DialogConfirmarComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+        data =>{
+          if(data){
+            this.carritoServicie.deleteAll();
+          }
+        }
+    );
+  
+
+  }
+
+  public onDate(event): void {
+    console.log(event.value);
+  }
+
+  selectOption(event) {
+    //getted from event
+    console.log(event.value);
+    //getted from binding
   }
 
 }

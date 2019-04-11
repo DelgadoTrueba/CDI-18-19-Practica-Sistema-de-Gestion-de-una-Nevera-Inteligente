@@ -1,0 +1,9 @@
+<h3 mat-dialog-title>
+  
+    <p>Usted va a realizar una compra:</p>
+    <p>Esta seguro? &nbsp;<mat-icon color="warn">warning</mat-icon></p>
+</h3>
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close cdkFocusInitial color="primary">Cancelar</button>
+  <button mat-raised-button [mat-dialog-close]="true" style="background: #28a745; color: white;">Aceptar</button>
+</mat-dialog-actions>

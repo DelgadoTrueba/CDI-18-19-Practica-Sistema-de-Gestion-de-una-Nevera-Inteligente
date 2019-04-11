@@ -83,6 +83,7 @@ import { DialogCarritoComponent } from './components/movile-components/pages/mar
 import { DialogCancelComponent } from './components/core/dialog-cancel/dialog-cancel.component';
 import { DialogModificarComponent } from './components/movile-components/pages/market/dialog-modificar/dialog-modificar.component';
 import { AltaComponent } from './components/movile-components/pages/market/alta/alta.component';
+import { DialogConfirmarComponent } from './components/movile-components/pages/market/dialog-confirmar/dialog-confirmar.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -140,6 +141,7 @@ import { AltaComponent } from './components/movile-components/pages/market/alta/
     DialogCancelComponent,
     DialogModificarComponent,
     AltaComponent,
+    DialogConfirmarComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
@@ -184,7 +186,8 @@ import { AltaComponent } from './components/movile-components/pages/market/alta/
       DialogAguaComponent,
       DialogCarritoComponent,
       DialogCancelComponent,
-      DialogModificarComponent
+      DialogModificarComponent,
+      DialogConfirmarComponent
     ]
 })
 export class AppModule { }

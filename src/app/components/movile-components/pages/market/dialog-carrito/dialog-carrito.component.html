@@ -73,21 +73,23 @@
           
           <div class="main">
               <mat-form-field>
-                  <input matInput [matDatepicker]="picker" placeholder="Selecciona la fecha de entrega" [disabled]="alimentosEnCarrito.length === 0">
+                  <input (dateChange)="onDate($event)"
+                  matInput [matDatepicker]="picker" placeholder="Selecciona la fecha de entrega" [disabled]="alimentosEnCarrito.length === 0">
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-datepicker #picker ></mat-datepicker>
                 </mat-form-field>
       
               <mat-form-field>
                 <mat-label>Nº de tarjeta Paymarket</mat-label>
-                <mat-select>
+                <mat-select (selectionChange)="selectOption($event)">
                   <mat-option *ngFor="let food of foods" [value]="food.value" [disabled]="alimentosEnCarrito.length === 0">
                     {{food.viewValue}}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
       
-                <button [disabled]="alimentosEnCarrito.length === 0" mat-raised-button color="accent" class="pagar">
+                <button [disabled]="alimentosEnCarrito.length === 0" mat-raised-button color="accent" class="pagar"
+                (click)="confirmar()">
                   Realizar el pago
                 </button>
           
