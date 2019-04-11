@@ -6,6 +6,7 @@ import { DialogModificarComponent } from '../dialog-modificar/dialog-modificar.c
 import { GlobalService } from 'src/app/services/global.service';
 import { DialogConfirmarComponent } from '../dialog-confirmar/dialog-confirmar.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SnackBarNotificationService } from 'src/app/services/snack-bar-notification.service';
 
 @Component({
   selector: 'app-dialog-carrito',
@@ -25,11 +26,14 @@ export class DialogCarritoComponent implements OnInit {
   fecha: boolean = false;
   tarjeta: boolean = false;
 
+  minDate = new Date();
+
   constructor(
     private carritoServicie: CarritoService,
     private dialog :MatDialog,
     private globalServicie: GlobalService,
     private router: Router, private r:ActivatedRoute,
+    private snackBarNotification: SnackBarNotificationService
   ) { }
 
   ngOnInit() {
@@ -127,6 +131,7 @@ export class DialogCarritoComponent implements OnInit {
             this.carritoServicie.addToFridge();
             this.carritoServicie.deleteAll();
             this.router.navigate(["fridge"]);
+            this.snackBarNotification.notify("La compra se ha realizado correctamente")
             this.dialog.closeAll();
           }
         }

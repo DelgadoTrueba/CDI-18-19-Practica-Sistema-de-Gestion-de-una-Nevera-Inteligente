@@ -22,7 +22,7 @@ export class ShoppingComponent implements OnInit {
   constructor(
     private router: Router, private r:ActivatedRoute,
     private carritoService: CarritoService,
-    private dialog :MatDialog
+    private dialog :MatDialog,
   ) { }
 
   ngOnInit() {
