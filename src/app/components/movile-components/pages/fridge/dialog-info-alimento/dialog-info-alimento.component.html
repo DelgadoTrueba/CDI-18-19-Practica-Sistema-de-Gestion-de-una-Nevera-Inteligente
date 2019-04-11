@@ -4,17 +4,18 @@
     <mat-card-title>{{alimento.nombre}}</mat-card-title>
     <mat-card-subtitle>Cantidad: {{alimento.cantidad}}</mat-card-subtitle>
     <mat-card-subtitle>Fecha Caducidad: {{alimento.cantidad}}</mat-card-subtitle>
+    <mat-card-subtitle>Fecha Caducidad: {{alimento.precio}}€/{{alimento.unidad}}</mat-card-subtitle>
   </mat-card-content>
   
   <mat-card-actions>
     <button mat-raised-button color="primary" (click)="irATodosLosAlimentos()">
         <mat-icon>store</mat-icon> Comprar
     </button>
-    <button mat-raised-button color="accent" (click)="consumir()">
+    <button mat-raised-button color="accent" (click)="consumir()" [disabled]="alimento.cantidad == 0">
         <mat-icon>restaurant</mat-icon> Consumir
     </button>
-    <button *ngIf = "alimentoCong"mat-raised-button color="accent">
-        <mat-icon>swap_vert</mat-icon> Descongelar
+    <button *ngIf = "alimentoCong"mat-raised-button color="accent" (click)="descongelar()" [disabled]="alimento.cantidad == 0">
+         <mat-icon>swap_vert</mat-icon> Descongelar
     </button>
     <button mat-raised-button color="warn" class="exit" (click)="close()">
         <mat-icon>close</mat-icon> Cerrar

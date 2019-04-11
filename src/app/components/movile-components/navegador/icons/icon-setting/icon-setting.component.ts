@@ -23,6 +23,9 @@ export class IconSettingComponent implements OnInit {
     ).addSvgIcon(
       "thermometer",
       sanitizer.bypassSecurityTrustResourceUrl('assets/icons/thermometer.svg')
+    ).addSvgIcon(
+      "bulb",
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/bulb.svg')
     )
    }
 

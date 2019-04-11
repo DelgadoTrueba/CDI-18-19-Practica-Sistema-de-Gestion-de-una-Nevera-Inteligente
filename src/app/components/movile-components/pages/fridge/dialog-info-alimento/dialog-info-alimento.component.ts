@@ -47,6 +47,10 @@ export class DialogInfoAlimentoComponent implements OnInit {
     this.alimentosService.decrementarCantidad(this.alimento);
   }
 
+  descongelar(){
+    this.alimentosService.decrementarCantidad(this.alimento);
+  }
+
   irATodosLosAlimentos(){
     this.router.navigate(["../market/todosAlimentos"]);
     this.dialogRef.close();
