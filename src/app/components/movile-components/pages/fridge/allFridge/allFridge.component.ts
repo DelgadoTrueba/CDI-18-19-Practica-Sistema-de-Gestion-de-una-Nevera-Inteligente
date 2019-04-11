@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AlimentosService } from 'src/app/services/alimentos.service';
 import { MatTooltip, MatDialogConfig, MatDialog } from '@angular/material';
 import { DialogAguaComponent } from '../dialog-agua/dialog-agua.component';
+import { DialogHieloComponent } from '../dialog-hielo/dialog-hielo.component';
 
 
 @Component({
@@ -454,6 +455,16 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
     dialogConfig.autoFocus = true;
 
     this.dialog.open(DialogAguaComponent, dialogConfig);
+  }
+
+  abrirDialogHielo()
+  {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(DialogHieloComponent, dialogConfig);
   }
 
 }

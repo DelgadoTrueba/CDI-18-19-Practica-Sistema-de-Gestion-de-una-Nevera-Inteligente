@@ -1,0 +1,19 @@
+<mat-card class="mat-elevation-z0">
+
+    <div class="center">
+    <img *ngIf="toggleIsOn" src="assets\img\animations\hielo-vacio.jpg" class="miAnimacion">
+    <img *ngIf="!toggleIsOn" src="assets\img\animations\hielo.gif" class="miAnimacion">
+    </div>
+    
+        <mat-card-actions>
+            <mat-slide-toggle id="toggle" (click)="changeImg()">
+                Fabricar cubitos de hielo
+            </mat-slide-toggle>
+    
+            <button mat-raised-button color="warn" class="exit" (click)="close()">
+                <mat-icon>close</mat-icon> Cerrar
+            </button>
+    
+        </mat-card-actions>
+    
+    </mat-card>

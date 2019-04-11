@@ -225,14 +225,14 @@
                                 <mat-icon>local_drink</mat-icon>
                         </button>
                         <button mat-mini-fab 
-                                [color]="'success'"     
+                                [color]="'success'"             
 
                                 [disabled]="abiertoArriba"
-                  
-                                #tooltip8="matTooltip"
-                                matTooltip="Hielos"
-                                [matTooltipPosition]="'after'">
                                 
+                                #tooltip7="matTooltip"
+                                matTooltip="Hielo"
+                                [matTooltipPosition]="'before'"
+                                (click)='abrirDialogHielo()'>
                                 <mat-icon>ac_unit</mat-icon>
                         </button>
                     </div>

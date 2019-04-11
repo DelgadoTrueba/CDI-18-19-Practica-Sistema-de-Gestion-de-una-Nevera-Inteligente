@@ -1,0 +1,20 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.miAnimacion{
+    height: 300px;
+
+}
+
+
+.exit{
+    width: 95% !important;
+    margin-top: 10px;
+  }
+
+#toggle{
+    margin-bottom: 5% !important;
+}
