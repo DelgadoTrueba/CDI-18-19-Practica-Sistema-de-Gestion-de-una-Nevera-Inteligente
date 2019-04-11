@@ -21,9 +21,8 @@ th{
 }
 
 .main{
-    text-align: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
 
     margin-top: 3%;
