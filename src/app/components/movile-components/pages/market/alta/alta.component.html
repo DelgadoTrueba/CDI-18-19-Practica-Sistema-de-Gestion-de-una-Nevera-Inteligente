@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" *ngIf="!alta">
     
     <mat-toolbar class="paymarket">
           <span style="margin: auto;">Servicio Paymarket</span>
@@ -50,7 +50,50 @@
     
       <br><br>
     
-      <button mat-raised-button color="primary" type="submit" value="Enviar" [disabled]="!userForm.valid">Dame de alta!</button>
+      <button mat-raised-button color="primary" (click)="darAlta()" [disabled]="!userForm.valid">Dame de alta!</button>
     
     </form> 
+</div>
+
+
+<div *ngIf="alta" class="main">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Bienvenido {{userForm.value.nombre}} !</mat-card-title>
+          <mat-card-subtitle>Esta es su tarjeta paymarket: </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+        </mat-card-content>
+        <mat-card-actions>
+
+        </mat-card-actions>
+      </mat-card>
+
+      <br>
+      <br>
+
+      <div class="mostrador-tarjeta">
+          <div class="grid-container">
+              <div class="bank">Paymarket</div>
+              <div class="chip">
+                <img src="assets/img/chip.png" class="chip"/>
+              </div>
+              <div class="number">1234 5678 9101 112</div>
+              <div class="label">
+                VALID FROM &nbsp; UNTIL END
+                <br>
+                04/19 &nbsp; 04/25
+              </div>
+              <div class="valid"></div>
+              <div class="name">{{userForm.value.nombre}}</div>
+      
+              <div class="logo"></div>
+              <div class="mc">
+                  <img src="assets/img/mc.png" class="chip"/>
+              </div>
+            </div>
+      </div>
+      
 </div>

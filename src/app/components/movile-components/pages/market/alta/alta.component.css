@@ -8,9 +8,60 @@ form{
 }
 
 .main{
-  margin-top: 70px !important;
+  margin-top: 80px !important;
 }
 
 .mat-toolbar{
   background-color: transparent !important;
+}
+
+.example-card {
+  margin: auto;
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://avatars0.githubusercontent.com/u/33582727?s=96&v=4');
+  background-size: cover;
+}
+/*grid*/
+.grid-container {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr 0.5fr 1fr;
+  grid-template-areas: "bank . . ." "chip . . logo" "number number . logo" "label . . ." "valid . . mc" "name . . mc";
+
+  background: #0097F8;
+  min-height: 200px;
+
+  border: 1px solid black;
+  border-radius: 20px;
+  padding:2%;
+}
+
+.number { grid-area: number; }
+
+.label { grid-area: label; }
+
+.valid { grid-area: valid; }
+
+.name { grid-area: name; }
+
+.chip { grid-area: chip; }
+
+.bank { grid-area: bank; }
+
+.logo { grid-area: logo; }
+
+.mc { grid-area: mc; }
+
+.chip{
+  width: 30%;
+}
+
+
+.mostrador-tarjeta{
+  width: 50%;
+  
+  margin:auto;
 }

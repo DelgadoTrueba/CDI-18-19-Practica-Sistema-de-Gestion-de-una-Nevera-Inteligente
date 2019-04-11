@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { User } from 'src/app/model/usuario';
 import { ErrorStateMatcher } from '@angular/material';
+import { GlobalService } from 'src/app/services/global.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -23,15 +24,18 @@ export class AltaComponent implements OnInit {
   public user: User = new User("", "", "", "","","123456789101112");
 
   matcher = new MyErrorStateMatcher();
-
+  alta;
 
   constructor(
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
+    private globalService: GlobalService
   ){ }
 
   ngOnInit() {
     this.createFormControls();
     this.createForm();
+
+    this.alta = this.globalService.getAlta();
   }
 
   nombre;
@@ -78,6 +82,13 @@ export class AltaComponent implements OnInit {
 
   onReset(myUserform){
     myUserform.reset();
+  }
+
+  darAlta(){
+    console.log(this.userForm.value);
+
+    this.globalService.darDeAlta();
+    this.alta = true;
   }
 
 }
