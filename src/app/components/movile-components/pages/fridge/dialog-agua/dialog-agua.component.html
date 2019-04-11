@@ -1,1 +1,18 @@
-<img src="assets\img\animations\agua.gif" class="miGif">
+<mat-card class="mat-elevation-z0">
+
+<img *ngIf="toggleIsOn" src="assets\img\animations\grifo-cerrado.png" class="miAnimacion">
+<img *ngIf="!toggleIsOn" src="assets\img\animations\agua.gif" class="miAnimacion">
+
+
+    <mat-card-actions>
+        <mat-slide-toggle id="toggle" (click)="changeImg()">
+            Abrir Grifo
+        </mat-slide-toggle>
+
+        <button mat-raised-button color="warn" class="exit" (click)="close()">
+            <mat-icon>close</mat-icon> Cerrar
+        </button>
+
+    </mat-card-actions>
+
+</mat-card>

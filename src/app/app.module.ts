@@ -37,6 +37,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 //Importar Flex-Layout
@@ -170,6 +171,7 @@ import { DialogConfirmarComponent } from './components/movile-components/pages/m
     MatBadgeModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatSlideToggleModule,
 
     FlexLayoutModule
   ],
