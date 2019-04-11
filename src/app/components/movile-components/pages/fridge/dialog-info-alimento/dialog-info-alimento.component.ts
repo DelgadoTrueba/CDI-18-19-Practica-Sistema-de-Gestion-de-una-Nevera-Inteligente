@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material';
 import { AlimentosService } from 'src/app/services/alimentos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dialog-info-alimento',
@@ -14,7 +15,7 @@ export class DialogInfoAlimentoComponent implements OnInit {
   constructor(
       @Inject(MAT_DIALOG_DATA) data,
       private dialogRef: MatDialogRef<DialogInfoAlimentoComponent>,
-      
+      private router: Router,
       private alimentosService: AlimentosService
   ) { 
     this.alimento = data;
@@ -35,6 +36,10 @@ export class DialogInfoAlimentoComponent implements OnInit {
 
   consumir(){
     this.alimentosService.decrementarCantidad(this.alimento);
+  }
+
+  irATodosLosAlimentos(){
+    this.router.navigate(["../market/todosAlimentos"]);
   }
 
 }
