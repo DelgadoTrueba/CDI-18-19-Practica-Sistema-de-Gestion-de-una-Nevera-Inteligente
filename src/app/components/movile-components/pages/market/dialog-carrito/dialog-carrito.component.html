@@ -88,7 +88,7 @@
                 </mat-select>
               </mat-form-field>
       
-                <button [disabled]="alimentosEnCarrito.length === 0" mat-raised-button color="accent" class="pagar"
+                <button [disabled]="alimentosEnCarrito.length === 0 || fecha === false || tarjeta === false" mat-raised-button color="accent" class="pagar"
                 (click)="confirmar()">
                   Realizar el pago
                 </button>

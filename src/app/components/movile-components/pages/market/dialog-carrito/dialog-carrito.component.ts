@@ -5,6 +5,7 @@ import { DialogCancelComponent } from 'src/app/components/core/dialog-cancel/dia
 import { DialogModificarComponent } from '../dialog-modificar/dialog-modificar.component';
 import { GlobalService } from 'src/app/services/global.service';
 import { DialogConfirmarComponent } from '../dialog-confirmar/dialog-confirmar.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dialog-carrito',
@@ -21,11 +22,14 @@ export class DialogCarritoComponent implements OnInit {
     {value: '1234-5678-9101-112', viewValue: '1234-5678-9101-112'},
   ];
   alta: boolean;
+  fecha: boolean = false;
+  tarjeta: boolean = false;
 
   constructor(
     private carritoServicie: CarritoService,
     private dialog :MatDialog,
-    private globalServicie: GlobalService
+    private globalServicie: GlobalService,
+    private router: Router, private r:ActivatedRoute,
   ) { }
 
   ngOnInit() {
@@ -118,6 +122,8 @@ export class DialogCarritoComponent implements OnInit {
         data =>{
           if(data){
             this.carritoServicie.deleteAll();
+            this.router.navigate(["fridge"]);
+            this.dialog.closeAll();
           }
         }
     );
@@ -127,12 +133,14 @@ export class DialogCarritoComponent implements OnInit {
 
   public onDate(event): void {
     console.log(event.value);
+    this.fecha = true;
   }
 
   selectOption(event) {
     //getted from event
     console.log(event.value);
-    //getted from binding
+    //getted from 
+    this.tarjeta = true;
   }
 
 }
