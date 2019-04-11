@@ -3,13 +3,6 @@
     <div class="anchura">
   
         <div class="displayer">
-            <mat-form-field>
-                <mat-select placeholder="Filtrar por" [(value)]="selectValue" (selectionChange)="selectChange($event.value)">
-                    <mat-option *ngFor="let tag of tags" [value]="tag._id">
-                        {{tag._id}}
-                    </mat-option>
-                </mat-select>
-              </mat-form-field>
         </div>
       
      
