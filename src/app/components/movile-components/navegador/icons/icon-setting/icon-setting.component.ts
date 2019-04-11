@@ -17,7 +17,13 @@ export class IconSettingComponent implements OnInit {
     iconRegistry.addSvgIcon(
       'settings',
       sanitizer.bypassSecurityTrustResourceUrl('assets/icons/settings.svg')
-    );
+    ).addSvgIcon(
+      "power-off",
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/power-off.svg')
+    ).addSvgIcon(
+      "thermometer",
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/thermometer.svg')
+    )
    }
 
   ngOnInit() {
