@@ -38,6 +38,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 //Importar Flex-Layout
@@ -86,6 +87,7 @@ import { DialogModificarComponent } from './components/movile-components/pages/m
 import { AltaComponent } from './components/movile-components/pages/market/alta/alta.component';
 import { DialogConfirmarComponent } from './components/movile-components/pages/market/dialog-confirmar/dialog-confirmar.component';
 import { DialogHieloComponent } from './components/movile-components/pages/fridge/dialog-hielo/dialog-hielo.component';
+import { SnackBarComponent } from './components/core/snack-bar/snack-bar.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -145,6 +147,7 @@ import { DialogHieloComponent } from './components/movile-components/pages/fridg
     AltaComponent,
     DialogConfirmarComponent,
     DialogHieloComponent,
+    SnackBarComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
@@ -174,6 +177,7 @@ import { DialogHieloComponent } from './components/movile-components/pages/fridg
     MatDatepickerModule,
     MatNativeDateModule,
     MatSlideToggleModule,
+    MatSnackBarModule,
 
     FlexLayoutModule
   ],

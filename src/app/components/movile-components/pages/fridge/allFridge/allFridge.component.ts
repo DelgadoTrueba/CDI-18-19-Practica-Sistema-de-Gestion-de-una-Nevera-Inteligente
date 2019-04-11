@@ -6,6 +6,7 @@ import { AlimentosService } from 'src/app/services/alimentos.service';
 import { MatTooltip, MatDialogConfig, MatDialog } from '@angular/material';
 import { DialogAguaComponent } from '../dialog-agua/dialog-agua.component';
 import { DialogHieloComponent } from '../dialog-hielo/dialog-hielo.component';
+import { SnackBarNotificationService } from 'src/app/services/snack-bar-notification.service';
 
 
 @Component({
@@ -61,12 +62,16 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
   @ViewChild('tooltip8') tooltip8:MatTooltip;
   @ViewChild('tooltip9') tooltip9:MatTooltip;
   @ViewChild('tooltip10') tooltip10:MatTooltip;
+  a2 
+  a1
+  b1
+  b2
 
   constructor(
     private router: Router, private r:ActivatedRoute,
     private alimentosService: AlimentosService,
-    private dialog: MatDialog
-
+    private dialog: MatDialog,
+    private snackBarNotificationService: SnackBarNotificationService
   ) { 
     this.width= 0; 
     this.height = 0;
@@ -112,6 +117,11 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     //this.subscribeServiceAlimentos.unsubscribe();
+    clearTimeout(this.a1);
+    clearTimeout(this.a2);
+    clearTimeout(this.b1);
+    clearTimeout(this.b2);
+
   }
 
   ngAfterViewInit() {
@@ -349,33 +359,51 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
   hightLeft(){
     console.log("hightLeft");
     this.abiertoArriba = false;
+    clearTimeout(this.a1);
+    clearTimeout(this.a2);
   }
 
   main(){
     console.log("main");
-    if(!this.abiertoArriba ) this.abiertoArriba = true;
+    if(!this.abiertoArriba ){
+      this.abiertoArriba = true;
+      this.a1 = setTimeout( ()=>{
+        this.snackBarNotificationService.notify("Aviso: La parte superior lleva más de 30s abierta");
+      }, 30000 );
+    } 
     else this.router.navigate(["../main"], { relativeTo: this.r });
   }
 
   hightRight(){
     console.log("hightRight");
     this.abiertoArriba = false;
+    clearTimeout(this.a1);
+    clearTimeout(this.a2);
   }
 
   lowerLeft(){
     console.log("lowerLeft");
     this.abiertoAbajo = false;
+    clearTimeout(this.b1);
+    clearTimeout(this.b2);  
   }
 
   freezer(){
     console.log("freezer");
-    if(!this.abiertoAbajo ) this.abiertoAbajo = true;
+    if(!this.abiertoAbajo ) {
+      this.abiertoAbajo = true;
+      this.b1 = setTimeout( ()=>{
+        this.snackBarNotificationService.notify("Aviso: La parte inferior lleva más de 30s abierta");
+      }, 30000 );
+    }
     else this.router.navigate(["../freezer"], { relativeTo: this.r });
   }
 
   lowerRight(){
     console.log("higlowerRighthtRight");
     this.abiertoAbajo = false;
+    clearTimeout(this.b1);
+    clearTimeout(this.b2);
   }
 
   lateralIzq(){
@@ -404,7 +432,12 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
           this.tooltip4.hide();
           this.tooltip9.hide();
         }, 3500);
+
       });
+
+      this.a2 = setTimeout( ()=>{
+        this.snackBarNotificationService.notify("Aviso: La parte superior lleva más de 30s abierta");
+      }, 30000 );
     }
       else{
         setTimeout(() =>{
@@ -420,6 +453,9 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
           }, 1250);
         });
       }
+      clearTimeout(this.a1);
+      clearTimeout(this.a2);
+    
   }
 
   abrirCongelador(){
@@ -434,6 +470,10 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
           this.tooltip10.hide();
         }, 3500);
       });
+
+      this.b2 = setTimeout( ()=>{
+        this.snackBarNotificationService.notify("Aviso: La parte inferior lleva más de 30s abierta");
+      }, 30000 );
     }
     else{
       setTimeout(() =>{
@@ -444,6 +484,8 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
 
         }, 1250);
       });
+      clearTimeout(this.b1);
+      clearTimeout(this.b2);
     }
   }
 
