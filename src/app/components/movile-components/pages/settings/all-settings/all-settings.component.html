@@ -3,13 +3,13 @@
       <h2 class="h2">Ajustes</h2>
       <mat-list role="list">
           <mat-divider></mat-divider>
-          <mat-list-item class="pointer">
+          <mat-list-item class="pointer" *ngIf="!encendida" (click)="nevera()">
             <mat-icon>power_settings_new</mat-icon>
             &nbsp;
             Encender Nevera
           </mat-list-item>
           <mat-divider></mat-divider>
-          <mat-list-item class="pointer">
+          <mat-list-item class="pointer" *ngIf="encendida" (click)="nevera()">
               <mat-icon class="example-tab-icon" svgIcon="power-off"></mat-icon>
               &nbsp;
               Apagar Nevera

@@ -1,4 +1,4 @@
-<div id="main">
+<div id="main" *ngIf="encendida">
         <!-- REMARCAR LA FIGURA -->
         <figure id=figura appStyleGetter [height]="height" [width]="width">
             <map name=recortes id=recortes>
@@ -237,3 +237,22 @@
                         </button>
                     </div>
           </div>
+</div>
+
+<div *ngIf="!encendida" style="margin-top: 50%;">
+        <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Nevera Apagada</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button (click)="encender()">
+                        <mat-icon>power_settings_new</mat-icon>
+                        &nbsp;
+                        ¿ Desea encender la nevera ?
+                  </button>
+                </mat-card-actions>
+              </mat-card>
+              
+</div>

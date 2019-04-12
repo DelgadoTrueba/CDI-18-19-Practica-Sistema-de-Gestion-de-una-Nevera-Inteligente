@@ -7,6 +7,7 @@ import { MatTooltip, MatDialogConfig, MatDialog } from '@angular/material';
 import { DialogAguaComponent } from '../dialog-agua/dialog-agua.component';
 import { DialogHieloComponent } from '../dialog-hielo/dialog-hielo.component';
 import { SnackBarNotificationService } from 'src/app/services/snack-bar-notification.service';
+import { GlobalService } from 'src/app/services/global.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { SnackBarNotificationService } from 'src/app/services/snack-bar-notifica
   templateUrl: './allFridge.component.html',
   styleUrls: ['./allFridge.component.css']
 })
-export class AllFridgeComponent implements OnInit, OnDestroy {
+export class AllFridgeComponent implements OnInit {
 
   //inicializarla
   alimentos;
@@ -66,12 +67,14 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
   a1
   b1
   b2
+  encendida: boolean = false;
 
   constructor(
     private router: Router, private r:ActivatedRoute,
     private alimentosService: AlimentosService,
     private dialog: MatDialog,
-    private snackBarNotificationService: SnackBarNotificationService
+    private snackBarNotificationService: SnackBarNotificationService,
+    private globalService: GlobalService
   ) { 
     this.width= 0; 
     this.height = 0;
@@ -80,7 +83,9 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
     this.left = 0;
   }
 
-  async ngOnInit() {
+   ngOnInit() {
+    this.encendida = this.globalService.encendida;
+
     this.alimentos = this.alimentosService.alimentosAllFridgeFilter();
     /*
     this.subscribeServiceAlimentos = this.alimentosService.notification$.subscribe(
@@ -102,6 +107,8 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
     
     this.calcularMapArea();
     let nombres = [];
+
+    if(this.encendida){
     this.alimentos.forEach(async alimento => {
       if(alimento.caducado === true){
         nombres.push(alimento.nombre);
@@ -119,6 +126,9 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
       }
     });
   }
+  }
+
+  
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
@@ -131,7 +141,7 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
 
     this.calcularMapArea();
   }
-
+/*
   ngOnDestroy() {
     //this.subscribeServiceAlimentos.unsubscribe();
     clearTimeout(this.a1);
@@ -162,7 +172,7 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
     }, 500);
     
   }
-
+*/
   calcularMapArea(){
     this.calcularNeveraCentral();
 
@@ -437,7 +447,7 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
   abrirNevera(){
     this.abiertoArriba = !this.abiertoArriba;
     if(this.abiertoArriba === true){
-      setTimeout(_ =>{
+      /*setTimeout(_ =>{
         this.tooltip2.show();
         this.tooltip3.show();
         this.tooltip4.show();
@@ -450,14 +460,14 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
           this.tooltip9.hide();
         }, 3500);
 
-      });
+      });*/
 
       this.a2 = setTimeout( ()=>{
         this.snackBarNotificationService.notify("Aviso: La parte superior lleva más de 30s abierta");
       }, 30000 );
     }
       else{
-        setTimeout(() =>{
+        /*setTimeout(() =>{
           this.tooltip1.show();
           this.tooltip7.show();
           this.tooltip8.show();
@@ -468,7 +478,7 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
             this.tooltip8.hide();
 
           }, 1250);
-        });
+        });*/
       }
       clearTimeout(this.a1);
       clearTimeout(this.a2);
@@ -478,7 +488,7 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
   abrirCongelador(){
     this.abiertoAbajo = !this.abiertoAbajo;
     if(this.abiertoAbajo === true){
-      setTimeout(_ =>{
+      /*setTimeout(_ =>{
         this.tooltip6.show();
         this.tooltip10.show();
 
@@ -486,21 +496,21 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
           this.tooltip6.hide();
           this.tooltip10.hide();
         }, 3500);
-      });
+      });*/
 
       this.b2 = setTimeout( ()=>{
         this.snackBarNotificationService.notify("Aviso: La parte inferior lleva más de 30s abierta");
       }, 30000 );
     }
     else{
-      setTimeout(() =>{
+      /*setTimeout(() =>{
         this.tooltip5.show();
 
         setTimeout(_ =>{
           this.tooltip5.hide();
 
         }, 1250);
-      });
+      });*/
       clearTimeout(this.b1);
       clearTimeout(this.b2);
     }
@@ -524,4 +534,10 @@ this.mapCoorIzq2 = mapCoord.reduce( (v_ant, v_act, index,)=>{if(index ==0 ) retu
     this.dialog.open(DialogHieloComponent, dialogConfig);
   }
 
+
+  encender(){
+    this.encendida = true;
+    this.globalService.encendida = true;
+    this.ngOnInit();
+  }
 }

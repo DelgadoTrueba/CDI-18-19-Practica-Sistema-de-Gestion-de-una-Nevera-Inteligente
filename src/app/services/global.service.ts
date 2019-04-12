@@ -15,6 +15,8 @@ export class GlobalService {
   bM = false;
   bH = false;
 
+  encendida = true;
+
   constructor() { }
 
   getAlta(){
