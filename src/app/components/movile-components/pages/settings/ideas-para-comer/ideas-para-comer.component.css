@@ -29,3 +29,8 @@
 button{
     cursor: default !important;
 }
+
+.pointer{
+    cursor: pointer !important;
+
+}

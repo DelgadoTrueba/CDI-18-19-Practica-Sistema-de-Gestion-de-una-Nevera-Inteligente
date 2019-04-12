@@ -3,6 +3,8 @@
         <h2 class="h2">Ideas para comer</h2>
         <mat-list role="list">
             <mat-divider></mat-divider>
+            
+
             <mat-list-item class="pointer">
               <mat-icon 
               *ngIf="manzana.cantidad > 0 && platano.cantidad >0 && melon.cantidad>0; 
@@ -18,19 +20,19 @@
               <button  mat-stroked-button matBadge={{manzana.cantidad}} matBadgeColor="warn">              
                 <img *ngIf="manzana.cantidad > 0" src={{manzana.photo}} class="img">
                 <img *ngIf="manzana.cantidad === 0" src="assets/img/main/manzana-cruz.png" class="img">
-
+                {{manzana.nombre}}
               </button>&nbsp; &nbsp;
 
               <button  mat-stroked-button matBadge={{platano.cantidad}} matBadgeColor="warn">              
                   <img *ngIf="platano.cantidad > 0" src={{platano.photo}} class="img">
                   <img *ngIf="platano.cantidad === 0" src="assets/img/main/platano-cruz.png" class="img">
-
+                  {{platano.nombre}}
                 </button>&nbsp; &nbsp;
 
                 <button  mat-stroked-button matBadge={{melon.cantidad}} matBadgeColor="warn">              
                     <img *ngIf="melon.cantidad > 0" src={{melon.photo}} class="img">
                     <img *ngIf="melon.cantidad === 0" src="assets/img/main/melon-cruz.png" class="img">
-
+                    {{melon.nombre}}
                   </button>
             </mat-list-item>
             <mat-divider></mat-divider>
@@ -47,16 +49,21 @@
                   <button  mat-stroked-button matBadge={{salchicha.cantidad}} matBadgeColor="warn" [disabled]=false>              
                       <img *ngIf="salchicha.cantidad > 0" src={{salchicha.photo}} class="img">
                 <img *ngIf="salchicha.cantidad === 0" src="assets/img/main/salchicha-cruz.png" class="img">
+                {{salchicha.nombre}}
               </button>&nbsp; &nbsp;
 
               <button  mat-stroked-button matBadge={{patatas.cantidad}} matBadgeColor="warn">              
                   <img *ngIf="patatas.cantidad > 0" src={{patatas.photo}} class="img">
                   <img *ngIf="patatas.cantidad === 0" src="assets/img/freezer/patatas-cruz.png" class="img">
+                  {{patatas.nombre}}
+ 
                 </button>&nbsp; &nbsp;
 
                 <button  mat-stroked-button matBadge={{ketchup.cantidad}} matBadgeColor="warn">              
                     <img *ngIf="ketchup.cantidad > 0" src={{ketchup.photo}} class="img">
                     <img *ngIf="ketchup.cantidad === 0" src="assets/img/leftSide/salsaTomate-cruz.png" class="img">
+                    {{ketchup.nombre}}
+
                   </button>
               </mat-list-item>
               <mat-divider></mat-divider>
@@ -77,16 +84,26 @@
                   <button  mat-stroked-button matBadge={{pescado.cantidad}} matBadgeColor="warn">              
                       <img *ngIf="pescado.cantidad > 0" src={{pescado.photo}} class="img">
                 <img *ngIf="pescado.cantidad === 0" src="assets/img/freezer/pescado-cruz.png" class="img">
-
+                {{pescado.nombre}}
               </button>&nbsp; &nbsp;
 
               <button  mat-stroked-button matBadge={{verduras.cantidad}} matBadgeColor="warn">              
                   <img *ngIf="verduras.cantidad > 0" src={{verduras.photo}} class="img">
                   <img *ngIf="verduras.cantidad === 0" src="assets/img/freezer/verdura-cruz.png" class="img">
+                  {{verduras.nombre}}
                 </button>&nbsp; &nbsp;
 
               </mat-list-item>
               <mat-divider></mat-divider>
+
+              <mat-list-item>
+
+                  <button mat-raised-button routerLink="../" class="pointer" >
+                    <mat-icon>exit_to_app</mat-icon>
+                  </button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                
         </mat-list>  
     </mat-card>
   </div>
