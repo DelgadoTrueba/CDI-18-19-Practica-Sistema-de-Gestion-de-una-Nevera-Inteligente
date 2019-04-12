@@ -114,7 +114,7 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
       else if(nombres.length > 1){
         let nombre = nombres.reduce( (str, value, index)=>{ 
           console.log(str);
-          return str+=index+1 +") "+value+", "}, " ");
+          return str+=value+", "}, " ");
         this.snackBarNotificationService.notify("Los alimentos: "+nombre+" estan caducados.");
       }
     });
