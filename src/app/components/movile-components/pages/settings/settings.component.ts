@@ -9,14 +9,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class SettingsComponent implements OnInit {
 
   constructor(
-    private router: Router, private r:ActivatedRoute,
   ) { }
 
   ngOnInit() {
-  }
-
-  irAMisProductos(){
-    this.router.navigate(["misProductos"], { relativeTo: this.r });
   }
 
 }

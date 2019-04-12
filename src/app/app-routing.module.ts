@@ -17,6 +17,7 @@ import { FrutaComponent } from './components/movile-components/pages/market/frut
 import { CarnePescadoComponent } from './components/movile-components/pages/market/carne-pescado/carne-pescado.component';
 import { AltaComponent } from './components/movile-components/pages/market/alta/alta.component';
 import { MisProductosComponent } from './components/movile-components/pages/settings/mis-productos/mis-productos.component';
+import { AllSettingsComponent } from './components/movile-components/pages/settings/all-settings/all-settings.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'fridge', pathMatch: 'full' },
@@ -45,6 +46,8 @@ const routes: Routes = [
   },
   { path: 'settings', component: SettingsComponent, data: {animation: 'settings'},
     children: [
+      { path: '', redirectTo: 'allSettings', pathMatch: 'full' },
+      { path: 'allSettings', component: AllSettingsComponent },
       { path: 'misProductos', component: MisProductosComponent },
     ]
   }

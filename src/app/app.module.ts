@@ -89,6 +89,7 @@ import { DialogConfirmarComponent } from './components/movile-components/pages/m
 import { DialogHieloComponent } from './components/movile-components/pages/fridge/dialog-hielo/dialog-hielo.component';
 import { SnackBarComponent } from './components/core/snack-bar/snack-bar.component';
 import { MisProductosComponent } from './components/movile-components/pages/settings/mis-productos/mis-productos.component';
+import { AllSettingsComponent } from './components/movile-components/pages/settings/all-settings/all-settings.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -150,6 +151,7 @@ import { MisProductosComponent } from './components/movile-components/pages/sett
     DialogHieloComponent,
     SnackBarComponent,
     MisProductosComponent,
+    AllSettingsComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [
