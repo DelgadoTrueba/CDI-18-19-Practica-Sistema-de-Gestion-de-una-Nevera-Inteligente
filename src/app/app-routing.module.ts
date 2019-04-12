@@ -19,6 +19,7 @@ import { AltaComponent } from './components/movile-components/pages/market/alta/
 import { MisProductosComponent } from './components/movile-components/pages/settings/mis-productos/mis-productos.component';
 import { AllSettingsComponent } from './components/movile-components/pages/settings/all-settings/all-settings.component';
 import { IdeasParaComerComponent } from './components/movile-components/pages/settings/ideas-para-comer/ideas-para-comer.component';
+import { ServicioTecnicoComponent } from './components/movile-components/pages/settings/servicio-tecnico/servicio-tecnico.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'fridge', pathMatch: 'full' },
@@ -51,6 +52,7 @@ const routes: Routes = [
       { path: 'allSettings', component: AllSettingsComponent },
       { path: 'misProductos', component: MisProductosComponent },
       { path: 'ideasParaComer', component: IdeasParaComerComponent },
+      { path: 'servicioTecnico', component: ServicioTecnicoComponent },
     ]
   }
 ]

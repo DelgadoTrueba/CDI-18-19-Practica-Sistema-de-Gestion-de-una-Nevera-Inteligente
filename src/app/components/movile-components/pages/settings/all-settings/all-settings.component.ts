@@ -23,4 +23,7 @@ export class AllSettingsComponent implements OnInit {
     this.router.navigate(["../ideasParaComer"], { relativeTo: this.r });
   }
 
+  irATecnicp(){
+    this.router.navigate(["../servicioTecnico"], { relativeTo: this.r });
+  }
 }

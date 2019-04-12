@@ -91,6 +91,7 @@ import { SnackBarComponent } from './components/core/snack-bar/snack-bar.compone
 import { MisProductosComponent } from './components/movile-components/pages/settings/mis-productos/mis-productos.component';
 import { AllSettingsComponent } from './components/movile-components/pages/settings/all-settings/all-settings.component';
 import { IdeasParaComerComponent } from './components/movile-components/pages/settings/ideas-para-comer/ideas-para-comer.component';
+import { ServicioTecnicoComponent } from './components/movile-components/pages/settings/servicio-tecnico/servicio-tecnico.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -154,6 +155,7 @@ import { IdeasParaComerComponent } from './components/movile-components/pages/se
     MisProductosComponent,
     AllSettingsComponent,
     IdeasParaComerComponent,
+    ServicioTecnicoComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [

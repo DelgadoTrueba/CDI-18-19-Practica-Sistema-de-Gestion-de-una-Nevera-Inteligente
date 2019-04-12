@@ -1,0 +1,35 @@
+<div id="mostrador">
+    <mat-card class="main"> 
+        <h2 class="h2">Servicio Técnico</h2>
+        <mat-divider></mat-divider>
+
+      <div class="main2" *ngIf="mostrar">
+                <br>
+                <mat-spinner></mat-spinner>
+                <p>Analizando Nevera</p>
+        </div>
+
+        <div class="main2" *ngIf="!mostrar && !error">
+            <br>
+            <p>No se ha detectado ningun problema</p>
+        </div>
+        
+        <div class="main2" *ngIf="!mostrar && error">
+            <br>
+            <b>Detectado Problema.</b>
+            <p>Compruebe la conexión a internet de su nevera</p>
+
+            <p>Si no desaparece dicho error contacte con el servicio técnico.</p>
+        </div>
+
+        <mat-card-actions  style="text-align: center">
+            <mat-divider></mat-divider>
+            <br/>
+            <button mat-raised-button routerLink="../">
+              <mat-icon>exit_to_app</mat-icon>
+            </button>
+          </mat-card-actions>
+    
+    </mat-card>
+  </div>
+  
