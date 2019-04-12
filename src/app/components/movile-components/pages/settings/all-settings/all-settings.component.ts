@@ -26,4 +26,8 @@ export class AllSettingsComponent implements OnInit {
   irATecnicp(){
     this.router.navigate(["../servicioTecnico"], { relativeTo: this.r });
   }
+
+  irATemperatura(){
+    this.router.navigate(["../temperatura"], { relativeTo: this.r });
+  }
 }

@@ -1,0 +1,33 @@
+<div id="mostrador">
+    <mat-card class="main"> 
+        <h2 class="h2">Regular Temperatura</h2>
+        <mat-divider></mat-divider>
+
+      <div class="main2">
+                <br>
+                <p>Parte Superior</p>
+                <img *ngIf="aC" src="assets/img/cold.png" class="pointer" (click)="cambiar(1)">
+                <img *ngIf="aM" src="assets/img/medium.png" class="pointer" (click)="cambiar(2)">
+                <img *ngIf="aH" src="assets/img/hot.png" class="pointer" (click)="cambiar(3)">
+
+                <mat-divider></mat-divider>
+                
+                <p>Parte Inferior</p>
+                <img *ngIf="bC" src="assets/img/cold.png" class="pointer" (click)="cambiar2(1)">
+                <img *ngIf="bM" src="assets/img/medium.png" class="pointer" (click)="cambiar2(2)">
+                <img *ngIf="bH" src="assets/img/hot.png" class="pointer" (click)="cambiar2(3)">
+                <br>
+
+        </div>
+
+        <mat-card-actions  style="text-align: center">
+            <mat-divider></mat-divider>
+            <br/>
+            <button mat-raised-button routerLink="../">
+              <mat-icon>exit_to_app</mat-icon>
+            </button>
+          </mat-card-actions>
+    
+    </mat-card>
+  </div>
+  

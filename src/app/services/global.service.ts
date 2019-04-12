@@ -7,6 +7,14 @@ export class GlobalService {
 
   alta: boolean = false;
 
+  aC = true;
+  aM = false;
+  aH = false;
+
+  bC = true;
+  bM = false;
+  bH = false;
+
   constructor() { }
 
   getAlta(){
