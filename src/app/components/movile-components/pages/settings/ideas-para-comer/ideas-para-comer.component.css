@@ -15,19 +15,17 @@
 }
 .main{
     min-width: 50%;
-    height: 100vh;
 }
 
 .mat-card{
     margin-top: 2%;
 }
 
-.build{
-    margin-left: 4% !important;
-    padding-top: 2% !important;
-    padding-bottom: 3% !important;
+
+.img{
+    height: 25px;
 }
 
-.pointer{
-    cursor: pointer;
+button{
+    cursor: default !important;
 }

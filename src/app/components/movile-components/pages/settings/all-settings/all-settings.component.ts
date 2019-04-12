@@ -18,4 +18,9 @@ export class AllSettingsComponent implements OnInit {
   irAMisProductos(){
     this.router.navigate(["../misProductos"], { relativeTo: this.r });
   }
+
+  irAIdeas(){
+    this.router.navigate(["../ideasParaComer"], { relativeTo: this.r });
+  }
+
 }

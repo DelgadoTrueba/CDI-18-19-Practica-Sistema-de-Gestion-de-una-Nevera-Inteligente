@@ -90,6 +90,7 @@ import { DialogHieloComponent } from './components/movile-components/pages/fridg
 import { SnackBarComponent } from './components/core/snack-bar/snack-bar.component';
 import { MisProductosComponent } from './components/movile-components/pages/settings/mis-productos/mis-productos.component';
 import { AllSettingsComponent } from './components/movile-components/pages/settings/all-settings/all-settings.component';
+import { IdeasParaComerComponent } from './components/movile-components/pages/settings/ideas-para-comer/ideas-para-comer.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -152,6 +153,7 @@ import { AllSettingsComponent } from './components/movile-components/pages/setti
     SnackBarComponent,
     MisProductosComponent,
     AllSettingsComponent,
+    IdeasParaComerComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [

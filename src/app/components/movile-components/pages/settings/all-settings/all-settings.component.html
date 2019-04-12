@@ -3,38 +3,38 @@
       <h2 class="h2">Ajustes</h2>
       <mat-list role="list">
           <mat-divider></mat-divider>
-          <mat-list-item>
+          <mat-list-item class="pointer">
             <mat-icon>power_settings_new</mat-icon>
             &nbsp;
             Encender Nevera
           </mat-list-item>
           <mat-divider></mat-divider>
-          <mat-list-item>
+          <mat-list-item class="pointer">
               <mat-icon class="example-tab-icon" svgIcon="power-off"></mat-icon>
               &nbsp;
               Apagar Nevera
           </mat-list-item>
           <mat-divider></mat-divider>
-          <mat-list-item >
+          <mat-list-item class="pointer">
               <mat-icon svgIcon="thermometer"></mat-icon>
               &nbsp;
               Regular Temperatura
           </mat-list-item>          
         </mat-list>
         <mat-divider></mat-divider>
-          <mat-list-item>
+          <mat-list-item class="pointer">
               <mat-icon class="build">build</mat-icon>
               &nbsp;
               Servicio Ténico
           </mat-list-item>
           <mat-divider></mat-divider>
-          <mat-list-item (click)="irAMisProductos()">
+          <mat-list-item (click)="irAMisProductos()" class="pointer">
               <mat-icon class="build">local_dining</mat-icon>
               &nbsp;
               Mis alimentos
           </mat-list-item>
           <mat-divider></mat-divider>
-          <mat-list-item>
+          <mat-list-item class="pointer" (click)="irAIdeas()">
               <mat-icon svgIcon="bulb" class="build"></mat-icon>
               &nbsp;
               Ideas para comer
