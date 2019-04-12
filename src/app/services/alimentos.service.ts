@@ -812,4 +812,183 @@ setTartaDescongelada(cantidad){
 	  
   }
 
+  aumentarAgua(){
+    this.alimentos[0].cantidad++;
+    
+    }
+  
+    aumentarBroccoli(){
+      this.alimentos[1].cantidad++;
+    
+    }
+  
+    aumentarCarne(){
+      this.alimentos[2].cantidad++;
+    
+    }
+  
+    aumentarCarneCongelada(){
+      this.alimentos[3].cantidad++;
+    
+    }
+  
+    aumentarCereza(){
+      this.alimentos[4].cantidad++;
+    
+    }
+  
+    aumentarChurros(){
+      this.alimentos[5].cantidad++;
+    
+    }
+  
+    aumentarCocaCola(){
+      this.alimentos[6].cantidad++;
+    
+    }
+  
+    aumentarColiflor(){
+      this.alimentos[7].cantidad++;
+    
+    }
+  
+    aumentarFanta(){
+      this.alimentos[8].cantidad++;
+    
+    }
+  
+    aumentarHelado(){
+      this.alimentos[9].cantidad++;
+    
+    }
+  
+    aumentarHuevos(){
+      this.alimentos[10].cantidad++;
+    
+    }
+  
+    aumentarLeche(){
+      this.alimentos[11].cantidad++;
+    
+    }
+  
+    aumentarMantequilla(){
+      this.alimentos[12].cantidad++;
+    
+    }
+  
+    aumentarManzana(){
+      this.alimentos[13].cantidad++;
+    
+    }
+  
+    aumentarMelon(){
+      this.alimentos[14].cantidad++;
+    
+    }
+  
+    aumentarPatatasCongeladas(){
+      this.alimentos[15].cantidad++;
+    
+    }
+  
+    aumentarPepino(){
+      this.alimentos[16].cantidad++;
+    
+    }
+  
+    aumentarPera(){
+      this.alimentos[17].cantidad++;
+    
+    }
+  
+    aumentarPescado(){
+      this.alimentos[18].cantidad++;
+    
+    }
+  
+    aumentarPescadoCongelado(){
+      this.alimentos[19].cantidad++;
+    
+    }
+  
+    aumentarPimiento(){
+      this.alimentos[20].cantidad++;
+    
+    }
+  
+    aumentarPizzaCongelada(){
+      this.alimentos[21].cantidad++;
+    
+    }
+  
+    aumentarPlatano(){
+      this.alimentos[22].cantidad++;
+    
+    }
+  
+    aumentarPollo(){
+      this.alimentos[23].cantidad++;
+    
+    }
+  
+    aumentarQueso(){
+      this.alimentos[24].cantidad++;
+    
+    }
+  
+    aumentarSalchicha(){
+      this.alimentos[25].cantidad++;
+    
+    }
+  
+    aumentarSalsaDeTomate(){
+      this.alimentos[26].cantidad++;
+    
+    }
+  
+    aumentarSprite(){
+      this.alimentos[27].cantidad++;
+    
+    }
+  
+    aumentarTarta(){
+      this.alimentos[28].cantidad++;
+    
+    }
+  
+    aumentarVerdurasCongeladas(){
+      this.alimentos[29].cantidad++;
+    
+    }
+  
+    aumentarYogurt(){
+      this.alimentos[30].cantidad++;
+    
+    }
+  
+    aumentarZanahoria(){
+      this.alimentos[31].cantidad++;
+    
+    }
+  
+    aumentarZumo(){
+      this.alimentos[32].cantidad++;
+      
+    }
+    aumentarCarneDescongelada(){
+      this.alimentos[33].cantidad++;
+      
+    }
+  
+    aumentarPescadoDescongelado(){
+      this.alimentos[34].cantidad++;
+      
+    }
+  
+    aumentarTartaDescongelada(){
+      this.alimentos[35].cantidad++;
+      
+    }
+
 }

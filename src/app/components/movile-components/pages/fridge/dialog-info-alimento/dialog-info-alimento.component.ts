@@ -49,6 +49,16 @@ export class DialogInfoAlimentoComponent implements OnInit {
 
   descongelar(){
     this.alimentosService.decrementarCantidad(this.alimento);
+    let id = this.alimento.id;
+    if(id === "carne-congelada"){
+      this.alimentosService.aumentarCarneDescongelada();
+    }
+    if(id === "pescado-descongelado"){
+      this.alimentosService.aumentarPescadoDescongelado();
+    }
+    if(id === "tarta"){
+      this.alimentosService.aumentarTartaDescongelada();
+    }
   }
 
   irATodosLosAlimentos(){
