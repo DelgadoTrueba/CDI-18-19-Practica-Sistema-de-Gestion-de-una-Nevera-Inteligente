@@ -88,6 +88,7 @@ import { AltaComponent } from './components/movile-components/pages/market/alta/
 import { DialogConfirmarComponent } from './components/movile-components/pages/market/dialog-confirmar/dialog-confirmar.component';
 import { DialogHieloComponent } from './components/movile-components/pages/fridge/dialog-hielo/dialog-hielo.component';
 import { SnackBarComponent } from './components/core/snack-bar/snack-bar.component';
+import { MisProductosComponent } from './components/movile-components/pages/settings/mis-productos/mis-productos.component';
 
 @NgModule({
   //Importar Componenentes y Directivas
@@ -148,6 +149,7 @@ import { SnackBarComponent } from './components/core/snack-bar/snack-bar.compone
     DialogConfirmarComponent,
     DialogHieloComponent,
     SnackBarComponent,
+    MisProductosComponent,
   ],
   //Importar Modulos, Material Design y Flexbox
   imports: [

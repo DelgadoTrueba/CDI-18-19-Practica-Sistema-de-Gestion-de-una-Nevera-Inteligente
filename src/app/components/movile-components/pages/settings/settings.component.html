@@ -1,4 +1,7 @@
 
+<router-outlet></router-outlet>
+
+
 <div id="mostrador">
     <mat-card class="main"> 
         <h2 class="h2">Ajustes</h2>
@@ -29,7 +32,7 @@
                 Servicio Ténico
             </mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item>
+            <mat-list-item (click)="irAMisProductos()">
                 <mat-icon class="build">local_dining</mat-icon>
                 &nbsp;
                 Mis productos

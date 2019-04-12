@@ -16,6 +16,7 @@ import { VerdurasComponent } from './components/movile-components/pages/market/v
 import { FrutaComponent } from './components/movile-components/pages/market/fruta/fruta.component';
 import { CarnePescadoComponent } from './components/movile-components/pages/market/carne-pescado/carne-pescado.component';
 import { AltaComponent } from './components/movile-components/pages/market/alta/alta.component';
+import { MisProductosComponent } from './components/movile-components/pages/settings/mis-productos/mis-productos.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'fridge', pathMatch: 'full' },
@@ -42,7 +43,11 @@ const routes: Routes = [
       { path: 'registro', component: AltaComponent },
     ]
   },
-  { path: 'settings', component: SettingsComponent, data: {animation: 'settings'} }
+  { path: 'settings', component: SettingsComponent, data: {animation: 'settings'},
+    children: [
+      { path: 'misProductos', component: MisProductosComponent },
+    ]
+  }
 ]
 
 @NgModule({

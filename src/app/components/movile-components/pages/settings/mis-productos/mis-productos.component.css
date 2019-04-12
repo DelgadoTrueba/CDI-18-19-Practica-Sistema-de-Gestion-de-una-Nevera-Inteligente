@@ -1,0 +1,23 @@
+#mostrador{
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 20%;
+}
+
+.h2{
+    text-align: center;
+    font-family: Roboto;
+    font-weight: bold;
+}
+.main{
+    min-width: 50%;
+    height: 100vh;
+}
+
+.mat-card{
+    margin-top: 2%;
+}
