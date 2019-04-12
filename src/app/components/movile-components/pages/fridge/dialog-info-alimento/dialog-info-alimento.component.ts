@@ -12,6 +12,7 @@ export class DialogInfoAlimentoComponent implements OnInit {
 
   alimento;
   alimentoCong: boolean = false;
+  fecha;
 
   constructor(
       @Inject(MAT_DIALOG_DATA) data,
@@ -21,6 +22,17 @@ export class DialogInfoAlimentoComponent implements OnInit {
   ) { 
     this.alimento = data;
     console.log(this.alimento);
+    let date
+    if(this.alimento.caducado){
+       date = new Date(2019, 3, 12);
+       this.fecha = date.getDate() +" / "+ date.getMonth() +" / "+ date.getFullYear();
+    }
+    else{
+        date = new Date();
+        let month = parseInt(date.getMonth());
+        month++;
+       this.fecha = date.getDate() +" / "+ month +" / "+ date.getFullYear();
+    }
   }
 
   ngOnInit() {

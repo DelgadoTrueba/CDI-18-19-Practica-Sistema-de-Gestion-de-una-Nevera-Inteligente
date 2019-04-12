@@ -80,7 +80,7 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
     this.left = 0;
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.alimentos = this.alimentosService.alimentosAllFridgeFilter();
     /*
     this.subscribeServiceAlimentos = this.alimentosService.notification$.subscribe(
@@ -101,6 +101,23 @@ export class AllFridgeComponent implements OnInit, OnDestroy {
     this.left = (window.innerWidth/2) - (this.width/1.975);
     
     this.calcularMapArea();
+    let nombres = [];
+    this.alimentos.forEach(async alimento => {
+      if(alimento.caducado === true){
+        nombres.push(alimento.nombre);
+      }
+
+      if(nombres.length === 1){
+        let nombre = nombres[0];
+        this.snackBarNotificationService.notify("El alimento: "+nombre+" esta caducados.");
+      }
+      else if(nombres.length > 1){
+        let nombre = nombres.reduce( (str, value, index)=>{ 
+          console.log(str);
+          return str+=index+1 +") "+value+", "}, " ");
+        this.snackBarNotificationService.notify("Los alimentos: "+nombre+" estan caducados.");
+      }
+    });
   }
 
   @HostListener('window:resize', ['$event'])

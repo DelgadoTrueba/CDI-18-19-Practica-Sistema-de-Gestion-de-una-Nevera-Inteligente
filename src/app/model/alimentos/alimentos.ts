@@ -12,7 +12,8 @@ export let alimentos = [
         },
         photo: "/assets/img/leftSide/agua.png",
         unidad: "Litros",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //1
     {
@@ -27,7 +28,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/broccoli.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: true
     },
     //2
     {
@@ -42,7 +44,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/carne.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //3
     {
@@ -52,7 +55,8 @@ export let alimentos = [
         cajon: 2,
         photo: "/assets/img/freezer/carne.png",
         unidad:"Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //4
     {
@@ -67,7 +71,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/cherry.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //5
     {
@@ -77,7 +82,8 @@ export let alimentos = [
         cajon: 0,
         photo: "/assets/img/freezer/churros.png",
         unidad:"Packs",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //6
     {
@@ -92,7 +98,8 @@ export let alimentos = [
         },
         photo: "/assets/img/rightSide/coca-cola.png",
         unidad:"Litros",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //7
     {
@@ -107,7 +114,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/coliflor.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //8
     {
@@ -122,7 +130,8 @@ export let alimentos = [
         },
         photo: "/assets/img/rightSide/fanta.png",
         unidad: "Litros",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //9
     {
@@ -132,7 +141,8 @@ export let alimentos = [
         cajon: 0,
         photo: "/assets/img/freezer/helado.png",
         unidad: "Unidades",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //10
     {
@@ -147,7 +157,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/huevos.png",
         unidad: "Packs",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //11
     {
@@ -162,7 +173,8 @@ export let alimentos = [
         },
         photo: "/assets/img/leftSide/leche.png",
         unidad: "Litros",
-        precio: 1
+        precio: 1,
+        caducado: true
     },
     //12
     {
@@ -177,7 +189,8 @@ export let alimentos = [
         },
         photo: "/assets/img/leftSide/mantequilla.png",
         unidad: "Unidades",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //13
     {
@@ -192,7 +205,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/manzana.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //14
     {
@@ -207,7 +221,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/melon.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //15
     {
@@ -217,7 +232,8 @@ export let alimentos = [
         cajon: 1,
         photo: "/assets/img/freezer/patatas.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //16
     {
@@ -232,7 +248,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/pepino.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //17
     {
@@ -247,7 +264,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/pera.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //18
     {
@@ -262,7 +280,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/pescado.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //19
     {
@@ -272,7 +291,8 @@ export let alimentos = [
         cajon: 2,
         photo: "/assets/img/freezer/pescado.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //20
     {
@@ -287,7 +307,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/pimiento.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //21
     {
@@ -297,7 +318,8 @@ export let alimentos = [
         cajon: 1,
         photo: "/assets/img/freezer/pizza.png",
         unidad: "Unidades",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //22
     {
@@ -312,7 +334,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/platano.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //23
     {
@@ -327,7 +350,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/pollo.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //24
     {
@@ -342,7 +366,8 @@ export let alimentos = [
         },
         photo: "/assets/img/rightSide/queso.png",
         unidad: "Unidades",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //25
     {
@@ -357,7 +382,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/salchicha.png",
         unidad: "Unidades",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //26
     {
@@ -372,7 +398,8 @@ export let alimentos = [
         },
         photo: "/assets/img/leftSide/salsaTomate.png",
         unidad: "Unidades",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //27
     {
@@ -387,7 +414,8 @@ export let alimentos = [
         },
         photo: "/assets/img/rightSide/sprite.png",
         unidad: "Litros",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //28
     {
@@ -397,7 +425,8 @@ export let alimentos = [
         cajon: 0,
         photo: "/assets/img/freezer/tarta.png",
         unidad: "Unidades",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //29
     {
@@ -407,7 +436,8 @@ export let alimentos = [
         cajon: 1,
         photo: "/assets/img/freezer/verduras.png",
         unidad: "Packs",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //30
     {
@@ -422,7 +452,8 @@ export let alimentos = [
         },
         photo: "/assets/img/rightSide/yogurt.png",
         unidad: "Unidades",
-        precio: 1
+        precio: 1,
+        caducado: true
     },
     //31
     {
@@ -437,7 +468,8 @@ export let alimentos = [
         },
         photo: "/assets/img/main/zanahoria.png",
         unidad: "Gramos",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //32
     {
@@ -452,7 +484,8 @@ export let alimentos = [
         },
         photo: "/assets/img/rightSide/zumo.png",
         unidad: "Litros",
-        precio: 1
+        precio: 1,
+        caducado: false
     },
     //33
     {
@@ -460,6 +493,7 @@ export let alimentos = [
         nombre: "carne descongelada", 
         cantidad: 0,
         cajon: 0,
+        caducado: false,
     },
     //34
     {
@@ -467,6 +501,7 @@ export let alimentos = [
         nombre: "pescado descongelado", 
         cantidad: 0,
         cajon: 0,
+        caducado: false
     },
     //35
     {
@@ -474,5 +509,6 @@ export let alimentos = [
         nombre: "tarta descongelada", 
         cantidad: 0,
         cajon: 0,
+        caducado: false
     },
 ];
