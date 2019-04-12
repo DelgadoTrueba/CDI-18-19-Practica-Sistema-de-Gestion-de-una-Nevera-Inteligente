@@ -25,8 +25,8 @@ export class SnackBarComponent implements OnInit {
 
   private openNotification(message: string){
     let config = new MatSnackBarConfig();
-    config.duration = 5000;
-    config.verticalPosition = 'top'
+    config.duration = 2500;
+    //config.verticalPosition = 'top'
     config.panelClass = ['blue-snackbar']
 
 

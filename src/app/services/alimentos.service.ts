@@ -444,6 +444,14 @@ export class AlimentosService {
   setCantidadId(id,cantidad){
     this.alimentos.forEach((alimento)=>{
       if(alimento.id === id) alimento.cantidad += cantidad;
+      alimento.caducado = false;
+    })
+  }
+
+  setCantidadIdCaducado(id, cantidad){
+    this.alimentos.forEach((alimento)=>{
+      if(alimento.id === id) alimento.cantidad = cantidad;
+      alimento.caducado = false;
     })
   }
 

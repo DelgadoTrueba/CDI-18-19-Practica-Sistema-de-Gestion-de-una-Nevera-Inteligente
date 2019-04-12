@@ -19,7 +19,7 @@ export let alimentos = [
     {
         id: "broccoli",
         nombre: "Broccoli", 
-        cantidad: 0,
+        cantidad: 1,
         img: {
             allFridge: {
                 rutaOk:"assets/img/all-fridge-con-alimentos/broccoli.png", 
@@ -164,7 +164,7 @@ export let alimentos = [
     {
         id: "leche",
         nombre: "Leche", 
-        cantidad: 0,
+        cantidad: 1,
         img: {
             allFridge: {
                 rutaOk:"assets/img/all-fridge-con-alimentos/leche.png", 
@@ -443,7 +443,7 @@ export let alimentos = [
     {
         id: "yogurt",
         nombre: "Yogurt", 
-        cantidad: 0,
+        cantidad: 1,
         img: {
             allFridge: {
                 rutaOk:"assets/img/all-fridge-con-alimentos/yogurt.png", 

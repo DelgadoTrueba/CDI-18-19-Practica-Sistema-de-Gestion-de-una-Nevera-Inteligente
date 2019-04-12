@@ -1,6 +1,43 @@
 <div id="mostrador">
   <mat-card class="main"> 
-      <h2 class="h2">Mis Productoes</h2>
+      <h2 *ngIf="!caducados" class="h2">Mis alimentos</h2>
+      <mat-divider *ngIf="!caducados"></mat-divider>
+
+      <h2 *ngIf="caducados" class="h2">Alimentos caducados o a punto de caducar</h2>
+
+      <div *ngIf="caducados">
+          <div *ngIf="mostrar">
+            <div *ngFor="let alimento of alimentos">
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                      <img src={{alimento.photo}} style="max-width: 100px"> 
+                      <b>{{alimento.nombre}}</b><br/>
+                      Cantidad: {{alimento.cantidad}}<br/>
+                      <b>Fecha de Caducación:<br>
+                      12/04/2019</b><br><br>
+                    </div>
+                </mat-list-item>
+              <mat-divider></mat-divider>
+              </div>
+          </div>
+          
+      </div>
+      <div *ngIf="mostrar===false">
+          <h3 style="text-align: center; margin-top: 5%;">No posee alimentos caducados o a punto de caducar</h3>
+      </div>
+
+      <mat-card-actions style="text-align: center">
+        <a mat-raised-button *ngIf="!caducados" (click)="caducados=true"
+         download href="/assets/img/arriba.PNG">
+          Ver contenido de la nevera.</a>
+        <button mat-raised-button color="primary" *ngIf="caducados" [disabled]="!mostrar"
+        (click)="reponer()">Reponer dichos alimentos</button>
+        <button mat-raised-button routerLink="../">
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+      </mat-card-actions>
+
   </mat-card>
 </div>
 
