@@ -1,8 +1,6 @@
 <div class="main" *ngIf="!alta">
     
-    <mat-toolbar class="paymarket">
-          <span style="margin: auto;">Servicio Paymarket</span>
-    </mat-toolbar>
+    <h2 class="paymarket">Servicio Paymarket</h2>
     
     <form (ngSubmit)="onSubmit(); onReset(myUserform)" [formGroup]="userForm" #myUserform="ngForm">
     

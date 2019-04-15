@@ -1,36 +1,39 @@
-<div id="navbar" appStyleGetter [height]="height" [width]="width">
-  <mat-tab-group headerPosition="below" 
-                  (selectedTabChange)="onLinkClick($event)"
-                  #tabGroup >
-  <!--market-->
-    <mat-tab>
-      <ng-template mat-tab-label>
-          <app-icon-store *ngIf="position !== 0" ></app-icon-store>
-          <app-icon-selecled-store *ngIf="position === 0"></app-icon-selecled-store>
-          <!--{{tabs[0]}}-->
-      </ng-template>
-      <!--Content 1-->
-    </mat-tab>
+<mat-toolbar class="navegador">
 
-  <!--kitchen-->
-  <mat-tab>
-    <ng-template mat-tab-label>
-        <app-icon-kitchen *ngIf="position !== 1"></app-icon-kitchen>
-        <app-icon-selecled-kitchen *ngIf="position === 1"></app-icon-selecled-kitchen>
-        <!--{{tabs[1]}}-->
-    </ng-template>
-    <!--Content 1-->
-  </mat-tab>
 
-  <!--Settings-->
-  <mat-tab>
-    <ng-template mat-tab-label>
-        <app-icon-setting *ngIf="position !== 2"></app-icon-setting>
-        <app-icon-selecled-setting *ngIf="position === 2"></app-icon-selecled-setting>
-      <!--{{tabs[2]}}-->
-    </ng-template>
-    <!--Content 1-->
-  </mat-tab>
 
-  </mat-tab-group>
-</div>
+  <div class="grid-container">
+      <div class="titulo">    
+          Nevera Inteligente
+      </div>
+  
+      <div class="btn1">
+          <button mat-stroked-button class="btn" (click)="navegateToMarket()">
+          <app-icon-selecled-store></app-icon-selecled-store>
+          &nbsp;
+          <p>Tienda</p>
+      </button>
+      </div>
+  
+  
+      <div class="btn2">
+          <button mat-stroked-button class="btn" (click)="navegateToNevera()">
+          <app-icon-kitchen></app-icon-kitchen>
+          &nbsp;
+          <p>Nevera</p>
+          </button>
+      </div>
+  
+      <div class="btn3">
+              <button mat-stroked-button class="btn" (click)="navegateToConfig()">
+              <app-icon-setting></app-icon-setting>
+              &nbsp;
+              <p>Configuración</p>
+          </button>
+      </div>
+  
+  </div>
+  
+  </mat-toolbar>
+  
+  

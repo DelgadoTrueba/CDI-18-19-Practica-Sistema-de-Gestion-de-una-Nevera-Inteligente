@@ -25,42 +25,18 @@ export class NavegadorComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-   this.reAlignTabGroup(this.position);
-   this.height = (window.innerHeight*0.10);
-   this.width  = (window.innerWidth);
-
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.height =(window.innerHeight*0.10);
-    this.width  = (window.innerWidth);
+  navegateToNevera(component: string){
+    this._router.navigate(['/fridge']);
   }
 
-
-  ngOnChanges(changes) {
-    //console.log('Changed', changes.position.currentValue, changes.position.previousValue);
-    this.reAlignTabGroup(this.position);
-  }
- 
-  public onLinkClick(event: MatTabChangeEvent){
-    let index = event.index;
-    //console.log("onclick; "+index);
-    if (index >=0 && index < this.tabs.length){
-      this.navegateToComponent(this.tabs[index]);
-    }
+  navegateToMarket(component: string){
+    this._router.navigate(['/market']);
   }
 
-  private reAlignTabGroup( index: number ){
-    if (index >=0 && index < this.tabs.length){
-      this.position = index;
-      this.tabGroup.selectedIndex = index;
-      this.tabGroup.realignInkBar();
-    }
-  }
-
-  private navegateToComponent(component: string){
-    this._router.navigate(['/'+component]);
+  navegateToConfig(component: string){
+    this._router.navigate(['/settings']);
   }
   
 }

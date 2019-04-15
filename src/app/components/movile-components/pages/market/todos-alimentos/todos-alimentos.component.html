@@ -1,11 +1,12 @@
-<app-mostrador-de-articulos [alimentos]="alimentos" *ngIf="alta"></app-mostrador-de-articulos>
+<app-mostrador-de-articulos [alimentos]="alimentos" *ngIf="alta"
+class="main"></app-mostrador-de-articulos>
 
-<div *ngIf="!alta" style="text-align: center;">
+<div *ngIf="!alta" style="text-align: center;" class="main">
   <p style="margin-top: 80px; font-size: 2em; 
     font-family: Roboto; text-align: center; margin-left: 2%; margin-right: 2%;">
         Para realizar una compra es necesario
         darse de alta en el servicio Paymarket
   </p>
-
+  <br>
   <button mat-raised-button routerLink="../registro">Dame de alta !</button>
 </div>
