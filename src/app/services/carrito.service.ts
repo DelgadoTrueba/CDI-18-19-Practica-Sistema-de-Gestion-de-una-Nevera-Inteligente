@@ -213,7 +213,8 @@ export class CarritoService {
 
   addToFridge(){
     this.alimentos.forEach(alimento => {
-      this.alimentosService.setCantidadId(alimento.id,alimento.cantidad);
+      if(alimento.cantidad > 0)
+        this.alimentosService.setCantidadId(alimento.id,alimento.cantidad);
     });
   }
 

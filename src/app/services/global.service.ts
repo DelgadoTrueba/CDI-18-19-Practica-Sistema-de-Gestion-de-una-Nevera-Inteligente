@@ -16,6 +16,7 @@ export class GlobalService {
   bH = false;
 
   encendida = true;
+  nombre: any;
 
   constructor() { }
 
@@ -25,5 +26,9 @@ export class GlobalService {
 
   darDeAlta(){
     this.alta = true;
+  }
+
+  addNombre(nombre){
+    this.nombre = nombre;
   }
 }

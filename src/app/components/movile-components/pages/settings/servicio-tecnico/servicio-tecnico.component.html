@@ -16,10 +16,11 @@
         
         <div class="main2" *ngIf="!mostrar && error">
             <br>
-            <b>Detectado Problema.</b>
-            <p>Compruebe la conexión a internet de su nevera</p>
+            <b>Detectado Problema Grave.</b>
+          
+            <p>Contactando con servicio técnico</p>
+            <mat-progress-bar mode="indeterminate" style="width: 80%"></mat-progress-bar>
 
-            <p>Si no desaparece dicho error contacte con el servicio técnico.</p>
         </div>
 
         <mat-card-actions  style="text-align: center">

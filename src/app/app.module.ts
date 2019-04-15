@@ -39,6 +39,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 //Importar Flex-Layout
@@ -188,6 +189,7 @@ import { TemperaturaComponent } from './components/movile-components/pages/setti
     MatNativeDateModule,
     MatSlideToggleModule,
     MatSnackBarModule,
+    MatProgressBarModule,
 
     FlexLayoutModule
   ],

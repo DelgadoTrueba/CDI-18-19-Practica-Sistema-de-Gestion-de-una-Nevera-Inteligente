@@ -16,6 +16,7 @@ export class ArticuloComponent implements OnInit {
 
   cantidad = 0;
   estaEnCarrito = false;
+  fecha: string;
 
   constructor(
     private carritoService: CarritoService,
@@ -32,7 +33,15 @@ export class ArticuloComponent implements OnInit {
           return true;
         }
         return resul;
-      }, false)
+      }, false);
+
+      let date
+      date = new Date();
+      let month = parseInt(date.getMonth());
+      month+=2;
+      this.fecha = date.getDate() +" / "+ month +" / "+ date.getFullYear();
+            
+  
     })
   }
 

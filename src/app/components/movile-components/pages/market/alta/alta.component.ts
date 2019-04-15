@@ -25,6 +25,7 @@ export class AltaComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
   alta;
+  nombre2: any;
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -36,6 +37,7 @@ export class AltaComponent implements OnInit {
     this.createForm();
 
     this.alta = this.globalService.getAlta();
+    this.nombre2 = this.globalService.nombre;
   }
 
   nombre;
@@ -80,7 +82,6 @@ export class AltaComponent implements OnInit {
   }
 
   onSubmit(){
-   console.log(this.userForm.value);
   }
 
   onReset(myUserform){
@@ -88,10 +89,12 @@ export class AltaComponent implements OnInit {
   }
 
   darAlta(){
-    console.log(this.userForm.value);
+    console.log(this.userForm.value.nombre);
 
     this.globalService.darDeAlta();
     this.alta = true;
+    this.nombre2 = this.userForm.value.nombre;
+    this.globalService.addNombre(this.nombre2);
   }
 
 }
