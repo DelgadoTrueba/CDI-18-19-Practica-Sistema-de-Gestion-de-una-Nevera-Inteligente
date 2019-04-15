@@ -183,6 +183,12 @@ export class CarritoService {
     }
   }
   
+  setCantidadIdCaducado(id, cantidad){
+    this.alimentos.forEach((alimento)=>{
+      if(alimento.id === id) alimento.cantidad = cantidad;
+    })
+  }
+
   indexOfId(id: string) : number {
     for( let i=0; i< this.alimentos.length; i++){
       if(this.alimentos[i].id === id) return i;

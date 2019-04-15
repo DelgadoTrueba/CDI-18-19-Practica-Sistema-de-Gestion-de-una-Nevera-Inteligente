@@ -5,7 +5,7 @@ export let carrito = [
         nombre: "Agua", 
         cantidad: 0,
         unidad: "Litros",
-        precio: 1    
+        precio: 1,  
     },
     //1
     {

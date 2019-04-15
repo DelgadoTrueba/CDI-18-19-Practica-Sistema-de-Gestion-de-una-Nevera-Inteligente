@@ -448,13 +448,6 @@ export class AlimentosService {
     })
   }
 
-  setCantidadIdCaducado(id, cantidad){
-    this.alimentos.forEach((alimento)=>{
-      if(alimento.id === id) alimento.cantidad = cantidad;
-      alimento.caducado = false;
-    })
-  }
-
   setAgua(cantidad){
     this.alimentos[0].cantidad = cantidad;
 	

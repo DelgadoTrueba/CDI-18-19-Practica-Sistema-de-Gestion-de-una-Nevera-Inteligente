@@ -23,7 +23,6 @@
 
   mat-sidenav-content{
       min-height: 100vh !important;
-      margin-bottom: 25%;
   }
 
   mat-sidenav{
@@ -54,7 +53,7 @@
 .upm-market{
   position:fixed;
   left:0px;
-  top:10%;
+  top:10.25%;
 
   z-index: 1;
 }

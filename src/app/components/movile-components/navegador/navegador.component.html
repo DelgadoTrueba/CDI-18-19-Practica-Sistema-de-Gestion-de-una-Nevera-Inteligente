@@ -8,7 +8,7 @@
       </div>
   
       <div class="btn1">
-          <button mat-stroked-button class="btn" (click)="navegateToMarket()">
+          <button mat-stroked-button class="btn" [routerLink]="['/market']" [routerLinkActive]="['activate']">
           <app-icon-selecled-store></app-icon-selecled-store>
           &nbsp;
           <p>Tienda</p>
@@ -17,16 +17,16 @@
   
   
       <div class="btn2">
-          <button mat-stroked-button class="btn" (click)="navegateToNevera()">
-          <app-icon-kitchen></app-icon-kitchen>
+        <button mat-stroked-button class="btn" [routerLink]="['/fridge']" [routerLinkActive]="['activate']">
+            <app-icon-selecled-kitchen></app-icon-selecled-kitchen>
           &nbsp;
           <p>Nevera</p>
           </button>
       </div>
   
       <div class="btn3">
-              <button mat-stroked-button class="btn" (click)="navegateToConfig()">
-              <app-icon-setting></app-icon-setting>
+            <button mat-stroked-button class="btn" [routerLink]="['/settings']" [routerLinkActive]="['activate']">
+            <app-icon-selecled-setting></app-icon-selecled-setting>
               &nbsp;
               <p>Configuración</p>
           </button>

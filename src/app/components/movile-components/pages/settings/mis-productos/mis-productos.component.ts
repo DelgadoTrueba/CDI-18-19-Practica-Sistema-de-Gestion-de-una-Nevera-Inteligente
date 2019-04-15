@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlimentosService } from 'src/app/services/alimentos.service';
 import { Router } from '@angular/router';
 import { SnackBarNotificationService } from 'src/app/services/snack-bar-notification.service';
+import { CarritoService } from 'src/app/services/carrito.service';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class MisProductosComponent implements OnInit {
   constructor(
     private alimentosService: AlimentosService,
     private router: Router,
-    private snackBarServicie: SnackBarNotificationService
+    private snackBarServicie: SnackBarNotificationService,
+    private carritoService: CarritoService
   ) { }
 
   ngOnInit() {
@@ -31,12 +33,12 @@ export class MisProductosComponent implements OnInit {
 
   reponer(){
     this.alimentos.forEach(element => {
-      this.alimentosService.setCantidadIdCaducado(element.id, element.cantidad);
+      this.carritoService.setCantidadIdCaducado(element.id, element.cantidad);
     });
 
     this.mostrar = false;
-    this.router.navigate(["/fridge"]);
-    this.snackBarServicie.notify("Alimentos caducados añadidos");
+    this.router.navigate(["/market"]);
+    this.snackBarServicie.notify("Alimentos caducados añadidos al carrito");
   }
   
 

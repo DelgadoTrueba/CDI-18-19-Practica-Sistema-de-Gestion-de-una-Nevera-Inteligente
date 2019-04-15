@@ -27,6 +27,14 @@ mat-toolbar{
     border: 0px !important;
 }
 
+.btn:hover{
+    background: #0C96EE;
+}
+
+.activate{
+    background: #0097F8;
+}
+
 p{
     display: inline-block;
 }
@@ -45,3 +53,8 @@ p{
   .btn2 { grid-area: btn2; }
   
   .btn3 { grid-area: btn3; }
+
+
+.mat-drawer-container .mat-sidenav-container .mat-drawer-transition{
+    margin-top: 5%!;
+}
