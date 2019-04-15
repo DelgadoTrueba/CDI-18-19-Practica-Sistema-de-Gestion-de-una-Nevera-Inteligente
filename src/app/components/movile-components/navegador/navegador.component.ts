@@ -7,7 +7,6 @@ import { arrayDeNavegacion as tabs} from 'src/app/model/array-de-navegacion/arra
   selector: 'app-navegador',
   templateUrl: './navegador.component.html',
   styleUrls: ['./navegador.component.css'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class NavegadorComponent implements OnInit {
 
