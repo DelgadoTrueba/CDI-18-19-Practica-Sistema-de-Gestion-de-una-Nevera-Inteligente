@@ -57,7 +57,7 @@ export class MainFridgeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.alimentos = this.alimentosService.alimentosMainFridgeFilter();
-
+    console.log(this.alimentos)
     /*
     this.subscribeServiceAlimentos = this.alimentosService.notification$.subscribe(
       (alimentos) => {

@@ -18,6 +18,8 @@ export class GlobalService {
   encendida = true;
   nombre: any;
 
+  noMas = false;
+
   constructor() { }
 
   getAlta(){

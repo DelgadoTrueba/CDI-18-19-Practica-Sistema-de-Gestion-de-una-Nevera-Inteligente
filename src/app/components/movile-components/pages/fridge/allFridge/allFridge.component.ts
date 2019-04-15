@@ -68,6 +68,7 @@ export class AllFridgeComponent implements OnInit {
   b1
   b2
   encendida: boolean = false;
+  NoMas: boolean;
 
   constructor(
     private router: Router, private r:ActivatedRoute,
@@ -81,6 +82,8 @@ export class AllFridgeComponent implements OnInit {
 
     this.top= 0; 
     this.left = 0;
+
+    this.NoMas = this.globalService.noMas;
   }
 
    ngOnInit() {
@@ -108,7 +111,7 @@ export class AllFridgeComponent implements OnInit {
     this.calcularMapArea();
     let nombres = [];
 
-    if(this.encendida){
+    if(this.encendida && this.NoMas === false){
     this.alimentos.forEach(async alimento => {
       if(alimento.caducado === true){
         nombres.push(alimento.nombre);
@@ -116,14 +119,18 @@ export class AllFridgeComponent implements OnInit {
 
       if(nombres.length === 1){
         let nombre = nombres[0];
-        this.snackBarNotificationService.notify("El alimento: "+nombre+" esta caducados.");
+        setTimeout(()=>{
+          this.snackBarNotificationService.notify("El alimento: "+nombre+" esta caducados.");
+        }, 4000)
       }
       else if(nombres.length > 1){
         let nombre = nombres.reduce( (str, value, index)=>{ 
           console.log(str);
           return str+=value+", "}, " ");
-        this.snackBarNotificationService.notify("Los alimentos: "+nombre+" estan caducados.");
-      }
+          setTimeout(()=>{
+            this.snackBarNotificationService.notify("Los alimentos: "+nombre+" estan caducados.");
+          }, 4000);
+        }
     });
   }
   }

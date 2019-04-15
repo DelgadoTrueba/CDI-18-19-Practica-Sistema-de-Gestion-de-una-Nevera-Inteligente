@@ -8,7 +8,8 @@
       <p *ngIf="!alimento.caducado" style="display: inline;"> {{fecha}}.</p>
 
     </mat-card-subtitle>
-    <mat-card-subtitle>Precio: {{alimento.precio}}€/{{alimento.unidad}}.</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="!alimentoCajon"
+    >Precio: {{alimento.precio}}€/{{alimento.unidad}}.</mat-card-subtitle>
   </mat-card-content>
   
   <mat-card-actions>

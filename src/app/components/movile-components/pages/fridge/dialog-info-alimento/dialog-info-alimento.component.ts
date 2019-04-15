@@ -13,6 +13,7 @@ export class DialogInfoAlimentoComponent implements OnInit {
   alimento;
   alimentoCong: boolean = false;
   fecha;
+  alimentoCajon: boolean = false;
 
   constructor(
       @Inject(MAT_DIALOG_DATA) data,
@@ -46,6 +47,15 @@ export class DialogInfoAlimentoComponent implements OnInit {
 
     if(this.alimento.id === "tarta")
        this.alimentoCong = true;
+
+    if(this.alimento.id === "carne-descongelada")
+       this.alimentoCajon = true;
+
+    if(this.alimento.id === "pescado-descongelado")
+       this.alimentoCajon = true;
+
+    if(this.alimento.id === "tarta-descongelada")
+       this.alimentoCajon = true;
   }
 
   close()
@@ -64,10 +74,11 @@ export class DialogInfoAlimentoComponent implements OnInit {
   descongelar(){
     this.alimentosService.decrementarCantidad(this.alimento);
     let id = this.alimento.id;
+    console.log(id);
     if(id === "carne-congelada"){
       this.alimentosService.aumentarCarneDescongelada();
     }
-    if(id === "pescado-descongelado"){
+    if(id === "pescado-congelado"){
       this.alimentosService.aumentarPescadoDescongelado();
     }
     if(id === "tarta"){
