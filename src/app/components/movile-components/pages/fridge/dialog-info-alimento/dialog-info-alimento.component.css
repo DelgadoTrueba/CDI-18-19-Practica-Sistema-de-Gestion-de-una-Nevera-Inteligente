@@ -16,13 +16,11 @@ mat-card-actions{
 
 button{
   margin: 1% !important;
-  width: 30% !important;
 
-  font-size: 1em;
 }
 
 .exit{
-  width: 95% !important;
+  width: 60% !important;
 }
 
 @media (max-width: 600px) {

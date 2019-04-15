@@ -1,7 +1,7 @@
 #main{
-    margin: 2% auto; 
     display: flex;
     align-items: flex-start;
+    margin-top: 10%;
 }
 
 .imgSuperpuesta{
@@ -53,7 +53,7 @@ z-index: 1;
 }
 
 .fixed{
-top: 5%;
+top: 13%;
 right: 1.5%;
 
 position: fixed;
@@ -61,7 +61,7 @@ z-index: 1;
 }
 
 .fixed3{
-top: 5%;
+top: 13%;
 left: 1.5%;
 
 position: fixed;
@@ -69,8 +69,8 @@ z-index: 1;
 }
 
 .btn{
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
     justify-content: space-between;
 }
 

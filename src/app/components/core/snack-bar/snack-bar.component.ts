@@ -27,6 +27,7 @@ export class SnackBarComponent implements OnInit {
     let config = new MatSnackBarConfig();
     config.duration = 2500;
     //config.verticalPosition = 'top'
+    config.horizontalPosition = "right";
     config.panelClass = ['blue-snackbar']
 
 
