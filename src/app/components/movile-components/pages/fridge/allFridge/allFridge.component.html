@@ -79,11 +79,17 @@
                <!--Imagenes de los alimentos-->
             <div *ngIf="abiertoArriba">
                 <div *ngFor="let alimento of alimentos">
-                    <img *ngIf="alimento.cantidad > 0"
+                    <img *ngIf="alimento.cantidad > 0 && alimento.caducado === false"
                     src="{{alimento.img.allFridge.rutaOk}}"
                     class="imgSuperpuesta"  usemap="#recortes"
                     appStyleGetter [height]="height" [width]="width"
-                    appOverLap [top]="top" [left]="left"> 
+                    appOverLap [top]="top" [left]="left">
+                    
+                    <img *ngIf="alimento.cantidad > 0 && alimento.caducado === true"
+                    src="{{alimento.img.allFridge.rutaC}}"
+                    class="imgSuperpuesta"  usemap="#recortes"
+                    appStyleGetter [height]="height" [width]="width"
+                    appOverLap [top]="top" [left]="left">
         
                     <img *ngIf="alimento.cantidad === 0"
                     src="{{alimento.img.allFridge.rutaEmpty}}"

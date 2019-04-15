@@ -67,7 +67,10 @@
                                 mat-stroked-button 
                                 class="btn-broccoli">
                             <img src="/assets/img/main/broccoli.png"
-                                *ngIf="alimentos[0].cantidad > 0"
+                                *ngIf="alimentos[0].cantidad > 0 && alimentos[0].caducado === false"
+                                class="responsive">
+                            <img src="/assets/img/main/broccoli-c.png"
+                                *ngIf="alimentos[0].cantidad > 0 && alimentos[0].caducado === true"
                                 class="responsive">
                             <img src="/assets/img/main/broccoli-cruz.png"
                                 *ngIf="alimentos[0].cantidad === 0"

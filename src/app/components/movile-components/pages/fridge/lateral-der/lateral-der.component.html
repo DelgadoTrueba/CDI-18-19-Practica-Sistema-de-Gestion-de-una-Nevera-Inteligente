@@ -29,7 +29,10 @@
                                     mat-stroked-button 
                                     class="btn-queso">
                                 <img src="/assets/img/rightSide/queso.png"
-                                    *ngIf="alimentos[2].cantidad > 0"
+                                    *ngIf="alimentos[2].cantidad > 0 && alimentos[2].caducado === false"
+                                    class="responsive">
+                                <img src="/assets/img/rightSide/queso-c.png"
+                                    *ngIf="alimentos[2].cantidad > 0 && alimentos[2].caducado === true"
                                     class="responsive">
                                 <img src="/assets/img/rightSide/queso-cruz.png"
                                     *ngIf="alimentos[2].cantidad === 0"
@@ -49,7 +52,10 @@
                                     mat-stroked-button 
                                     class="btn-yogurt">
                                 <img src="/assets/img/rightSide/yogurt.png"
-                                    *ngIf="alimentos[4].cantidad > 0"
+                                    *ngIf="alimentos[4].cantidad > 0 && alimentos[4].caducado === false"
+                                    class="responsive">
+                                <img src="/assets/img/rightSide/yogurt-c.png"
+                                    *ngIf="alimentos[4].cantidad > 0 && alimentos[4].caducado === true"
                                     class="responsive">
                                 <img src="/assets/img/rightSide/yogurt-cruz.png"
                                     *ngIf="alimentos[4].cantidad === 0"

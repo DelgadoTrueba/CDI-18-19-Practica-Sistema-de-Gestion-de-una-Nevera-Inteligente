@@ -22,7 +22,10 @@
                                         mat-stroked-button 
                                         class="btn-leche">
                                     <img src="/assets/img/leftSide/leche.png"
-                                        *ngIf="alimentos[1].cantidad > 0"
+                                        *ngIf="alimentos[1].cantidad > 0 && alimentos[1].caducado == false"
+                                        class="responsive">
+                                    <img src="/assets/img/leftSide/leche-c.png"
+                                        *ngIf="alimentos[1].cantidad > 0 && alimentos[1].caducado == true"
                                         class="responsive">
                                     <img src="/assets/img/leftSide/leche-cruz.png"
                                         *ngIf="alimentos[1].cantidad === 0"

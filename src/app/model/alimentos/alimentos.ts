@@ -24,6 +24,7 @@ export let alimentos = [
             allFridge: {
                 rutaOk:"assets/img/all-fridge-con-alimentos/broccoli.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/broccoli-cruz.png", 
+                rutaC: "assets/img/all-fridge-con-alimentos/broccoli-c.png", 
             }
         },
         photo: "/assets/img/main/broccoli.png",
@@ -169,6 +170,7 @@ export let alimentos = [
             allFridge: {
                 rutaOk:"assets/img/all-fridge-con-alimentos/leche.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/leche-cruz.png", 
+                rutaC:"assets/img/all-fridge-con-alimentos/leche-c.png", 
             }
         },
         photo: "/assets/img/leftSide/leche.png",
@@ -448,6 +450,7 @@ export let alimentos = [
             allFridge: {
                 rutaOk:"assets/img/all-fridge-con-alimentos/yogurt.png", 
                 rutaEmpty:"assets/img/all-fridge-con-alimentos/yogurt-cruz.png", 
+                rutaC:"assets/img/all-fridge-con-alimentos/yogurt-c.png", 
             }
         },
         photo: "/assets/img/rightSide/yogurt.png",
