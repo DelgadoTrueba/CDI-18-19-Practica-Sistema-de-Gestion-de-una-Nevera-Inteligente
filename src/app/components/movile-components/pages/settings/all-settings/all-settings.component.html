@@ -10,13 +10,13 @@
           </mat-list-item>
           <mat-divider></mat-divider>
           <mat-list-item class="pointer" *ngIf="encendida" (click)="nevera()">
-              <mat-icon class="example-tab-icon" svgIcon="power-off"></mat-icon>
+              <mat-icon>power_settings_new</mat-icon>
               &nbsp;
               Apagar Nevera
           </mat-list-item>
           <mat-divider></mat-divider>
           <mat-list-item class="pointer" (click)="irATemperatura();">
-              <mat-icon svgIcon="thermometer"></mat-icon>
+              <mat-icon class="build">wb_sunny</mat-icon>
               &nbsp;
               Regular Temperatura
           </mat-list-item>          
@@ -35,10 +35,9 @@
           </mat-list-item>
           <mat-divider></mat-divider>
           <mat-list-item class="pointer" (click)="irAIdeas()">
-              <mat-icon svgIcon="bulb" class="build"></mat-icon>
+            <mat-icon class="build">style</mat-icon>
               &nbsp;
               Ideas para comer
           </mat-list-item>
-          <mat-divider></mat-divider>
   </mat-card>
 </div>
