@@ -30,3 +30,11 @@
 .pointer{
     cursor: pointer;
 }
+
+.termometro{
+    height: 110%;
+}
+
+.power{
+    margin-left: 1.5%;
+}
