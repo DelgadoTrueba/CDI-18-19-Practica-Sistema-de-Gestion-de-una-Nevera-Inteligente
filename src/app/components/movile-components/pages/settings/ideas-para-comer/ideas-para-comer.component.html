@@ -13,7 +13,8 @@
               <ng-template #else1>
                   <mat-icon>clear</mat-icon>
               </ng-template>
-                Macedonia: &nbsp; &nbsp;
+                <a href="https://www.hogarmania.com/cocina/recetas/postres/201106/macedonia-8708.html" target="_blank">
+                  Macedonia</a>: &nbsp; &nbsp;
 
 
 
@@ -39,12 +40,86 @@
 
             <mat-list-item class="pointer">
                 <mat-icon 
+                *ngIf="pollo.cantidad > 0 && leche.cantidad >0 && mantequilla.cantidad>0 && coliflor.cantidad>0; 
+                else else4"
+                >done</mat-icon>
+                <ng-template #else4>
+                    <mat-icon>clear</mat-icon>
+                </ng-template>
+                <a href="https://okdiario.com/recetas/pechugas-pollo-bechamel-90156" target="_blank">
+                  Pollo con bechamel</a>: &nbsp; &nbsp;
+  
+  
+  
+                <button  mat-stroked-button matBadge={{pollo.cantidad}} matBadgeColor="warn">              
+                  <img *ngIf="pollo.cantidad > 0" src={{pollo.photo}} class="img">
+                  <img *ngIf="pollo.cantidad === 0" src="assets/img/main/pollo-cruz.png" class="img">
+                  {{pollo.nombre}}
+                </button>&nbsp; &nbsp;
+  
+                <button  mat-stroked-button matBadge={{leche.cantidad}} matBadgeColor="warn">              
+                    <img *ngIf="leche.cantidad > 0" src={{leche.photo}} class="img">
+                    <img *ngIf="leche.cantidad === 0" src="assets/img/main/leche-cruz.png" class="img">
+                    {{leche.nombre}}
+                  </button>&nbsp; &nbsp;
+  
+                  <button  mat-stroked-button matBadge={{mantequilla.cantidad}} matBadgeColor="warn">              
+                      <img *ngIf="mantequilla.cantidad > 0" src={{mantequilla.photo}} class="img">
+                      <img *ngIf="mantequilla.cantidad === 0" src="/assets/img/leftSide/mantequilla-cruz.png" class="img">
+                      {{mantequilla.nombre}}
+                    </button>&nbsp; &nbsp;
+
+                    <button  mat-stroked-button matBadge={{coliflor.cantidad}} matBadgeColor="warn">              
+                        <img *ngIf="coliflor.cantidad > 0" src={{coliflor.photo}} class="img">
+                        <img *ngIf="coliflor.cantidad === 0" src="/assets/img/main/coliflor-cruz.png" class="img">
+                        {{coliflor.nombre}}
+                      </button>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+
+
+              <mat-list-item class="pointer">
+                  <mat-icon 
+                  *ngIf="carne.cantidad > 0 && zanahoria.cantidad >0 && agua.cantidad>0; 
+                  else else5"
+                  >done</mat-icon>
+                  <ng-template #else5>
+                      <mat-icon>clear</mat-icon>
+                  </ng-template>
+                    <a href="https://www.recetasderechupete.com/receta-guiso-carne-ternera-estofada/17688/" target="_blank">
+                      Ternera estofada</a>: &nbsp; &nbsp;
+    
+    
+    
+                  <button  mat-stroked-button matBadge={{carne.cantidad}} matBadgeColor="warn">              
+                    <img *ngIf="carne.cantidad > 0" src={{carne.photo}} class="img">
+                    <img *ngIf="carne.cantidad === 0" src="assets/img/main/carne-cruz.png" class="img">
+                    Ternera
+                  </button>&nbsp; &nbsp;
+    
+                  <button  mat-stroked-button matBadge={{zanahoria.cantidad}} matBadgeColor="warn">              
+                      <img *ngIf="zanahoria.cantidad > 0" src={{zanahoria.photo}} class="img">
+                      <img *ngIf="zanahoria.cantidad === 0" src="assets/img/main/zanahoria-cruz.png" class="img">
+                      {{zanahoria.nombre}}
+                    </button>&nbsp; &nbsp;
+    
+                    <button  mat-stroked-button matBadge={{agua.cantidad}} matBadgeColor="warn">              
+                        <img *ngIf="agua.cantidad > 0" src={{agua.photo}} class="img">
+                        <img *ngIf="agua.cantidad === 0" src="assets/img/leftSide/agua-cruz.png" class="img">
+                        {{agua.nombre}}
+                      </button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+
+            <mat-list-item class="pointer">
+                <mat-icon 
                 *ngIf="salchicha.cantidad > 0 && patatas.cantidad >0 && ketchup.cantidad>0; 
                 else else2">done</mat-icon>
                 <ng-template #else2>
                     <mat-icon>clear</mat-icon>
                 </ng-template>
-                  Salchi-Papas: &nbsp; &nbsp;
+                  <a href="https://www.laylita.com/recetas/salchipapas/" target="_blank">
+                    Salchi-Papas</a>: &nbsp; &nbsp;
 
                   <button  mat-stroked-button matBadge={{salchicha.cantidad}} matBadgeColor="warn" [disabled]=false>              
                       <img *ngIf="salchicha.cantidad > 0" src={{salchicha.photo}} class="img">
@@ -71,6 +146,33 @@
               <mat-divider></mat-divider>
 
               <mat-list-item class="pointer">
+                  <mat-icon                 
+                  *ngIf="pollo.cantidad > 0 && pimiento.cantidad >0; 
+                  else else6"                    
+                  >done</mat-icon>
+                  <ng-template #else6>
+                      <mat-icon>clear</mat-icon>
+                  </ng-template>
+                    <a href="https://cookpad.com/es/recetas/5160386-relleno-para-fajitas-de-pollo?via=search&search_term=relleno%20de%20fajitas%20de%20pollo" target="_blank">
+                      Relleno de fajitas</a>: &nbsp; &nbsp;
+  
+  
+                    <button  mat-stroked-button matBadge={{pollo.cantidad}} matBadgeColor="warn">              
+                        <img *ngIf="pollo.cantidad > 0" src={{pollo.photo}} class="img">
+                  <img *ngIf="pollo.cantidad === 0" src="assets/img/main/pollo-cruz.png" class="img">
+                  {{pollo.nombre}}
+                </button>&nbsp; &nbsp;
+  
+                <button  mat-stroked-button matBadge={{pimiento.cantidad}} matBadgeColor="warn">              
+                    <img *ngIf="pimiento.cantidad > 0" src={{pimiento.photo}} class="img">
+                    <img *ngIf="pimiento.cantidad === 0" src="assets/img/main/pimiento-cruz.png" class="img">
+                    {{pimiento.nombre}}
+                  </button>&nbsp; &nbsp;
+  
+              </mat-list-item>
+              <mat-divider></mat-divider>
+
+              <mat-list-item class="pointer">
                 <mat-icon                 
                 *ngIf="pescado.cantidad > 0 && verduras.cantidad >0; 
                 else else3"                    
@@ -78,7 +180,8 @@
                 <ng-template #else3>
                     <mat-icon>clear</mat-icon>
                 </ng-template>
-                  Pescado con pisto: &nbsp; &nbsp;
+                  <a href="https://www.pescanova.es/recetas/merluza-con-pisto/" target="_blank">
+                    Pescado con pisto</a>: &nbsp; &nbsp;
 
 
                   <button  mat-stroked-button matBadge={{pescado.cantidad}} matBadgeColor="warn">              
